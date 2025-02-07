@@ -30,6 +30,9 @@ def parse_pinned_deps_from_uv_lock(lock: dict) -> list[Requirement]:
 
 
 class PinnedExtraMetadataHook(MetadataHookInterface):
+
+    PLUGIN_NAME = "pinned_extra"
+
     def update(self, metadata: dict):
         with open(f"{self.root}/uv.lock", "rb") as f:
             lock = tomllib.load(f)
