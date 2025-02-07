@@ -12,7 +12,9 @@ def parse_pinned_deps_from_uv_lock(lock: dict) -> list[Requirement]:
 
     for package in lock.get("package", []):
         # skip the main package
-        if package.get("source", {}).get("virtual") or package.get("source", {}).get("editable"):
+        if package.get("source", {}).get("virtual") or package.get("source", {}).get(
+            "editable"
+        ):
             continue
 
         name = package.get("name")
@@ -30,19 +32,24 @@ def parse_pinned_deps_from_uv_lock(lock: dict) -> list[Requirement]:
 
 
 class PinnedExtraMetadataHook(MetadataHookInterface):
-
     PLUGIN_NAME = "pinned_extra"
 
     def update(self, metadata: dict):
         with open(f"{self.root}/uv.lock", "rb") as f:
             lock = tomllib.load(f)
 
-        reqs = parse_pinned_deps_from_uv_lock(lock)
+        direct_reqs = [
+            canonicalize_name(Requirement(req).name)
+            for req in metadata.get("dependencies", [])
+        ]
+        pinned_reqs = parse_pinned_deps_from_uv_lock(lock)
 
         # add the pinned dependencies to the project table
-        metadata["optional-dependencies"] = {"pinned": [str(req) for req in reqs]}
+        metadata["optional-dependencies"] = {
+            "pinned": [str(req) for req in pinned_reqs if req.name in direct_reqs]
+        }
 
 
 @hookimpl
 def hatch_register_metadata_hook() -> type[PinnedExtraMetadataHook]:
-	return PinnedExtraMetadataHook
+    return PinnedExtraMetadataHook
