@@ -11,11 +11,14 @@ dependencies = [
     "hatchling>=1.27.0",
 ]
 
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+[project.entry-points.hatch]
+pinned_extra = "hatch_pinned_extra"
 
 [dependency-groups]
 dev = [
     "pytest>=8",
 ]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
