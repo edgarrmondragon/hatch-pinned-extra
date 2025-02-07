@@ -96,9 +96,7 @@ class PinnedExtraMetadataHook(MetadataHookInterface):
         pinned_reqs = parse_pinned_deps_from_uv_lock(lock, metadata["dependencies"])
 
         # add the pinned dependencies to the project table
-        metadata["optional-dependencies"] = {
-            extra_name: [str(req) for req in pinned_reqs]
-        }
+        metadata["optional-dependencies"][extra_name] = [str(req) for req in pinned_reqs]
 
 
 @hookimpl
