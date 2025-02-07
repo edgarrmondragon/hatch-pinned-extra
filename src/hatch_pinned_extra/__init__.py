@@ -12,7 +12,7 @@ def parse_pinned_deps_from_uv_lock(lock: dict) -> list[Requirement]:
 
     for package in lock.get("package", []):
         # skip the main package
-        if package.get("source", {}).get("virtual"):
+        if package.get("source", {}).get("virtual") or package.get("source", {}).get("editable"):
             continue
 
         name = package.get("name")
