@@ -6,7 +6,7 @@ readme = "README.md"
 authors = [
     { name = "Edgar Ramírez Mondragón", email = "edgarrm358@gmail.com" }
 ]
-requires-python = ">=3.13"
+requires-python = ">=3.9"
 dependencies = [
     "hatchling>=1.27.0",
 ]
