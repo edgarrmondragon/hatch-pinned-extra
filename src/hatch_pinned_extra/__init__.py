@@ -4,6 +4,7 @@ from typing import Dict, Iterable, TypeAlias
 from hatchling.metadata.plugin.interface import MetadataHookInterface
 from hatchling.plugin import hookimpl
 
+from packaging.markers import Marker
 from packaging.requirements import Requirement
 from packaging.utils import canonicalize_name
 
@@ -16,7 +17,16 @@ else:
 Deps: TypeAlias = Dict[str, Dict[str, Dict]]
 
 
-def _extract_requirements(name: str, deps: Deps) -> list[Requirement]:
+def _merge_markers(*markers: str, op: str) -> str:
+    # wrap the markers in parentheses if they are not already and join them with " and "
+    return f" {op} ".join(f"({marker})" for marker in markers if marker)
+
+
+def _extract_requirements(
+    deps: Deps,
+    name: str,
+    *markers: str,
+) -> list[Requirement]:
     reqs = []
 
     for version in deps[name]:
@@ -24,15 +34,20 @@ def _extract_requirements(name: str, deps: Deps) -> list[Requirement]:
 
         req_string = f"{name}=={version}"
 
-        if markers := package.get("resolution-markers", []):
-            req_string += f" ; {' and '.join(markers)}"
+        resolution_markers = _merge_markers(
+            *package.get("resolution-markers", []),
+            op="or",
+        )
+        if new_markers := _merge_markers(*markers, resolution_markers, op='and'):
+            req_string += f" ; {new_markers}"
 
         req = Requirement(req_string)
         req.name = canonicalize_name(req.name)
         reqs.append(req)
 
         for dep in package.get("dependencies", []):
-            reqs.extend(_extract_requirements(dep["name"], deps))
+            new_markers = (*markers, dep["marker"]) if dep.get("marker") else markers
+            reqs.extend(_extract_requirements(deps, dep["name"], *new_markers))
 
     return reqs
 
@@ -62,8 +77,8 @@ def parse_pinned_deps_from_uv_lock(
     for dep in dependencies:
         req = Requirement(dep)
         name = canonicalize_name(req.name)
-
-        reqs.extend(_extract_requirements(name, deps))
+        markers = (str(req.marker),) if req.marker else ()
+        reqs.extend(_extract_requirements(deps, name, *markers))
 
     # Sort by name and version, and deduplicate the requirements
     return sorted(set(reqs), key=lambda req: (req.name, str(req.specifier)))

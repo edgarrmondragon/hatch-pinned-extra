@@ -30,9 +30,8 @@ def test_parse_pinned_deps_from_uv_lock():
     assert reqs[1].specifier == "==4.8.0"
     assert str(reqs[1].marker) == (
         'python_full_version >= "3.13" '
-        'and python_full_version >= "3.10" '
-        'and python_full_version < "3.13" and '
-        'python_full_version == "3.9.*"'
+        'or (python_full_version >= "3.10" and python_full_version < "3.13") '
+        'or python_full_version == "3.9.*"'
     )
 
     assert reqs[2].name == "exceptiongroup"
