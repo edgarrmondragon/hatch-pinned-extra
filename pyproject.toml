@@ -1,0 +1,21 @@
+[project]
+name = "hatch-pinned-extra"
+version = "0.1.0"
+description = "Add a packaging extra with pinned dependencies from a lock file"
+readme = "README.md"
+authors = [
+    { name = "Edgar Ramírez Mondragón", email = "edgarrm358@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "hatchling>=1.27.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+]

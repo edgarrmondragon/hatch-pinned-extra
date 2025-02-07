@@ -1,0 +1,18 @@
+[project]
+name = "project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "anyio>=4.5.2",
+    "boto3>=1.36.15",
+    "colorama; sys_platform == 'win32'",
+    "exceptiongroup>=1.2.2",
+    "importlib-resources; python_version < '3.10'",
+    "fastapi>=0.115.8",
+]
+optional-dependencies.dev = [
+    "pytest>=8; python_version >= '3.13'",
+    "pytest>=7,<8; python_version < '3.13'",
+]
