@@ -14,4 +14,7 @@ requires = [
     "hatch-pinned-extra @ git+https://github.com/edgarrmondragon/hatch-pinned-extra.git",
 ]
 build-backend = "hatchling.build"
+
+[tool.hatch.metadata.hooks.pinned_extra]
+name = "pinned"
 ```
