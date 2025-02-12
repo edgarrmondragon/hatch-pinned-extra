@@ -1,12 +1,16 @@
 import sys
-from typing import Dict, Iterable, TypeAlias
+from typing import Dict, Iterable
 
 from hatchling.metadata.plugin.interface import MetadataHookInterface
 from hatchling.plugin import hookimpl
 
-from packaging.markers import Marker
 from packaging.requirements import Requirement
 from packaging.utils import canonicalize_name
+
+if sys.version_info < (3, 10):
+    from typing_extensions import TypeAlias
+else:
+    from typing import TypeAlias
 
 if sys.version_info < (3, 11):
     import tomli as tomllib
@@ -34,11 +38,8 @@ def _extract_requirements(
 
         req_string = f"{name}=={version}"
 
-        resolution_markers = _merge_markers(
-            *package.get("resolution-markers", []),
-            op="or",
-        )
-        if new_markers := _merge_markers(*markers, resolution_markers, op='and'):
+        resolution_markers = _merge_markers(*package.get("resolution-markers", []), op="or")
+        if new_markers := _merge_markers(*markers, resolution_markers, op="and"):
             req_string += f" ; {new_markers}"
 
         req = Requirement(req_string)
@@ -61,9 +62,7 @@ def parse_pinned_deps_from_uv_lock(
     deps: dict[str, dict[str, dict]] = {}
     for package in lock.get("package", []):
         # skip the main package
-        if package.get("source", {}).get("virtual") or package.get("source", {}).get(
-            "editable"
-        ):
+        if package.get("source", {}).get("virtual") or package.get("source", {}).get("editable"):
             continue
 
         name = package["name"]

@@ -1,6 +1,6 @@
 [project]
 name = "hatch-pinned-extra"
-version = "0.1.0"
+dynamic = [ "version" ]
 description = "Add a packaging extra with pinned dependencies from a lock file"
 readme = "README.md"
 authors = [
@@ -9,6 +9,8 @@ authors = [
 requires-python = ">=3.9"
 dependencies = [
     "hatchling>=1.27.0",
+    "tomli; python_version < '3.11'",
+    "typing-extensions; python_version < '3.10'",
 ]
 
 [project.entry-points.hatch]
@@ -20,5 +22,11 @@ dev = [
 ]
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.ruff]
+line-length = 100
