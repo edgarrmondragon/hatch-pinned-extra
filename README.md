@@ -18,3 +18,13 @@ build-backend = "hatchling.build"
 [tool.hatch.metadata.hooks.pinned_extra]
 name = "pinned"
 ```
+
+If your package doesn't have any optional dependencies already, you will need to mark them as _dynamic_:
+
+```toml
+# pyproject.toml
+[project]
+dynamic = [
+    "optional-dependencies",
+]
+```
