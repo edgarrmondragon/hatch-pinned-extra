@@ -11,7 +11,7 @@ Hatch plugin that adds a packaging [_extra_](https://packaging.python.org/en/lat
 [build-system]
 requires = [
     "hatchling",
-    "hatch-pinned-extra @ git+https://github.com/edgarrmondragon/hatch-pinned-extra.git",
+    "hatch-pinned-extra",
 ]
 build-backend = "hatchling.build"
 
