@@ -22,6 +22,7 @@
 
 from __future__ import annotations
 
+import os.path
 import sys
 from typing import TYPE_CHECKING
 
@@ -114,7 +115,7 @@ class PinnedExtraMetadataHook(MetadataHookInterface):
     def update(self, metadata: dict) -> None:
         extra_name = self.config.get("extra-name", "pinned")
 
-        with open(f"{self.root}/uv.lock", "rb") as f:
+        with open(os.path.join(self.root, "uv.lock"), "rb") as f:
             lock = tomllib.load(f)
 
         pinned_reqs = parse_pinned_deps_from_uv_lock(lock, metadata["dependencies"])
