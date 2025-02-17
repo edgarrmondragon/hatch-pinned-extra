@@ -1,9 +1,33 @@
+#
+#  Copyright © 2025 Edgar Ramírez-Mondragón <edgarrm358@gmail.com>
+#
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+#  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+#  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+#  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+#  DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+#  OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+#  OR OTHER DEALINGS IN THE SOFTWARE.
+#
+
+from __future__ import annotations
+
+import os.path
 import sys
-from typing import Dict, Iterable
+from typing import TYPE_CHECKING
 
 from hatchling.metadata.plugin.interface import MetadataHookInterface
 from hatchling.plugin import hookimpl
-
 from packaging.requirements import Requirement
 from packaging.utils import canonicalize_name
 
@@ -17,8 +41,10 @@ if sys.version_info < (3, 11):
 else:
     import tomllib
 
+if TYPE_CHECKING:
+    from collections.abc import Iterable
 
-Deps: TypeAlias = Dict[str, Dict[str, Dict]]
+Deps: TypeAlias = dict[str, dict[str, dict]]
 
 
 def _merge_markers(*markers: str, op: str) -> str:
@@ -86,10 +112,10 @@ def parse_pinned_deps_from_uv_lock(
 class PinnedExtraMetadataHook(MetadataHookInterface):
     PLUGIN_NAME = "pinned_extra"
 
-    def update(self, metadata: dict):
+    def update(self, metadata: dict) -> None:
         extra_name = self.config.get("extra-name", "pinned")
 
-        with open(f"{self.root}/uv.lock", "rb") as f:
+        with open(os.path.join(self.root, "uv.lock"), "rb") as f:
             lock = tomllib.load(f)
 
         pinned_reqs = parse_pinned_deps_from_uv_lock(lock, metadata["dependencies"])
