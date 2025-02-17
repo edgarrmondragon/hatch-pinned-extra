@@ -31,3 +31,32 @@ source = "vcs"
 
 [tool.ruff]
 line-length = 100
+preview = true
+
+[tool.ruff.lint]
+select = [
+    "F",    # Pyflakes
+    "E",    # pycodestyle (error)
+    "W",    # pycodestyle (warning)
+    "C90",  # mccabe
+    "I",    # isort
+    "UP",   # pyupgrade
+    "YTT",  # flake8-2020
+    "ANN",  # flake8-annotations
+    "S",    # flake8-bandit
+    "BLE",  # flake8-blind-except
+    "FBT",  # flake8-boolean-trap
+    "B",    # flake8-bugbear
+    "CPY",  # flake8-copyright
+    "FA",   # flake8-future-annotations
+    "ISC",  # flake8-implicit-str-concat
+    "PT",   # flake8-pytest-style
+    "SIM",  # flake8-simplify
+    "TID",  # flake8-tidy-imports
+    "TC",   # flake8-type-checking
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = [
+    "S101",  # assert
+]
