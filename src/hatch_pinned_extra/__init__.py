@@ -59,7 +59,7 @@ def _extract_requirements(
 ) -> list[Requirement]:
     reqs = []
 
-    for version in deps[name]:
+    for version in deps.get(name, {}):
         package = deps[name][version]
 
         req_string = f"{name}=={version}"
