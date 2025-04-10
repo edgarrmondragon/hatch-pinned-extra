@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import os.path
 import sys
+import warnings
 from typing import TYPE_CHECKING
 
 from hatchling.metadata.plugin.interface import MetadataHookInterface
@@ -114,6 +115,16 @@ class PinnedExtraMetadataHook(MetadataHookInterface):
 
     def update(self, metadata: dict) -> None:
         extra_name = self.config.get("extra-name", "pinned")
+
+        uv_lock_path = os.path.join(self.root, "uv.lock")
+        if not os.path.exists(uv_lock_path):
+            warnings.warn(
+                f"uv.lock file not found in {self.root}. "
+                f"Skipping the generation of the '{extra_name}' extra.",
+                UserWarning,
+                stacklevel=2,
+            )
+            return
 
         with open(os.path.join(self.root, "uv.lock"), "rb") as f:
             lock = tomllib.load(f)
