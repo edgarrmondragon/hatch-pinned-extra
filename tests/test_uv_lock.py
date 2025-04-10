@@ -22,6 +22,9 @@
 
 import sys
 from copy import deepcopy
+from pathlib import Path
+
+import pytest
 
 if sys.version_info < (3, 11):
     import tomli as tomllib
@@ -29,6 +32,15 @@ else:
     import tomllib
 
 from hatch_pinned_extra import PinnedExtraMetadataHook, parse_pinned_deps_from_uv_lock
+
+
+def test_missing_uv_lock(tmp_path: Path) -> None:
+    hook = PinnedExtraMetadataHook(str(tmp_path), {"extra-name": "pinned"})
+    with pytest.warns(
+        UserWarning,
+        match="uv.lock file not found in",
+    ):
+        hook.update({})
 
 
 def test_parse_pinned_deps_from_uv_lock() -> None:
