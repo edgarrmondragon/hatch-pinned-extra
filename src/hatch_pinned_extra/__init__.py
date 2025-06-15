@@ -57,7 +57,13 @@ def _extract_requirements(
     deps: Deps,
     name: str,
     *markers: str,
+    extras: set[str] = None,
+    visited: set = None,
 ) -> list[Requirement]:
+    if extras is None:
+        extras = set()
+    if visited is None:
+        visited = set()
     reqs = []
 
     for version in deps.get(name, {}):
@@ -73,9 +79,38 @@ def _extract_requirements(
         req.name = canonicalize_name(req.name)
         reqs.append(req)
 
+        # Handle normal dependencies
         for dep in package.get("dependencies", []):
             new_markers = (*markers, dep["marker"]) if dep.get("marker") else markers
-            reqs.extend(_extract_requirements(deps, dep["name"], *new_markers))
+            dep_extras = set(dep.get("extra", []))
+            reqs.extend(
+                _extract_requirements(
+                    deps,
+                    dep["name"],
+                    *new_markers,
+                    extras=dep_extras,
+                    visited=visited,
+                )
+            )
+
+        # Handle extras recursively
+        opt_deps = package.get("optional-dependencies", {})
+        for extra in extras:
+            if (name, extra) in visited:
+                continue
+            visited.add((name, extra))
+            for dep in opt_deps.get(extra, []):
+                dep_name = dep["name"]
+                dep_extras = set(dep.get("extra", []))
+                reqs.extend(
+                    _extract_requirements(
+                        deps,
+                        dep_name,
+                        *markers,
+                        extras=dep_extras,
+                        visited=visited,
+                    )
+                )
 
     return reqs
 
@@ -104,7 +139,8 @@ def parse_pinned_deps_from_uv_lock(
         req = Requirement(dep)
         name = canonicalize_name(req.name)
         markers = (str(req.marker),) if req.marker else ()
-        reqs.extend(_extract_requirements(deps, name, *markers))
+        extras = set(req.extras)
+        reqs.extend(_extract_requirements(deps, name, *markers, extras=extras, visited=set()))
 
     # Sort by name and version, and deduplicate the requirements
     return sorted(set(reqs), key=lambda req: (req.name, str(req.specifier)))

@@ -140,3 +140,52 @@ def test_update_metadata_no_optional_deps() -> None:
         'importlib-resources==6.5.2; python_version < "3.10" and python_full_version == "3.9.*"'
         in dst_metadata["optional-dependencies"]["pinned"]
     )
+
+
+def test_recursive_extras_resolution() -> None:
+    """Test that all dependencies from fastapi[standard] and its recursive extras are included."""
+    with open("fixtures/extras/uv.lock", "rb") as f:
+        lock = tomllib.load(f)
+
+    # This matches the dependency in fixtures/extras/pyproject.toml
+    reqs = parse_pinned_deps_from_uv_lock(
+        lock,
+        dependencies=["fastapi[standard]>=0.115.12"],
+    )
+    names = {req.name for req in reqs}
+
+    # Direct and transitive dependencies from fastapi[standard] and its recursive extras
+    expected = {
+        "fastapi",
+        "pydantic",
+        "starlette",
+        "typing-extensions",
+        "email-validator",
+        "dnspython",
+        "idna",
+        "fastapi-cli",
+        "rich-toolkit",
+        "typer",
+        "rich",
+        "click",
+        "colorama",
+        "uvicorn",
+        "httpx",
+        "jinja2",
+        "python-multipart",
+        "pyyaml",
+        "h11",
+        "httpcore",
+        "certifi",
+        "sniffio",
+        "anyio",
+        "exceptiongroup",
+        "markdown-it-py",
+        "mdurl",
+        "pygments",
+        "shellingham",
+        "markupsafe",
+    }
+    # Check that all expected dependencies are present
+    missing = expected - names
+    assert not missing, f"Missing dependencies in pinned output: {missing}"
