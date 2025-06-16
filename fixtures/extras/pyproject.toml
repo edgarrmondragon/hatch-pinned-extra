@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dep-with-extras"
+version = "0.1.0"
+description = ""
+requires-python = ">=3.9"
+dynamic = [
+    "optional-dependencies",
+]
+dependencies = [
+    "fastapi[standard]>=0.115.12",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dep_with_extras"]
