@@ -22,6 +22,7 @@
 
 from __future__ import annotations
 
+import os
 import os.path
 import sys
 import warnings
@@ -150,6 +151,10 @@ class PinnedExtraMetadataHook(MetadataHookInterface):
     PLUGIN_NAME = "pinned_extra"
 
     def update(self, metadata: dict) -> None:
+        # Check if plugin is enabled via environment variable
+        if not os.environ.get("HATCH_PINNED_EXTRA_ENABLE"):
+            return
+
         extra_name = self.config.get("extra-name", "pinned")
 
         uv_lock_path = os.path.join(self.root, "uv.lock")

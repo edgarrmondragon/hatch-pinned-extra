@@ -23,6 +23,7 @@
 import sys
 from copy import deepcopy
 from pathlib import Path
+from typing import Any
 
 import pytest
 
@@ -34,7 +35,8 @@ else:
 from hatch_pinned_extra import PinnedExtraMetadataHook, parse_pinned_deps_from_uv_lock
 
 
-def test_missing_uv_lock(tmp_path: Path) -> None:
+def test_missing_uv_lock(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
     hook = PinnedExtraMetadataHook(str(tmp_path), {"extra-name": "pinned"})
     with pytest.warns(
         UserWarning,
@@ -77,8 +79,9 @@ def test_parse_pinned_deps_from_uv_lock() -> None:
     assert reqs[2].name == "exceptiongroup"
 
 
-def test_update_metadata() -> None:
-    metadata = {
+def test_update_metadata(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
+    metadata: dict[str, Any] = {
         "dependencies": [
             "anyio>=4.5.2",
             "boto3>=1.36.15",
@@ -113,8 +116,9 @@ def test_update_metadata() -> None:
     )
 
 
-def test_update_metadata_no_optional_deps() -> None:
-    metadata = {
+def test_update_metadata_no_optional_deps(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
+    metadata: dict[str, Any] = {
         "dependencies": [
             "anyio>=4.5.2",
             "boto3>=1.36.15",
@@ -140,6 +144,45 @@ def test_update_metadata_no_optional_deps() -> None:
         'importlib-resources==6.5.2; python_version < "3.10" and python_full_version == "3.9.*"'
         in dst_metadata["optional-dependencies"]["pinned"]
     )
+
+
+def test_plugin_disabled_without_env_var() -> None:
+    """Test that the plugin does nothing when HATCH_PINNED_EXTRA_ENABLE is not set."""
+    metadata: dict[str, Any] = {
+        "dependencies": [
+            "anyio>=4.5.2",
+            "boto3>=1.36.15",
+        ],
+    }
+    hook = PinnedExtraMetadataHook("fixtures/project", {"extra-name": "pinned"})
+
+    dst_metadata = deepcopy(metadata)
+    hook.update(dst_metadata)
+
+    # Metadata should be unchanged when env var is not set
+    assert dst_metadata == metadata
+    assert "optional-dependencies" not in dst_metadata
+
+
+def test_plugin_enabled_with_env_var(monkeypatch: pytest.MonkeyPatch) -> None:
+    """Test that the plugin works when HATCH_PINNED_EXTRA_ENABLE is set."""
+    monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
+    metadata: dict[str, Any] = {
+        "dependencies": [
+            "anyio>=4.5.2",
+            "boto3>=1.36.15",
+        ],
+    }
+    hook = PinnedExtraMetadataHook("fixtures/project", {"extra-name": "pinned"})
+
+    dst_metadata = deepcopy(metadata)
+    hook.update(dst_metadata)
+
+    # Metadata should be updated when env var is set
+    assert dst_metadata != metadata
+    assert "optional-dependencies" in dst_metadata
+    assert "pinned" in dst_metadata["optional-dependencies"]
+    assert "boto3==1.36.15" in dst_metadata["optional-dependencies"]["pinned"]
 
 
 def test_recursive_extras_resolution() -> None:
