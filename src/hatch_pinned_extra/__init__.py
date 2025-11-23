@@ -38,10 +38,10 @@ if sys.version_info < (3, 10):
 else:
     from typing import TypeAlias
 
-if sys.version_info < (3, 11):
-    import tomli as tomllib
-else:
+if sys.version_info >= (3, 11):
     import tomllib
+else:
+    import tomli as tomllib
 
 if TYPE_CHECKING:
     from collections.abc import Iterable
@@ -58,8 +58,8 @@ def _extract_requirements(
     deps: Deps,
     name: str,
     *markers: str,
-    extras: set[str] = None,
-    visited: set = None,
+    extras: set[str] | None = None,
+    visited: set | None = None,
 ) -> list[Requirement]:
     if extras is None:
         extras = set()
@@ -120,6 +120,7 @@ def parse_pinned_deps_from_uv_lock(
     lock: dict,
     dependencies: Iterable[str],
 ) -> list[Requirement]:
+    """Parse the pinned dependencies from a uv.lock file."""
     reqs = []
 
     deps: dict[str, dict[str, dict]] = {}
@@ -148,6 +149,8 @@ def parse_pinned_deps_from_uv_lock(
 
 
 class PinnedExtraMetadataHook(MetadataHookInterface):
+    """Hatch plugin that adds a packaging extra with pinned dependencies from a lock file."""
+
     PLUGIN_NAME = "pinned_extra"
 
     def update(self, metadata: dict) -> None:
