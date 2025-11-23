@@ -19,6 +19,7 @@ pinned_extra = "hatch_pinned_extra"
 
 [dependency-groups]
 dev = [
+    "tomli",
     "pytest>=8",
 ]
 
@@ -54,6 +55,8 @@ select = [
     "SIM",  # flake8-simplify
     "TID",  # flake8-tidy-imports
     "TC",   # flake8-type-checking
+    "ARG",  # flake8-unused-arguments
+    "TRY",  # tryceratops
 ]
 
 [tool.ruff.lint.per-file-ignores]
