@@ -18,7 +18,7 @@ Hatch plugin that adds a packaging [_extra_][extras] to the wheel metadata with 
 [build-system]
 requires = [
     "hatchling",
-    "hatch-pinned-extra<0.2.0",
+    "hatch-pinned-extra>=0.0.1,<0.1.0",
 ]
 build-backend = "hatchling.build"
 
