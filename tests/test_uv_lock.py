@@ -157,7 +157,11 @@ def test_plugin_disabled_without_env_var() -> None:
     hook = PinnedExtraMetadataHook("fixtures/project", {"extra-name": "pinned"})
 
     dst_metadata = deepcopy(metadata)
-    hook.update(dst_metadata)
+    with pytest.warns(
+        UserWarning,
+        match="HATCH_PINNED_EXTRA_ENABLE is not set, pinned extra is disabled",
+    ):
+        hook.update(dst_metadata)
 
     # Metadata should be unchanged when env var is not set
     assert dst_metadata == metadata

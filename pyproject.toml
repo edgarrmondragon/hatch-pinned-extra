@@ -24,7 +24,11 @@ dev = [
 ]
 
 [build-system]
-requires = ["hatchling", "hatch-vcs"]
+requires = [
+    "hatchling",
+    "hatch-vcs",
+]
+
 build-backend = "hatchling.build"
 
 [tool.hatch.version]
