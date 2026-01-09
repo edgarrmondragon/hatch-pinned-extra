@@ -33,10 +33,10 @@ from hatchling.plugin import hookimpl
 from packaging.requirements import Requirement
 from packaging.utils import canonicalize_name
 
-if sys.version_info < (3, 10):
-    from typing_extensions import TypeAlias
-else:
+if sys.version_info >= (3, 10):
     from typing import TypeAlias
+else:
+    from typing_extensions import TypeAlias
 
 if sys.version_info >= (3, 11):
     import tomllib
@@ -156,6 +156,11 @@ class PinnedExtraMetadataHook(MetadataHookInterface):
     def update(self, metadata: dict) -> None:
         # Check if plugin is enabled via environment variable
         if not os.environ.get("HATCH_PINNED_EXTRA_ENABLE"):
+            warnings.warn(
+                "HATCH_PINNED_EXTRA_ENABLE is not set, pinned extra is disabled",
+                UserWarning,
+                stacklevel=1,
+            )
             return
 
         extra_name = self.config.get("extra-name", "pinned")
