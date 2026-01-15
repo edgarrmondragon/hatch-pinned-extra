@@ -1,4 +1,9 @@
-#
+#!/usr/bin/env -S uv run --script
+
+# /// script
+# dependencies = ["nox>=2025.2.9"]
+# ///
+
 #  Copyright © 2025 Edgar Ramírez-Mondragón <edgarrm358@gmail.com>
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,20 +28,22 @@ import nox
 
 nox.needs_version = ">=2025.2.9"
 nox.options.default_venv_backend = "uv"
+nox.options.reuse_venv = "yes"
 
 
-@nox.session
-def pip_timemachine(session: nox.Session) -> None:
+@nox.session(default=False)
+def pip(session: nox.Session) -> None:
     session.run(
         "uvx",
+        "--python=3.13",
         "pip-timemachine",
         "2025-06-15",
     )
 
 
-@nox.session
+@nox.session(default=False)
 @nox.parametrize("fixture", ["extras", "project"])
-def update_locks(session: nox.Session, fixture: str) -> None:
+def lock(session: nox.Session, fixture: str) -> None:
     with session.chdir(f"fixtures/{fixture}"):
         session.run(
             "uv",
@@ -45,3 +52,7 @@ def update_locks(session: nox.Session, fixture: str) -> None:
                 "UV_INDEX_URL": "http://127.0.0.1:8040/simple",
             },
         )
+
+
+if __name__ == "__main__":
+    nox.main()
