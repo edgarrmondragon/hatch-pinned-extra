@@ -34,6 +34,14 @@ build-backend = "hatchling.build"
 [tool.hatch.version]
 source = "vcs"
 
+[tool.pytest.ini_options]
+addopts = ["-ra", "--strict-config", "--strict-markers"]
+filterwarnings = ["error"]
+log_level = "INFO"
+minversion = "8"
+testpaths = ["tests"]
+xfail_strict = true
+
 [tool.ruff]
 line-length = 100
 preview = true
