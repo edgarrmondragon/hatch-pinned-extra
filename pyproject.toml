@@ -6,12 +6,23 @@ readme = "README.md"
 authors = [
     { name = "Edgar Ramírez Mondragón", email = "edgarrm358@gmail.com" }
 ]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
+]
 license = "MIT"
 requires-python = ">=3.9"
 dependencies = [
     "hatchling>=1.27.0",
-    "tomli; python_version < '3.11'",
-    "typing-extensions; python_version < '3.10'",
+    "packaging>=24.2",
+    "tomli>=1.2.2; python_version < '3.11'",
+    "typing-extensions>=4.4; python_version < '3.10'",
 ]
 
 [project.entry-points.hatch]
@@ -20,6 +31,9 @@ pinned_extra = "hatch_pinned_extra"
 [dependency-groups]
 dev = [
     "tomli",
+]
+testing = [
+    "coverage>=7",
     "pytest>=8",
 ]
 
@@ -42,6 +56,15 @@ log_level = "INFO"
 minversion = "8"
 testpaths = ["tests"]
 xfail_strict = true
+
+[tool.coverage.run]
+branch = true
+core = "sysmon"
+source = ["hatch_pinned_extra", "tests"]
+relative_files = true  # This allows coverage to be measured in Windows
+
+[tool.coverage.report]
+show_missing = true
 
 [tool.ruff]
 line-length = 100
@@ -75,4 +98,9 @@ select = [
 [tool.ruff.lint.per-file-ignores]
 "tests/*" = [
     "S101",  # assert
+]
+
+[tool.ty.src]
+exclude = [
+    "noxfile.py",
 ]

@@ -24,24 +24,105 @@
 #  OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 #  OR OTHER DEALINGS IN THE SOFTWARE.
 
+from pathlib import Path
+
 import nox
 
 nox.needs_version = ">=2025.2.9"
 nox.options.default_venv_backend = "uv"
 nox.options.reuse_venv = "yes"
 
+PYPROJECT = nox.project.load_toml()
+python_versions = nox.project.python_versions(PYPROJECT)
 
-@nox.session(default=False)
-def pip(session: nox.Session) -> None:
-    session.run(
-        "uvx",
-        "--python=3.13",
-        "pip-timemachine",
-        "2025-06-15",
+
+def _install_env(session: nox.Session) -> dict[str, str]:
+    """Get the environment variables for the install command.
+
+    Args:
+        session: The Nox session.
+
+    Returns:
+        The environment variables.
+    """
+    env = {"UV_PROJECT_ENVIRONMENT": session.virtualenv.location}
+    if isinstance(session.python, str):
+        env["UV_PYTHON"] = session.python
+
+    return env
+
+
+@nox.session(python=python_versions, tags=["test"])
+def tests(session: nox.Session) -> None:
+    """Execute pytest tests and compute coverage."""
+    session.run_install(
+        "uv",
+        "sync",
+        "--locked",
+        "--no-dev",
+        "--group=testing",
+        env=_install_env(session),
     )
 
+    try:
+        session.run("coverage", "run", "--parallel", "-m", "pytest", *session.posargs)
+    finally:
+        if session.interactive:
+            session.notify("coverage", posargs=[])
+
+
+@nox.session(name="test-lowest", python=python_versions[0], tags=["test"])
+def test_lowest_requirements(session: nox.Session) -> None:
+    """Test the package with the lowest dependency versions."""
+    tmpdir = Path(session.create_tmp())
+    tmpfile = tmpdir / "requirements.txt"
+    tmpfile.unlink(missing_ok=True)
+    session.run_install(
+        "uv",
+        "pip",
+        "compile",
+        "pyproject.toml",
+        f"--python={session.python}",
+        "--universal",
+        "--no-sources",
+        "--resolution=lowest-direct",
+        f"-o={tmpfile.as_posix()}",
+    )
+
+    install_env = _install_env(session)
+    session.run_install(
+        "uv",
+        "sync",
+        "--locked",
+        "--no-dev",
+        "--group=testing",
+        env=install_env,
+    )
+    session.install("-r", f"{tmpdir}/requirements.txt", env=install_env, silent=False)
+    session.run("pytest", *session.posargs)
+
 
 @nox.session(default=False)
+def coverage(session: nox.Session) -> None:
+    """Generate coverage report."""
+    args = session.posargs or ["report", "-m"]
+
+    session.run_install(
+        "uv",
+        "sync",
+        "--locked",
+        "--no-dev",
+        "--group=testing",
+        env=_install_env(session),
+    )
+
+    if not session.posargs and any(Path().glob(".coverage.*")):
+        session.run("coverage", "combine")
+
+    session.run("coverage", *args)
+
+
+@nox.session
 @nox.parametrize("fixture", ["extras", "project"])
 def lock(session: nox.Session, fixture: str) -> None:
     with session.chdir(f"fixtures/{fixture}"):
@@ -49,7 +130,7 @@ def lock(session: nox.Session, fixture: str) -> None:
             "uv",
             "lock",
             env={
-                "UV_INDEX_URL": "http://127.0.0.1:8040/simple",
+                "UV_EXCLUDE_NEWER": "2026-01-15",
             },
         )
 
