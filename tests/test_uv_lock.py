@@ -27,6 +27,7 @@ from typing import Any
 
 import pytest
 from packaging.requirements import Requirement
+from packaging.version import Version
 
 if sys.version_info < (3, 11):
     import tomli as tomllib
@@ -55,29 +56,21 @@ def test_parse_pinned_deps_from_uv_lock() -> None:
         dependencies=["annotated-types", "anyio"],
     )
     assert reqs[0].name == "annotated-types"
-    assert reqs[0].specifier == "==0.7.0"
+    assert reqs[0].version == Version("0.7.0")
 
     assert reqs[1].name == "anyio"
-    assert reqs[1].specifier == "==4.5.2"
+    assert reqs[1].version == Version("4.5.2")
     assert str(reqs[1].marker) == 'python_full_version < "3.9"'
 
-    reqs = parse_pinned_deps_from_uv_lock(
-        lock,
-        dependencies=["anyio"],
-    )
-    assert reqs[0].name == "anyio"
-    assert reqs[0].specifier == "==4.5.2"
-    assert str(reqs[0].marker) == 'python_full_version < "3.9"'
-
-    assert reqs[1].name == "anyio"
-    assert reqs[1].specifier == "==4.9.0"
-    assert str(reqs[1].marker) == (
+    assert reqs[2].name == "anyio"
+    assert reqs[2].version == Version("4.12.1")
+    assert str(reqs[2].marker) == (
         'python_full_version >= "3.13" '
         'or (python_full_version >= "3.10" and python_full_version < "3.13") '
         'or python_full_version == "3.9.*"'
     )
 
-    assert reqs[2].name == "exceptiongroup"
+    assert reqs[3].name == "exceptiongroup"
 
 
 def test_update_metadata(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -114,7 +107,7 @@ def test_update_metadata(monkeypatch: pytest.MonkeyPatch) -> None:
     assert len(botos) == 2
     assert botos[0].specifier == "==1.37.38"
     assert str(botos[0].marker) == 'python_full_version < "3.9"'
-    assert botos[1].specifier == "==1.38.36"
+    assert botos[1].specifier == "==1.42.29"
     assert str(botos[1].marker) == (
         'python_full_version >= "3.13" '
         'or (python_full_version >= "3.10" and python_full_version < "3.13") '
@@ -158,7 +151,7 @@ def test_update_metadata_no_optional_deps(monkeypatch: pytest.MonkeyPatch) -> No
     assert len(botos) == 2
     assert botos[0].specifier == "==1.37.38"
     assert str(botos[0].marker) == 'python_full_version < "3.9"'
-    assert botos[1].specifier == "==1.38.36"
+    assert botos[1].specifier == "==1.42.29"
     assert str(botos[1].marker) == (
         'python_full_version >= "3.13" '
         'or (python_full_version >= "3.10" and python_full_version < "3.13") '
@@ -222,7 +215,7 @@ def test_plugin_enabled_with_env_var(monkeypatch: pytest.MonkeyPatch) -> None:
     assert len(botos) == 2
     assert botos[0].specifier == "==1.37.38"
     assert str(botos[0].marker) == 'python_full_version < "3.9"'
-    assert botos[1].specifier == "==1.38.36"
+    assert botos[1].specifier == "==1.42.29"
     assert str(botos[1].marker) == (
         'python_full_version >= "3.13" '
         'or (python_full_version >= "3.10" and python_full_version < "3.13") '
@@ -265,7 +258,6 @@ def test_recursive_extras_resolution() -> None:
         "h11",
         "httpcore",
         "certifi",
-        "sniffio",
         "anyio",
         "exceptiongroup",
         "markdown-it-py",

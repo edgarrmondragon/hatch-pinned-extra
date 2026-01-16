@@ -26,12 +26,15 @@ import os
 import os.path
 import sys
 import warnings
+from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from hatchling.metadata.plugin.interface import MetadataHookInterface
 from hatchling.plugin import hookimpl
+from packaging.markers import Marker
 from packaging.requirements import Requirement
 from packaging.utils import canonicalize_name
+from packaging.version import Version
 
 if sys.version_info >= (3, 10):
     from typing import TypeAlias
@@ -49,6 +52,19 @@ if TYPE_CHECKING:
 Deps: TypeAlias = dict[str, dict[str, dict]]
 
 
+@dataclass(order=True)
+class _PinnedRequirement:
+    name: str
+    version: Version
+    marker: str = ""
+
+    def __hash__(self) -> int:
+        return hash((self.name, self.version, self.marker))
+
+    def __str__(self) -> str:
+        return f"{self.name}=={self.version}" + (f"; {self.marker}" if self.marker else "")
+
+
 def _merge_markers(*markers: str, op: str) -> str:
     # wrap the markers in parentheses if they are not already and join them with " and "
     return f" {op} ".join(f"({marker})" for marker in markers if marker)
@@ -58,26 +74,20 @@ def _extract_requirements(
     deps: Deps,
     name: str,
     *markers: str,
-    extras: set[str] | None = None,
-    visited: set | None = None,
-) -> list[Requirement]:
-    if extras is None:
-        extras = set()
-    if visited is None:
-        visited = set()
+    extras: set[str],
+    visited: set[tuple[str, str]],
+) -> list[_PinnedRequirement]:
     reqs = []
 
     for version in deps.get(name, {}):
-        package = deps[name][version]
+        req = _PinnedRequirement(canonicalize_name(name), Version(version))
 
-        req_string = f"{name}=={version}"
+        package = deps[name][version]
 
         resolution_markers = _merge_markers(*package.get("resolution-markers", []), op="or")
         if new_markers := _merge_markers(*markers, resolution_markers, op="and"):
-            req_string += f" ; {new_markers}"
+            req.marker = str(Marker(new_markers))
 
-        req = Requirement(req_string)
-        req.name = canonicalize_name(req.name)
         reqs.append(req)
 
         # Handle normal dependencies
@@ -119,7 +129,7 @@ def _extract_requirements(
 def parse_pinned_deps_from_uv_lock(
     lock: dict,
     dependencies: Iterable[str],
-) -> list[Requirement]:
+) -> list[_PinnedRequirement]:
     """Parse the pinned dependencies from a uv.lock file."""
     reqs = []
 
@@ -130,12 +140,10 @@ def parse_pinned_deps_from_uv_lock(
             continue
 
         name = package["name"]
-        if name not in deps:
-            deps[name] = {}
+        deps.setdefault(name, {})
 
         version = package.get("version")
-        if version not in deps[name]:
-            deps[name][version] = package
+        deps[name][version] = package
 
     for dep in dependencies:
         req = Requirement(dep)
@@ -144,8 +152,8 @@ def parse_pinned_deps_from_uv_lock(
         extras = set(req.extras)
         reqs.extend(_extract_requirements(deps, name, *markers, extras=extras, visited=set()))
 
-    # Sort by name and version, and deduplicate the requirements
-    return sorted(set(reqs), key=lambda req: (req.name, str(req.specifier)))
+    # Sort by name, version, and markers, and deduplicate the requirements
+    return sorted(set(reqs))
 
 
 class PinnedExtraMetadataHook(MetadataHookInterface):
@@ -189,4 +197,4 @@ class PinnedExtraMetadataHook(MetadataHookInterface):
 
 @hookimpl
 def hatch_register_metadata_hook() -> type[PinnedExtraMetadataHook]:
-    return PinnedExtraMetadataHook
+    return PinnedExtraMetadataHook  # pragma: no cover

@@ -28,21 +28,44 @@ jobs:
           - "3.11"
           - "3.12"
           - "3.13"
+          - "3.14"
         include:
-          - python-version: "3.14"
+          - python-version: "3.15"
             os: ubuntu-24.04
           - python-version: "3.14"
-            os: ubuntu-24.04-arm
-          - python-version: "3.13"
             os: macos-15
-          - python-version: "3.13"
+          - python-version: "3.14"
             os: windows-2025
 
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
       - uses: astral-sh/setup-uv@61cb8a9741eeb8a550a1b8544337180c0fc8476b # v7.2.0
+      - name: Install Nox
+        run: uv tool install nox
+      - name: Test
+        run: nox -p ${{ matrix.python-version }} -s tests
+      - name: Test with lowest requirements
+        if: matrix.python-version == '3.9' && matrix.os == 'ubuntu-24.04'
+        run: nox -s test-lowest
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
-          version: ">=0.5.30"
-      - env:
-          UV_PYTHON: ${{ matrix.python-version }}
-        run: uv run pytest
+          include-hidden-files: true
+          name: coverage-data-${{ matrix.os }}-py${{ matrix.python-version }}
+          path: ".coverage.*"
+
+  coverage:
+    name: Coverage
+    runs-on: ubuntu-24.04
+    needs: test
+
+    steps:
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+      - uses: astral-sh/setup-uv@61cb8a9741eeb8a550a1b8544337180c0fc8476b # v7.2.0
+      - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          pattern: coverage-data-*
+          merge-multiple: true
+      - name: Install Nox
+        run: uv tool install nox
+      - name: Coverage
+        run: nox -s coverage
