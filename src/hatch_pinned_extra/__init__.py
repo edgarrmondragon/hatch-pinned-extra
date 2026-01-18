@@ -27,7 +27,7 @@ import os.path
 import sys
 import warnings
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 from hatchling.metadata.plugin.interface import MetadataHookInterface
 from hatchling.plugin import hookimpl
@@ -49,7 +49,7 @@ else:
 if TYPE_CHECKING:
     from collections.abc import Iterable
 
-Deps: TypeAlias = dict[str, dict[str, dict]]
+Deps: TypeAlias = dict[str, dict[str, dict[str, Any]]]
 
 
 @dataclass(order=True)
@@ -85,8 +85,8 @@ def _extract_requirements(
         package = deps[name][version]
 
         resolution_markers = _merge_markers(*package.get("resolution-markers", []), op="or")
-        if new_markers := _merge_markers(*markers, resolution_markers, op="and"):
-            req.marker = str(Marker(new_markers))
+        if new_marker := _merge_markers(*markers, resolution_markers, op="and"):
+            req.marker = str(Marker(new_marker))
 
         reqs.append(req)
 
@@ -127,13 +127,13 @@ def _extract_requirements(
 
 
 def parse_pinned_deps_from_uv_lock(
-    lock: dict,
+    lock: dict[str, Any],
     dependencies: Iterable[str],
 ) -> list[_PinnedRequirement]:
     """Parse the pinned dependencies from a uv.lock file."""
     reqs = []
 
-    deps: dict[str, dict[str, dict]] = {}
+    deps: Deps = {}
     for package in lock.get("package", []):
         # skip the main package
         if package.get("source", {}).get("virtual") or package.get("source", {}).get("editable"):
@@ -161,7 +161,7 @@ class PinnedExtraMetadataHook(MetadataHookInterface):
 
     PLUGIN_NAME = "pinned_extra"
 
-    def update(self, metadata: dict) -> None:
+    def update(self, metadata: dict[str, Any]) -> None:
         # Check if plugin is enabled via environment variable
         if not os.environ.get("HATCH_PINNED_EXTRA_ENABLE"):
             warnings.warn(
