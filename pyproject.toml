@@ -92,6 +92,7 @@ select = [
     "TID",  # flake8-tidy-imports
     "TC",   # flake8-type-checking
     "ARG",  # flake8-unused-arguments
+    "FURB", # refurb
     "TRY",  # tryceratops
 ]
 
@@ -104,3 +105,12 @@ select = [
 exclude = [
     "noxfile.py",
 ]
+
+[tool.mypy]
+enable_error_code = [
+    "ignore-without-code",
+    "redundant-expr",
+    "truthy-bool",
+]
+strict = true
+warn_unreachable = true
