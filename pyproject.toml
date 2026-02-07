@@ -50,7 +50,7 @@ fallback-version = "0.0.0.dev0"
 source = "vcs"
 
 [tool.pytest.ini_options]
-addopts = ["-ra", "--strict-config", "--strict-markers"]
+addopts = ["-v", "-ra", "--strict-config", "--strict-markers"]
 filterwarnings = ["error"]
 log_level = "INFO"
 minversion = "8"

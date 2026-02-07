@@ -38,7 +38,7 @@ dynamic = [
 
 ### Enabling the Plugin
 
-The plugin requires the `HATCH_PINNED_EXTRA_ENABLE` environment variable to be set to activate. This design allows you to control when pinned dependencies are included:
+The plugin requires the `HATCH_PINNED_EXTRA_ENABLE` environment variable to be set to a truthy value to activate (e.g. `1`, `true`, `yes`, `on`). This design allows you to control when pinned dependencies are included:
 
 ```bash
 # Build with pinned dependencies
