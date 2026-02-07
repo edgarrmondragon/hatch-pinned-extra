@@ -34,7 +34,8 @@ if sys.version_info < (3, 11):
 else:
     import tomllib
 
-from hatch_pinned_extra import PinnedExtraMetadataHook, parse_pinned_deps_from_uv_lock
+from hatch_pinned_extra import PinnedExtraMetadataHook
+from hatch_pinned_extra._plugin import parse_pinned_deps_from_uv_lock
 
 
 def test_missing_uv_lock(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
