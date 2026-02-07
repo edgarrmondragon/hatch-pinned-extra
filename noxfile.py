@@ -24,6 +24,7 @@
 #  OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 #  OR OTHER DEALINGS IN THE SOFTWARE.
 
+import os
 from pathlib import Path
 
 import nox
@@ -100,6 +101,40 @@ def test_lowest_requirements(session: nox.Session) -> None:
     )
     session.install("-r", f"{tmpdir}/requirements.txt", env=install_env, silent=False)
     session.run("pytest", *session.posargs)
+
+
+@nox.session(tags=["typing"])
+def typing(session: nox.Session) -> None:
+    """Run type checking with mypy."""
+    session.run_install(
+        "uv",
+        "sync",
+        "--locked",
+        "--no-dev",
+        "--group=typing",
+        env=_install_env(session),
+    )
+    session.run("mypy", "src", "tests")
+
+
+@nox.session(tags=["typing"])
+def ty(session: nox.Session) -> None:
+    """Run type checking with ty."""
+    session.run_install(
+        "uv",
+        "sync",
+        "--locked",
+        "--no-dev",
+        "--group=typing",
+        env=_install_env(session),
+    )
+    session.run(
+        "ty",
+        "check",
+        f"--output-format={'github' if os.getenv('GITHUB_ACTIONS') == 'true' else 'concise'}",
+        "src",
+        "tests",
+    )
 
 
 @nox.session(default=False)

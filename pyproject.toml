@@ -30,11 +30,18 @@ pinned_extra = "hatch_pinned_extra"
 
 [dependency-groups]
 dev = [
-    "tomli",
+    { include-group = "testing" },
+    { include-group = "typing" },
 ]
 testing = [
     "coverage>=7",
     "pytest>=8",
+]
+typing = [
+    { include-group = "testing" },
+    "mypy>=1.19.1",
+    "tomli",
+    "ty>=0.0.15",
 ]
 
 [build-system]
@@ -50,7 +57,7 @@ fallback-version = "0.0.0.dev0"
 source = "vcs"
 
 [tool.pytest.ini_options]
-addopts = ["-v", "-ra", "--strict-config", "--strict-markers"]
+addopts = ["-ra", "--strict-config", "--strict-markers"]
 filterwarnings = ["error"]
 log_level = "INFO"
 minversion = "8"
@@ -112,5 +119,6 @@ enable_error_code = [
     "redundant-expr",
     "truthy-bool",
 ]
+follow_untyped_imports = true
 strict = true
 warn_unreachable = true
