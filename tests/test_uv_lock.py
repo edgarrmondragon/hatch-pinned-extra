@@ -167,8 +167,9 @@ def test_update_metadata_no_optional_deps(monkeypatch: pytest.MonkeyPatch) -> No
     )
 
 
-def test_plugin_disabled_without_env_var() -> None:
+def test_plugin_disabled_without_env_var(monkeypatch: pytest.MonkeyPatch) -> None:
     """Test that the plugin does nothing when HATCH_PINNED_EXTRA_ENABLE is not set."""
+    monkeypatch.delenv("HATCH_PINNED_EXTRA_ENABLE", raising=False)
     metadata: dict[str, Any] = {
         "dependencies": [
             "anyio>=4.5.2",
@@ -189,9 +190,34 @@ def test_plugin_disabled_without_env_var() -> None:
     assert "optional-dependencies" not in dst_metadata
 
 
-def test_plugin_enabled_with_env_var(monkeypatch: pytest.MonkeyPatch) -> None:
+@pytest.mark.parametrize("env_var", ["0", "false", "no", "off"])
+def test_plugin_disabled_with_false_env_var(monkeypatch: pytest.MonkeyPatch, env_var: str) -> None:
+    """Test that the plugin does nothing when HATCH_PINNED_EXTRA_ENABLE is set to a false value."""
+    monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", env_var)
+    metadata: dict[str, Any] = {
+        "dependencies": [
+            "anyio>=4.5.2",
+            "boto3>=1.36.15",
+        ],
+    }
+    hook = PinnedExtraMetadataHook("fixtures/project", {"extra-name": "pinned"})
+
+    dst_metadata = deepcopy(metadata)
+    with pytest.warns(
+        UserWarning,
+        match="HATCH_PINNED_EXTRA_ENABLE is not set, pinned extra is disabled",
+    ):
+        hook.update(dst_metadata)
+
+    # Metadata should be unchanged when env var is false
+    assert dst_metadata == metadata
+    assert "optional-dependencies" not in dst_metadata
+
+
+@pytest.mark.parametrize("env_var", ["1", "true", "yes", "on"])
+def test_plugin_enabled_with_env_var(monkeypatch: pytest.MonkeyPatch, env_var: str) -> None:
     """Test that the plugin works when HATCH_PINNED_EXTRA_ENABLE is set."""
-    monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
+    monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", env_var)
     metadata: dict[str, Any] = {
         "dependencies": [
             "anyio>=4.5.2",
@@ -221,6 +247,20 @@ def test_plugin_enabled_with_env_var(monkeypatch: pytest.MonkeyPatch) -> None:
         'or (python_full_version >= "3.10" and python_full_version < "3.13") '
         'or python_full_version == "3.9.*"'
     )
+
+
+def test_invalid_env_var(monkeypatch: pytest.MonkeyPatch) -> None:
+    """Test that the plugin does nothing when HATCH_PINNED_EXTRA_ENABLE is set to an invalid value."""  # noqa: E501
+    monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "invalid")
+    metadata: dict[str, Any] = {
+        "dependencies": [
+            "anyio>=4.5.2",
+            "boto3>=1.36.15",
+        ],
+    }
+    hook = PinnedExtraMetadataHook("fixtures/project", {"extra-name": "pinned"})
+    with pytest.raises(ValueError, match="invalid truth value 'invalid'"):
+        hook.update(metadata)
 
 
 def test_recursive_extras_resolution() -> None:
