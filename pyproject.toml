@@ -83,6 +83,7 @@ select = [
     "E",    # pycodestyle (error)
     "W",    # pycodestyle (warning)
     "C90",  # mccabe
+    "FLY",  # flynt
     "I",    # isort
     "UP",   # pyupgrade
     "YTT",  # flake8-2020
@@ -100,6 +101,7 @@ select = [
     "TC",   # flake8-type-checking
     "ARG",  # flake8-unused-arguments
     "FURB", # refurb
+    "RUF",  # ruff
     "TRY",  # tryceratops
 ]
 
