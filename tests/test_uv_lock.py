@@ -22,17 +22,13 @@
 
 import sys
 from copy import deepcopy
+from importlib.metadata import entry_points
 from pathlib import Path
 from typing import Any
 
 import pytest
 from packaging.requirements import Requirement
 from packaging.version import Version
-
-if sys.version_info >= (3, 10):
-    from importlib.metadata import entry_points
-else:
-    from importlib_metadata import entry_points  # ty: ignore[unresolved-import]
 
 if sys.version_info >= (3, 11):
     import tomllib
