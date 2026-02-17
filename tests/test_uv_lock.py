@@ -29,13 +29,25 @@ import pytest
 from packaging.requirements import Requirement
 from packaging.version import Version
 
-if sys.version_info < (3, 11):
-    import tomli as tomllib
+if sys.version_info >= (3, 10):
+    from importlib.metadata import entry_points
 else:
+    from importlib_metadata import entry_points  # ty: ignore[unresolved-import]
+
+if sys.version_info >= (3, 11):
     import tomllib
+else:
+    import tomli as tomllib
+
 
 from hatch_pinned_extra import PinnedExtraMetadataHook
 from hatch_pinned_extra._plugin import parse_pinned_deps_from_uv_lock
+
+
+def test_entry_point_is_loadable() -> None:
+    (ep,) = entry_points(group="hatch", name="pinned_extra")
+    plugin = ep.load()
+    assert hasattr(plugin, "hatch_register_metadata_hook")
 
 
 def test_missing_uv_lock(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:

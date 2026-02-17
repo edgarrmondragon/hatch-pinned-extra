@@ -26,7 +26,7 @@ dependencies = [
 ]
 
 [project.entry-points.hatch]
-pinned_extra = "hatch_pinned_extra"
+pinned_extra = "hatch_pinned_extra._plugin"
 
 [dependency-groups]
 dev = [
@@ -35,6 +35,7 @@ dev = [
 ]
 testing = [
     "coverage>=7",
+    "importlib-metadata>=4.6; python_version < '3.10'",
     "pytest>=8",
 ]
 typing = [
