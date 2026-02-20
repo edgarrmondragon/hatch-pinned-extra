@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import os
 import os.path
+import re
 import sys
 import warnings
 from dataclasses import dataclass
@@ -48,6 +49,35 @@ if TYPE_CHECKING:
     from collections.abc import Iterable
 
 Deps: TypeAlias = dict[str, dict[str, dict[str, Any]]]
+
+# Marker variables that are platform-specific (not Python-version selectors).
+_PLATFORM_MARKER_RE = re.compile(
+    r"\b(?:sys_platform|os_name|platform_machine|platform_system"
+    r"|platform_release|platform_version|platform_python_implementation"
+    r"|implementation_name)\b"
+)
+
+
+def _platform_only_marker(marker_str: str) -> str:
+    """Return only the platform-specific conditions from a dep marker.
+
+    In uv.lock, dep markers combine two kinds of conditions:
+
+    - **Python-version selectors** (e.g. ``python_full_version < "3.10"``):
+      these pick which lock-file entry of the dependency to use.  The dep
+      package's own ``resolution-markers`` already encode the same information,
+      so re-propagating them only creates redundant / impossible marker
+      combinations further down the dependency tree.
+    - **Platform conditions** (``sys_platform``, ``platform_python_implementation``,
+      …): genuine install-time guards that must be forwarded so that transitive
+      deps (e.g. ``uvloop``) are not installed unconditionally.
+
+    Dep markers in lock files are flat conjunctions, so splitting on
+    ``" and "`` is safe.
+    """
+    terms = [t.strip() for t in marker_str.split(" and ")]
+    platform_terms = [t for t in terms if t and _PLATFORM_MARKER_RE.search(t)]
+    return " and ".join(platform_terms)
 
 
 @dataclass(order=True)
@@ -90,7 +120,8 @@ def _extract_requirements(
 
         # Handle normal dependencies
         for dep in package.get("dependencies", []):
-            new_markers = (*markers, dep["marker"]) if dep.get("marker") else markers
+            effective = _platform_only_marker(dep.get("marker", ""))
+            new_markers = (*markers, effective) if effective else markers
             dep_extras = set(dep.get("extra", []))
             reqs.extend(
                 _extract_requirements(
@@ -111,7 +142,8 @@ def _extract_requirements(
             for dep in opt_deps.get(extra, []):
                 dep_name = dep["name"]
                 dep_extras = set(dep.get("extra", []))
-                new_markers = (*markers, dep["marker"]) if dep.get("marker") else markers
+                effective = _platform_only_marker(dep.get("marker", ""))
+                new_markers = (*markers, effective) if effective else markers
                 reqs.extend(
                     _extract_requirements(
                         deps,
