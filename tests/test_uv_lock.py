@@ -322,3 +322,30 @@ def test_recursive_extras_resolution() -> None:
     # Check that all expected dependencies are present
     missing = expected - names
     assert not missing, f"Missing dependencies in pinned output: {missing}"
+
+
+def test_optional_dep_markers_preserved() -> None:
+    """Test that environment markers on optional dependencies are preserved (issue #55).
+
+    When a dep listed under [package.optional-dependencies] in uv.lock has a marker
+    (e.g., sys_platform != 'win32'), that marker must be propagated to the generated
+    Requires-Dist entry so platform-specific packages are not installed unconditionally.
+    """
+    with open("fixtures/extras/uv.lock", "rb") as f:
+        lock = tomllib.load(f)
+
+    reqs = parse_pinned_deps_from_uv_lock(
+        lock,
+        dependencies=["fastapi[standard]>=0.115.12"],
+    )
+
+    req = next((req for req in reqs if req.name == "uvloop"), None)
+    assert req, "uvloop should be included as a transitive dependency"
+
+    assert "sys_platform" in req.marker, (
+        f"uvloop marker {req.marker=} is missing platform restriction; "
+        "markers from optional-dependencies entries are not being propagated"
+    )
+    assert "win32" in req.marker, (
+        f"uvloop marker {req.marker=} should contain sys_platform != 'win32'"
+    )
