@@ -113,11 +113,12 @@ def _extract_requirements(
             for dep in opt_deps.get(extra, []):
                 dep_name = dep["name"]
                 dep_extras = set(dep.get("extra", []))
+                new_markers = (*markers, dep["marker"]) if dep.get("marker") else markers
                 reqs.extend(
                     _extract_requirements(
                         deps,
                         dep_name,
-                        *markers,
+                        *new_markers,
                         extras=dep_extras,
                         visited=visited,
                     )
