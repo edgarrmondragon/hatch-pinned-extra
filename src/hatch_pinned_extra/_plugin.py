@@ -36,15 +36,13 @@ from packaging.requirements import Requirement
 from packaging.utils import canonicalize_name
 from packaging.version import Version
 
+from hatch_pinned_extra._compat import read_toml
+
 if sys.version_info >= (3, 10):
     from typing import TypeAlias
 else:
     from typing_extensions import TypeAlias
 
-if sys.version_info >= (3, 11):
-    import tomllib
-else:
-    import tomli as tomllib
 
 if TYPE_CHECKING:
     from collections.abc import Iterable
@@ -214,9 +212,7 @@ class PinnedExtraMetadataHook(MetadataHookInterface):
             )
             return
 
-        with open(os.path.join(self.root, "uv.lock"), "rb") as f:
-            lock = tomllib.load(f)
-
+        lock = read_toml(os.path.join(self.root, "uv.lock"))
         pinned_reqs = parse_pinned_deps_from_uv_lock(lock, metadata["dependencies"])
 
         # add the pinned dependencies to the project table
