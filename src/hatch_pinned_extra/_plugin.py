@@ -51,6 +51,7 @@ if TYPE_CHECKING:
 Deps: TypeAlias = dict[str, dict[str, dict[str, Any]]]
 
 # Marker variables that are platform-specific (not Python-version selectors).
+# https://packaging.python.org/en/latest/specifications/dependency-specifiers/#environment-markers
 _PLATFORM_MARKER_RE = re.compile(
     r"\b(?:sys_platform|os_name|platform_machine|platform_system"
     r"|platform_release|platform_version|platform_python_implementation"
