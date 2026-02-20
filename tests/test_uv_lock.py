@@ -20,50 +20,29 @@
 #  OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-import sys
 from copy import deepcopy
-from pathlib import Path
 from typing import Any
 
 import pytest
 from packaging.requirements import Requirement
 from packaging.version import Version
 
-if sys.version_info >= (3, 10):
-    from importlib.metadata import entry_points
-else:
-    from importlib_metadata import entry_points  # ty: ignore[unresolved-import]
-
-if sys.version_info >= (3, 11):
-    import tomllib
-else:
-    import tomli as tomllib
-
-
 from hatch_pinned_extra import PinnedExtraMetadataHook
+from hatch_pinned_extra._compat import read_toml
 from hatch_pinned_extra._plugin import parse_pinned_deps_from_uv_lock
 
 
-def test_entry_point_is_loadable() -> None:
-    (ep,) = entry_points(group="hatch", name="pinned_extra")
-    plugin = ep.load()
-    assert hasattr(plugin, "hatch_register_metadata_hook")
+@pytest.fixture
+def lock() -> dict[str, Any]:
+    return read_toml("fixtures/uv_lock/project/uv.lock")
 
 
-def test_missing_uv_lock(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
-    hook = PinnedExtraMetadataHook(str(tmp_path), {"extra-name": "pinned"})
-    with pytest.warns(
-        UserWarning,
-        match="uv.lock file not found in",
-    ):
-        hook.update({})
+@pytest.fixture
+def lock_with_extras() -> dict[str, Any]:
+    return read_toml("fixtures/uv_lock/extras/uv.lock")
 
 
-def test_parse_pinned_deps_from_uv_lock() -> None:
-    with open("fixtures/project/uv.lock", "rb") as f:
-        lock = tomllib.load(f)
-
+def test_parse_pinned_deps_from_uv_lock(lock: dict[str, Any]) -> None:
     reqs = parse_pinned_deps_from_uv_lock(
         lock,
         dependencies=["annotated-types", "anyio"],
@@ -86,6 +65,76 @@ def test_parse_pinned_deps_from_uv_lock() -> None:
     assert reqs[3].name == "exceptiongroup"
 
 
+def test_recursive_extras_resolution(lock_with_extras: dict[str, Any]) -> None:
+    """Test that all dependencies from fastapi[standard] and its recursive extras are included."""
+    # This matches the dependency in fixtures/extras/pyproject.toml
+    reqs = parse_pinned_deps_from_uv_lock(
+        lock_with_extras,
+        dependencies=["fastapi[standard]>=0.115.12"],
+    )
+    names = {req.name for req in reqs}
+
+    # Direct and transitive dependencies from fastapi[standard] and its recursive extras
+    expected = {
+        "fastapi",
+        "pydantic",
+        "starlette",
+        "typing-extensions",
+        "email-validator",
+        "dnspython",
+        "idna",
+        "fastapi-cli",
+        "rich-toolkit",
+        "typer",
+        "rich",
+        "click",
+        "colorama",
+        "uvicorn",
+        "httpx",
+        "jinja2",
+        "python-multipart",
+        "pyyaml",
+        "h11",
+        "httpcore",
+        "certifi",
+        "anyio",
+        "exceptiongroup",
+        "markdown-it-py",
+        "mdurl",
+        "pygments",
+        "shellingham",
+        "markupsafe",
+        "uvloop",
+    }
+    # Check that all expected dependencies are present
+    missing = expected - names
+    assert not missing, f"Missing dependencies in pinned output: {missing}"
+
+
+def test_optional_dep_markers_preserved(lock_with_extras: dict[str, Any]) -> None:
+    """Test that environment markers on optional dependencies are preserved (issue #55).
+
+    When a dep listed under [package.optional-dependencies] in uv.lock has a marker
+    (e.g., sys_platform != 'win32'), that marker must be propagated to the generated
+    Requires-Dist entry so platform-specific packages are not installed unconditionally.
+    """
+    reqs = parse_pinned_deps_from_uv_lock(
+        lock_with_extras,
+        dependencies=["fastapi[standard]>=0.115.12"],
+    )
+
+    req = next((req for req in reqs if req.name == "uvloop"), None)
+    assert req, "uvloop should be included as a transitive dependency"
+
+    assert "sys_platform" in req.marker, (
+        f"uvloop marker {req.marker=} is missing platform restriction; "
+        "markers from optional-dependencies entries are not being propagated"
+    )
+    assert "win32" in req.marker, (
+        f"uvloop marker {req.marker=} should contain sys_platform != 'win32'"
+    )
+
+
 def test_update_metadata(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
     metadata: dict[str, Any] = {
@@ -104,7 +153,7 @@ def test_update_metadata(monkeypatch: pytest.MonkeyPatch) -> None:
             ],
         },
     }
-    hook = PinnedExtraMetadataHook("fixtures/project", {"extra-name": "pinned"})
+    hook = PinnedExtraMetadataHook("fixtures/uv_lock/project", {"extra-name": "pinned"})
 
     dst_metadata = deepcopy(metadata)
     hook.update(dst_metadata)
@@ -149,7 +198,7 @@ def test_update_metadata_no_optional_deps(monkeypatch: pytest.MonkeyPatch) -> No
             "fastapi>=0.115.8",
         ],
     }
-    hook = PinnedExtraMetadataHook("fixtures/project", {"extra-name": "pinned"})
+    hook = PinnedExtraMetadataHook("fixtures/uv_lock/project", {"extra-name": "pinned"})
 
     dst_metadata = deepcopy(metadata)
     hook.update(dst_metadata)
@@ -189,7 +238,7 @@ def test_plugin_disabled_without_env_var(monkeypatch: pytest.MonkeyPatch) -> Non
             "boto3>=1.36.15",
         ],
     }
-    hook = PinnedExtraMetadataHook("fixtures/project", {"extra-name": "pinned"})
+    hook = PinnedExtraMetadataHook("fixtures/uv_lock/project", {"extra-name": "pinned"})
 
     dst_metadata = deepcopy(metadata)
     with pytest.warns(
@@ -213,7 +262,7 @@ def test_plugin_disabled_with_false_env_var(monkeypatch: pytest.MonkeyPatch, env
             "boto3>=1.36.15",
         ],
     }
-    hook = PinnedExtraMetadataHook("fixtures/project", {"extra-name": "pinned"})
+    hook = PinnedExtraMetadataHook("fixtures/uv_lock/project", {"extra-name": "pinned"})
 
     dst_metadata = deepcopy(metadata)
     with pytest.warns(
@@ -237,7 +286,7 @@ def test_plugin_enabled_with_env_var(monkeypatch: pytest.MonkeyPatch, env_var: s
             "boto3>=1.36.15",
         ],
     }
-    hook = PinnedExtraMetadataHook("fixtures/project", {"extra-name": "pinned"})
+    hook = PinnedExtraMetadataHook("fixtures/uv_lock/project", {"extra-name": "pinned"})
 
     dst_metadata = deepcopy(metadata)
     hook.update(dst_metadata)
@@ -271,81 +320,6 @@ def test_invalid_env_var(monkeypatch: pytest.MonkeyPatch) -> None:
             "boto3>=1.36.15",
         ],
     }
-    hook = PinnedExtraMetadataHook("fixtures/project", {"extra-name": "pinned"})
+    hook = PinnedExtraMetadataHook("fixtures/uv_lock/project", {"extra-name": "pinned"})
     with pytest.raises(ValueError, match="invalid truth value 'invalid'"):
         hook.update(metadata)
-
-
-def test_recursive_extras_resolution() -> None:
-    """Test that all dependencies from fastapi[standard] and its recursive extras are included."""
-    with open("fixtures/extras/uv.lock", "rb") as f:
-        lock = tomllib.load(f)
-
-    # This matches the dependency in fixtures/extras/pyproject.toml
-    reqs = parse_pinned_deps_from_uv_lock(
-        lock,
-        dependencies=["fastapi[standard]>=0.115.12"],
-    )
-    names = {req.name for req in reqs}
-
-    # Direct and transitive dependencies from fastapi[standard] and its recursive extras
-    expected = {
-        "fastapi",
-        "pydantic",
-        "starlette",
-        "typing-extensions",
-        "email-validator",
-        "dnspython",
-        "idna",
-        "fastapi-cli",
-        "rich-toolkit",
-        "typer",
-        "rich",
-        "click",
-        "colorama",
-        "uvicorn",
-        "httpx",
-        "jinja2",
-        "python-multipart",
-        "pyyaml",
-        "h11",
-        "httpcore",
-        "certifi",
-        "anyio",
-        "exceptiongroup",
-        "markdown-it-py",
-        "mdurl",
-        "pygments",
-        "shellingham",
-        "markupsafe",
-    }
-    # Check that all expected dependencies are present
-    missing = expected - names
-    assert not missing, f"Missing dependencies in pinned output: {missing}"
-
-
-def test_optional_dep_markers_preserved() -> None:
-    """Test that environment markers on optional dependencies are preserved (issue #55).
-
-    When a dep listed under [package.optional-dependencies] in uv.lock has a marker
-    (e.g., sys_platform != 'win32'), that marker must be propagated to the generated
-    Requires-Dist entry so platform-specific packages are not installed unconditionally.
-    """
-    with open("fixtures/extras/uv.lock", "rb") as f:
-        lock = tomllib.load(f)
-
-    reqs = parse_pinned_deps_from_uv_lock(
-        lock,
-        dependencies=["fastapi[standard]>=0.115.12"],
-    )
-
-    req = next((req for req in reqs if req.name == "uvloop"), None)
-    assert req, "uvloop should be included as a transitive dependency"
-
-    assert "sys_platform" in req.marker, (
-        f"uvloop marker {req.marker=} is missing platform restriction; "
-        "markers from optional-dependencies entries are not being propagated"
-    )
-    assert "win32" in req.marker, (
-        f"uvloop marker {req.marker=} should contain sys_platform != 'win32'"
-    )
