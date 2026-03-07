@@ -104,7 +104,7 @@ def test_lowest_requirements(session: nox.Session) -> None:
 
 
 @nox.session(tags=["typing"])
-def typing(session: nox.Session) -> None:
+def mypy(session: nox.Session) -> None:
     """Run type checking with mypy."""
     session.run_install(
         "uv",
