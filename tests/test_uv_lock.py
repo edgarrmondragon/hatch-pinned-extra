@@ -21,6 +21,7 @@
 #
 
 from copy import deepcopy
+from pathlib import Path
 from typing import Any
 
 import pytest
@@ -29,17 +30,17 @@ from packaging.version import Version
 
 from hatch_pinned_extra import PinnedExtraMetadataHook
 from hatch_pinned_extra._compat import read_toml
-from hatch_pinned_extra._plugin import parse_pinned_deps_from_uv_lock
+from hatch_pinned_extra._uv import parse_pinned_deps_from_uv_lock
 
 
 @pytest.fixture
 def lock() -> dict[str, Any]:
-    return read_toml("fixtures/uv_lock/project/uv.lock")
+    return read_toml(Path("fixtures/uv_lock/project/uv.lock"))
 
 
 @pytest.fixture
 def lock_with_extras() -> dict[str, Any]:
-    return read_toml("fixtures/uv_lock/extras/uv.lock")
+    return read_toml(Path("fixtures/uv_lock/extras/uv.lock"))
 
 
 def test_parse_pinned_deps_from_uv_lock(lock: dict[str, Any]) -> None:

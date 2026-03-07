@@ -31,9 +31,8 @@ else:
     import tomli as tomllib
 
 if TYPE_CHECKING:
-    import os
+    from pathlib import Path
 
 
-def read_toml(path: str | bytes | os.PathLike[Any]) -> dict[str, Any]:
-    with open(path, "rb") as f:
-        return tomllib.load(f)
+def read_toml(path: Path) -> dict[str, Any]:
+    return tomllib.loads(path.read_text(encoding="utf-8"))
