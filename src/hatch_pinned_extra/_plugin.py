@@ -23,169 +23,15 @@
 from __future__ import annotations
 
 import os
-import os.path
-import re
-import sys
 import warnings
-from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from pathlib import Path
+from typing import Any
 
 from hatchling.metadata.plugin.interface import MetadataHookInterface
 from hatchling.plugin import hookimpl
-from packaging.markers import Marker
-from packaging.requirements import Requirement
-from packaging.utils import canonicalize_name
-from packaging.version import Version
 
 from hatch_pinned_extra._compat import read_toml
-
-if sys.version_info >= (3, 10):
-    from typing import TypeAlias
-else:
-    from typing_extensions import TypeAlias
-
-
-if TYPE_CHECKING:
-    from collections.abc import Iterable
-
-Deps: TypeAlias = dict[str, dict[str, dict[str, Any]]]
-
-# Marker variables that are platform-specific (not Python-version selectors).
-# https://packaging.python.org/en/latest/specifications/dependency-specifiers/#environment-markers
-_PLATFORM_MARKER_RE = re.compile(
-    r"\b(?:sys_platform|os_name|platform_machine|platform_system"
-    r"|platform_release|platform_version|platform_python_implementation"
-    r"|implementation_name)\b"
-)
-
-
-def _platform_only_marker(marker_str: str) -> str:
-    """Return only the platform-specific conditions from a dep marker.
-
-    In uv.lock, dep markers combine two kinds of conditions:
-
-    - **Python-version selectors** (e.g. ``python_full_version < "3.10"``):
-      these pick which lock-file entry of the dependency to use.  The dep
-      package's own ``resolution-markers`` already encode the same information,
-      so re-propagating them only creates redundant / impossible marker
-      combinations further down the dependency tree.
-    - **Platform conditions** (``sys_platform``, ``platform_python_implementation``,
-      …): genuine install-time guards that must be forwarded so that transitive
-      deps (e.g. ``uvloop``) are not installed unconditionally.
-
-    Dep markers in lock files are flat conjunctions, so splitting on
-    ``" and "`` is safe.
-    """
-    terms = [t.strip() for t in marker_str.split(" and ")]
-    platform_terms = [t for t in terms if t and _PLATFORM_MARKER_RE.search(t)]
-    return " and ".join(platform_terms)
-
-
-@dataclass(order=True)
-class _PinnedRequirement:
-    name: str
-    version: Version
-    marker: str = ""
-
-    def __hash__(self) -> int:
-        return hash((self.name, self.version, self.marker))
-
-    def __str__(self) -> str:
-        return f"{self.name}=={self.version}" + (f"; {self.marker}" if self.marker else "")
-
-
-def _merge_markers(*markers: str, op: str) -> str:
-    # wrap the markers in parentheses if they are not already and join them with " and "
-    return f" {op} ".join(f"({marker})" for marker in markers if marker)
-
-
-def _extract_requirements(
-    deps: Deps,
-    name: str,
-    *markers: str,
-    extras: set[str],
-    visited: set[tuple[str, str]],
-) -> list[_PinnedRequirement]:
-    reqs = []
-
-    for version in deps.get(name, {}):
-        req = _PinnedRequirement(canonicalize_name(name), Version(version))
-
-        package = deps[name][version]
-
-        resolution_markers = _merge_markers(*package.get("resolution-markers", []), op="or")
-        if new_marker := _merge_markers(*markers, resolution_markers, op="and"):
-            req.marker = str(Marker(new_marker))
-
-        reqs.append(req)
-
-        # Handle normal dependencies
-        for dep in package.get("dependencies", []):
-            effective = _platform_only_marker(dep.get("marker", ""))
-            new_markers = (*markers, effective) if effective else markers
-            dep_extras = set(dep.get("extra", []))
-            reqs.extend(
-                _extract_requirements(
-                    deps,
-                    dep["name"],
-                    *new_markers,
-                    extras=dep_extras,
-                    visited=visited,
-                )
-            )
-
-        # Handle extras recursively
-        opt_deps = package.get("optional-dependencies", {})
-        for extra in extras:
-            if (name, extra) in visited:
-                continue
-            visited.add((name, extra))
-            for dep in opt_deps.get(extra, []):
-                dep_name = dep["name"]
-                dep_extras = set(dep.get("extra", []))
-                effective = _platform_only_marker(dep.get("marker", ""))
-                new_markers = (*markers, effective) if effective else markers
-                reqs.extend(
-                    _extract_requirements(
-                        deps,
-                        dep_name,
-                        *new_markers,
-                        extras=dep_extras,
-                        visited=visited,
-                    )
-                )
-
-    return reqs
-
-
-def parse_pinned_deps_from_uv_lock(
-    lock: dict[str, Any],
-    dependencies: Iterable[str],
-) -> list[_PinnedRequirement]:
-    """Parse the pinned dependencies from a uv.lock file."""
-    reqs = []
-
-    deps: Deps = {}
-    for package in lock.get("package", []):
-        # skip the main package
-        if package.get("source", {}).get("virtual") or package.get("source", {}).get("editable"):
-            continue
-
-        name = package["name"]
-        deps.setdefault(name, {})
-
-        version = package.get("version")
-        deps[name][version] = package
-
-    for dep in dependencies:
-        req = Requirement(dep)
-        name = canonicalize_name(req.name)
-        markers = (str(req.marker),) if req.marker else ()
-        extras = set(req.extras)
-        reqs.extend(_extract_requirements(deps, name, *markers, extras=extras, visited=set()))
-
-    # Sort by name, version, and markers, and deduplicate the requirements
-    return sorted(set(reqs))
+from hatch_pinned_extra._uv import parse_pinned_deps_from_uv_lock
 
 
 def strtobool(val: str) -> bool:
@@ -234,9 +80,14 @@ class PinnedExtraMetadataHook(MetadataHookInterface):
             return
 
         extra_name = self.config.get("extra-name", "pinned")
+        root_path = Path(self.root)
 
-        uv_lock_path = os.path.join(self.root, "uv.lock")
-        if not os.path.exists(uv_lock_path):
+        uv_lock_path = root_path / "uv.lock"
+        if uv_lock_path.exists():
+            lock = read_toml(uv_lock_path)
+            pinned_reqs = parse_pinned_deps_from_uv_lock(lock, metadata["dependencies"])
+
+        else:
             warnings.warn(
                 f"uv.lock file not found in {self.root}. "
                 f"Skipping the generation of the '{extra_name}' extra.",
@@ -245,13 +96,8 @@ class PinnedExtraMetadataHook(MetadataHookInterface):
             )
             return
 
-        lock = read_toml(os.path.join(self.root, "uv.lock"))
-        pinned_reqs = parse_pinned_deps_from_uv_lock(lock, metadata["dependencies"])
-
         # add the pinned dependencies to the project table
-        if "optional-dependencies" not in metadata:
-            metadata["optional-dependencies"] = {}
-
+        metadata.setdefault("optional-dependencies", {})
         metadata["optional-dependencies"][extra_name] = [str(req) for req in pinned_reqs]
 
 
