@@ -31,6 +31,7 @@ from hatchling.metadata.plugin.interface import MetadataHookInterface
 from hatchling.plugin import hookimpl
 
 from hatch_pinned_extra._compat import read_toml
+from hatch_pinned_extra._pylock import parse_pinned_deps_from_pylock
 from hatch_pinned_extra._uv import parse_pinned_deps_from_uv_lock
 
 
@@ -80,17 +81,23 @@ class PinnedExtraMetadataHook(MetadataHookInterface):
             return
 
         extra_name = self.config.get("extra-name", "pinned")
+        pylock_name: str = self.config.get("pylock", "pylock.toml")
         root_path = Path(self.root)
 
         uv_lock_path = root_path / "uv.lock"
+        pylock_path = root_path / pylock_name
         if uv_lock_path.exists():
             lock = read_toml(uv_lock_path)
             pinned_reqs = parse_pinned_deps_from_uv_lock(lock, metadata["dependencies"])
 
+        elif pylock_path.exists():
+            lock = read_toml(pylock_path)
+            pinned_reqs = parse_pinned_deps_from_pylock(lock, metadata["dependencies"])
+
         else:
             warnings.warn(
-                f"uv.lock file not found in {self.root}. "
-                f"Skipping the generation of the '{extra_name}' extra.",
+                f"uv.lock nor {pylock_path} were found in {self.root}. "
+                f"Skipping generation of the '{extra_name}' extra.",
                 UserWarning,
                 stacklevel=2,
             )
