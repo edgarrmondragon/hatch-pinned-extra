@@ -34,7 +34,6 @@ jobs:
         os:
           - ubuntu-24.04
         python-version:
-          - "3.9"
           - "3.10"
           - "3.11"
           - "3.12"
@@ -56,7 +55,7 @@ jobs:
       - name: Test
         run: nox -p ${{ matrix.python-version }} -s tests
       - name: Test with lowest requirements
-        if: matrix.python-version == '3.9' && matrix.os == 'ubuntu-24.04'
+        if: matrix.python-version == '3.10' && matrix.os == 'ubuntu-24.04'
         run: nox -s test-lowest
       - uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
