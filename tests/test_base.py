@@ -19,17 +19,12 @@
 #  OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 #  OR OTHER DEALINGS IN THE SOFTWARE.
 
-import sys
+from importlib.metadata import entry_points  # ty: ignore[unresolved-import]
 from pathlib import Path
 
 import pytest
 
 from hatch_pinned_extra import PinnedExtraMetadataHook
-
-if sys.version_info >= (3, 10):
-    from importlib.metadata import entry_points
-else:
-    from importlib_metadata import entry_points  # ty: ignore[unresolved-import]
 
 
 def test_entry_point_is_loadable() -> None:

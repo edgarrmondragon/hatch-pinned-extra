@@ -22,8 +22,7 @@
 
 from __future__ import annotations
 
-import sys
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Any, TypeAlias
 
 from packaging.markers import Marker
 from packaging.requirements import Requirement
@@ -31,11 +30,6 @@ from packaging.utils import canonicalize_name
 from packaging.version import Version
 
 from ._base import _merge_markers, _PinnedRequirement, _platform_only_marker
-
-if sys.version_info >= (3, 10):
-    from typing import TypeAlias
-else:
-    from typing_extensions import TypeAlias
 
 if TYPE_CHECKING:
     from collections.abc import Iterable
