@@ -19,7 +19,7 @@
 #  OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 #  OR OTHER DEALINGS IN THE SOFTWARE.
 
-from importlib.metadata import entry_points  # ty: ignore[unresolved-import]
+from importlib.metadata import entry_points
 from pathlib import Path
 
 import pytest
