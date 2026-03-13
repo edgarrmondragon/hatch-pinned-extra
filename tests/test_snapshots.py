@@ -23,6 +23,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
+from pathlib import Path
 from typing import TYPE_CHECKING, Any
 
 import packaging
@@ -33,6 +34,7 @@ from packaging.requirements import Requirement
 from packaging.version import Version
 
 from hatch_pinned_extra import PinnedExtraMetadataHook
+from hatch_pinned_extra._compat import read_toml
 
 if TYPE_CHECKING:
     from packaging.metadata import RawMetadata
@@ -83,21 +85,11 @@ def test_snapshot_project_metadata(
 ) -> None:
     """Snapshot the METADATA content for the uv_lock/project fixture."""
     monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
+
+    pyproject = read_toml(Path("fixtures/uv_lock/project/pyproject.toml"))
     metadata: dict[str, Any] = {
-        "dependencies": [
-            "anyio>=4.5.2",
-            "boto3>=1.36.15",
-            "colorama; sys_platform == 'win32'",
-            "exceptiongroup>=1.2.2",
-            "importlib-resources; python_version < '3.10'",
-            "fastapi>=0.115.8",
-        ],
-        "optional-dependencies": {
-            "dev": [
-                "pytest>=8; python_version >= '3.13'",
-                "pytest>=7,<8; python_version < '3.13'",
-            ],
-        },
+        "dependencies": pyproject["project"]["dependencies"],
+        "optional-dependencies": pyproject["project"]["optional-dependencies"],
     }
     hook = PinnedExtraMetadataHook("fixtures/uv_lock/project", {"extra-name": "pinned"})
 
@@ -119,10 +111,10 @@ def test_snapshot_extras_metadata(
 ) -> None:
     """Snapshot the METADATA content for the uv_lock/extras fixture."""
     monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
+
+    pyproject = read_toml(Path("fixtures/uv_lock/extras/pyproject.toml"))
     metadata: dict[str, Any] = {
-        "dependencies": [
-            "fastapi[standard]>=0.115.12",
-        ],
+        "dependencies": pyproject["project"]["dependencies"],
     }
     hook = PinnedExtraMetadataHook("fixtures/uv_lock/extras", {"extra-name": "pinned"})
 
