@@ -26,6 +26,7 @@
 
 import os
 from pathlib import Path
+from tempfile import NamedTemporaryFile
 
 import nox
 
@@ -160,13 +161,34 @@ def coverage(session: nox.Session) -> None:
 @nox.session(default=False)
 @nox.parametrize("fixture", ["uv_lock/extras", "uv_lock/project"])
 def lock(session: nox.Session, fixture: str) -> None:
-    with session.chdir(f"fixtures/{fixture}"):
+    with NamedTemporaryFile(suffix=".txt") as tmpfile, session.chdir(f"fixtures/{fixture}"):
         session.run(
             "uv",
             "lock",
             env={
                 "UV_EXCLUDE_NEWER": "2026-01-15",
             },
+        )
+        session.run(
+            "uv",
+            "export",
+            "--format=pylock.toml",
+            "--output-file=pylock.uv.toml",
+        )
+        session.run(
+            "uv",
+            "export",
+            "--format=requirements.txt",
+            "--no-hashes",
+            f"--output-file={tmpfile.name}",
+        )
+        session.run(
+            "uvx",
+            "pip",
+            "lock",
+            "--requirement",
+            f"{tmpfile.name}",
+            "--output=pylock.pip.toml",
         )
 
 
