@@ -165,7 +165,7 @@ def lock(session: nox.Session, fixture: str) -> None:
             "uv",
             "lock",
             env={
-                "UV_EXCLUDE_NEWER": "2026-01-15",
+                "UV_EXCLUDE_NEWER": "2026-03-30",
             },
         )
 
