@@ -126,3 +126,27 @@
   
   '''
 # ---
+# name: test_snapshot_requests_metadata
+  '''
+  metadata-version: 2.3
+  name: requests
+  version: 0.1.0
+  requires-dist: requests~=2.32
+  requires-dist: requests-cache~=1.2
+  requires-dist: attrs==26.1.0; extra == "pinned"
+  requires-dist: cattrs==26.1.0; extra == "pinned"
+  requires-dist: certifi==2026.2.25; extra == "pinned"
+  requires-dist: charset-normalizer==3.4.6; extra == "pinned"
+  requires-dist: exceptiongroup==1.3.1; extra == "pinned"
+  requires-dist: idna==3.11; extra == "pinned"
+  requires-dist: platformdirs==4.9.4; extra == "pinned"
+  requires-dist: requests==2.33.1; extra == "pinned"
+  requires-dist: requests-cache==1.3.1; extra == "pinned"
+  requires-dist: typing-extensions==4.15.0; extra == "pinned"
+  requires-dist: url-normalize==2.2.1; extra == "pinned"
+  requires-dist: urllib3==2.6.3; extra == "pinned"
+  provides-extra: pinned
+  
+  
+  '''
+# ---
