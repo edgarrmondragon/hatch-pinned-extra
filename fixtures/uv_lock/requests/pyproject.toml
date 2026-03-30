@@ -1,0 +1,14 @@
+[project]
+name = "my-api-client"
+version = "0.0.0.dev0"
+description = "Singer tap for pypistats.org"
+requires-python = ">=3.10"
+dependencies = [
+  "requests~=2.33",
+  "requests-cache~=1.2",
+]
+
+[tool.uv]
+prerelease = "allow"
+preview = true
+required-version = ">=0.6"

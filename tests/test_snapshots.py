@@ -124,3 +124,30 @@ def test_snapshot_extras_metadata(
     raw = _to_raw_metadata(name="dep-with-extras", version="0.1.0", metadata=dst)
     wheel_metadata = Metadata.from_raw(raw)
     assert wheel_metadata.as_rfc822().as_string() == snapshot
+
+
+@pytest.mark.skipif(
+    Version(packaging.__version__) < Version("26.0"),
+    reason="packaging < 26.0 does not support writing METADATA files",
+)
+def test_snapshot_requests_metadata(
+    monkeypatch: pytest.MonkeyPatch,
+    snapshot: SnapshotAssertion,
+) -> None:
+    """Snapshot the METADATA content for the uv_lock/extras fixture."""
+    monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
+    metadata: dict[str, Any] = {
+        "dependencies": [
+            "requests~=2.32",
+            "requests-cache~=1.2",
+        ],
+    }
+
+    hook = PinnedExtraMetadataHook("fixtures/uv_lock/requests", {"extra-name": "pinned"})
+
+    dst = deepcopy(metadata)
+    hook.update(dst)
+
+    raw = _to_raw_metadata(name="requests", version="0.1.0", metadata=dst)
+    wheel_metadata = Metadata.from_raw(raw)
+    assert wheel_metadata.as_rfc822().as_string() == snapshot
