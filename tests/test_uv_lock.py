@@ -129,13 +129,9 @@ def test_optional_dep_markers_preserved(lock_with_extras: dict[str, Any]) -> Non
 
     req = next((req for req in reqs if req.name == "uvloop"), None)
     assert req, "uvloop should be included as a transitive dependency"
-
-    assert "sys_platform" in req.marker, (
-        f"uvloop marker {req.marker=} is missing platform restriction; "
-        "markers from optional-dependencies entries are not being propagated"
-    )
-    assert "win32" in req.marker, (
-        f"uvloop marker {req.marker=} should contain sys_platform != 'win32'"
+    assert str(req.marker) == (
+        '(platform_python_implementation != "PyPy" and sys_platform != "cygwin") '
+        'and sys_platform != "win32"'
     )
 
 
@@ -175,8 +171,8 @@ def test_update_metadata(monkeypatch: pytest.MonkeyPatch) -> None:
     assert str(botos[0].marker) == 'python_full_version < "3.9"'
     assert botos[1].specifier == "==1.42.79"
     assert str(botos[1].marker) == (
-        'python_full_version >= "3.13" '
-        'or (python_full_version >= "3.10" and python_full_version < "3.13") '
+        '(python_full_version >= "3.13" '
+        'or (python_full_version >= "3.10" and python_full_version < "3.13")) '
         'or python_full_version == "3.9.*"'
     )
 
@@ -219,8 +215,8 @@ def test_update_metadata_no_optional_deps(monkeypatch: pytest.MonkeyPatch) -> No
     assert str(botos[0].marker) == 'python_full_version < "3.9"'
     assert botos[1].specifier == "==1.42.79"
     assert str(botos[1].marker) == (
-        'python_full_version >= "3.13" '
-        'or (python_full_version >= "3.10" and python_full_version < "3.13") '
+        '(python_full_version >= "3.13" '
+        'or (python_full_version >= "3.10" and python_full_version < "3.13")) '
         'or python_full_version == "3.9.*"'
     )
     assert (
@@ -309,8 +305,8 @@ def test_plugin_enabled_with_env_var(monkeypatch: pytest.MonkeyPatch, env_var: s
     assert str(botos[0].marker) == 'python_full_version < "3.9"'
     assert botos[1].specifier == "==1.42.79"
     assert str(botos[1].marker) == (
-        'python_full_version >= "3.13" '
-        'or (python_full_version >= "3.10" and python_full_version < "3.13") '
+        '(python_full_version >= "3.13" '
+        'or (python_full_version >= "3.10" and python_full_version < "3.13")) '
         'or python_full_version == "3.9.*"'
     )
 

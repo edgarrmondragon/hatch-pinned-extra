@@ -24,7 +24,11 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
+from functools import reduce
+from operator import and_
 from typing import TYPE_CHECKING
+
+from packaging.markers import Marker
 
 if TYPE_CHECKING:
     from packaging.version import Version
@@ -42,7 +46,7 @@ _PLATFORM_MARKER_RE = re.compile(
 class _PinnedRequirement:
     name: str
     version: Version
-    marker: str = ""
+    marker: Marker | None = None
 
     def __hash__(self) -> int:
         return hash((self.name, self.version, self.marker))
@@ -51,7 +55,7 @@ class _PinnedRequirement:
         return f"{self.name}=={self.version}" + (f"; {self.marker}" if self.marker else "")
 
 
-def _platform_only_marker(marker_str: str) -> str:
+def _platform_only_marker(marker_str: str) -> Marker | None:
     """Return only the platform-specific conditions from a dep marker.
 
     In uv.lock, dep markers combine two kinds of conditions:
@@ -69,10 +73,8 @@ def _platform_only_marker(marker_str: str) -> str:
     ``" and "`` is safe.
     """
     terms = [t.strip() for t in marker_str.split(" and ")]
-    platform_terms = [t for t in terms if t and _PLATFORM_MARKER_RE.search(t)]
-    return " and ".join(platform_terms)
+    platform_terms = [Marker(t) for t in terms if t and _PLATFORM_MARKER_RE.search(t)]
+    if platform_terms:
+        return reduce(and_, platform_terms)
 
-
-def _merge_markers(*markers: str, op: str) -> str:
-    # wrap the markers in parentheses if they are not already and join them with " and "
-    return f" {op} ".join(f"({marker})" for marker in markers if marker)
+    return None

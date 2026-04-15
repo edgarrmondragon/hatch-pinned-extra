@@ -22,6 +22,8 @@
 
 from __future__ import annotations
 
+from functools import reduce
+from operator import and_, or_
 from typing import TYPE_CHECKING, Any, TypeAlias
 
 from packaging.markers import Marker
@@ -29,7 +31,7 @@ from packaging.requirements import Requirement
 from packaging.utils import canonicalize_name
 from packaging.version import Version
 
-from ._base import _merge_markers, _PinnedRequirement, _platform_only_marker
+from ._base import _PinnedRequirement, _platform_only_marker
 
 if TYPE_CHECKING:
     from collections.abc import Iterable
@@ -40,7 +42,7 @@ Deps: TypeAlias = dict[str, dict[str, dict[str, Any]]]
 def _extract_uv_requirements(
     deps: Deps,
     name: str,
-    *markers: str,
+    *markers: Marker,
     extras: set[str],
     visited: set[tuple[str, str]],
 ) -> list[_PinnedRequirement]:
@@ -50,10 +52,13 @@ def _extract_uv_requirements(
         req = _PinnedRequirement(canonicalize_name(name), Version(version))
 
         package = deps[name][version]
+        package_markers: list[Marker] = list(markers)
 
-        resolution_markers = _merge_markers(*package.get("resolution-markers", []), op="or")
-        if new_marker := _merge_markers(*markers, resolution_markers, op="and"):
-            req.marker = str(Marker(new_marker))
+        if marker_strs := package.get("resolution-markers", []):
+            package_markers.append(reduce(or_, (Marker(m) for m in marker_strs)))
+
+        if package_markers:
+            req.marker = reduce(and_, package_markers)
 
         reqs.append(req)
 
@@ -118,7 +123,7 @@ def parse_pinned_deps_from_uv_lock(
     for dep in dependencies:
         req = Requirement(dep)
         name = canonicalize_name(req.name)
-        markers = (str(req.marker),) if req.marker else ()
+        markers = (req.marker,) if req.marker else ()
         extras = set(req.extras)
         reqs.extend(_extract_uv_requirements(deps, name, *markers, extras=extras, visited=set()))
 
