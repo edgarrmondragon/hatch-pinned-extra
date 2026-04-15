@@ -26,17 +26,15 @@ from copy import deepcopy
 from pathlib import Path
 from typing import TYPE_CHECKING, Any
 
-import packaging
-import pytest
 from packaging.markers import Marker
 from packaging.metadata import Metadata
 from packaging.requirements import Requirement
-from packaging.version import Version
 
 from hatch_pinned_extra import PinnedExtraMetadataHook
 from hatch_pinned_extra._compat import read_toml
 
 if TYPE_CHECKING:
+    import pytest
     from packaging.metadata import RawMetadata
     from syrupy.assertion import SnapshotAssertion
 
@@ -75,10 +73,6 @@ def _to_raw_metadata(
     }
 
 
-@pytest.mark.skipif(
-    Version(packaging.__version__) < Version("26.0"),
-    reason="packaging < 26.0 does not support writing METADATA files",
-)
 def test_snapshot_project_metadata(
     monkeypatch: pytest.MonkeyPatch,
     snapshot: SnapshotAssertion,
@@ -101,10 +95,6 @@ def test_snapshot_project_metadata(
     assert wheel_metadata.as_rfc822().as_string() == snapshot
 
 
-@pytest.mark.skipif(
-    Version(packaging.__version__) < Version("26.0"),
-    reason="packaging < 26.0 does not support writing METADATA files",
-)
 def test_snapshot_extras_metadata(
     monkeypatch: pytest.MonkeyPatch,
     snapshot: SnapshotAssertion,
@@ -126,10 +116,6 @@ def test_snapshot_extras_metadata(
     assert wheel_metadata.as_rfc822().as_string() == snapshot
 
 
-@pytest.mark.skipif(
-    Version(packaging.__version__) < Version("26.0"),
-    reason="packaging < 26.0 does not support writing METADATA files",
-)
 def test_snapshot_requests_metadata(
     monkeypatch: pytest.MonkeyPatch,
     snapshot: SnapshotAssertion,
