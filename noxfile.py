@@ -34,7 +34,6 @@ nox.options.default_venv_backend = "uv"
 nox.options.reuse_venv = "yes"
 
 PYPROJECT = nox.project.load_toml()
-THIS = ["."] if "CI" in os.environ else ["-e", "."]
 python_versions = nox.project.python_versions(PYPROJECT)
 
 
@@ -57,14 +56,14 @@ def _install_env(session: nox.Session) -> dict[str, str]:
 @nox.session(tags=["test"])
 def snap(session: nox.Session) -> None:
     """Refresh snapshots"""
-    session.install(*THIS, "--group=testing", env=_install_env(session))
+    session.install("-e.", "--group=testing", env=_install_env(session))
     session.run("pytest", "--snapshot-update")
 
 
 @nox.session(python=python_versions, tags=["test"])
 def tests(session: nox.Session) -> None:
     """Execute pytest tests and compute coverage."""
-    session.install(*THIS, "--group=testing", env=_install_env(session))
+    session.install("-e.", "--group=testing", env=_install_env(session))
 
     try:
         session.run("coverage", "run", "--parallel", "-m", "pytest", *session.posargs)
@@ -92,7 +91,7 @@ def test_lowest_requirements(session: nox.Session) -> None:
     )
 
     install_env = _install_env(session)
-    session.install(*THIS, "--group=testing", env=install_env)
+    session.install("-e.", "--group=testing", env=install_env)
     session.install("-r", f"{tmpdir}/requirements.txt", env=install_env, silent=False)
     session.run("pytest", *session.posargs)
 
@@ -100,14 +99,14 @@ def test_lowest_requirements(session: nox.Session) -> None:
 @nox.session(tags=["typing"])
 def mypy(session: nox.Session) -> None:
     """Run type checking with mypy."""
-    session.install(*THIS, "--group=typing", env=_install_env(session))
+    session.install("-e.", "--group=typing", env=_install_env(session))
     session.run("mypy", "src", "tests")
 
 
 @nox.session(tags=["typing"])
 def ty(session: nox.Session) -> None:
     """Run type checking with ty."""
-    session.install(*THIS, "--group=typing", env=_install_env(session))
+    session.install("-e.", "--group=typing", env=_install_env(session))
     session.run(
         "ty",
         "check",
@@ -122,10 +121,10 @@ def coverage(session: nox.Session) -> None:
     """Generate coverage report."""
     args = session.posargs or ["report", "-m"]
 
-    session.install(*THIS, "--group=testing", env=_install_env(session))
+    session.install("-e.", "--group=testing", env=_install_env(session))
 
     if not session.posargs and any(Path().glob(".coverage.*")):
-        session.run("coverage", "combine")
+        session.run("coverage", "combine", "--debug=pathmap")
 
     session.run("coverage", *args)
 
