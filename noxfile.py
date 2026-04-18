@@ -54,6 +54,13 @@ def _install_env(session: nox.Session) -> dict[str, str]:
     return env
 
 
+@nox.session(tags=["test"])
+def snap(session: nox.Session) -> None:
+    """Refresh snapshots"""
+    session.install(*THIS, "--group=testing", env=_install_env(session))
+    session.run("pytest", "--snapshot-update")
+
+
 @nox.session(python=python_versions, tags=["test"])
 def tests(session: nox.Session) -> None:
     """Execute pytest tests and compute coverage."""
@@ -131,7 +138,7 @@ def lock(session: nox.Session, fixture: str) -> None:
             "uv",
             "lock",
             env={
-                "UV_EXCLUDE_NEWER": "2026-03-30",
+                "UV_EXCLUDE_NEWER": "2026-04-10",
             },
         )
 

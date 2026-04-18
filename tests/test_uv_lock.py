@@ -169,7 +169,7 @@ def test_update_metadata(monkeypatch: pytest.MonkeyPatch) -> None:
     assert len(botos) == 2
     assert botos[0].specifier == "==1.37.38"
     assert str(botos[0].marker) == 'python_full_version < "3.9"'
-    assert botos[1].specifier == "==1.42.79"
+    assert botos[1].specifier == "==1.42.88"
     assert str(botos[1].marker) == (
         '(python_full_version >= "3.13" '
         'or (python_full_version >= "3.10" and python_full_version < "3.13")) '
@@ -213,7 +213,7 @@ def test_update_metadata_no_optional_deps(monkeypatch: pytest.MonkeyPatch) -> No
     assert len(botos) == 2
     assert botos[0].specifier == "==1.37.38"
     assert str(botos[0].marker) == 'python_full_version < "3.9"'
-    assert botos[1].specifier == "==1.42.79"
+    assert botos[1].specifier == "==1.42.88"
     assert str(botos[1].marker) == (
         '(python_full_version >= "3.13" '
         'or (python_full_version >= "3.10" and python_full_version < "3.13")) '
@@ -303,7 +303,7 @@ def test_plugin_enabled_with_env_var(monkeypatch: pytest.MonkeyPatch, env_var: s
     assert len(botos) == 2
     assert botos[0].specifier == "==1.37.38"
     assert str(botos[0].marker) == 'python_full_version < "3.9"'
-    assert botos[1].specifier == "==1.42.79"
+    assert botos[1].specifier == "==1.42.88"
     assert str(botos[1].marker) == (
         '(python_full_version >= "3.13" '
         'or (python_full_version >= "3.10" and python_full_version < "3.13")) '
