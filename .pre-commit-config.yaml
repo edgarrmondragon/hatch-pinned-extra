@@ -24,12 +24,6 @@ repos:
         args: ["--fix", "--show-fixes"]
       - id: ruff-format
 
-  - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.11.6
-    hooks:
-      - id: uv-lock
-      - id: uv-sync
-
   - repo: https://github.com/python-jsonschema/check-jsonschema
     rev: 0.37.1
     hooks:
