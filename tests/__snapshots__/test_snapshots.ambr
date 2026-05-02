@@ -1,5 +1,30 @@
 # serializer version: 1
-# name: test_snapshot_extras_metadata
+# name: test_snapshot_extras_metadata[pylock.pip.toml]
+  '''
+  metadata-version: 2.3
+  name: dep-with-extras
+  version: 0.1.0
+  requires-dist: fastapi[standard]>=0.115.12
+  requires-dist: fastapi==0.135.3; extra == "pinned"
+  provides-extra: pinned
+  
+  
+  '''
+# ---
+# name: test_snapshot_extras_metadata[pylock.uv.toml]
+  '''
+  metadata-version: 2.3
+  name: dep-with-extras
+  version: 0.1.0
+  requires-dist: fastapi[standard]>=0.115.12
+  requires-dist: fastapi==0.128.8; python_full_version < "3.10" and extra == "pinned"
+  requires-dist: fastapi==0.135.3; python_full_version >= "3.10" and extra == "pinned"
+  provides-extra: pinned
+  
+  
+  '''
+# ---
+# name: test_snapshot_extras_metadata[uv.lock]
   '''
   metadata-version: 2.3
   name: dep-with-extras
@@ -69,7 +94,7 @@
   
   '''
 # ---
-# name: test_snapshot_project_metadata
+# name: test_snapshot_project_metadata[pylock.pip.toml]
   '''
   metadata-version: 2.3
   name: project
@@ -80,8 +105,59 @@
   requires-dist: exceptiongroup>=1.2.2
   requires-dist: importlib-resources; python_version < "3.10"
   requires-dist: fastapi>=0.115.8
-  requires-dist: pytest>=8; python_version >= "3.13" and extra == "dev"
-  requires-dist: pytest<8,>=7; python_version < "3.13" and extra == "dev"
+  requires-dist: click; extra == "cli"
+  requires-dist: anyio==4.13.0; extra == "pinned"
+  requires-dist: boto3==1.42.88; extra == "pinned"
+  requires-dist: exceptiongroup==1.3.1; extra == "pinned"
+  requires-dist: fastapi==0.135.3; extra == "pinned"
+  provides-extra: cli
+  provides-extra: pinned
+  
+  
+  '''
+# ---
+# name: test_snapshot_project_metadata[pylock.uv.toml]
+  '''
+  metadata-version: 2.3
+  name: project
+  version: 0.1.0
+  requires-dist: anyio>=4.5.2
+  requires-dist: boto3>=1.36.15
+  requires-dist: colorama; sys_platform == "win32"
+  requires-dist: exceptiongroup>=1.2.2
+  requires-dist: importlib-resources; python_version < "3.10"
+  requires-dist: fastapi>=0.115.8
+  requires-dist: click; extra == "cli"
+  requires-dist: anyio==4.5.2; python_full_version < "3.9" and extra == "pinned"
+  requires-dist: anyio==4.12.1; python_full_version == "3.9.*" and extra == "pinned"
+  requires-dist: anyio==4.13.0; python_full_version >= "3.10" and extra == "pinned"
+  requires-dist: boto3==1.37.38; python_full_version < "3.9" and extra == "pinned"
+  requires-dist: boto3==1.42.88; python_full_version >= "3.9" and extra == "pinned"
+  requires-dist: colorama==0.4.6; (sys_platform == "win32" and sys_platform == "win32") and extra == "pinned"
+  requires-dist: exceptiongroup==1.3.1; extra == "pinned"
+  requires-dist: fastapi==0.124.4; python_full_version < "3.9" and extra == "pinned"
+  requires-dist: fastapi==0.128.8; python_full_version == "3.9.*" and extra == "pinned"
+  requires-dist: fastapi==0.135.3; python_full_version >= "3.10" and extra == "pinned"
+  requires-dist: importlib-resources==6.4.5; (python_version < "3.10" and python_full_version < "3.9") and extra == "pinned"
+  requires-dist: importlib-resources==6.5.2; (python_version < "3.10" and python_full_version == "3.9.*") and extra == "pinned"
+  provides-extra: cli
+  provides-extra: pinned
+  
+  
+  '''
+# ---
+# name: test_snapshot_project_metadata[uv.lock]
+  '''
+  metadata-version: 2.3
+  name: project
+  version: 0.1.0
+  requires-dist: anyio>=4.5.2
+  requires-dist: boto3>=1.36.15
+  requires-dist: colorama; sys_platform == "win32"
+  requires-dist: exceptiongroup>=1.2.2
+  requires-dist: importlib-resources; python_version < "3.10"
+  requires-dist: fastapi>=0.115.8
+  requires-dist: click; extra == "cli"
   requires-dist: annotated-doc==0.0.4; extra == "pinned"
   requires-dist: annotated-types==0.7.0; extra == "pinned"
   requires-dist: anyio==4.5.2; python_full_version < "3.9" and extra == "pinned"
@@ -120,13 +196,41 @@
   requires-dist: urllib3==2.6.3; (python_full_version >= "3.13" or (python_full_version >= "3.10" and python_full_version < "3.13")) and extra == "pinned"
   requires-dist: zipp==3.20.2; (python_version < "3.10" and python_full_version < "3.9") and extra == "pinned"
   requires-dist: zipp==3.23.0; (python_version < "3.10" and python_full_version == "3.9.*") and extra == "pinned"
-  provides-extra: dev
+  provides-extra: cli
   provides-extra: pinned
   
   
   '''
 # ---
-# name: test_snapshot_requests_metadata
+# name: test_snapshot_requests_metadata[pylock.pip.toml]
+  '''
+  metadata-version: 2.3
+  name: requests
+  version: 0.1.0
+  requires-dist: requests~=2.32
+  requires-dist: requests-cache~=1.2
+  requires-dist: requests==2.33.1; extra == "pinned"
+  requires-dist: requests-cache==1.3.1; extra == "pinned"
+  provides-extra: pinned
+  
+  
+  '''
+# ---
+# name: test_snapshot_requests_metadata[pylock.uv.toml]
+  '''
+  metadata-version: 2.3
+  name: requests
+  version: 0.1.0
+  requires-dist: requests~=2.32
+  requires-dist: requests-cache~=1.2
+  requires-dist: requests==2.33.1; extra == "pinned"
+  requires-dist: requests-cache==1.3.1; extra == "pinned"
+  provides-extra: pinned
+  
+  
+  '''
+# ---
+# name: test_snapshot_requests_metadata[uv.lock]
   '''
   metadata-version: 2.3
   name: requests

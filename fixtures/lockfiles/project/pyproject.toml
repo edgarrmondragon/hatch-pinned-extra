@@ -12,7 +12,12 @@ dependencies = [
     "importlib-resources; python_version < '3.10'",
     "fastapi>=0.115.8",
 ]
-optional-dependencies.dev = [
+optional-dependencies.cli = [
+    "click",
+]
+
+[dependency-groups]
+dev = [
     "pytest>=8; python_version >= '3.13'",
     "pytest>=7,<8; python_version < '3.13'",
 ]

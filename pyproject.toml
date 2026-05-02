@@ -19,7 +19,7 @@ license = "MIT"
 requires-python = ">=3.10"
 dependencies = [
     "hatchling>=1.27.0",
-    "packaging>=26.1",
+    "packaging>=26.1",  # 26.0+ required for pylock support, 26.1+ required for & and | support for Marker
     "tomli>=1.2.2; python_version < '3.11'",
 ]
 
@@ -132,3 +132,6 @@ enable_error_code = [
 follow_untyped_imports = true
 strict = true
 warn_unreachable = true
+
+[tool.typos.files]
+extend-exclude = ["fixtures/**/pylock.*.toml"]
