@@ -144,7 +144,7 @@
   requires-dist: requests-cache==1.3.1; extra == "pinned"
   requires-dist: typing-extensions==4.15.0; extra == "pinned"
   requires-dist: url-normalize==2.2.1; extra == "pinned"
-  requires-dist: urllib3==2.6.3; extra == "pinned"
+  requires-dist: urllib3==2.7.0; extra == "pinned"
   provides-extra: pinned
   
   
