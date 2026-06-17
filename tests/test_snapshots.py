@@ -77,15 +77,15 @@ def test_snapshot_project_metadata(
     monkeypatch: pytest.MonkeyPatch,
     snapshot: SnapshotAssertion,
 ) -> None:
-    """Snapshot the METADATA content for the uv_lock/project fixture."""
+    """Snapshot the METADATA content for the lockfiles/project fixture."""
     monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
 
-    pyproject = read_toml(Path("fixtures/uv_lock/project/pyproject.toml"))
+    pyproject = read_toml(Path("fixtures/lockfiles/project/pyproject.toml"))
     metadata: dict[str, Any] = {
         "dependencies": pyproject["project"]["dependencies"],
         "optional-dependencies": pyproject["project"]["optional-dependencies"],
     }
-    hook = PinnedExtraMetadataHook("fixtures/uv_lock/project", {"extra-name": "pinned"})
+    hook = PinnedExtraMetadataHook("fixtures/lockfiles/project", {"extra-name": "pinned"})
 
     dst = deepcopy(metadata)
     hook.update(dst)
@@ -99,14 +99,14 @@ def test_snapshot_extras_metadata(
     monkeypatch: pytest.MonkeyPatch,
     snapshot: SnapshotAssertion,
 ) -> None:
-    """Snapshot the METADATA content for the uv_lock/extras fixture."""
+    """Snapshot the METADATA content for the lockfiles/extras fixture."""
     monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
 
-    pyproject = read_toml(Path("fixtures/uv_lock/extras/pyproject.toml"))
+    pyproject = read_toml(Path("fixtures/lockfiles/extras/pyproject.toml"))
     metadata: dict[str, Any] = {
         "dependencies": pyproject["project"]["dependencies"],
     }
-    hook = PinnedExtraMetadataHook("fixtures/uv_lock/extras", {"extra-name": "pinned"})
+    hook = PinnedExtraMetadataHook("fixtures/lockfiles/extras", {"extra-name": "pinned"})
 
     dst = deepcopy(metadata)
     hook.update(dst)
@@ -120,7 +120,7 @@ def test_snapshot_requests_metadata(
     monkeypatch: pytest.MonkeyPatch,
     snapshot: SnapshotAssertion,
 ) -> None:
-    """Snapshot the METADATA content for the uv_lock/extras fixture."""
+    """Snapshot the METADATA content for the lockfiles/extras fixture."""
     monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
     metadata: dict[str, Any] = {
         "dependencies": [
@@ -129,7 +129,7 @@ def test_snapshot_requests_metadata(
         ],
     }
 
-    hook = PinnedExtraMetadataHook("fixtures/uv_lock/requests", {"extra-name": "pinned"})
+    hook = PinnedExtraMetadataHook("fixtures/lockfiles/requests", {"extra-name": "pinned"})
 
     dst = deepcopy(metadata)
     hook.update(dst)
