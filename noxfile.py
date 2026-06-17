@@ -130,7 +130,7 @@ def coverage(session: nox.Session) -> None:
 
 
 @nox.session(default=False)
-@nox.parametrize("fixture", ["uv_lock/extras", "uv_lock/project", "uv_lock/requests"])
+@nox.parametrize("fixture", ["lockfiles/extras", "lockfiles/project", "lockfiles/requests"])
 def lock(session: nox.Session, fixture: str) -> None:
     with session.chdir(f"fixtures/{fixture}"):
         session.run(

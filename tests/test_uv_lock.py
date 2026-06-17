@@ -35,12 +35,12 @@ from hatch_pinned_extra._uv import parse_pinned_deps_from_uv_lock
 
 @pytest.fixture
 def lock() -> dict[str, Any]:
-    return read_toml(Path("fixtures/uv_lock/project/uv.lock"))
+    return read_toml(Path("fixtures/lockfiles/project/uv.lock"))
 
 
 @pytest.fixture
 def lock_with_extras() -> dict[str, Any]:
-    return read_toml(Path("fixtures/uv_lock/extras/uv.lock"))
+    return read_toml(Path("fixtures/lockfiles/extras/uv.lock"))
 
 
 def test_parse_pinned_deps_from_uv_lock(lock: dict[str, Any]) -> None:
@@ -153,7 +153,7 @@ def test_update_metadata(monkeypatch: pytest.MonkeyPatch) -> None:
             ],
         },
     }
-    hook = PinnedExtraMetadataHook("fixtures/uv_lock/project", {"extra-name": "pinned"})
+    hook = PinnedExtraMetadataHook("fixtures/lockfiles/project", {"extra-name": "pinned"})
 
     dst_metadata = deepcopy(metadata)
     hook.update(dst_metadata)
@@ -198,7 +198,7 @@ def test_update_metadata_no_optional_deps(monkeypatch: pytest.MonkeyPatch) -> No
             "fastapi>=0.115.8",
         ],
     }
-    hook = PinnedExtraMetadataHook("fixtures/uv_lock/project", {"extra-name": "pinned"})
+    hook = PinnedExtraMetadataHook("fixtures/lockfiles/project", {"extra-name": "pinned"})
 
     dst_metadata = deepcopy(metadata)
     hook.update(dst_metadata)
@@ -238,7 +238,7 @@ def test_plugin_disabled_without_env_var(monkeypatch: pytest.MonkeyPatch) -> Non
             "boto3>=1.36.15",
         ],
     }
-    hook = PinnedExtraMetadataHook("fixtures/uv_lock/project", {"extra-name": "pinned"})
+    hook = PinnedExtraMetadataHook("fixtures/lockfiles/project", {"extra-name": "pinned"})
 
     dst_metadata = deepcopy(metadata)
     with pytest.warns(
@@ -262,7 +262,7 @@ def test_plugin_disabled_with_false_env_var(monkeypatch: pytest.MonkeyPatch, env
             "boto3>=1.36.15",
         ],
     }
-    hook = PinnedExtraMetadataHook("fixtures/uv_lock/project", {"extra-name": "pinned"})
+    hook = PinnedExtraMetadataHook("fixtures/lockfiles/project", {"extra-name": "pinned"})
 
     dst_metadata = deepcopy(metadata)
     with pytest.warns(
@@ -286,7 +286,7 @@ def test_plugin_enabled_with_env_var(monkeypatch: pytest.MonkeyPatch, env_var: s
             "boto3>=1.36.15",
         ],
     }
-    hook = PinnedExtraMetadataHook("fixtures/uv_lock/project", {"extra-name": "pinned"})
+    hook = PinnedExtraMetadataHook("fixtures/lockfiles/project", {"extra-name": "pinned"})
 
     dst_metadata = deepcopy(metadata)
     hook.update(dst_metadata)
@@ -320,6 +320,6 @@ def test_invalid_env_var(monkeypatch: pytest.MonkeyPatch) -> None:
             "boto3>=1.36.15",
         ],
     }
-    hook = PinnedExtraMetadataHook("fixtures/uv_lock/project", {"extra-name": "pinned"})
+    hook = PinnedExtraMetadataHook("fixtures/lockfiles/project", {"extra-name": "pinned"})
     with pytest.raises(ValueError, match="invalid truth value 'invalid'"):
         hook.update(metadata)
