@@ -100,7 +100,7 @@ class PinnedExtraMetadataHook(MetadataHookInterface):
 
         elif lockfile.startswith("pylock.") and lockfile.endswith(".toml"):
             lock = read_toml(lock_path)
-            pinned_reqs = parse_pinned_deps_from_pylock(lock, metadata["dependencies"])
+            pinned_reqs = parse_pinned_deps_from_pylock(lock)
 
         else:
             warnings.warn(

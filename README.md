@@ -46,6 +46,9 @@ lockfile = "pylock.prod.toml"
 ```
 
 > [!NOTE]
+> The `pinned` will contain ALL the dependencies in `pylock.toml`, so you'll want to make sure it includes only runtime or relevant dependencies, e.g. by generating it with the `--no-dev` flag.
+
+> [!NOTE]
 > `pylock.toml` files may produce less precise environment markers than `uv.lock` because the
 > pylock format does not carry the resolver's internal per-Python-version splits. For example,
 > a `uv.lock`-derived pinned requirement might read

@@ -145,6 +145,7 @@ def lock(session: nox.Session, fixture: str) -> None:
             "uv",
             "export",
             "--format=pylock.toml",
+            "--no-dev",
             "--output-file=pylock.uv.toml",
         )
         session.run(
@@ -152,6 +153,7 @@ def lock(session: nox.Session, fixture: str) -> None:
             "export",
             "--format=requirements.txt",
             "--no-hashes",
+            "--no-dev",
             f"--output-file={tmpfile.name}",
         )
         session.run(

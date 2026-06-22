@@ -90,17 +90,6 @@ url = "https://files.pythonhosted.org/packages/0e/61/66938bbb5fc52dbdf84594873d5
 sha256 = "771a87f49d9defaf64091e6e6fe9c18d4833f140bd19464795bc32d966ca37ea"
 
 [[packages]]
-name = "iniconfig"
-version = "2.3.0"
-
-[[packages.wheels]]
-name = "iniconfig-2.3.0-py3-none-any.whl"
-url = "https://files.pythonhosted.org/packages/cb/b1/3846dd7f199d53cb17f49cba7e651e9ce294d8497c8c150530ed11865bb8/iniconfig-2.3.0-py3-none-any.whl"
-
-[packages.wheels.hashes]
-sha256 = "f631c04d2c48c52b84d0d0549c99ff3859c98df65b3101406327ecc7d53fbf12"
-
-[[packages]]
 name = "jmespath"
 version = "1.1.0"
 
@@ -110,28 +99,6 @@ url = "https://files.pythonhosted.org/packages/14/2f/967ba146e6d58cf6a652da73885
 
 [packages.wheels.hashes]
 sha256 = "a5663118de4908c91729bea0acadca56526eb2698e83de10cd116ae0f4e97c64"
-
-[[packages]]
-name = "packaging"
-version = "26.0"
-
-[[packages.wheels]]
-name = "packaging-26.0-py3-none-any.whl"
-url = "https://files.pythonhosted.org/packages/b7/b9/c538f279a4e237a006a2c98387d081e9eb060d203d8ed34467cc0f0b9b53/packaging-26.0-py3-none-any.whl"
-
-[packages.wheels.hashes]
-sha256 = "b36f1fef9334a5588b4166f8bcd26a14e521f2b55e6b9de3aaa80d3ff7a37529"
-
-[[packages]]
-name = "pluggy"
-version = "1.6.0"
-
-[[packages.wheels]]
-name = "pluggy-1.6.0-py3-none-any.whl"
-url = "https://files.pythonhosted.org/packages/54/20/4d324d65cc6d9205fabedc306948156824eb9f0ee1633355a8f7ec5c66bf/pluggy-1.6.0-py3-none-any.whl"
-
-[packages.wheels.hashes]
-sha256 = "e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746"
 
 [[packages]]
 name = "pydantic"
@@ -154,28 +121,6 @@ url = "https://files.pythonhosted.org/packages/74/1a/145646e5687e8d9a1e8d09acb27
 
 [packages.wheels.hashes]
 sha256 = "1d1d9764366c73f996edd17abb6d9d7649a7eb690006ab6adbda117717099b14"
-
-[[packages]]
-name = "pygments"
-version = "2.20.0"
-
-[[packages.wheels]]
-name = "pygments-2.20.0-py3-none-any.whl"
-url = "https://files.pythonhosted.org/packages/f4/7e/a72dd26f3b0f4f2bf1dd8923c85f7ceb43172af56d63c7383eb62b332364/pygments-2.20.0-py3-none-any.whl"
-
-[packages.wheels.hashes]
-sha256 = "81a9e26dd42fd28a23a2d169d86d7ac03b46e2f8b59ed4698fb4785f946d0176"
-
-[[packages]]
-name = "pytest"
-version = "9.0.3"
-
-[[packages.wheels]]
-name = "pytest-9.0.3-py3-none-any.whl"
-url = "https://files.pythonhosted.org/packages/d4/24/a372aaf5c9b7208e7112038812994107bc65a84cd00e0354a88c2c77a617/pytest-9.0.3-py3-none-any.whl"
-
-[packages.wheels.hashes]
-sha256 = "2c5efc453d45394fdd706ade797c0a81091eccd1d6e4bccfcd476e2b8e0ab5d9"
 
 [[packages]]
 name = "python-dateutil"
