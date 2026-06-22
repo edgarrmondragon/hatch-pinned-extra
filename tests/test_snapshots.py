@@ -26,6 +26,7 @@ from copy import deepcopy
 from pathlib import Path
 from typing import TYPE_CHECKING, Any
 
+import pytest
 from packaging.markers import Marker
 from packaging.metadata import Metadata
 from packaging.requirements import Requirement
@@ -34,7 +35,6 @@ from hatch_pinned_extra import PinnedExtraMetadataHook
 from hatch_pinned_extra._compat import read_toml
 
 if TYPE_CHECKING:
-    import pytest
     from packaging.metadata import RawMetadata
     from syrupy.assertion import SnapshotAssertion
 
@@ -73,9 +73,14 @@ def _to_raw_metadata(
     }
 
 
+@pytest.mark.parametrize(
+    "lockfile",
+    ["uv.lock", "pylock.uv.toml", "pylock.pip.toml"],
+)
 def test_snapshot_project_metadata(
     monkeypatch: pytest.MonkeyPatch,
     snapshot: SnapshotAssertion,
+    lockfile: str,
 ) -> None:
     """Snapshot the METADATA content for the lockfiles/project fixture."""
     monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
@@ -85,7 +90,10 @@ def test_snapshot_project_metadata(
         "dependencies": pyproject["project"]["dependencies"],
         "optional-dependencies": pyproject["project"]["optional-dependencies"],
     }
-    hook = PinnedExtraMetadataHook("fixtures/lockfiles/project", {"extra-name": "pinned"})
+    hook = PinnedExtraMetadataHook(
+        "fixtures/lockfiles/project",
+        {"extra-name": "pinned", "lockfile": lockfile},
+    )
 
     dst = deepcopy(metadata)
     hook.update(dst)
@@ -95,9 +103,14 @@ def test_snapshot_project_metadata(
     assert wheel_metadata.as_rfc822().as_string() == snapshot
 
 
+@pytest.mark.parametrize(
+    "lockfile",
+    ["uv.lock", "pylock.uv.toml", "pylock.pip.toml"],
+)
 def test_snapshot_extras_metadata(
     monkeypatch: pytest.MonkeyPatch,
     snapshot: SnapshotAssertion,
+    lockfile: str,
 ) -> None:
     """Snapshot the METADATA content for the lockfiles/extras fixture."""
     monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
@@ -106,7 +119,10 @@ def test_snapshot_extras_metadata(
     metadata: dict[str, Any] = {
         "dependencies": pyproject["project"]["dependencies"],
     }
-    hook = PinnedExtraMetadataHook("fixtures/lockfiles/extras", {"extra-name": "pinned"})
+    hook = PinnedExtraMetadataHook(
+        "fixtures/lockfiles/extras",
+        {"extra-name": "pinned", "lockfile": lockfile},
+    )
 
     dst = deepcopy(metadata)
     hook.update(dst)
@@ -116,11 +132,16 @@ def test_snapshot_extras_metadata(
     assert wheel_metadata.as_rfc822().as_string() == snapshot
 
 
+@pytest.mark.parametrize(
+    "lockfile",
+    ["uv.lock", "pylock.uv.toml", "pylock.pip.toml"],
+)
 def test_snapshot_requests_metadata(
     monkeypatch: pytest.MonkeyPatch,
     snapshot: SnapshotAssertion,
+    lockfile: str,
 ) -> None:
-    """Snapshot the METADATA content for the lockfiles/extras fixture."""
+    """Snapshot the METADATA content for the corresponding lockfile fixture."""
     monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
     metadata: dict[str, Any] = {
         "dependencies": [
@@ -129,7 +150,10 @@ def test_snapshot_requests_metadata(
         ],
     }
 
-    hook = PinnedExtraMetadataHook("fixtures/lockfiles/requests", {"extra-name": "pinned"})
+    hook = PinnedExtraMetadataHook(
+        "fixtures/lockfiles/requests",
+        {"extra-name": "pinned", "lockfile": lockfile},
+    )
 
     dst = deepcopy(metadata)
     hook.update(dst)
