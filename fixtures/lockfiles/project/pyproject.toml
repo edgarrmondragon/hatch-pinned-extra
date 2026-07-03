@@ -8,16 +8,27 @@ dependencies = [
     "anyio>=4.5.2",
     "boto3>=1.36.15",
     "colorama; sys_platform == 'win32'",
-    "exceptiongroup>=1.2.2",
     "importlib-resources; python_version < '3.10'",
     "fastapi>=0.115.8",
 ]
-optional-dependencies.cli = [
-    "click",
-]
+optional-dependencies.cli = ["click"]
 
 [dependency-groups]
 dev = [
     "pytest>=8; python_version >= '3.13'",
     "pytest>=7,<8; python_version < '3.13'",
 ]
+
+[tool.nab]
+mode = "universal"
+
+[tool.nab.matrix]
+python = ">=3.8"
+platforms = [
+    "linux_x86_64",
+    "linux_aarch64",
+    "macos_x86_64",
+    "macos_arm64",
+    "windows_amd64",
+]
+python-order = "desc"

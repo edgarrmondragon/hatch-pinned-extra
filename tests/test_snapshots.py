@@ -75,7 +75,7 @@ def _to_raw_metadata(
 
 @pytest.mark.parametrize(
     "lockfile",
-    ["uv.lock", "pylock.uv.toml", "pylock.pip.toml"],
+    ["uv.lock", "pylock.uv.toml", "pylock.pip.toml", "pylock.nab.toml"],
 )
 def test_snapshot_project_metadata(
     monkeypatch: pytest.MonkeyPatch,
@@ -105,7 +105,7 @@ def test_snapshot_project_metadata(
 
 @pytest.mark.parametrize(
     "lockfile",
-    ["uv.lock", "pylock.uv.toml", "pylock.pip.toml"],
+    ["uv.lock", "pylock.uv.toml", "pylock.pip.toml", "pylock.nab.toml"],
 )
 def test_snapshot_extras_metadata(
     monkeypatch: pytest.MonkeyPatch,
@@ -134,7 +134,7 @@ def test_snapshot_extras_metadata(
 
 @pytest.mark.parametrize(
     "lockfile",
-    ["uv.lock", "pylock.uv.toml", "pylock.pip.toml"],
+    ["uv.lock", "pylock.uv.toml", "pylock.pip.toml", "pylock.nab.toml"],
 )
 def test_snapshot_requests_metadata(
     monkeypatch: pytest.MonkeyPatch,

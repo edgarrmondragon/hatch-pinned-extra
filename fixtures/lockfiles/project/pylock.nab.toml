@@ -1,0 +1,1528 @@
+lock-version = "1.0"
+environments = [
+    "python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\"",
+    "python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\"",
+    "python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\"",
+    "python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\"",
+    "python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\"",
+    "python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\"",
+    "python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\"",
+    "python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\"",
+    "python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\"",
+    "python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\"",
+    "python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\"",
+    "python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\"",
+    "python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\"",
+    "python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\"",
+    "python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\"",
+    "python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\"",
+    "python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\"",
+    "python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\"",
+    "python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\"",
+    "python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\"",
+    "python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\"",
+    "python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\"",
+    "python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\"",
+    "python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\"",
+    "python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\"",
+    "python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\"",
+    "python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\"",
+    "python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\"",
+    "python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\"",
+    "python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\"",
+    "python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\"",
+    "python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\"",
+    "python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\"",
+    "python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\"",
+    "python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\"",
+]
+created-by = "nab"
+
+[[packages]]
+name = "annotated-doc"
+version = "0.0.4"
+requires-python = ">=3.8"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "annotated_doc-0.0.4.tar.gz"
+upload-time = 2025-11-10 22:07:42.062214+00:00
+url = "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
+size = 7288
+
+[packages.sdist.hashes]
+sha256 = "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
+
+[[packages.wheels]]
+name = "annotated_doc-0.0.4-py3-none-any.whl"
+upload-time = 2025-11-10 22:07:40.673400+00:00
+url = "https://files.pythonhosted.org/packages/1e/d3/26bf1008eb3d2daa8ef4cacc7f3bfdc11818d111f7e2d0201bc6e3b49d45/annotated_doc-0.0.4-py3-none-any.whl"
+size = 5303
+
+[packages.wheels.hashes]
+sha256 = "571ac1dc6991c450b25a9c2d84a3705e2ae7a53467b5d111c24fa8baabbed320"
+
+[[packages]]
+name = "annotated-types"
+version = "0.7.0"
+requires-python = ">=3.8"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "annotated_types-0.7.0.tar.gz"
+upload-time = 2024-05-20 21:33:25.928805+00:00
+url = "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
+size = 16081
+
+[packages.sdist.hashes]
+sha256 = "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
+
+[[packages.wheels]]
+name = "annotated_types-0.7.0-py3-none-any.whl"
+upload-time = 2024-05-20 21:33:24.100469+00:00
+url = "https://files.pythonhosted.org/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl"
+size = 13643
+
+[packages.wheels.hashes]
+sha256 = "1f02e8b43a8fbbc3f3e0d4f0f4bfc8131bcb4eebe8849b8e5c773f3a1c582a53"
+
+[[packages]]
+name = "anyio"
+version = "4.12.1"
+marker = "(python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.9"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "anyio-4.12.1.tar.gz"
+upload-time = 2026-01-06 11:45:21.246706+00:00
+url = "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
+size = 228685
+
+[packages.sdist.hashes]
+sha256 = "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
+
+[[packages.wheels]]
+name = "anyio-4.12.1-py3-none-any.whl"
+upload-time = 2026-01-06 11:45:19.497480+00:00
+url = "https://files.pythonhosted.org/packages/38/0e/27be9fdef66e72d64c0cdc3cc2823101b80585f8119b5c112c2e8f5f7dab/anyio-4.12.1-py3-none-any.whl"
+size = 113592
+
+[packages.wheels.hashes]
+sha256 = "d405828884fc140aa80a3c667b8beed277f1dfedec42ba031bd6ac3db606ab6c"
+
+[[packages]]
+name = "anyio"
+version = "4.14.1"
+marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.10"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "anyio-4.14.1.tar.gz"
+upload-time = 2026-06-24 20:56:06.017006+00:00
+url = "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
+size = 254831
+
+[packages.sdist.hashes]
+sha256 = "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
+
+[[packages.wheels]]
+name = "anyio-4.14.1-py3-none-any.whl"
+upload-time = 2026-06-24 20:56:04.413052+00:00
+url = "https://files.pythonhosted.org/packages/b0/7b/90df4a0a816d98d6ea26f559d87836d494a2cf1fcf063be67df50a7bcc30/anyio-4.14.1-py3-none-any.whl"
+size = 124875
+
+[packages.wheels.hashes]
+sha256 = "4e5533c5b8ff0a24f5d7a176cbe6877129cd183893f66b537f8f227d10527d72"
+
+[[packages]]
+name = "anyio"
+version = "4.5.2"
+marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.8"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "anyio-4.5.2.tar.gz"
+upload-time = 2024-10-13 22:18:03.307192+00:00
+url = "https://files.pythonhosted.org/packages/4d/f9/9a7ce600ebe7804daf90d4d48b1c0510a4561ddce43a596be46676f82343/anyio-4.5.2.tar.gz"
+size = 171293
+
+[packages.sdist.hashes]
+sha256 = "23009af4ed04ce05991845451e11ef02fc7c5ed29179ac9a420e5ad0ac7ddc5b"
+
+[[packages.wheels]]
+name = "anyio-4.5.2-py3-none-any.whl"
+upload-time = 2024-10-13 22:18:01.524750+00:00
+url = "https://files.pythonhosted.org/packages/1b/b4/f7e396030e3b11394436358ca258a81d6010106582422f23443c16ca1873/anyio-4.5.2-py3-none-any.whl"
+size = 89766
+
+[packages.wheels.hashes]
+sha256 = "c011ee36bc1e8ba40e5a81cb9df91925c218fe9b778554e0b56a21e1b5d4716f"
+
+[[packages]]
+name = "boto3"
+version = "1.37.38"
+marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.8"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "boto3-1.37.38.tar.gz"
+upload-time = 2025-04-21 19:27:18.060262+00:00
+url = "https://files.pythonhosted.org/packages/0d/b5/d1c2e8c484cea43891629bbab6ca90ce9ca932586750bc0e786c8f096ccf/boto3-1.37.38.tar.gz"
+size = 111623
+
+[packages.sdist.hashes]
+sha256 = "88c02910933ab7777597d1ca7c62375f52822e0aa1a8e0c51b2598a547af42b2"
+
+[[packages.wheels]]
+name = "boto3-1.37.38-py3-none-any.whl"
+upload-time = 2025-04-21 19:27:16.107049+00:00
+url = "https://files.pythonhosted.org/packages/d3/87/8189f22ee798177bc7b40afd13f046442c5f91b699e70a950b42ff447e80/boto3-1.37.38-py3-none-any.whl"
+size = 139922
+
+[packages.wheels.hashes]
+sha256 = "b6d42803607148804dff82389757827a24ce9271f0583748853934c86310999f"
+
+[[packages]]
+name = "boto3"
+version = "1.42.97"
+marker = "(python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.9"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "boto3-1.42.97.tar.gz"
+upload-time = 2026-04-27 20:39:17.646563+00:00
+url = "https://files.pythonhosted.org/packages/55/7d/5c6fa0bb9fd5caf865b9356411793900304328bcd0bc1eda96a32a1368a6/boto3-1.42.97.tar.gz"
+size = 113217
+
+[packages.sdist.hashes]
+sha256 = "2833dbeda3670ea610ad48dff7d27cdc829dbbfcdfbc6b750b673948e949b6f0"
+
+[[packages.wheels]]
+name = "boto3-1.42.97-py3-none-any.whl"
+upload-time = 2026-04-27 20:39:15.509996+00:00
+url = "https://files.pythonhosted.org/packages/38/43/84c1888139aa1aaf1dc53f8f914e6ec629e5a571fbafdd42fb2d98ac361f/boto3-1.42.97-py3-none-any.whl"
+size = 140556
+
+[packages.wheels.hashes]
+sha256 = "966e49f0510af9a64057a902b7df53d4348c447de0d3df4cc855dfd85e058fcd"
+
+[[packages]]
+name = "boto3"
+version = "1.43.41"
+marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.10"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "boto3-1.43.41.tar.gz"
+upload-time = 2026-07-06 19:39:38.788131+00:00
+url = "https://files.pythonhosted.org/packages/79/5b/e91af651bf4e902f86b9e2f8bc09ca20dbd1ad3c1e21b70bf34651cf3cee/boto3-1.43.41.tar.gz"
+size = 112677
+
+[packages.sdist.hashes]
+sha256 = "0f56811f13677bfb4542daa0cce8532c95d9afd27b4ba7b681af36a0568624ad"
+
+[[packages.wheels]]
+name = "boto3-1.43.41-py3-none-any.whl"
+upload-time = 2026-07-06 19:39:37.125712+00:00
+url = "https://files.pythonhosted.org/packages/f9/4a/babb2de16f6ff0688697d2eac7d95566151c255f6b08f547306f57dabfc2/boto3-1.43.41-py3-none-any.whl"
+size = 140029
+
+[packages.wheels.hashes]
+sha256 = "f48f862d2720ea9203ed2d842d436b8eb2d459ea31654a7ad7c0756fdf36c6b2"
+
+[[packages]]
+name = "botocore"
+version = "1.37.38"
+marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.8"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "botocore-1.37.38.tar.gz"
+upload-time = 2025-04-21 19:27:05.245620+00:00
+url = "https://files.pythonhosted.org/packages/34/79/4e072e614339727f79afef704e5993b5b4d2667c1671c757cc4deb954744/botocore-1.37.38.tar.gz"
+size = 13832365
+
+[packages.sdist.hashes]
+sha256 = "c3ea386177171f2259b284db6afc971c959ec103fa2115911c4368bea7cbbc5d"
+
+[[packages.wheels]]
+name = "botocore-1.37.38-py3-none-any.whl"
+upload-time = 2025-04-21 19:27:00.869044+00:00
+url = "https://files.pythonhosted.org/packages/55/1b/93f3504afc7c523dcaa8a8147cfc75421983e30b08d9f93a533929589630/botocore-1.37.38-py3-none-any.whl"
+size = 13499391
+
+[packages.wheels.hashes]
+sha256 = "23b4097780e156a4dcaadfc1ed156ce25cb95b6087d010c4bb7f7f5d9bc9d219"
+
+[[packages]]
+name = "botocore"
+version = "1.42.97"
+marker = "(python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.9"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "botocore-1.42.97.tar.gz"
+upload-time = 2026-04-27 20:39:05.625931+00:00
+url = "https://files.pythonhosted.org/packages/c6/95/c37edb602948fad2253ffd1bb3dba5b938645bd1845ee4160350136a0f41/botocore-1.42.97.tar.gz"
+size = 15269348
+
+[packages.sdist.hashes]
+sha256 = "5c0bb00e32d16ff6d278cc8c9e10dc3672d9c1d569031635ac3c908a60de8310"
+
+[[packages.wheels]]
+name = "botocore-1.42.97-py3-none-any.whl"
+upload-time = 2026-04-27 20:39:01.261215+00:00
+url = "https://files.pythonhosted.org/packages/e3/d2/8e025ba1a4e257879af72d06913272311af79673d82fa2581a351b924317/botocore-1.42.97-py3-none-any.whl"
+size = 14950367
+
+[packages.wheels.hashes]
+sha256 = "77d2c8ce1bc592d3fbd7c01c35836f4a5b0cac2ca03ccdf6ffc60faa16b5fadc"
+
+[[packages]]
+name = "botocore"
+version = "1.43.41"
+marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.10"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "botocore-1.43.41.tar.gz"
+upload-time = 2026-07-06 19:39:27.119436+00:00
+url = "https://files.pythonhosted.org/packages/6a/a1/48a0f38b0cac8196764607c0bca7e3ca50d3cffc825087b743d3635413f2/botocore-1.43.41.tar.gz"
+size = 15647567
+
+[packages.sdist.hashes]
+sha256 = "27627d79af0df7dcb7ecf78d8d3d1310da09a5e9460be30bf759f1c2ed095ee8"
+
+[[packages.wheels]]
+name = "botocore-1.43.41-py3-none-any.whl"
+upload-time = 2026-07-06 19:39:23.694638+00:00
+url = "https://files.pythonhosted.org/packages/61/4f/19e0b97ce1801c66a4d1d35117f36240aa20f864338f093fccc23873a231/botocore-1.43.41-py3-none-any.whl"
+size = 15331199
+
+[packages.wheels.hashes]
+sha256 = "0cc6e79b30a2a98374f16a31cd9c7a9106a51b60650bd8c34cc8223f58ae6b8d"
+
+[[packages]]
+name = "colorama"
+version = "0.4.6"
+marker = "(python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "colorama-0.4.6.tar.gz"
+upload-time = 2022-10-25 02:36:22.414799+00:00
+url = "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
+size = 27697
+
+[packages.sdist.hashes]
+sha256 = "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
+
+[[packages.wheels]]
+name = "colorama-0.4.6-py2.py3-none-any.whl"
+upload-time = 2022-10-25 02:36:20.889702+00:00
+url = "https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl"
+size = 25335
+
+[packages.wheels.hashes]
+sha256 = "4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"
+
+[[packages]]
+name = "exceptiongroup"
+version = "1.3.1"
+marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.7"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "exceptiongroup-1.3.1.tar.gz"
+upload-time = 2025-11-21 23:01:54.787772+00:00
+url = "https://files.pythonhosted.org/packages/50/79/66800aadf48771f6b62f7eb014e352e5d06856655206165d775e675a02c9/exceptiongroup-1.3.1.tar.gz"
+size = 30371
+
+[packages.sdist.hashes]
+sha256 = "8b412432c6055b0b7d14c310000ae93352ed6754f70fa8f7c34141f91c4e3219"
+
+[[packages.wheels]]
+name = "exceptiongroup-1.3.1-py3-none-any.whl"
+upload-time = 2025-11-21 23:01:53.443434+00:00
+url = "https://files.pythonhosted.org/packages/8a/0e/97c33bf5009bdbac74fd2beace167cab3f978feb69cc36f1ef79360d6c4e/exceptiongroup-1.3.1-py3-none-any.whl"
+size = 16740
+
+[packages.wheels.hashes]
+sha256 = "a7a39a3bd276781e98394987d3a5701d0c4edffb633bb7a5144577f82c773598"
+
+[[packages]]
+name = "fastapi"
+version = "0.124.4"
+marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.8"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "fastapi-0.124.4.tar.gz"
+upload-time = 2025-12-12 15:00:43.891569+00:00
+url = "https://files.pythonhosted.org/packages/cd/21/ade3ff6745a82ea8ad88552b4139d27941549e4f19125879f848ac8f3c3d/fastapi-0.124.4.tar.gz"
+size = 378460
+
+[packages.sdist.hashes]
+sha256 = "0e9422e8d6b797515f33f500309f6e1c98ee4e85563ba0f2debb282df6343763"
+
+[[packages.wheels]]
+name = "fastapi-0.124.4-py3-none-any.whl"
+upload-time = 2025-12-12 15:00:42.440078+00:00
+url = "https://files.pythonhosted.org/packages/3e/57/aa70121b5008f44031be645a61a7c4abc24e0e888ad3fc8fda916f4d188e/fastapi-0.124.4-py3-none-any.whl"
+size = 113281
+
+[packages.wheels.hashes]
+sha256 = "6d1e703698443ccb89e50abe4893f3c84d9d6689c0cf1ca4fad6d3c15cf69f15"
+
+[[packages]]
+name = "fastapi"
+version = "0.128.8"
+marker = "(python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.9"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "fastapi-0.128.8.tar.gz"
+upload-time = 2026-02-11 15:19:36.690951+00:00
+url = "https://files.pythonhosted.org/packages/01/72/0df5c58c954742f31a7054e2dd1143bae0b408b7f36b59b85f928f9b456c/fastapi-0.128.8.tar.gz"
+size = 375523
+
+[packages.sdist.hashes]
+sha256 = "3171f9f328c4a218f0a8d2ba8310ac3a55d1ee12c28c949650288aee25966007"
+
+[[packages.wheels]]
+name = "fastapi-0.128.8-py3-none-any.whl"
+upload-time = 2026-02-11 15:19:35.209673+00:00
+url = "https://files.pythonhosted.org/packages/9f/37/37b07e276f8923c69a5df266bfcb5bac4ba8b55dfe4a126720f8c48681d1/fastapi-0.128.8-py3-none-any.whl"
+size = 103630
+
+[packages.wheels.hashes]
+sha256 = "5618f492d0fe973a778f8fec97723f598aa9deee495040a8d51aaf3cf123ecf1"
+
+[[packages]]
+name = "fastapi"
+version = "0.139.0"
+marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.10"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "fastapi-0.139.0.tar.gz"
+upload-time = 2026-07-01 16:35:33.436988+00:00
+url = "https://files.pythonhosted.org/packages/d3/af/a5f50ccfa659ec1802cb4ca842c23f06d906a8cc9aef6016a2caeea3d4ed/fastapi-0.139.0.tar.gz"
+size = 423016
+
+[packages.sdist.hashes]
+sha256 = "99ab7b2d92223c76d6cf10757ab3f89d45b38267fc20b2a136cf02f6beac3145"
+
+[[packages.wheels]]
+name = "fastapi-0.139.0-py3-none-any.whl"
+upload-time = 2026-07-01 16:35:32.190000+00:00
+url = "https://files.pythonhosted.org/packages/9e/7c/8e3c6ad324ea5cb36604fc3f968554887891c316d9dfde57761611d907ad/fastapi-0.139.0-py3-none-any.whl"
+size = 130339
+
+[packages.wheels.hashes]
+sha256 = "cf15e1e9e667ddb0ad63811e60bd11390d1aac838ca4a7a23f421807b2308189"
+
+[[packages]]
+name = "idna"
+version = "3.15"
+marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.8"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "idna-3.15.tar.gz"
+upload-time = 2026-05-12 22:45:57.011321+00:00
+url = "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+size = 199245
+
+[packages.sdist.hashes]
+sha256 = "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+
+[[packages.wheels]]
+name = "idna-3.15-py3-none-any.whl"
+upload-time = 2026-05-12 22:45:55.733813+00:00
+url = "https://files.pythonhosted.org/packages/d2/23/408243171aa9aaba178d3e2559159c24c1171a641aa83b67bdd3394ead8e/idna-3.15-py3-none-any.whl"
+size = 72340
+
+[packages.wheels.hashes]
+sha256 = "048adeaf8c2d788c40fee287673ccaa74c24ffd8dcf09ffa555a2fbb59f10ac8"
+
+[[packages]]
+name = "idna"
+version = "3.18"
+marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.9"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "idna-3.18.tar.gz"
+upload-time = 2026-06-02 14:34:07.794523+00:00
+url = "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+size = 196711
+
+[packages.sdist.hashes]
+sha256 = "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+
+[[packages.wheels]]
+name = "idna-3.18-py3-none-any.whl"
+upload-time = 2026-06-02 14:34:06.319954+00:00
+url = "https://files.pythonhosted.org/packages/1e/5e/d4e9f1a599fb8e573b7b87160658329fbf28d19eac2718f51fc3def3aa5a/idna-3.18-py3-none-any.whl"
+size = 65455
+
+[packages.wheels.hashes]
+sha256 = "7f952cbe720b688055e3f87de14f5c3e5fdaa8bc3928985c4077ca689de849a2"
+
+[[packages]]
+name = "importlib-resources"
+version = "6.4.5"
+marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.8"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "importlib_resources-6.4.5.tar.gz"
+upload-time = 2024-09-09 17:03:14.677078+00:00
+url = "https://files.pythonhosted.org/packages/98/be/f3e8c6081b684f176b761e6a2fef02a0be939740ed6f54109a2951d806f3/importlib_resources-6.4.5.tar.gz"
+size = 43372
+
+[packages.sdist.hashes]
+sha256 = "980862a1d16c9e147a59603677fa2aa5fd82b87f223b6cb870695bcfce830065"
+
+[[packages.wheels]]
+name = "importlib_resources-6.4.5-py3-none-any.whl"
+upload-time = 2024-09-09 17:03:13.390875+00:00
+url = "https://files.pythonhosted.org/packages/e1/6a/4604f9ae2fa62ef47b9de2fa5ad599589d28c9fd1d335f32759813dfa91e/importlib_resources-6.4.5-py3-none-any.whl"
+size = 36115
+
+[packages.wheels.hashes]
+sha256 = "ac29d5f956f01d5e4bb63102a5a19957f1b9175e45649977264a1416783bb717"
+
+[[packages]]
+name = "importlib-resources"
+version = "6.5.2"
+marker = "(python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.9"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "importlib_resources-6.5.2.tar.gz"
+upload-time = 2025-01-03 18:51:56.698254+00:00
+url = "https://files.pythonhosted.org/packages/cf/8c/f834fbf984f691b4f7ff60f50b514cc3de5cc08abfc3295564dd89c5e2e7/importlib_resources-6.5.2.tar.gz"
+size = 44693
+
+[packages.sdist.hashes]
+sha256 = "185f87adef5bcc288449d98fb4fba07cea78bc036455dd44c5fc4a2fe78fed2c"
+
+[[packages.wheels]]
+name = "importlib_resources-6.5.2-py3-none-any.whl"
+upload-time = 2025-01-03 18:51:54.306634+00:00
+url = "https://files.pythonhosted.org/packages/a4/ed/1f1afb2e9e7f38a545d628f864d562a5ae64fe6f7a10e28ffb9b185b4e89/importlib_resources-6.5.2-py3-none-any.whl"
+size = 37461
+
+[packages.wheels.hashes]
+sha256 = "789cfdc3ed28c78b67a06acb8126751ced69a3d5f79c095a98298cd8a760ccec"
+
+[[packages]]
+name = "jmespath"
+version = "1.0.1"
+marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.7"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "jmespath-1.0.1.tar.gz"
+upload-time = 2022-06-17 18:00:12.224390+00:00
+url = "https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz"
+size = 25843
+
+[packages.sdist.hashes]
+sha256 = "90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
+
+[[packages.wheels]]
+name = "jmespath-1.0.1-py3-none-any.whl"
+upload-time = 2022-06-17 18:00:10.251235+00:00
+url = "https://files.pythonhosted.org/packages/31/b4/b9b800c45527aadd64d5b442f9b932b00648617eb5d63d2c7a6587b7cafc/jmespath-1.0.1-py3-none-any.whl"
+size = 20256
+
+[packages.wheels.hashes]
+sha256 = "02e2e4cc71b5bcab88332eebf907519190dd9e6e82107fa7f83b1003a6252980"
+
+[[packages]]
+name = "jmespath"
+version = "1.1.0"
+marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.9"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "jmespath-1.1.0.tar.gz"
+upload-time = 2026-01-22 16:35:26.279695+00:00
+url = "https://files.pythonhosted.org/packages/d3/59/322338183ecda247fb5d1763a6cbe46eff7222eaeebafd9fa65d4bf5cb11/jmespath-1.1.0.tar.gz"
+size = 27377
+
+[packages.sdist.hashes]
+sha256 = "472c87d80f36026ae83c6ddd0f1d05d4e510134ed462851fd5f754c8c3cbb88d"
+
+[[packages.wheels]]
+name = "jmespath-1.1.0-py3-none-any.whl"
+upload-time = 2026-01-22 16:35:24.919874+00:00
+url = "https://files.pythonhosted.org/packages/14/2f/967ba146e6d58cf6a652da73885f52fc68001525b4197effc174321d70b4/jmespath-1.1.0-py3-none-any.whl"
+size = 20419
+
+[packages.wheels.hashes]
+sha256 = "a5663118de4908c91729bea0acadca56526eb2698e83de10cd116ae0f4e97c64"
+
+[[packages]]
+name = "pydantic"
+version = "2.10.6"
+marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.8"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "pydantic-2.10.6.tar.gz"
+upload-time = 2025-01-24 01:42:12.693453+00:00
+url = "https://files.pythonhosted.org/packages/b7/ae/d5220c5c52b158b1de7ca89fc5edb72f304a70a4c540c84c8844bf4008de/pydantic-2.10.6.tar.gz"
+size = 761681
+
+[packages.sdist.hashes]
+sha256 = "ca5daa827cce33de7a42be142548b0096bf05a7e7b365aebfa5f8eeec7128236"
+
+[[packages.wheels]]
+name = "pydantic-2.10.6-py3-none-any.whl"
+upload-time = 2025-01-24 01:42:10.371104+00:00
+url = "https://files.pythonhosted.org/packages/f4/3c/8cc1cc84deffa6e25d2d0c688ebb80635dfdbf1dbea3e30c541c8cf4d860/pydantic-2.10.6-py3-none-any.whl"
+size = 431696
+
+[packages.wheels.hashes]
+sha256 = "427d664bf0b8a2b34ff5dd0f5a18df00591adcee7198fbd71981054cef37b584"
+
+[[packages]]
+name = "pydantic"
+version = "2.13.4"
+marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.9"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "pydantic-2.13.4.tar.gz"
+upload-time = 2026-05-06 13:43:05.343572+00:00
+url = "https://files.pythonhosted.org/packages/18/a5/b60d21ac674192f8ab0ba4e9fd860690f9b4a6e51ca5df118733b487d8d6/pydantic-2.13.4.tar.gz"
+size = 844775
+
+[packages.sdist.hashes]
+sha256 = "c40756b57adaa8b1efeeced5c196f3f3b7c435f90e84ea7f443901bec8099ef6"
+
+[[packages.wheels]]
+name = "pydantic-2.13.4-py3-none-any.whl"
+upload-time = 2026-05-06 13:43:02.641507+00:00
+url = "https://files.pythonhosted.org/packages/fd/7b/122376b1fd3c62c1ed9dc80c931ace4844b3c55407b6fb2d199377c9736f/pydantic-2.13.4-py3-none-any.whl"
+size = 472262
+
+[packages.wheels.hashes]
+sha256 = "45a282cde31d808236fd7ea9d919b128653c8b38b393d1c4ab335c62924d9aba"
+
+[[packages]]
+name = "pydantic-core"
+version = "2.27.2"
+marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.8"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "pydantic_core-2.27.2.tar.gz"
+upload-time = 2024-12-18 11:31:54.917780+00:00
+url = "https://files.pythonhosted.org/packages/fc/01/f3e5ac5e7c25833db5eb555f7b7ab24cd6f8c322d3a3ad2d67a952dc0abc/pydantic_core-2.27.2.tar.gz"
+size = 413443
+
+[packages.sdist.hashes]
+sha256 = "eb026e5a4c1fee05726072337ff51d1efb6f59090b7da90d30ea58625b1ffb39"
+
+[[packages.wheels]]
+name = "pydantic_core-2.27.2-cp38-cp38-macosx_10_12_x86_64.whl"
+upload-time = 2024-12-18 11:29:40.887679+00:00
+url = "https://files.pythonhosted.org/packages/43/53/13e9917fc69c0a4aea06fd63ed6a8d6cda9cf140ca9584d49c1650b0ef5e/pydantic_core-2.27.2-cp38-cp38-macosx_10_12_x86_64.whl"
+size = 1899595
+
+[packages.wheels.hashes]
+sha256 = "d3e8d504bdd3f10835468f29008d72fc8359d95c9c415ce6e767203db6127506"
+
+[[packages.wheels]]
+name = "pydantic_core-2.27.2-cp38-cp38-macosx_11_0_arm64.whl"
+upload-time = 2024-12-18 11:29:44.823596+00:00
+url = "https://files.pythonhosted.org/packages/f4/20/26c549249769ed84877f862f7bb93f89a6ee08b4bee1ed8781616b7fbb5e/pydantic_core-2.27.2-cp38-cp38-macosx_11_0_arm64.whl"
+size = 1775010
+
+[packages.wheels.hashes]
+sha256 = "521eb9b7f036c9b6187f0b47318ab0d7ca14bd87f776240b90b21c1f4f149320"
+
+[[packages.wheels]]
+name = "pydantic_core-2.27.2-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+upload-time = 2024-12-18 11:29:46.904827+00:00
+url = "https://files.pythonhosted.org/packages/35/eb/8234e05452d92d2b102ffa1b56d801c3567e628fdc63f02080fdfc68fd5e/pydantic_core-2.27.2-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+size = 1830727
+
+[packages.wheels.hashes]
+sha256 = "85210c4d99a0114f5a9481b44560d7d1e35e32cc5634c656bc48e590b669b145"
+
+[[packages.wheels]]
+name = "pydantic_core-2.27.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+upload-time = 2024-12-18 11:29:57.130505+00:00
+url = "https://files.pythonhosted.org/packages/f7/a3/5f19bc495793546825ab160e530330c2afcee2281c02b5ffafd0b32ac05e/pydantic_core-2.27.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+size = 1996493
+
+[packages.wheels.hashes]
+sha256 = "9fdbe7629b996647b99c01b37f11170a57ae675375b14b8c13b8518b8320ced5"
+
+[[packages.wheels]]
+name = "pydantic_core-2.27.2-cp38-cp38-musllinux_1_1_aarch64.whl"
+upload-time = 2024-12-18 11:30:02.985327+00:00
+url = "https://files.pythonhosted.org/packages/fb/a3/4be70845b555bd80aaee9f9812a7cf3df81550bce6dadb3cfee9c5d8421d/pydantic_core-2.27.2-cp38-cp38-musllinux_1_1_aarch64.whl"
+size = 2007449
+
+[packages.wheels.hashes]
+sha256 = "cabb9bcb7e0d97f74df8646f34fc76fbf793b7f6dc2438517d7a9e50eee4f14d"
+
+[[packages.wheels]]
+name = "pydantic_core-2.27.2-cp38-cp38-musllinux_1_1_x86_64.whl"
+upload-time = 2024-12-18 11:30:09.428396+00:00
+url = "https://files.pythonhosted.org/packages/a0/f0/a6ab0681f6e95260c7fbf552874af7302f2ea37b459f9b7f00698f875492/pydantic_core-2.27.2-cp38-cp38-musllinux_1_1_x86_64.whl"
+size = 2159609
+
+[packages.wheels.hashes]
+sha256 = "bca101c00bff0adb45a833f8451b9105d9df18accb8743b08107d7ada14bd7da"
+
+[[packages.wheels]]
+name = "pydantic_core-2.27.2-cp38-cp38-win_amd64.whl"
+upload-time = 2024-12-18 11:30:14.828806+00:00
+url = "https://files.pythonhosted.org/packages/aa/6d/df49c17f024dfc58db0bacc7b03610058018dd2ea2eaf748ccbada4c3d06/pydantic_core-2.27.2-cp38-cp38-win_amd64.whl"
+size = 1980773
+
+[packages.wheels.hashes]
+sha256 = "fd1aea04935a508f62e0d0ef1f5ae968774a32afc306fb8545e06f5ff5cdf3ad"
+
+[[packages]]
+name = "pydantic-core"
+version = "2.46.4"
+marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.9"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "pydantic_core-2.46.4.tar.gz"
+upload-time = 2026-05-06 13:37:06.980634+00:00
+url = "https://files.pythonhosted.org/packages/9d/56/921726b776ace8d8f5db44c4ef961006580d91dc52b803c489fafd1aa249/pydantic_core-2.46.4.tar.gz"
+size = 471464
+
+[packages.sdist.hashes]
+sha256 = "62f875393d7f270851f20523dd2e29f082bcc82292d66db2b64ea71f64b6e1c1"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp310-cp310-macosx_10_12_x86_64.whl"
+upload-time = 2026-05-06 13:37:36.537721+00:00
+url = "https://files.pythonhosted.org/packages/e7/08/f1ba952f1c8ae5581c70fa9c6da89f247b83e3dd8c09c035d5d7931fc23d/pydantic_core-2.46.4-cp310-cp310-macosx_10_12_x86_64.whl"
+size = 2113146
+
+[packages.wheels.hashes]
+sha256 = "a396dcc17e5a0b164dbe026896245a4fa9ff402edca1dff0be3d53a517f74de4"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp310-cp310-macosx_11_0_arm64.whl"
+upload-time = 2026-05-06 13:37:46.365408+00:00
+url = "https://files.pythonhosted.org/packages/56/c6/65f646c7ff09bd257f660434adb45c4dfcbbcebcc030562fecf6f5bf887d/pydantic_core-2.46.4-cp310-cp310-macosx_11_0_arm64.whl"
+size = 1949769
+
+[packages.wheels.hashes]
+sha256 = "da4b951fe36dc7c3a1ccb4e3cd1747c3542b8c9ceede8fc86cae054e764485f5"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+upload-time = 2026-05-06 13:37:28.611275+00:00
+url = "https://files.pythonhosted.org/packages/64/ba/bfb1d928fd5b49e1258935ff104ae356e9fd89384a55bf9f847e9193ad40/pydantic_core-2.46.4-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+size = 1974958
+
+[packages.wheels.hashes]
+sha256 = "bb63e0198ca18aad131c089b9204c23079c3afa95487e561f4c522d519e55aba"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+upload-time = 2026-05-06 13:38:46.981295+00:00
+url = "https://files.pythonhosted.org/packages/ba/1e/acc4d70f88a0a277e4a1fa77ebb985ceabaf900430f875bf9338e11c9420/pydantic_core-2.46.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+size = 2092042
+
+[packages.wheels.hashes]
+sha256 = "395aebd9183f9d112f569aeb5b2214d1a10a33bec8456447f7fbdfa51d38d4cd"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp310-cp310-musllinux_1_1_aarch64.whl"
+upload-time = 2026-05-06 13:38:13.901050+00:00
+url = "https://files.pythonhosted.org/packages/72/04/2beacf7e1607e93eefe4aed1b4709f079b905fb77530179d4f7c71745f22/pydantic_core-2.46.4-cp310-cp310-musllinux_1_1_aarch64.whl"
+size = 2184769
+
+[packages.wheels.hashes]
+sha256 = "daa27d92c36f24388fe3ad306b174781c747627f134452e4f128ea00ce1fe8c4"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp310-cp310-musllinux_1_1_x86_64.whl"
+upload-time = 2026-05-06 13:38:43.200092+00:00
+url = "https://files.pythonhosted.org/packages/7c/af/0f7a5b85fec6075bea96e3ef9187de38fccced0de92c1e7feda8d5cc7bb9/pydantic_core-2.46.4-cp310-cp310-musllinux_1_1_x86_64.whl"
+size = 2361817
+
+[packages.wheels.hashes]
+sha256 = "c1747f85cee84c26985853c6f3d9bd3e75da5212912443fa111c113b9c246f39"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp310-cp310-win_amd64.whl"
+upload-time = 2026-05-06 13:39:59.922640+00:00
+url = "https://files.pythonhosted.org/packages/01/aa/62f082da2c91fac1c234bc9ee0066257ce83f0604abd72e4c9d5991f2d84/pydantic_core-2.46.4-cp310-cp310-win_amd64.whl"
+size = 2074311
+
+[packages.wheels.hashes]
+sha256 = "8358a950c8909158e3df31538a7e4edc2d7265a7c54b47f0864d9e5bae9dcebf"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp311-cp311-macosx_10_12_x86_64.whl"
+upload-time = 2026-05-06 13:40:27.596895+00:00
+url = "https://files.pythonhosted.org/packages/5c/fa/6d7708d2cfc1a832acb6aeb0cd16e801902df8a0f583bb3b4b527fde022e/pydantic_core-2.46.4-cp311-cp311-macosx_10_12_x86_64.whl"
+size = 2111872
+
+[packages.wheels.hashes]
+sha256 = "0e96592440881c74a213e5ad528e2b24d3d4f940de2766bed9010ab1d9e51594"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp311-cp311-macosx_11_0_arm64.whl"
+upload-time = 2026-05-06 13:39:12.574673+00:00
+url = "https://files.pythonhosted.org/packages/ae/6f/aa064a3e74b5745afbdf250594f38e7ead05e2d651bcb35994b9417a0d4d/pydantic_core-2.46.4-cp311-cp311-macosx_11_0_arm64.whl"
+size = 1948255
+
+[packages.wheels.hashes]
+sha256 = "e0d65b8c354be7fb5f720c3caa8bc940bc2d20ce749c8e06135f07f8ed95dd7c"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+upload-time = 2026-05-06 13:38:19.841087+00:00
+url = "https://files.pythonhosted.org/packages/43/3a/41114a9f7569b84b4d84e7a018c57c56347dac30c0d4a872946ec4e36c46/pydantic_core-2.46.4-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+size = 1972827
+
+[packages.wheels.hashes]
+sha256 = "7bfb192b3f4b9e8a89b6277b6ce787564f62cfd272055f6e685726b111dc7826"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+upload-time = 2026-05-06 13:38:17.762933+00:00
+url = "https://files.pythonhosted.org/packages/80/50/540cd3aeefc041beb111125c4bff779831a2111fc6b15a9138cda277d32c/pydantic_core-2.46.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+size = 2089685
+
+[packages.wheels.hashes]
+sha256 = "f9fa868638bf362d3d138ea55829cefb3d5f4b0d7f142234382a15e2485dbec4"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp311-cp311-musllinux_1_1_aarch64.whl"
+upload-time = 2026-05-06 13:38:45.040978+00:00
+url = "https://files.pythonhosted.org/packages/f7/52/7c529d7bdb2d1068bd52f51fe32572c8301f9a4febf1948f10639f1436f5/pydantic_core-2.46.4-cp311-cp311-musllinux_1_1_aarch64.whl"
+size = 2182573
+
+[packages.wheels.hashes]
+sha256 = "aaa2a54443eff1950ba5ddc6b6ccda0d9c84a364276a62f969bdf2a390650848"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp311-cp311-musllinux_1_1_x86_64.whl"
+upload-time = 2026-05-06 13:37:30.099970+00:00
+url = "https://files.pythonhosted.org/packages/d9/37/f913f81a657c865b75da6c0dbed79876073c2a43b5bd9edbe8da785e4d49/pydantic_core-2.46.4-cp311-cp311-musllinux_1_1_x86_64.whl"
+size = 2360433
+
+[packages.wheels.hashes]
+sha256 = "a0f62d0a58f4e7da165457e995725421e0064f2255d8eccebc49f41bbc23b109"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp311-cp311-win_amd64.whl"
+upload-time = 2026-05-06 13:40:35.416873+00:00
+url = "https://files.pythonhosted.org/packages/aa/e6/c505f83dfeda9a2e5c995cfd872949e4d05e12f7feb3dca72f633daefa94/pydantic_core-2.46.4-cp311-cp311-win_amd64.whl"
+size = 2071114
+
+[packages.wheels.hashes]
+sha256 = "6f2eeda33a839975441c86a4119e1383c50b47faf0cbb5176985565c6bb02c33"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp312-cp312-macosx_10_12_x86_64.whl"
+upload-time = 2026-05-06 13:38:57.215819+00:00
+url = "https://files.pythonhosted.org/packages/ce/8c/af022f0af448d7747c5154288d46b5f2bc5f17366eaa0e23e9aa04d59f3b/pydantic_core-2.46.4-cp312-cp312-macosx_10_12_x86_64.whl"
+size = 2106158
+
+[packages.wheels.hashes]
+sha256 = "3245406455a5d98187ec35530fd772b1d799b26667980872c8d4614991e2c4a2"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp312-cp312-macosx_11_0_arm64.whl"
+upload-time = 2026-05-06 13:37:02.697872+00:00
+url = "https://files.pythonhosted.org/packages/19/95/6195171e385007300f0f5574592e467c568becce2d937a0b6804f218bc49/pydantic_core-2.46.4-cp312-cp312-macosx_11_0_arm64.whl"
+size = 1951724
+
+[packages.wheels.hashes]
+sha256 = "962ccbab7b642487b1d8b7df90ef677e03134cf1fd8880bf698649b22a69371f"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+upload-time = 2026-05-06 13:37:09.448733+00:00
+url = "https://files.pythonhosted.org/packages/8e/bc/f47d1ff9cbb1620e1b5b697eef06010035735f07820180e74178226b27b3/pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+size = 1975742
+
+[packages.wheels.hashes]
+sha256 = "8233f2947cf85404441fd7e0085f53b10c93e0ee78611099b5c7237e36aacbf7"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+upload-time = 2026-05-06 13:39:10.577024+00:00
+url = "https://files.pythonhosted.org/packages/5f/97/2aab507d3d00ca626e8e57c1eac6a79e4e5fbcc63eb99733ff55d1717f65/pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+size = 2094516
+
+[packages.wheels.hashes]
+sha256 = "926c9541b14b12b1681dca8a0b75feb510b06c6341b70a8e500c2fdcff837cce"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp312-cp312-musllinux_1_1_aarch64.whl"
+upload-time = 2026-05-06 13:40:43.231009+00:00
+url = "https://files.pythonhosted.org/packages/ae/6c/fc44000918855b42779d007ae63b0532794739027b2f417321cddbc44f6a/pydantic_core-2.46.4-cp312-cp312-musllinux_1_1_aarch64.whl"
+size = 2190044
+
+[packages.wheels.hashes]
+sha256 = "b2f69dec1725e79a012d920df1707de5caf7ed5e08f3be4435e25803efc47458"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp312-cp312-musllinux_1_1_x86_64.whl"
+upload-time = 2026-05-06 13:38:06.976773+00:00
+url = "https://files.pythonhosted.org/packages/d0/cf/c873d91679f3a30bcf5e7ac280ce5573483e72295307685120d0d5ad3416/pydantic_core-2.46.4-cp312-cp312-musllinux_1_1_x86_64.whl"
+size = 2374464
+
+[packages.wheels.hashes]
+sha256 = "fbdb89b3e1c94a30cc5edfce477c6e6a5dc4d8f84665b455c27582f211a1c72c"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp312-cp312-win_amd64.whl"
+upload-time = 2026-05-06 13:39:21.153899+00:00
+url = "https://files.pythonhosted.org/packages/40/8c/985c1d41ea1107c2534abd9870e4ed5c8e7669b5c308297835c001e7a1c4/pydantic_core-2.46.4-cp312-cp312-win_amd64.whl"
+size = 2072919
+
+[packages.wheels.hashes]
+sha256 = "e9c26f834c65f5752f3f06cb08cb86a913ceb7274d0db6e267808a708b46bc89"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp313-cp313-macosx_10_12_x86_64.whl"
+upload-time = 2026-05-06 13:37:48.029854+00:00
+url = "https://files.pythonhosted.org/packages/51/a2/5d30b469c5267a17b39dec53208222f76a8d351dfac4af661888c5aee77d/pydantic_core-2.46.4-cp313-cp313-macosx_10_12_x86_64.whl"
+size = 2106306
+
+[packages.wheels.hashes]
+sha256 = "5d5902252db0d3cedf8d4a1bc68f70eeb430f7e4c7104c8c476753519b423008"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp313-cp313-macosx_11_0_arm64.whl"
+upload-time = 2026-05-06 13:37:17.012599+00:00
+url = "https://files.pythonhosted.org/packages/c1/81/4fa520eaffa8bd7d1525e644cd6d39e7d60b1592bc5b516693c7340b50f1/pydantic_core-2.46.4-cp313-cp313-macosx_11_0_arm64.whl"
+size = 1951906
+
+[packages.wheels.hashes]
+sha256 = "c94f0688e7b8d0a67abf40e57a7eaaecd17cc9586706a31b76c031f63df052b4"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+upload-time = 2026-05-06 13:37:35.113249+00:00
+url = "https://files.pythonhosted.org/packages/03/d5/fd02da45b659668b05923b17ba3a0100a0a3d5541e3bd8fcc4ecb711309e/pydantic_core-2.46.4-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+size = 1976802
+
+[packages.wheels.hashes]
+sha256 = "f027324c56cd5406ca49c124b0db10e56c69064fec039acc571c29020cc87c76"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+upload-time = 2026-05-06 13:39:18.847733+00:00
+url = "https://files.pythonhosted.org/packages/07/f8/41db9de19d7987d6b04715a02b3b40aea467000275d9d758ffaa31af7d50/pydantic_core-2.46.4-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+size = 2094467
+
+[packages.wheels.hashes]
+sha256 = "9551187363ffc0de2a00b2e47c25aeaeb1020b69b668762966df15fc5659dd5a"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp313-cp313-musllinux_1_1_aarch64.whl"
+upload-time = 2026-05-06 13:36:51.018903+00:00
+url = "https://files.pythonhosted.org/packages/5a/f2/c8d7773ede6af08036423a00ae0ceffce266c3c52a096c435d68c896083f/pydantic_core-2.46.4-cp313-cp313-musllinux_1_1_aarch64.whl"
+size = 2188782
+
+[packages.wheels.hashes]
+sha256 = "cbaf13819775b7f769bf4a1f066cb6df7a28d4480081a589828ef190226881cd"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp313-cp313-musllinux_1_1_x86_64.whl"
+upload-time = 2026-05-06 13:39:34.152365+00:00
+url = "https://files.pythonhosted.org/packages/c2/eb/4f6c8a41efa30baa755590f4141abf3a8c370fab610915733e74134a7270/pydantic_core-2.46.4-cp313-cp313-musllinux_1_1_x86_64.whl"
+size = 2372986
+
+[packages.wheels.hashes]
+sha256 = "82cf5301172168103724d49a1444d3378cb20cdee30b116a1bd6031236298a5d"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp313-cp313-win_amd64.whl"
+upload-time = 2026-05-06 13:38:49.139748+00:00
+url = "https://files.pythonhosted.org/packages/7e/e8/cff247591966f2d22ec8c003cd7587e27b7ba7b81ab2fb888e3ab75dc285/pydantic_core-2.46.4-cp313-cp313-win_amd64.whl"
+size = 2071819
+
+[packages.wheels.hashes]
+sha256 = "6b3ace8194b0e5204818c92802dcdca7fc6d88aabbb799d7c795540d9cd6d292"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp314-cp314-macosx_10_12_x86_64.whl"
+upload-time = 2026-05-06 13:38:41.019990+00:00
+url = "https://files.pythonhosted.org/packages/8d/74/228a26ddad29c6672b805d9fd78e8d251cd04004fa7eed0e622096cd0250/pydantic_core-2.46.4-cp314-cp314-macosx_10_12_x86_64.whl"
+size = 2102079
+
+[packages.wheels.hashes]
+sha256 = "428e04521a40150c85216fc8b85e8d39fece235a9cf5e383761238c7fa9b96fb"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp314-cp314-macosx_11_0_arm64.whl"
+upload-time = 2026-05-06 13:36:59.812106+00:00
+url = "https://files.pythonhosted.org/packages/ad/1f/8970b150a4b4365623ae00fc88603491f763c627311ae8031e3111356d6e/pydantic_core-2.46.4-cp314-cp314-macosx_11_0_arm64.whl"
+size = 1952179
+
+[packages.wheels.hashes]
+sha256 = "23ace664830ee0bfe014a0c7bc248b1f7f25ed7ad103852c317624a1083af462"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp314-cp314-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+upload-time = 2026-05-06 13:37:39.933294+00:00
+url = "https://files.pythonhosted.org/packages/95/30/5211a831ae054928054b2f79731661087a2bc5c01e825c672b3a4a8f1b3e/pydantic_core-2.46.4-cp314-cp314-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+size = 1978926
+
+[packages.wheels.hashes]
+sha256 = "ce5c1d2a8b27468f433ca974829c44060b8097eedc39933e3c206a90ee49c4a9"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+upload-time = 2026-05-06 13:39:31.942232+00:00
+url = "https://files.pythonhosted.org/packages/89/1d/8eff589b45bb8190a9d12c49cfad0f176a5cbd1534908a6b5125e2886239/pydantic_core-2.46.4-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+size = 2099732
+
+[packages.wheels.hashes]
+sha256 = "7a5f930472650a82629163023e630d160863fce524c616f4e5186e5de9d9a49b"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp314-cp314-musllinux_1_1_aarch64.whl"
+upload-time = 2026-05-06 13:36:53.615561+00:00
+url = "https://files.pythonhosted.org/packages/7b/79/7daa95be995be0eecc4cf75064cb33f9bbbfe3fe0158caf2f0d4a996a5c7/pydantic_core-2.46.4-cp314-cp314-musllinux_1_1_aarch64.whl"
+size = 2184325
+
+[packages.wheels.hashes]
+sha256 = "3fb702cd90b0446a3a1c5e470bfa0dd23c0233b676a9099ddcc964fa6ca13898"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp314-cp314-musllinux_1_1_x86_64.whl"
+upload-time = 2026-05-06 13:37:23.027850+00:00
+url = "https://files.pythonhosted.org/packages/05/db/d9ba624cc4a5aced1598e88c04fdbd8310c8a69b9d38b9a3d39ce3a61ed7/pydantic_core-2.46.4-cp314-cp314-musllinux_1_1_x86_64.whl"
+size = 2369978
+
+[packages.wheels.hashes]
+sha256 = "372429a130e469c9cd698925ce5fc50940b7a1336b0d82038e63d5bbc4edc519"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp314-cp314-win_amd64.whl"
+upload-time = 2026-05-06 13:39:40.807145+00:00
+url = "https://files.pythonhosted.org/packages/fc/b6/6b8de4c0a7d7ab3004c439c80c5c1e0a3e8d78bbae19379b01960383d9e5/pydantic_core-2.46.4-cp314-cp314-win_amd64.whl"
+size = 2072238
+
+[packages.wheels.hashes]
+sha256 = "811ff8e9c313ab425368bcbb36e5c4ebd7108c2bbf4e4089cfbb0b01eff63fac"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp39-cp39-macosx_10_12_x86_64.whl"
+upload-time = 2026-05-06 13:38:37.741167+00:00
+url = "https://files.pythonhosted.org/packages/5d/00/13a0c039569d1e583779ee1b8d7df6bfe275a0db83fcae14f01d6856c16e/pydantic_core-2.46.4-cp39-cp39-macosx_10_12_x86_64.whl"
+size = 2115337
+
+[packages.wheels.hashes]
+sha256 = "fd8b3d9fd264be37976686c7f65cd52a83f5e84f4bfd2adf9c1d469676bbb6ae"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp39-cp39-macosx_11_0_arm64.whl"
+upload-time = 2026-05-06 13:37:33.478056+00:00
+url = "https://files.pythonhosted.org/packages/41/60/e70fa1ee03e243bdfd4b1fddf1e1f2a8fba681df3034b51b9376c0fb5bf5/pydantic_core-2.46.4-cp39-cp39-macosx_11_0_arm64.whl"
+size = 1957976
+
+[packages.wheels.hashes]
+sha256 = "9f444c499b3eefd3a92e348059471ea0c3a6e303d9c1cec09fa748fd9f895201"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+upload-time = 2026-05-06 13:36:52.419718+00:00
+url = "https://files.pythonhosted.org/packages/11/9a/78fb5f2ea849f767ea802de8b4e8f5a0c4a48ddbe4bc66bd19ac2f55a01c/pydantic_core-2.46.4-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+size = 1979390
+
+[packages.wheels.hashes]
+sha256 = "3447661d99f75a3683a4cf5c87da72f2161964611864dbbeac7fbb118bb4bfc0"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+upload-time = 2026-05-06 13:38:23.632665+00:00
+url = "https://files.pythonhosted.org/packages/65/05/497446a9586d1b2d24ee25ebe208beb15388f1875d783e1e014055d150ac/pydantic_core-2.46.4-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+size = 2095629
+
+[packages.wheels.hashes]
+sha256 = "432c179df7874eeb73307aad2df0755e1ae0efa61ff0ea89b93e194411ae3928"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp39-cp39-musllinux_1_1_aarch64.whl"
+upload-time = 2026-05-06 13:37:51.597281+00:00
+url = "https://files.pythonhosted.org/packages/2a/21/fe9f039138c9ea3be10ccdb6ec490acb54dcbef5a5e96dbdf1411f82b929/pydantic_core-2.46.4-cp39-cp39-musllinux_1_1_aarch64.whl"
+size = 2186726
+
+[packages.wheels.hashes]
+sha256 = "228ee9bae8bef5b1e97ec58302f80357c37199e0d0a99174e138d28e6957b9d9"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp39-cp39-musllinux_1_1_x86_64.whl"
+upload-time = 2026-05-06 13:38:53.039148+00:00
+url = "https://files.pythonhosted.org/packages/cd/14/fe3fbf6e845bf2080dc2f282d75085ddf79d037b35634ecde68f33c217b4/pydantic_core-2.46.4-cp39-cp39-musllinux_1_1_x86_64.whl"
+size = 2363318
+
+[packages.wheels.hashes]
+sha256 = "91a06d2e259ecfbd8c901d70c3c507900458498142b3026a296b7de4d1322cc9"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.4-cp39-cp39-win_amd64.whl"
+upload-time = 2026-05-06 13:39:38.498829+00:00
+url = "https://files.pythonhosted.org/packages/0b/d6/8ede2f98f17e1e4e127d37be0eced4eee931a511c62cd68af50e1b25bfa9/pydantic_core-2.46.4-cp39-cp39-win_amd64.whl"
+size = 2079257
+
+[packages.wheels.hashes]
+sha256 = "3be77f45df024d789a672ae34f8b06fb346c4f9f46ea714956660ea4862e89ac"
+
+[[packages]]
+name = "python-dateutil"
+version = "2.9.0.post0"
+requires-python = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "python-dateutil-2.9.0.post0.tar.gz"
+upload-time = 2024-03-01 18:36:20.211056+00:00
+url = "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
+size = 342432
+
+[packages.sdist.hashes]
+sha256 = "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
+
+[[packages.wheels]]
+name = "python_dateutil-2.9.0.post0-py2.py3-none-any.whl"
+upload-time = 2024-03-01 18:36:18.570437+00:00
+url = "https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl"
+size = 229892
+
+[packages.wheels.hashes]
+sha256 = "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"
+
+[[packages]]
+name = "s3transfer"
+version = "0.11.5"
+marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.8"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "s3transfer-0.11.5.tar.gz"
+upload-time = 2025-04-17 19:23:19.051539+00:00
+url = "https://files.pythonhosted.org/packages/c4/2b/5c9562795c2eb2b5f63536961754760c25bf0f34af93d36aa28dea2fb303/s3transfer-0.11.5.tar.gz"
+size = 149107
+
+[packages.sdist.hashes]
+sha256 = "8c8aad92784779ab8688a61aefff3e28e9ebdce43142808eaa3f0b0f402f68b7"
+
+[[packages.wheels]]
+name = "s3transfer-0.11.5-py3-none-any.whl"
+upload-time = 2025-04-17 19:23:17.516812+00:00
+url = "https://files.pythonhosted.org/packages/45/39/13402e323666d17850eca87e4cd6ecfcf9fd7809cac9efdcce10272fc29d/s3transfer-0.11.5-py3-none-any.whl"
+size = 84782
+
+[packages.wheels.hashes]
+sha256 = "757af0f2ac150d3c75bc4177a32355c3862a98d20447b69a0161812992fe0bd4"
+
+[[packages]]
+name = "s3transfer"
+version = "0.16.1"
+marker = "(python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.9"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "s3transfer-0.16.1.tar.gz"
+upload-time = 2026-04-22 20:36:06.475968+00:00
+url = "https://files.pythonhosted.org/packages/46/29/af14f4ef3c11a50435308660e2cc68761c9a7742475e0585cd4396b91777/s3transfer-0.16.1.tar.gz"
+size = 154801
+
+[packages.sdist.hashes]
+sha256 = "8e424355754b9ccb32467bdc568edf55be82692ef2002d934b1311dbb3b9e524"
+
+[[packages.wheels]]
+name = "s3transfer-0.16.1-py3-none-any.whl"
+upload-time = 2026-04-22 20:36:04.992238+00:00
+url = "https://files.pythonhosted.org/packages/03/19/90d7d4ed51932c022d53f1d02d564b62d10e272692a1f9b76425c1ad2a02/s3transfer-0.16.1-py3-none-any.whl"
+size = 86825
+
+[packages.wheels.hashes]
+sha256 = "61bcd00ccb83b21a0fe7e91a553fff9729d46c83b4e0106e7c314a733891f7c2"
+
+[[packages]]
+name = "s3transfer"
+version = "0.19.0"
+marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.10"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "s3transfer-0.19.0.tar.gz"
+upload-time = 2026-06-16 19:44:51.599868+00:00
+url = "https://files.pythonhosted.org/packages/f6/94/dcdaeb1713cab9c84def276cfac7388b17c7d9855bbcfe88d77e4dbafd44/s3transfer-0.19.0.tar.gz"
+size = 165171
+
+[packages.sdist.hashes]
+sha256 = "ce436931687addc4c1712d52d40b32f53e88315723f107ffa20ba82b05a0f685"
+
+[[packages.wheels]]
+name = "s3transfer-0.19.0-py3-none-any.whl"
+upload-time = 2026-06-16 19:44:50.439966+00:00
+url = "https://files.pythonhosted.org/packages/46/5f/4c174edad94f82de888ac00a5ddd8d07b35609b6c94f0bdf4d74af57703e/s3transfer-0.19.0-py3-none-any.whl"
+size = 90101
+
+[packages.wheels.hashes]
+sha256 = "777cc2415536f1debadb5c2ef7779275d0fc0fe0e042411cdd6caebeb2685262"
+
+[[packages]]
+name = "six"
+version = "1.17.0"
+requires-python = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "six-1.17.0.tar.gz"
+upload-time = 2024-12-04 17:35:28.174320+00:00
+url = "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
+size = 34031
+
+[packages.sdist.hashes]
+sha256 = "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
+
+[[packages.wheels]]
+name = "six-1.17.0-py2.py3-none-any.whl"
+upload-time = 2024-12-04 17:35:26.475808+00:00
+url = "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl"
+size = 11050
+
+[packages.wheels.hashes]
+sha256 = "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
+
+[[packages]]
+name = "sniffio"
+version = "1.3.1"
+marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.7"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "sniffio-1.3.1.tar.gz"
+upload-time = 2024-02-25 23:20:04.057878+00:00
+url = "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
+size = 20372
+
+[packages.sdist.hashes]
+sha256 = "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
+
+[[packages.wheels]]
+name = "sniffio-1.3.1-py3-none-any.whl"
+upload-time = 2024-02-25 23:20:01.196159+00:00
+url = "https://files.pythonhosted.org/packages/e9/44/75a9c9421471a6c4805dbf2356f7c181a29c1879239abab1ea2cc8f38b40/sniffio-1.3.1-py3-none-any.whl"
+size = 10235
+
+[packages.wheels.hashes]
+sha256 = "2f6da418d1f1e0fddd844478f41680e794e6051915791a034ff65e5f100525a2"
+
+[[packages]]
+name = "starlette"
+version = "0.44.0"
+marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.8"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "starlette-0.44.0.tar.gz"
+upload-time = 2024-12-28 07:32:56.003796+00:00
+url = "https://files.pythonhosted.org/packages/8d/b4/910f693584958b687b8f9c628f8217cfef19a42b64d2de7840814937365c/starlette-0.44.0.tar.gz"
+size = 2575579
+
+[packages.sdist.hashes]
+sha256 = "e35166950a3ccccc701962fe0711db0bc14f2ecd37c6f9fe5e3eae0cbaea8715"
+
+[[packages.wheels]]
+name = "starlette-0.44.0-py3-none-any.whl"
+upload-time = 2024-12-28 07:32:53.871364+00:00
+url = "https://files.pythonhosted.org/packages/b6/c5/7ae467eeddb57260c8ce17a3a09f9f5edba35820fc022d7c55b7decd5d3a/starlette-0.44.0-py3-none-any.whl"
+size = 73412
+
+[packages.wheels.hashes]
+sha256 = "19edeb75844c16dcd4f9dd72f22f9108c1539f3fc9c4c88885654fef64f85aea"
+
+[[packages]]
+name = "starlette"
+version = "0.49.3"
+marker = "(python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.9"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "starlette-0.49.3.tar.gz"
+upload-time = 2025-11-01 15:12:26.130539+00:00
+url = "https://files.pythonhosted.org/packages/de/1a/608df0b10b53b0beb96a37854ee05864d182ddd4b1156a22f1ad3860425a/starlette-0.49.3.tar.gz"
+size = 2655031
+
+[packages.sdist.hashes]
+sha256 = "1c14546f299b5901a1ea0e34410575bc33bbd741377a10484a54445588d00284"
+
+[[packages.wheels]]
+name = "starlette-0.49.3-py3-none-any.whl"
+upload-time = 2025-11-01 15:12:24.387284+00:00
+url = "https://files.pythonhosted.org/packages/a3/e0/021c772d6a662f43b63044ab481dc6ac7592447605b5b35a957785363122/starlette-0.49.3-py3-none-any.whl"
+size = 74340
+
+[packages.wheels.hashes]
+sha256 = "b579b99715fdc2980cf88c8ec96d3bf1ce16f5a8051a7c2b84ef9b1cdecaea2f"
+
+[[packages]]
+name = "starlette"
+version = "1.3.1"
+marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.10"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "starlette-1.3.1.tar.gz"
+upload-time = 2026-06-12 09:23:11.602344+00:00
+url = "https://files.pythonhosted.org/packages/eb/e3/7c1dc7381d9f8ab7d854328ebfa884e62cb3f3d8549ddfd37c7814f42afa/starlette-1.3.1.tar.gz"
+size = 2703240
+
+[packages.sdist.hashes]
+sha256 = "05d0213193f2fbaae60e2ecb593b4add4262ad4e46536b54abe36f11a71724e0"
+
+[[packages.wheels]]
+name = "starlette-1.3.1-py3-none-any.whl"
+upload-time = 2026-06-12 09:23:10.017643+00:00
+url = "https://files.pythonhosted.org/packages/ec/bb/2799cc2ede3ed41131f8975621e7213dfc7ef4acbbaadfa440f32500c370/starlette-1.3.1-py3-none-any.whl"
+size = 73632
+
+[packages.wheels.hashes]
+sha256 = "c7372aae11c3c3f26a42df7bd626cec2f47d03483d261d369516a615a53714c6"
+
+[[packages]]
+name = "typing-extensions"
+version = "4.13.2"
+marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.8"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "typing_extensions-4.13.2.tar.gz"
+upload-time = 2025-04-10 14:19:05.416400+00:00
+url = "https://files.pythonhosted.org/packages/f6/37/23083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061/typing_extensions-4.13.2.tar.gz"
+size = 106967
+
+[packages.sdist.hashes]
+sha256 = "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
+
+[[packages.wheels]]
+name = "typing_extensions-4.13.2-py3-none-any.whl"
+upload-time = 2025-04-10 14:19:03.967482+00:00
+url = "https://files.pythonhosted.org/packages/8b/54/b1ae86c0973cc6f0210b53d508ca3641fb6d0c56823f288d108bc7ab3cc8/typing_extensions-4.13.2-py3-none-any.whl"
+size = 45806
+
+[packages.wheels.hashes]
+sha256 = "a439e7c04b49fec3e5d3e2beaa21755cadbbdc391694e28ccdd36ca4a1408f8c"
+
+[[packages]]
+name = "typing-extensions"
+version = "4.16.0"
+marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.9"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "typing_extensions-4.16.0.tar.gz"
+upload-time = 2026-07-02 08:40:05.920538+00:00
+url = "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+size = 113555
+
+[packages.sdist.hashes]
+sha256 = "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
+
+[[packages.wheels]]
+name = "typing_extensions-4.16.0-py3-none-any.whl"
+upload-time = 2026-07-02 08:40:04.659120+00:00
+url = "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl"
+size = 45571
+
+[packages.wheels.hashes]
+sha256 = "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+
+[[packages]]
+name = "typing-inspection"
+version = "0.4.2"
+marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.9"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "typing_inspection-0.4.2.tar.gz"
+upload-time = 2025-10-01 02:14:41.687923+00:00
+url = "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
+size = 75949
+
+[packages.sdist.hashes]
+sha256 = "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
+
+[[packages.wheels]]
+name = "typing_inspection-0.4.2-py3-none-any.whl"
+upload-time = 2025-10-01 02:14:40.154613+00:00
+url = "https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl"
+size = 14611
+
+[packages.wheels.hashes]
+sha256 = "4ed1cacbdc298c220f1bd249ed5287caa16f34d44ef4e9c3d0cbad5b521545e7"
+
+[[packages]]
+name = "urllib3"
+version = "1.26.20"
+marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,>=2.7"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "urllib3-1.26.20.tar.gz"
+upload-time = 2024-08-29 15:43:11.370856+00:00
+url = "https://files.pythonhosted.org/packages/e4/e8/6ff5e6bc22095cfc59b6ea711b687e2b7ed4bdb373f7eeec370a97d7392f/urllib3-1.26.20.tar.gz"
+size = 307380
+
+[packages.sdist.hashes]
+sha256 = "40c2dc0c681e47eb8f90e7e27bf6ff7df2e677421fd46756da1161c39ca70d32"
+
+[[packages.wheels]]
+name = "urllib3-1.26.20-py2.py3-none-any.whl"
+upload-time = 2024-08-29 15:43:08.921610+00:00
+url = "https://files.pythonhosted.org/packages/33/cf/8435d5a7159e2a9c83a95896ed596f68cf798005fe107cc655b5c5c14704/urllib3-1.26.20-py2.py3-none-any.whl"
+size = 144225
+
+[packages.wheels.hashes]
+sha256 = "0ed14ccfbf1c30a9072c7ca157e4319b70d65f623e91e7b32fadb2853431016e"
+
+[[packages]]
+name = "urllib3"
+version = "2.7.0"
+marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.10"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "urllib3-2.7.0.tar.gz"
+upload-time = 2026-05-07 16:13:18.596909+00:00
+url = "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+size = 433602
+
+[packages.sdist.hashes]
+sha256 = "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+
+[[packages.wheels]]
+name = "urllib3-2.7.0-py3-none-any.whl"
+upload-time = 2026-05-07 16:13:17.151740+00:00
+url = "https://files.pythonhosted.org/packages/7f/3e/5db95bcf282c52709639744ca2a8b149baccf648e39c8cc87553df9eae0c/urllib3-2.7.0-py3-none-any.whl"
+size = 131087
+
+[packages.wheels.hashes]
+sha256 = "9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897"
+
+[[packages]]
+name = "zipp"
+version = "3.20.2"
+marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.8"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "zipp-3.20.2.tar.gz"
+upload-time = 2024-09-13 13:44:16.101164+00:00
+url = "https://files.pythonhosted.org/packages/54/bf/5c0000c44ebc80123ecbdddba1f5dcd94a5ada602a9c225d84b5aaa55e86/zipp-3.20.2.tar.gz"
+size = 24199
+
+[packages.sdist.hashes]
+sha256 = "bc9eb26f4506fda01b81bcde0ca78103b6e62f991b381fec825435c836edbc29"
+
+[[packages.wheels]]
+name = "zipp-3.20.2-py3-none-any.whl"
+upload-time = 2024-09-13 13:44:14.380969+00:00
+url = "https://files.pythonhosted.org/packages/62/8b/5ba542fa83c90e09eac972fc9baca7a88e7e7ca4b221a89251954019308b/zipp-3.20.2-py3-none-any.whl"
+size = 9200
+
+[packages.wheels.hashes]
+sha256 = "a817ac80d6cf4b23bf7f2828b7cabf326f15a001bea8b1f9b49631780ba28350"
+
+[[packages]]
+name = "zipp"
+version = "3.23.1"
+marker = "(python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+requires-python = ">=3.9"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "zipp-3.23.1.tar.gz"
+upload-time = 2026-04-13 23:21:46.600996+00:00
+url = "https://files.pythonhosted.org/packages/30/21/093488dfc7cc8964ded15ab726fad40f25fd3d788fd741cc1c5a17d78ee8/zipp-3.23.1.tar.gz"
+size = 25965
+
+[packages.sdist.hashes]
+sha256 = "32120e378d32cd9714ad503c1d024619063ec28aad2248dc6672ad13edfa5110"
+
+[[packages.wheels]]
+name = "zipp-3.23.1-py3-none-any.whl"
+upload-time = 2026-04-13 23:21:45.386171+00:00
+url = "https://files.pythonhosted.org/packages/08/8a/0861bec20485572fbddf3dfba2910e38fe249796cb73ecdeb74e07eeb8d3/zipp-3.23.1-py3-none-any.whl"
+size = 10378
+
+[packages.wheels.hashes]
+sha256 = "0b3596c50a5c700c9cb40ba8d86d9f2cc4807e9bedb06bcdf7fac85633e444dc"
+
+[tool.nab]
+nab-version = "0.0.7"
+created-at = 2026-07-03 01:58:36.235576+00:00
+command-line = [
+    "/Users/edgarramirez/.cache/uv/archive-v0/HVss7k3UiRCN9B1W/bin/nab",
+    "lock",
+    "pyproject.toml",
+    "--output=pylock.nab.toml",
+]
+input-path = "pyproject.toml"
+mode = "universal"
+python-specifier = ">=3.8"
+platforms = [
+    "linux_x86_64",
+    "linux_aarch64",
+    "macos_x86_64",
+    "macos_arm64",
+    "windows_amd64",
+]
