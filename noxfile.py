@@ -135,6 +135,13 @@ def coverage(session: nox.Session) -> None:
 def lock(session: nox.Session, fixture: str) -> None:
     with NamedTemporaryFile(suffix=".txt") as tmpfile, session.chdir(f"fixtures/{fixture}"):
         session.run(
+            "uvx",
+            "nab",
+            "lock",
+            "pyproject.toml",
+            "--output=pylock.nab.toml",
+        )
+        session.run(
             "uv",
             "lock",
             env={
@@ -143,6 +150,7 @@ def lock(session: nox.Session, fixture: str) -> None:
         )
         session.run(
             "uv",
+            "-q",
             "export",
             "--format=pylock.toml",
             "--no-dev",
@@ -150,6 +158,7 @@ def lock(session: nox.Session, fixture: str) -> None:
         )
         session.run(
             "uv",
+            "-q",
             "export",
             "--format=requirements.txt",
             "--no-hashes",
@@ -159,6 +168,7 @@ def lock(session: nox.Session, fixture: str) -> None:
         session.run(
             "uvx",
             "pip",
+            "-q",
             "lock",
             "--requirement",
             f"{tmpfile.name}",

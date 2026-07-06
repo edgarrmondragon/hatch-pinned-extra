@@ -138,7 +138,7 @@ def test_pylock(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
             'botocore==1.37.38; python_full_version < "3.9"',
             'botocore==1.42.88; python_full_version >= "3.9"',
             'colorama==0.4.6; sys_platform == "win32"',
-            "exceptiongroup==1.3.1",
+            'exceptiongroup==1.3.1; python_full_version < "3.11"',
             'fastapi==0.124.4; python_full_version < "3.9"',
             'fastapi==0.128.8; python_full_version == "3.9.*"',
             'fastapi==0.135.3; python_full_version >= "3.10"',
