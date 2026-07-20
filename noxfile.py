@@ -56,7 +56,7 @@ def _install_env(session: nox.Session) -> dict[str, str]:
 
 @nox.session(tags=["test"])
 def snap(session: nox.Session) -> None:
-    """Refresh snapshots"""
+    """Refresh snapshots."""
     session.install("-e.", "--group=testing", env=_install_env(session))
     session.run("pytest", "--snapshot-update")
 
@@ -131,21 +131,30 @@ def coverage(session: nox.Session) -> None:
 
 
 @nox.session(default=False)
-@nox.parametrize("fixture", ["lockfiles/extras", "lockfiles/project", "lockfiles/requests"])
+@nox.parametrize(
+    "fixture",
+    ["lockfiles/extras", "lockfiles/project", "lockfiles/requests"],
+)
 def lock(session: nox.Session, fixture: str) -> None:
-    with NamedTemporaryFile(suffix=".txt") as tmpfile, session.chdir(f"fixtures/{fixture}"):
+    """Generate lock files."""
+    uploaded_prior_to = "P7D"
+    with (
+        NamedTemporaryFile(suffix=".txt") as tmpfile,
+        session.chdir(f"fixtures/{fixture}"),
+    ):
         session.run(
             "uvx",
             "nab",
             "lock",
             "pyproject.toml",
             "--output=pylock.nab.toml",
+            f"--project-uploaded-prior-to={uploaded_prior_to}",
         )
         session.run(
             "uv",
             "lock",
             env={
-                "UV_EXCLUDE_NEWER": "2026-05-11",
+                "UV_EXCLUDE_NEWER": uploaded_prior_to,
             },
         )
         session.run(
@@ -173,6 +182,7 @@ def lock(session: nox.Session, fixture: str) -> None:
             "--requirement",
             f"{tmpfile.name}",
             "--output=pylock.pip.toml",
+            f"--uploaded-prior-to={uploaded_prior_to}",
         )
 
 

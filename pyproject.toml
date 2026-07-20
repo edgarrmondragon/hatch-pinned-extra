@@ -79,6 +79,7 @@ show_missing = true
 [tool.ruff]
 line-length = 100
 preview = true
+required-version = ">=0.15.22"
 
 [tool.ruff.lint]
 select = [
@@ -115,7 +116,7 @@ select = [
 
 [tool.ruff.lint.per-file-ignores]
 "tests/*" = [
-    "S101",  # assert
+    "assert",  # assert
 ]
 
 [tool.ty.src]

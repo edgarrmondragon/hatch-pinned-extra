@@ -60,7 +60,7 @@ def test_parse_pinned_deps_from_uv_lock(lock: dict[str, Any]) -> None:
     assert str(reqs[2].marker) == 'python_full_version == "3.9.*"'
 
     assert reqs[3].name == "anyio"
-    assert reqs[3].version == Version("4.13.0")
+    assert reqs[3].version == Version("4.14.1")
     assert str(reqs[3].marker) == (
         'python_full_version >= "3.13" '
         'or (python_full_version >= "3.10" and python_full_version < "3.13")'
@@ -166,14 +166,15 @@ def test_update_metadata(monkeypatch: pytest.MonkeyPatch) -> None:
         for dep in dst_metadata["optional-dependencies"]["pinned"]
         if dep.startswith("boto3")
     ]
-    assert len(botos) == 2
+    assert len(botos) == 3
     assert botos[0].specifier == "==1.37.38"
     assert str(botos[0].marker) == 'python_full_version < "3.9"'
-    assert botos[1].specifier == "==1.42.88"
-    assert str(botos[1].marker) == (
-        '(python_full_version >= "3.13" '
-        'or (python_full_version >= "3.10" and python_full_version < "3.13")) '
-        'or python_full_version == "3.9.*"'
+    assert botos[1].specifier == "==1.42.97"
+    assert str(botos[1].marker) == 'python_full_version == "3.9.*"'
+    assert botos[2].specifier == "==1.43.46"
+    assert str(botos[2].marker) == (
+        'python_full_version >= "3.13" '
+        'or (python_full_version >= "3.10" and python_full_version < "3.13")'
     )
 
     assert (
@@ -210,14 +211,15 @@ def test_update_metadata_no_optional_deps(monkeypatch: pytest.MonkeyPatch) -> No
         for dep in dst_metadata["optional-dependencies"]["pinned"]
         if dep.startswith("boto3")
     ]
-    assert len(botos) == 2
+    assert len(botos) == 3
     assert botos[0].specifier == "==1.37.38"
     assert str(botos[0].marker) == 'python_full_version < "3.9"'
-    assert botos[1].specifier == "==1.42.88"
-    assert str(botos[1].marker) == (
-        '(python_full_version >= "3.13" '
-        'or (python_full_version >= "3.10" and python_full_version < "3.13")) '
-        'or python_full_version == "3.9.*"'
+    assert botos[1].specifier == "==1.42.97"
+    assert str(botos[1].marker) == 'python_full_version == "3.9.*"'
+    assert botos[2].specifier == "==1.43.46"
+    assert str(botos[2].marker) == (
+        'python_full_version >= "3.13" '
+        'or (python_full_version >= "3.10" and python_full_version < "3.13")'
     )
     assert (
         'colorama==0.4.6; sys_platform == "win32"'
@@ -300,19 +302,20 @@ def test_plugin_enabled_with_env_var(monkeypatch: pytest.MonkeyPatch, env_var: s
         for dep in dst_metadata["optional-dependencies"]["pinned"]
         if dep.startswith("boto3")
     ]
-    assert len(botos) == 2
+    assert len(botos) == 3
     assert botos[0].specifier == "==1.37.38"
     assert str(botos[0].marker) == 'python_full_version < "3.9"'
-    assert botos[1].specifier == "==1.42.88"
-    assert str(botos[1].marker) == (
-        '(python_full_version >= "3.13" '
-        'or (python_full_version >= "3.10" and python_full_version < "3.13")) '
-        'or python_full_version == "3.9.*"'
+    assert botos[1].specifier == "==1.42.97"
+    assert str(botos[1].marker) == 'python_full_version == "3.9.*"'
+    assert botos[2].specifier == "==1.43.46"
+    assert str(botos[2].marker) == (
+        'python_full_version >= "3.13" '
+        'or (python_full_version >= "3.10" and python_full_version < "3.13")'
     )
 
 
 def test_invalid_env_var(monkeypatch: pytest.MonkeyPatch) -> None:
-    """Test that the plugin does nothing when HATCH_PINNED_EXTRA_ENABLE is set to an invalid value."""  # noqa: E501
+    """Test that the plugin does nothing when HATCH_PINNED_EXTRA_ENABLE is set to an invalid value."""  # ruff:ignore[line-too-long]
     monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "invalid")
     metadata: dict[str, Any] = {
         "dependencies": [
