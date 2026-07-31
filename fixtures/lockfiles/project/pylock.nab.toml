@@ -98,7 +98,7 @@ sha256 = "1f02e8b43a8fbbc3f3e0d4f0f4bfc8131bcb4eebe8849b8e5c773f3a1c582a53"
 [[packages]]
 name = "anyio"
 version = "4.12.1"
-marker = "(python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.9\""
 requires-python = ">=3.9"
 dependencies = [
     { name = "exceptiongroup" },
@@ -128,7 +128,7 @@ sha256 = "d405828884fc140aa80a3c667b8beed277f1dfedec42ba031bd6ac3db606ab6c"
 [[packages]]
 name = "anyio"
 version = "4.14.1"
-marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\""
 requires-python = ">=3.10"
 dependencies = [
     { name = "exceptiongroup" },
@@ -158,7 +158,7 @@ sha256 = "4e5533c5b8ff0a24f5d7a176cbe6877129cd183893f66b537f8f227d10527d72"
 [[packages]]
 name = "anyio"
 version = "4.5.2"
-marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.8\""
 requires-python = ">=3.8"
 dependencies = [
     { name = "exceptiongroup" },
@@ -189,7 +189,7 @@ sha256 = "c011ee36bc1e8ba40e5a81cb9df91925c218fe9b778554e0b56a21e1b5d4716f"
 [[packages]]
 name = "boto3"
 version = "1.37.38"
-marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.8\""
 requires-python = ">=3.8"
 dependencies = [
     { name = "botocore" },
@@ -219,7 +219,7 @@ sha256 = "b6d42803607148804dff82389757827a24ce9271f0583748853934c86310999f"
 [[packages]]
 name = "boto3"
 version = "1.42.97"
-marker = "(python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.9\""
 requires-python = ">=3.9"
 dependencies = [
     { name = "botocore" },
@@ -249,7 +249,7 @@ sha256 = "966e49f0510af9a64057a902b7df53d4348c447de0d3df4cc855dfd85e058fcd"
 [[packages]]
 name = "boto3"
 version = "1.43.46"
-marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\""
 requires-python = ">=3.10"
 dependencies = [
     { name = "botocore" },
@@ -279,7 +279,7 @@ sha256 = "69453e2c1bcb9fd9806527ab99950cacfc2826cb0dce9a3a0414d19270c06c3c"
 [[packages]]
 name = "botocore"
 version = "1.37.38"
-marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.8\""
 requires-python = ">=3.8"
 dependencies = [
     { name = "jmespath" },
@@ -309,7 +309,7 @@ sha256 = "23b4097780e156a4dcaadfc1ed156ce25cb95b6087d010c4bb7f7f5d9bc9d219"
 [[packages]]
 name = "botocore"
 version = "1.42.97"
-marker = "(python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.9\""
 requires-python = ">=3.9"
 dependencies = [
     { name = "jmespath" },
@@ -339,7 +339,7 @@ sha256 = "77d2c8ce1bc592d3fbd7c01c35836f4a5b0cac2ca03ccdf6ffc60faa16b5fadc"
 [[packages]]
 name = "botocore"
 version = "1.43.46"
-marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\""
 requires-python = ">=3.10"
 dependencies = [
     { name = "jmespath" },
@@ -369,7 +369,7 @@ sha256 = "cb673891e623ae6e6a1bf24d94ef169504f3eb02584adb5d5bee2f6aae819b60"
 [[packages]]
 name = "colorama"
 version = "0.4.6"
-marker = "(python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.15\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "sys_platform == \"win32\""
 requires-python = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
 index = "https://pypi.org/simple/"
 
@@ -394,7 +394,7 @@ sha256 = "4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"
 [[packages]]
 name = "exceptiongroup"
 version = "1.3.1"
-marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.10\" or python_version == \"3.8\" or python_version == \"3.9\""
 requires-python = ">=3.7"
 dependencies = [
     { name = "typing-extensions" },
@@ -422,7 +422,7 @@ sha256 = "a7a39a3bd276781e98394987d3a5701d0c4edffb633bb7a5144577f82c773598"
 [[packages]]
 name = "fastapi"
 version = "0.124.4"
-marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.8\""
 requires-python = ">=3.8"
 dependencies = [
     { name = "annotated-doc" },
@@ -453,7 +453,7 @@ sha256 = "6d1e703698443ccb89e50abe4893f3c84d9d6689c0cf1ca4fad6d3c15cf69f15"
 [[packages]]
 name = "fastapi"
 version = "0.128.8"
-marker = "(python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.9\""
 requires-python = ">=3.9"
 dependencies = [
     { name = "annotated-doc" },
@@ -485,7 +485,7 @@ sha256 = "5618f492d0fe973a778f8fec97723f598aa9deee495040a8d51aaf3cf123ecf1"
 [[packages]]
 name = "fastapi"
 version = "0.139.0"
-marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\""
 requires-python = ">=3.10"
 dependencies = [
     { name = "annotated-doc" },
@@ -517,7 +517,7 @@ sha256 = "cf15e1e9e667ddb0ad63811e60bd11390d1aac838ca4a7a23f421807b2308189"
 [[packages]]
 name = "idna"
 version = "3.15"
-marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.8\""
 requires-python = ">=3.8"
 index = "https://pypi.org/simple/"
 
@@ -542,7 +542,7 @@ sha256 = "048adeaf8c2d788c40fee287673ccaa74c24ffd8dcf09ffa555a2fbb59f10ac8"
 [[packages]]
 name = "idna"
 version = "3.18"
-marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\" or python_version == \"3.9\""
 requires-python = ">=3.9"
 index = "https://pypi.org/simple/"
 
@@ -567,7 +567,7 @@ sha256 = "7f952cbe720b688055e3f87de14f5c3e5fdaa8bc3928985c4077ca689de849a2"
 [[packages]]
 name = "importlib-resources"
 version = "6.4.5"
-marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.8\""
 requires-python = ">=3.8"
 dependencies = [
     { name = "zipp" },
@@ -595,7 +595,7 @@ sha256 = "ac29d5f956f01d5e4bb63102a5a19957f1b9175e45649977264a1416783bb717"
 [[packages]]
 name = "importlib-resources"
 version = "6.5.2"
-marker = "(python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.9\""
 requires-python = ">=3.9"
 dependencies = [
     { name = "zipp" },
@@ -623,7 +623,7 @@ sha256 = "789cfdc3ed28c78b67a06acb8126751ced69a3d5f79c095a98298cd8a760ccec"
 [[packages]]
 name = "jmespath"
 version = "1.0.1"
-marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.8\""
 requires-python = ">=3.7"
 index = "https://pypi.org/simple/"
 
@@ -648,7 +648,7 @@ sha256 = "02e2e4cc71b5bcab88332eebf907519190dd9e6e82107fa7f83b1003a6252980"
 [[packages]]
 name = "jmespath"
 version = "1.1.0"
-marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\" or python_version == \"3.9\""
 requires-python = ">=3.9"
 index = "https://pypi.org/simple/"
 
@@ -673,7 +673,7 @@ sha256 = "a5663118de4908c91729bea0acadca56526eb2698e83de10cd116ae0f4e97c64"
 [[packages]]
 name = "pydantic"
 version = "2.10.6"
-marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.8\""
 requires-python = ">=3.8"
 dependencies = [
     { name = "annotated-types" },
@@ -703,7 +703,7 @@ sha256 = "427d664bf0b8a2b34ff5dd0f5a18df00591adcee7198fbd71981054cef37b584"
 [[packages]]
 name = "pydantic"
 version = "2.13.4"
-marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\" or python_version == \"3.9\""
 requires-python = ">=3.9"
 dependencies = [
     { name = "annotated-types" },
@@ -734,7 +734,7 @@ sha256 = "45a282cde31d808236fd7ea9d919b128653c8b38b393d1c4ab335c62924d9aba"
 [[packages]]
 name = "pydantic-core"
 version = "2.27.2"
-marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.8\""
 requires-python = ">=3.8"
 dependencies = [
     { name = "typing-extensions" },
@@ -798,7 +798,7 @@ sha256 = "fd1aea04935a508f62e0d0ef1f5ae968774a32afc306fb8545e06f5ff5cdf3ad"
 [[packages]]
 name = "pydantic-core"
 version = "2.46.4"
-marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\" or python_version == \"3.9\""
 requires-python = ">=3.9"
 dependencies = [
     { name = "typing-extensions" },
@@ -1114,7 +1114,7 @@ sha256 = "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"
 [[packages]]
 name = "s3transfer"
 version = "0.11.5"
-marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.8\""
 requires-python = ">=3.8"
 dependencies = [
     { name = "botocore" },
@@ -1142,7 +1142,7 @@ sha256 = "757af0f2ac150d3c75bc4177a32355c3862a98d20447b69a0161812992fe0bd4"
 [[packages]]
 name = "s3transfer"
 version = "0.16.1"
-marker = "(python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.9\""
 requires-python = ">=3.9"
 dependencies = [
     { name = "botocore" },
@@ -1170,7 +1170,7 @@ sha256 = "61bcd00ccb83b21a0fe7e91a553fff9729d46c83b4e0106e7c314a733891f7c2"
 [[packages]]
 name = "s3transfer"
 version = "0.19.1"
-marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\""
 requires-python = ">=3.10"
 dependencies = [
     { name = "botocore" },
@@ -1222,7 +1222,7 @@ sha256 = "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
 [[packages]]
 name = "sniffio"
 version = "1.3.1"
-marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.8\""
 requires-python = ">=3.7"
 index = "https://pypi.org/simple/"
 
@@ -1247,7 +1247,7 @@ sha256 = "2f6da418d1f1e0fddd844478f41680e794e6051915791a034ff65e5f100525a2"
 [[packages]]
 name = "starlette"
 version = "0.44.0"
-marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.8\""
 requires-python = ">=3.8"
 dependencies = [
     { name = "anyio" },
@@ -1276,7 +1276,7 @@ sha256 = "19edeb75844c16dcd4f9dd72f22f9108c1539f3fc9c4c88885654fef64f85aea"
 [[packages]]
 name = "starlette"
 version = "0.49.3"
-marker = "(python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.9\""
 requires-python = ">=3.9"
 dependencies = [
     { name = "anyio" },
@@ -1305,7 +1305,7 @@ sha256 = "b579b99715fdc2980cf88c8ec96d3bf1ce16f5a8051a7c2b84ef9b1cdecaea2f"
 [[packages]]
 name = "starlette"
 version = "1.3.1"
-marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\""
 requires-python = ">=3.10"
 dependencies = [
     { name = "anyio" },
@@ -1334,7 +1334,7 @@ sha256 = "c7372aae11c3c3f26a42df7bd626cec2f47d03483d261d369516a615a53714c6"
 [[packages]]
 name = "typing-extensions"
 version = "4.13.2"
-marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.8\""
 requires-python = ">=3.8"
 index = "https://pypi.org/simple/"
 
@@ -1359,7 +1359,7 @@ sha256 = "a439e7c04b49fec3e5d3e2beaa21755cadbbdc391694e28ccdd36ca4a1408f8c"
 [[packages]]
 name = "typing-extensions"
 version = "4.16.0"
-marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\" or python_version == \"3.9\""
 requires-python = ">=3.9"
 index = "https://pypi.org/simple/"
 
@@ -1384,7 +1384,7 @@ sha256 = "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
 [[packages]]
 name = "typing-inspection"
 version = "0.4.2"
-marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\" or python_version == \"3.9\""
 requires-python = ">=3.9"
 dependencies = [
     { name = "typing-extensions" },
@@ -1412,7 +1412,7 @@ sha256 = "4ed1cacbdc298c220f1bd249ed5287caa16f34d44ef4e9c3d0cbad5b521545e7"
 [[packages]]
 name = "urllib3"
 version = "1.26.20"
-marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.8\" or python_version == \"3.9\""
 requires-python = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,>=2.7"
 index = "https://pypi.org/simple/"
 
@@ -1437,7 +1437,7 @@ sha256 = "0ed14ccfbf1c30a9072c7ca157e4319b70d65f623e91e7b32fadb2853431016e"
 [[packages]]
 name = "urllib3"
 version = "2.7.0"
-marker = "(python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.15\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\""
 requires-python = ">=3.10"
 index = "https://pypi.org/simple/"
 
@@ -1462,7 +1462,7 @@ sha256 = "9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897"
 [[packages]]
 name = "zipp"
 version = "3.20.2"
-marker = "(python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.8\""
 requires-python = ">=3.8"
 index = "https://pypi.org/simple/"
 
@@ -1487,7 +1487,7 @@ sha256 = "a817ac80d6cf4b23bf7f2828b7cabf326f15a001bea8b1f9b49631780ba28350"
 [[packages]]
 name = "zipp"
 version = "3.23.1"
-marker = "(python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\") or (python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\") or (python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\") or (python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\")"
+marker = "python_version == \"3.9\""
 requires-python = ">=3.9"
 index = "https://pypi.org/simple/"
 
@@ -1510,7 +1510,7 @@ size = 10378
 sha256 = "0b3596c50a5c700c9cb40ba8d86d9f2cc4807e9bedb06bcdf7fac85633e444dc"
 
 [tool.nab]
-nab-version = "0.0.11"
+nab-version = "0.0.12"
 created-at = 2026-07-19 18:41:26.746142+00:00
 command-line = [
     "nab",
