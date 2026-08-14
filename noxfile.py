@@ -1,7 +1,7 @@
 #!/usr/bin/env -S uv run --script
 
 # /// script
-# dependencies = ["nox>=2025.2.9"]
+# dependencies = ["nox>=2025.8.11"]
 # ///
 
 #  Copyright © 2025 Edgar Ramírez-Mondragón <edgarrm358@gmail.com>
@@ -30,7 +30,7 @@ from tempfile import NamedTemporaryFile
 
 import nox
 
-nox.needs_version = ">=2025.2.9"
+nox.needs_version = ">=2025.8.11"
 nox.options.default_venv_backend = "uv"
 nox.options.reuse_venv = "yes"
 
@@ -58,22 +58,24 @@ def _install_env(session: nox.Session) -> dict[str, str]:
 def snap(session: nox.Session) -> None:
     """Refresh snapshots."""
     session.install("-e.", "--group=testing", env=_install_env(session))
-    session.run("pytest", "--snapshot-update")
+    args = session.posargs or ["--quiet"]
+    session.run("pytest", "--snapshot-update", *args)
 
 
-@nox.session(python=python_versions, tags=["test"])
+@nox.session(python=python_versions, tags=["test"], allow_parallel=True)
 def tests(session: nox.Session) -> None:
     """Execute pytest tests and compute coverage."""
     session.install("-e.", "--group=testing", env=_install_env(session))
+    args = session.posargs or ["--quiet"]
 
     try:
-        session.run("coverage", "run", "--parallel", "-m", "pytest", *session.posargs)
+        session.run("coverage", "run", "--parallel", "-m", "pytest", *args)
     finally:
         if session.interactive:
             session.notify("coverage", posargs=[])
 
 
-@nox.session(name="test-lowest", python=python_versions[0], tags=["test"])
+@nox.session(name="test-lowest", python=python_versions[0], tags=["test"], allow_parallel=True)
 def test_lowest_requirements(session: nox.Session) -> None:
     """Test the package with the lowest dependency versions."""
     tmpdir = Path(session.create_tmp())
@@ -94,20 +96,18 @@ def test_lowest_requirements(session: nox.Session) -> None:
     install_env = _install_env(session)
     session.install("-e.", "--group=testing", env=install_env)
     session.install("-r", f"{tmpdir}/requirements.txt", env=install_env, silent=False)
-    session.run("pytest", *session.posargs)
+    args = session.posargs or ["--quiet"]
+    session.run("pytest", *args)
 
 
-@nox.session(tags=["typing"])
-def mypy(session: nox.Session) -> None:
-    """Run type checking with mypy."""
+@nox.session(tags=["test"], allow_parallel=True)
+def typing(session: nox.Session) -> None:
+    """Run type checking with a few type checkers."""
     session.install("-e.", "--group=typing", env=_install_env(session))
+    session.run("mypy", "--version")
     session.run("mypy", "src", "tests")
 
-
-@nox.session(tags=["typing"])
-def ty(session: nox.Session) -> None:
-    """Run type checking with ty."""
-    session.install("-e.", "--group=typing", env=_install_env(session))
+    session.run("ty", "--version")
     session.run(
         "ty",
         "check",

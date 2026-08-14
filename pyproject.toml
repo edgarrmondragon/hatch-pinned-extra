@@ -72,6 +72,7 @@ branch = true
 core = "sysmon"
 source = ["hatch_pinned_extra", "tests"]
 relative_files = true  # This allows coverage to be measured in Windows
+disable_warnings = ["no-sysmon"]
 
 [tool.coverage.report]
 show_missing = true
