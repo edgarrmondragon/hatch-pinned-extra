@@ -69,12 +69,14 @@ jobs:
           persist-credentials: false
       - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
         with:
-          enable-cache: false
+          enable-cache: auto
           python-version: ${{ matrix.python-version }}
       - name: Test
+        shell: bash
         run: ./noxfile.py -s tests
       - name: Test with lowest requirements
         if: ${{ matrix.python-version == '3.10' && startsWith(matrix.os, 'ubuntu') }}
+        shell: bash
         run: ./noxfile.py -s test-lowest
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
