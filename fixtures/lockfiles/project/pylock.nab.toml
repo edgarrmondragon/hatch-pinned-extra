@@ -47,6 +47,7 @@ created-by = "nab"
 [[packages]]
 name = "annotated-doc"
 version = "0.0.4"
+marker = "python_version == \"3.8\""
 requires-python = ">=3.8"
 index = "https://pypi.org/simple/"
 
@@ -69,8 +70,34 @@ size = 5303
 sha256 = "571ac1dc6991c450b25a9c2d84a3705e2ae7a53467b5d111c24fa8baabbed320"
 
 [[packages]]
+name = "annotated-doc"
+version = "0.0.5"
+marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\" or python_version == \"3.9\""
+requires-python = ">=3.9"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "annotated_doc-0.0.5.tar.gz"
+upload-time = 2026-07-28 13:50:58.129724+00:00
+url = "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
+size = 10758
+
+[packages.sdist.hashes]
+sha256 = "c7e58ce09192557605d8bbd92836d7e1d520ac9580096042c0bfd197efacf1bb"
+
+[[packages.wheels]]
+name = "annotated_doc-0.0.5-py3-none-any.whl"
+upload-time = 2026-07-28 13:50:57.239109+00:00
+url = "https://files.pythonhosted.org/packages/3e/30/e900b21425a860e195f32e37657aa1f7c7f2b1bfb26f03ca209b90933c06/annotated_doc-0.0.5-py3-none-any.whl"
+size = 5302
+
+[packages.wheels.hashes]
+sha256 = "117bac03a25ede5df5440e855b32d556049ca169ead221505badf432fed4b101"
+
+[[packages]]
 name = "annotated-types"
 version = "0.7.0"
+marker = "python_version == \"3.8\" or python_version == \"3.9\""
 requires-python = ">=3.8"
 dependencies = [
     { name = "typing-extensions" },
@@ -94,6 +121,31 @@ size = 13643
 
 [packages.wheels.hashes]
 sha256 = "1f02e8b43a8fbbc3f3e0d4f0f4bfc8131bcb4eebe8849b8e5c773f3a1c582a53"
+
+[[packages]]
+name = "annotated-types"
+version = "0.8.0"
+marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\""
+requires-python = ">=3.10"
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "annotated_types-0.8.0.tar.gz"
+upload-time = 2026-07-23 20:16:13.995706+00:00
+url = "https://files.pythonhosted.org/packages/5f/56/a8120250d128bed162cd73c76d45f6ef9991f3e068f62a8ee060afa3104a/annotated_types-0.8.0.tar.gz"
+size = 15893
+
+[packages.sdist.hashes]
+sha256 = "13b2beaad985e05e2d6407ee4c4f35590b11f8d693a258a561055cac8f64cab7"
+
+[[packages.wheels]]
+name = "annotated_types-0.8.0-py3-none-any.whl"
+upload-time = 2026-07-23 20:16:12.938651+00:00
+url = "https://files.pythonhosted.org/packages/99/91/8acff4f5e50511b911bbccb72b8628a49c68ce14148cd9f6431094859a90/annotated_types-0.8.0-py3-none-any.whl"
+size = 13427
+
+[packages.wheels.hashes]
+sha256 = "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0"
 
 [[packages]]
 name = "anyio"
@@ -127,7 +179,7 @@ sha256 = "d405828884fc140aa80a3c667b8beed277f1dfedec42ba031bd6ac3db606ab6c"
 
 [[packages]]
 name = "anyio"
-version = "4.14.1"
+version = "4.14.2"
 marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\""
 requires-python = ">=3.10"
 dependencies = [
@@ -138,22 +190,22 @@ dependencies = [
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "anyio-4.14.1.tar.gz"
-upload-time = 2026-06-24 20:56:06.017006+00:00
-url = "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
-size = 254831
+name = "anyio-4.14.2.tar.gz"
+upload-time = 2026-07-12 20:29:07.082484+00:00
+url = "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
+size = 260176
 
 [packages.sdist.hashes]
-sha256 = "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
+sha256 = "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
 
 [[packages.wheels]]
-name = "anyio-4.14.1-py3-none-any.whl"
-upload-time = 2026-06-24 20:56:04.413052+00:00
-url = "https://files.pythonhosted.org/packages/b0/7b/90df4a0a816d98d6ea26f559d87836d494a2cf1fcf063be67df50a7bcc30/anyio-4.14.1-py3-none-any.whl"
-size = 124875
+name = "anyio-4.14.2-py3-none-any.whl"
+upload-time = 2026-07-12 20:29:05.763870+00:00
+url = "https://files.pythonhosted.org/packages/da/35/f2287558c17e29fafc8ef3daf819bb9834061cfa43bff8014f7df7f63bdc/anyio-4.14.2-py3-none-any.whl"
+size = 125813
 
 [packages.wheels.hashes]
-sha256 = "4e5533c5b8ff0a24f5d7a176cbe6877129cd183893f66b537f8f227d10527d72"
+sha256 = "9f505dda5ac9f0c8309b5e8bd445a8c2bf7246f3ce950121e45ea15bc41d1494"
 
 [[packages]]
 name = "anyio"
@@ -248,7 +300,7 @@ sha256 = "966e49f0510af9a64057a902b7df53d4348c447de0d3df4cc855dfd85e058fcd"
 
 [[packages]]
 name = "boto3"
-version = "1.43.46"
+version = "1.43.80"
 marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\""
 requires-python = ">=3.10"
 dependencies = [
@@ -259,22 +311,22 @@ dependencies = [
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "boto3-1.43.46.tar.gz"
-upload-time = 2026-07-10 19:32:12.498448+00:00
-url = "https://files.pythonhosted.org/packages/f2/e7/976bf3dfe0aa5d7f31bec2f2cf57c79641620c910a39bc843a237aa9592d/boto3-1.43.46.tar.gz"
-size = 112654
+name = "boto3-1.43.80.tar.gz"
+upload-time = 2026-08-25 20:38:34.564959+00:00
+url = "https://files.pythonhosted.org/packages/cc/97/9ef9b949f253b197c813c57ab58578572d20dbacedceb5a5f4516ea628cb/boto3-1.43.80.tar.gz"
+size = 112674
 
 [packages.sdist.hashes]
-sha256 = "66c0d943b049a46a492ec4ec2ebe73c930b1842c7137bee83aad6d93e95d4d96"
+sha256 = "384d522e2ce722266afceea8ab3e618e16695b358ebe32b45e0a2109fcd53a28"
 
 [[packages.wheels]]
-name = "boto3-1.43.46-py3-none-any.whl"
-upload-time = 2026-07-10 19:32:11.129179+00:00
-url = "https://files.pythonhosted.org/packages/ef/1d/c52e66ff32ba7911664e6c4c2ac62e1c6d2d1e7550c7ac185d3f4b70a8a4/boto3-1.43.46-py3-none-any.whl"
-size = 140031
+name = "boto3-1.43.80-py3-none-any.whl"
+upload-time = 2026-08-25 20:38:33.021775+00:00
+url = "https://files.pythonhosted.org/packages/79/66/415da75a7846e46156a4746aae72a8e4b0c4d263e2c2559a083ad247ba39/boto3-1.43.80-py3-none-any.whl"
+size = 140024
 
 [packages.wheels.hashes]
-sha256 = "69453e2c1bcb9fd9806527ab99950cacfc2826cb0dce9a3a0414d19270c06c3c"
+sha256 = "26afe3b950ca1cc722c7fa5544991c222919c98355f82300a55b6315a2c4995e"
 
 [[packages]]
 name = "botocore"
@@ -338,7 +390,7 @@ sha256 = "77d2c8ce1bc592d3fbd7c01c35836f4a5b0cac2ca03ccdf6ffc60faa16b5fadc"
 
 [[packages]]
 name = "botocore"
-version = "1.43.46"
+version = "1.43.80"
 marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\""
 requires-python = ">=3.10"
 dependencies = [
@@ -349,22 +401,22 @@ dependencies = [
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "botocore-1.43.46.tar.gz"
-upload-time = 2026-07-10 19:32:00.437672+00:00
-url = "https://files.pythonhosted.org/packages/7d/f1/1917891851ac5ac09bb9f4862b8fc9252a009d7c24e8688bb67e4383d9e7/botocore-1.43.46.tar.gz"
-size = 15694635
+name = "botocore-1.43.80.tar.gz"
+upload-time = 2026-08-25 20:38:29.860728+00:00
+url = "https://files.pythonhosted.org/packages/b5/94/de291ad81495365682722efa9397c54c7b666f7bf1ae4064d26e40a55296/botocore-1.43.80.tar.gz"
+size = 16003031
 
 [packages.sdist.hashes]
-sha256 = "59f2e1ac3cdc66d191cae91c0804bc41847ce817dc8147cf43eaada8f76a5533"
+sha256 = "c021e60df26d17e9a8db05fa5071669449c8fd15e0fb4374f56a6c17d553f89b"
 
 [[packages.wheels]]
-name = "botocore-1.43.46-py3-none-any.whl"
-upload-time = 2026-07-10 19:31:57.616909+00:00
-url = "https://files.pythonhosted.org/packages/0e/f2/4bd8f2f419088feb3ce55f0ca91040ff902f402edfd197450b20a2e1d533/botocore-1.43.46-py3-none-any.whl"
-size = 15380350
+name = "botocore-1.43.80-py3-none-any.whl"
+upload-time = 2026-08-25 20:38:26.760229+00:00
+url = "https://files.pythonhosted.org/packages/64/93/7bba357266450f7d3e3075ee4d2f1e1d96c1617e40d8065c558485baed78/botocore-1.43.80-py3-none-any.whl"
+size = 15695640
 
 [packages.wheels.hashes]
-sha256 = "cb673891e623ae6e6a1bf24d94ef169504f3eb02584adb5d5bee2f6aae819b60"
+sha256 = "461bce2159eadd758d0651d2a11dced3450169383e6ca8ef65f5c250f8b7ebd4"
 
 [[packages]]
 name = "colorama"
@@ -484,7 +536,7 @@ sha256 = "5618f492d0fe973a778f8fec97723f598aa9deee495040a8d51aaf3cf123ecf1"
 
 [[packages]]
 name = "fastapi"
-version = "0.139.0"
+version = "0.141.1"
 marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\""
 requires-python = ">=3.10"
 dependencies = [
@@ -497,22 +549,22 @@ dependencies = [
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "fastapi-0.139.0.tar.gz"
-upload-time = 2026-07-01 16:35:33.436988+00:00
-url = "https://files.pythonhosted.org/packages/d3/af/a5f50ccfa659ec1802cb4ca842c23f06d906a8cc9aef6016a2caeea3d4ed/fastapi-0.139.0.tar.gz"
-size = 423016
+name = "fastapi-0.141.1.tar.gz"
+upload-time = 2026-07-29 17:18:05.568608+00:00
+url = "https://files.pythonhosted.org/packages/8a/02/91e3416a8fdd715abb903a952a6bec7cdd8d14eed55d415fc8595524c319/fastapi-0.141.1.tar.gz"
+size = 425799
 
 [packages.sdist.hashes]
-sha256 = "99ab7b2d92223c76d6cf10757ab3f89d45b38267fc20b2a136cf02f6beac3145"
+sha256 = "e8822fc40db1e1858054d7a949a888695bc9bdce70139178e33bd2871a453ca1"
 
 [[packages.wheels]]
-name = "fastapi-0.139.0-py3-none-any.whl"
-upload-time = 2026-07-01 16:35:32.190000+00:00
-url = "https://files.pythonhosted.org/packages/9e/7c/8e3c6ad324ea5cb36604fc3f968554887891c316d9dfde57761611d907ad/fastapi-0.139.0-py3-none-any.whl"
-size = 130339
+name = "fastapi-0.141.1-py3-none-any.whl"
+upload-time = 2026-07-29 17:18:04.364385+00:00
+url = "https://files.pythonhosted.org/packages/cb/03/10388a42375ee7e4ac9b94eb2c5c569c8b5795e377e701c9ac3ad63de890/fastapi-0.141.1-py3-none-any.whl"
+size = 131954
 
 [packages.wheels.hashes]
-sha256 = "cf15e1e9e667ddb0ad63811e60bd11390d1aac838ca4a7a23f421807b2308189"
+sha256 = "bfb91aa2d334c61cb35ba9a116fc123b3d3df31640b801cf57a7a78ec3f603b3"
 
 [[packages]]
 name = "idna"
@@ -541,28 +593,28 @@ sha256 = "048adeaf8c2d788c40fee287673ccaa74c24ffd8dcf09ffa555a2fbb59f10ac8"
 
 [[packages]]
 name = "idna"
-version = "3.18"
+version = "3.19"
 marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\" or python_version == \"3.9\""
 requires-python = ">=3.9"
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "idna-3.18.tar.gz"
-upload-time = 2026-06-02 14:34:07.794523+00:00
-url = "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-size = 196711
+name = "idna-3.19.tar.gz"
+upload-time = 2026-08-18 05:14:24.270231+00:00
+url = "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+size = 215237
 
 [packages.sdist.hashes]
-sha256 = "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+sha256 = "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
 
 [[packages.wheels]]
-name = "idna-3.18-py3-none-any.whl"
-upload-time = 2026-06-02 14:34:06.319954+00:00
-url = "https://files.pythonhosted.org/packages/1e/5e/d4e9f1a599fb8e573b7b87160658329fbf28d19eac2718f51fc3def3aa5a/idna-3.18-py3-none-any.whl"
-size = 65455
+name = "idna-3.19-py3-none-any.whl"
+upload-time = 2026-08-18 05:14:22.343598+00:00
+url = "https://files.pythonhosted.org/packages/57/b0/0e52c878c53f245edd3a11020f20979b3f490f245af532c7cae3027754b5/idna-3.19-py3-none-any.whl"
+size = 68550
 
 [packages.wheels.hashes]
-sha256 = "7f952cbe720b688055e3f87de14f5c3e5fdaa8bc3928985c4077ca689de849a2"
+sha256 = "815e7be7a7806d54abb586dc943addc79e8b2ee16915059658cbeff4b1b43bf4"
 
 [[packages]]
 name = "importlib-resources"
@@ -1169,7 +1221,7 @@ sha256 = "61bcd00ccb83b21a0fe7e91a553fff9729d46c83b4e0106e7c314a733891f7c2"
 
 [[packages]]
 name = "s3transfer"
-version = "0.19.1"
+version = "0.19.2"
 marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\""
 requires-python = ">=3.10"
 dependencies = [
@@ -1178,22 +1230,22 @@ dependencies = [
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "s3transfer-0.19.1.tar.gz"
-upload-time = 2026-07-10 19:32:04.849327+00:00
-url = "https://files.pythonhosted.org/packages/65/da/4bef7ce7bb989b222aa4785a413896dbec53306dfc59c6ce7d16a7ffbd6a/s3transfer-0.19.1.tar.gz"
-size = 165354
+name = "s3transfer-0.19.2.tar.gz"
+upload-time = 2026-07-22 19:30:44.432104+00:00
+url = "https://files.pythonhosted.org/packages/76/43/35e4d8aa320bffe8287fe8f65f578fa2d2db0a64212f0e710dce58267854/s3transfer-0.19.2.tar.gz"
+size = 165592
 
 [packages.sdist.hashes]
-sha256 = "d3d6371dc3f1e5c5427b2b457bcf13bcf87bec334c95aed18642eae61f6926f3"
+sha256 = "ba0309fd86be3c27dbf78cdd813c13c5e1df16e5874b99d2535ebbdfb9892993"
 
 [[packages.wheels]]
-name = "s3transfer-0.19.1-py3-none-any.whl"
-upload-time = 2026-07-10 19:32:03.673652+00:00
-url = "https://files.pythonhosted.org/packages/24/23/e84c64ad0e8bc59cd1b2ef98def848deff0ef3456c542afe74d51e9e8c85/s3transfer-0.19.1-py3-none-any.whl"
-size = 90072
+name = "s3transfer-0.19.2-py3-none-any.whl"
+upload-time = 2026-07-22 19:30:43.251801+00:00
+url = "https://files.pythonhosted.org/packages/bc/e7/5c595c75e9f41a44f30e526eda465ea0b4eec93470e074e4a111b253f13a/s3transfer-0.19.2-py3-none-any.whl"
+size = 90216
 
 [packages.wheels.hashes]
-sha256 = "d5fd7005ee39307455ad5f310b5ea67f4b1960d7fed5b3671ee50c249de675de"
+sha256 = "d8168eccca828cbb2cd573675333f3bddd254313a9c42494b84c76b539e8ba25"
 
 [[packages]]
 name = "six"
@@ -1304,7 +1356,7 @@ sha256 = "b579b99715fdc2980cf88c8ec96d3bf1ce16f5a8051a7c2b84ef9b1cdecaea2f"
 
 [[packages]]
 name = "starlette"
-version = "1.3.1"
+version = "1.6.0"
 marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\""
 requires-python = ">=3.10"
 dependencies = [
@@ -1314,22 +1366,22 @@ dependencies = [
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "starlette-1.3.1.tar.gz"
-upload-time = 2026-06-12 09:23:11.602344+00:00
-url = "https://files.pythonhosted.org/packages/eb/e3/7c1dc7381d9f8ab7d854328ebfa884e62cb3f3d8549ddfd37c7814f42afa/starlette-1.3.1.tar.gz"
-size = 2703240
+name = "starlette-1.6.0.tar.gz"
+upload-time = 2026-08-08 18:27:57.512594+00:00
+url = "https://files.pythonhosted.org/packages/b5/b4/205b0d5241d934e8add0c38aa924c4f9fb7330834ff11e5444db964ec3f9/starlette-1.6.0.tar.gz"
+size = 2716969
 
 [packages.sdist.hashes]
-sha256 = "05d0213193f2fbaae60e2ecb593b4add4262ad4e46536b54abe36f11a71724e0"
+sha256 = "d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b"
 
 [[packages.wheels]]
-name = "starlette-1.3.1-py3-none-any.whl"
-upload-time = 2026-06-12 09:23:10.017643+00:00
-url = "https://files.pythonhosted.org/packages/ec/bb/2799cc2ede3ed41131f8975621e7213dfc7ef4acbbaadfa440f32500c370/starlette-1.3.1-py3-none-any.whl"
-size = 73632
+name = "starlette-1.6.0-py3-none-any.whl"
+upload-time = 2026-08-08 18:27:56.196765+00:00
+url = "https://files.pythonhosted.org/packages/c8/cb/6a6a47d5b464bd08695d254f3da6e7986cc70c9fa5d778eda57538edfe56/starlette-1.6.0-py3-none-any.whl"
+size = 75969
 
 [packages.wheels.hashes]
-sha256 = "c7372aae11c3c3f26a42df7bd626cec2f47d03483d261d369516a615a53714c6"
+sha256 = "a86dd39d14bb45f85a3d18525215a9ef0cfd1f192ac793220e72598c90335f0c"
 
 [[packages]]
 name = "typing-extensions"
@@ -1384,7 +1436,7 @@ sha256 = "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
 [[packages]]
 name = "typing-inspection"
 version = "0.4.2"
-marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\" or python_version == \"3.9\""
+marker = "python_version == \"3.9\""
 requires-python = ">=3.9"
 dependencies = [
     { name = "typing-extensions" },
@@ -1408,6 +1460,34 @@ size = 14611
 
 [packages.wheels.hashes]
 sha256 = "4ed1cacbdc298c220f1bd249ed5287caa16f34d44ef4e9c3d0cbad5b521545e7"
+
+[[packages]]
+name = "typing-inspection"
+version = "0.4.4"
+marker = "python_version == \"3.10\" or python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\" or python_version == \"3.14\" or python_version == \"3.15\""
+requires-python = ">=3.10"
+dependencies = [
+    { name = "typing-extensions" },
+]
+index = "https://pypi.org/simple/"
+
+[packages.sdist]
+name = "typing_inspection-0.4.4.tar.gz"
+upload-time = 2026-08-12 12:37:25.997329+00:00
+url = "https://files.pythonhosted.org/packages/a3/26/b09b8010994eccc3c09092e6b34058f36a460eea2d4c3e8b910c695975a0/typing_inspection-0.4.4.tar.gz"
+size = 76928
+
+[packages.sdist.hashes]
+sha256 = "547274fa6b0a561ccf549cc9524b999a578e737d015d8709d021f9d0d13bea47"
+
+[[packages.wheels]]
+name = "typing_inspection-0.4.4-py3-none-any.whl"
+upload-time = 2026-08-12 12:37:24.648475+00:00
+url = "https://files.pythonhosted.org/packages/67/81/4add07e5172b7ac40d8ed5ff580409a7801a4fe26d529bdd915401dabfbe/typing_inspection-0.4.4-py3-none-any.whl"
+size = 14750
+
+[packages.wheels.hashes]
+sha256 = "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147"
 
 [[packages]]
 name = "urllib3"
@@ -1510,8 +1590,8 @@ size = 10378
 sha256 = "0b3596c50a5c700c9cb40ba8d86d9f2cc4807e9bedb06bcdf7fac85633e444dc"
 
 [tool.nab]
-nab-version = "0.0.14"
-created-at = 2026-07-19 18:41:26.746142+00:00
+nab-version = "0.0.16"
+created-at = 2026-09-02 03:32:24.805425+00:00
 command-line = [
     "nab",
     "lock",

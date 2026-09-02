@@ -40,20 +40,26 @@ def test_parse_pinned_deps_from_pylock(lock: dict[str, Any]) -> None:
     assert reqs[0].name == "annotated-doc"
     assert reqs[0].version == Version("0.0.4")
 
-    assert reqs[1].name == "annotated-types"
-    assert reqs[1].version == Version("0.7.0")
+    assert reqs[1].name == "annotated-doc"
+    assert reqs[1].version == Version("0.0.5")
 
-    assert reqs[2].name == "anyio"
-    assert reqs[2].version == Version("4.5.2")
-    assert str(reqs[2].marker) == 'python_full_version < "3.9"'
+    assert reqs[2].name == "annotated-types"
+    assert reqs[2].version == Version("0.7.0")
 
-    assert reqs[3].name == "anyio"
-    assert reqs[3].version == Version("4.12.1")
-    assert str(reqs[3].marker) == 'python_full_version == "3.9.*"'
+    assert reqs[3].name == "annotated-types"
+    assert reqs[3].version == Version("0.8.0")
 
     assert reqs[4].name == "anyio"
-    assert reqs[4].version == Version("4.14.1")
-    assert str(reqs[4].marker) == 'python_full_version >= "3.10"'
+    assert reqs[4].version == Version("4.5.2")
+    assert str(reqs[4].marker) == 'python_full_version < "3.9"'
+
+    assert reqs[5].name == "anyio"
+    assert reqs[5].version == Version("4.12.1")
+    assert str(reqs[5].marker) == 'python_full_version == "3.9.*"'
+
+    assert reqs[6].name == "anyio"
+    assert reqs[6].version == Version("4.14.2")
+    assert str(reqs[6].marker) == 'python_full_version >= "3.10"'
 
     # uv does not export transitive dependency information to pylock.toml
     assert len(set(r.name for r in reqs)) == 22
