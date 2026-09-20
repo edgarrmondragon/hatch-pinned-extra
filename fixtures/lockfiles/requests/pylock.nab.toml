@@ -31,7 +31,7 @@ sha256 = "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309"
 
 [[packages]]
 name = "cattrs"
-version = "26.1.0"
+version = "26.2.0"
 requires-python = ">=3.10"
 dependencies = [
     { name = "attrs" },
@@ -40,22 +40,22 @@ dependencies = [
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "cattrs-26.1.0.tar.gz"
-upload-time = 2026-02-18 22:15:19.406296+00:00
-url = "https://files.pythonhosted.org/packages/a0/ec/ba18945e7d6e55a58364d9fb2e46049c1c2998b3d805f19b703f14e81057/cattrs-26.1.0.tar.gz"
-size = 495672
+name = "cattrs-26.2.0.tar.gz"
+upload-time = 2026-09-06 20:31:58.055009+00:00
+url = "https://files.pythonhosted.org/packages/d6/b2/42f4524e5479b090040b5fd8bb316dd8c65a079bb6492494ce2079dc91be/cattrs-26.2.0.tar.gz"
+size = 524993
 
 [packages.sdist.hashes]
-sha256 = "fa239e0f0ec0715ba34852ce813986dfed1e12117e209b816ab87401271cdd40"
+sha256 = "3cf49f69df8326bcf17a3cb3d3d3ec4a856858fe3a7473746c9044c317d3ba55"
 
 [[packages.wheels]]
-name = "cattrs-26.1.0-py3-none-any.whl"
-upload-time = 2026-02-18 22:15:17.958002+00:00
-url = "https://files.pythonhosted.org/packages/80/56/60547f7801b97c67e97491dc3d9ade9fbccbd0325058fd3dfcb2f5d98d90/cattrs-26.1.0-py3-none-any.whl"
-size = 73054
+name = "cattrs-26.2.0-py3-none-any.whl"
+upload-time = 2026-09-06 20:31:56.327239+00:00
+url = "https://files.pythonhosted.org/packages/f5/4d/6b8460462012a52075ba97932197f8c141be71b8e5f7e918af08ee73424b/cattrs-26.2.0-py3-none-any.whl"
+size = 74830
 
 [packages.wheels.hashes]
-sha256 = "d1e0804c42639494d469d08d4f26d6b9de9b8ab26b446db7b5f8c2e97f7c3096"
+sha256 = "c680f17cd1df3a1c038ad1db8d90a9c595568cc54c4e8098e7ceb8d7b9bd826b"
 
 [[packages]]
 name = "certifi"
@@ -149,27 +149,27 @@ sha256 = "815e7be7a7806d54abb586dc943addc79e8b2ee16915059658cbeff4b1b43bf4"
 
 [[packages]]
 name = "platformdirs"
-version = "4.11.4"
+version = "4.11.8"
 requires-python = ">=3.10"
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "platformdirs-4.11.4.tar.gz"
-upload-time = 2026-08-24 14:53:49.676697+00:00
-url = "https://files.pythonhosted.org/packages/50/bb/ebc6636e1ae41314f796ebb7215fd28febb45f9aac72f2b04cb74b5071dc/platformdirs-4.11.4.tar.gz"
-size = 34079
+name = "platformdirs-4.11.8.tar.gz"
+upload-time = 2026-09-08 22:20:42.866414+00:00
+url = "https://files.pythonhosted.org/packages/53/18/f3bb8ef0d3b930692343da8aa4d3cbcd6749477c053959395ac81965a6e9/platformdirs-4.11.8.tar.gz"
+size = 37182
 
 [packages.sdist.hashes]
-sha256 = "f3373be828247211d0febabea97e238c3dfde8a60b3c90c32756fb52cb21556d"
+sha256 = "f23abafea7dd4276d1f29104b83598d7dcc567cafd07c9c951e66665645437fc"
 
 [[packages.wheels]]
-name = "platformdirs-4.11.4-py3-none-any.whl"
-upload-time = 2026-08-24 14:53:48.406471+00:00
-url = "https://files.pythonhosted.org/packages/28/be/0ff05fcd2938fb58ad9219bd54135968342d214737e012d62d43f06a2dd6/platformdirs-4.11.4-py3-none-any.whl"
-size = 23741
+name = "platformdirs-4.11.8-py3-none-any.whl"
+upload-time = 2026-09-08 22:20:41.537525+00:00
+url = "https://files.pythonhosted.org/packages/f4/e1/5b7b8bbb55084d1425bcb9bc823ff519e1b2be05f6ebb0089e2eacc38413/platformdirs-4.11.8-py3-none-any.whl"
+size = 24027
 
 [packages.wheels.hashes]
-sha256 = "e34ff91a24bcddc6d939b878bdf3f5c437c9c46fe9e212b1bf455fdf1ee57586"
+sha256 = "52f2f181bbfde907966932cc8312d967d02976422d66d537ea16092b8e291081"
 
 [[packages]]
 name = "requests"
@@ -309,8 +309,8 @@ size = 131087
 sha256 = "9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897"
 
 [tool.nab]
-nab-version = "0.0.16"
-created-at = 2026-09-02 03:32:27.170398+00:00
+nab-version = "0.0.18"
+created-at = 2026-09-20 03:31:32.297946+00:00
 command-line = [
     "nab",
     "lock",
