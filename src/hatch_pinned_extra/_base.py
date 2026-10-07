@@ -26,7 +26,7 @@ import re
 from dataclasses import dataclass
 from functools import reduce
 from operator import and_
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 from packaging.markers import Marker
 
@@ -42,7 +42,7 @@ _PLATFORM_MARKER_RE = re.compile(
 )
 
 
-@dataclass(order=True)
+@dataclass
 class _PinnedRequirement:
     name: str
     version: Version
@@ -50,6 +50,13 @@ class _PinnedRequirement:
 
     def __hash__(self) -> int:
         return hash((self.name, self.version, self.marker))
+
+    def sort_key(self) -> tuple[str, Version, str]:
+        # `Marker` is not orderable, so compare markers by their string form
+        return (self.name, self.version, str(self.marker) if self.marker else "")
+
+    def __lt__(self, other: Any) -> bool:  # ruff: ignore[any-type]
+        return self.sort_key() < other.sort_key()  # type: ignore[no-any-return]
 
     def __str__(self) -> str:
         return f"{self.name}=={self.version}" + (f"; {self.marker}" if self.marker else "")

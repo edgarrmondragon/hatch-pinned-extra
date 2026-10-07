@@ -26,8 +26,11 @@ from importlib.metadata import entry_points
 from pathlib import Path
 
 import pytest
+from packaging.markers import Marker
+from packaging.version import Version
 
 from hatch_pinned_extra import PinnedExtraMetadataHook
+from hatch_pinned_extra._base import _PinnedRequirement
 from hatch_pinned_extra._compat import read_toml
 
 
@@ -184,3 +187,19 @@ def test_pylock(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
             'zipp==3.23.1; python_full_version == "3.9.*"',
         ]
     }
+
+
+def test_pinned_requirement_sorting() -> None:
+    reqs = [
+        _PinnedRequirement("foo", Version("1.0"), Marker("sys_platform == 'win32'")),
+        _PinnedRequirement("foo", Version("1.0")),
+        _PinnedRequirement("foo", Version("1.0"), Marker("sys_platform == 'linux'")),
+        _PinnedRequirement("bar", Version("2.0")),
+    ]
+
+    assert [str(r) for r in sorted(reqs)] == [
+        "bar==2.0",
+        "foo==1.0",
+        'foo==1.0; sys_platform == "linux"',
+        'foo==1.0; sys_platform == "win32"',
+    ]
