@@ -334,3 +334,35 @@ def test_invalid_env_var(monkeypatch: pytest.MonkeyPatch) -> None:
     hook = PinnedExtraMetadataHook("fixtures/lockfiles/project", {"extra-name": "pinned"})
     with pytest.raises(ValueError, match="invalid truth value 'invalid'"):
         hook.update(metadata)
+
+
+def test_same_version_with_different_markers_is_sortable() -> None:
+    """Pins that differ only by marker (including no marker) must not be compared as `Marker`s."""
+    lock = {
+        "package": [
+            {"name": "app", "version": "0.1.0", "source": {"virtual": "."}},
+            {
+                "name": "a",
+                "version": "1.0",
+                "dependencies": [{"name": "shared", "marker": "sys_platform == 'linux'"}],
+            },
+            {
+                "name": "b",
+                "version": "1.0",
+                "dependencies": [{"name": "shared", "marker": "sys_platform == 'win32'"}],
+            },
+            {"name": "c", "version": "1.0", "dependencies": [{"name": "shared"}]},
+            {"name": "shared", "version": "1.0"},
+        ],
+    }
+
+    reqs = parse_pinned_deps_from_uv_lock(lock, dependencies=["a", "b", "c"])
+
+    assert [(r.name, str(r.marker) if r.marker else None) for r in reqs] == [
+        ("a", None),
+        ("b", None),
+        ("c", None),
+        ("shared", None),
+        ("shared", 'sys_platform == "linux"'),
+        ("shared", 'sys_platform == "win32"'),
+    ]

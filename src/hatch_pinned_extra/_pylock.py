@@ -46,7 +46,6 @@ def _extract_pylock_requirements(deps: Deps) -> list[_PinnedRequirement]:
 
 def parse_pinned_deps_from_pylock(lock: dict[str, Any]) -> list[_PinnedRequirement]:
     """Parse the pinned dependencies from a pylock.toml file."""
-    reqs: list[_PinnedRequirement] = []
     pylock = Pylock.from_dict(lock)
 
     deps: Deps = {}
@@ -57,7 +56,5 @@ def parse_pinned_deps_from_pylock(lock: dict[str, Any]) -> list[_PinnedRequireme
         deps.setdefault(name, {})
         deps[name][str(package.version)] = package
 
-    reqs.extend(_extract_pylock_requirements(deps))
-
     # Sort by name, version, and markers, and deduplicate the requirements
-    return sorted(set(reqs))
+    return sorted(set(_extract_pylock_requirements(deps)))
