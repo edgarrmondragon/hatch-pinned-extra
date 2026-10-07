@@ -56,7 +56,7 @@ class _PinnedRequirement:
         return (self.name, self.version, str(self.marker) if self.marker else "")
 
     def __lt__(self, other: Any) -> bool:  # ruff: ignore[any-type]
-        return self.sort_key() < other.sort_key()
+        return self.sort_key() < other.sort_key()  # type: ignore[no-any-return]
 
     def __str__(self) -> str:
         return f"{self.name}=={self.version}" + (f"; {self.marker}" if self.marker else "")
