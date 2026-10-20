@@ -36,6 +36,20 @@ dynamic = [
 ]
 ```
 
+### Enabling the plugin at build time
+
+The plugin requires the `HATCH_PINNED_EXTRA_ENABLE` environment variable to be set to a truthy value to activate (e.g. `1`, `true`, `yes`, `on`). This design allows you to control when pinned dependencies are included:
+
+```bash
+# Build with pinned dependencies
+HATCH_PINNED_EXTRA_ENABLE=1 uv build
+
+# Update lockfile without constraints from pinned dependencies
+uv lock --upgrade
+```
+
+This approach solves the circular dependency issue where pinned dependencies become constraints during `uv lock --upgrade`, preventing actual upgrades.
+
 ### Reading pinned dependencies from `pylock.toml` file
 
 To use a [`pylock.toml` file][pylock-spec] instead of `uv.lock`, set `lockfile` to the file path:
@@ -54,20 +68,6 @@ lockfile = "pylock.prod.toml"
 > a `uv.lock`-derived pinned requirement might read
 > `anyio==4.13.0; python_full_version >= "3.13" or (python_full_version >= "3.10" and python_full_version < "3.13")`
 > while the equivalent from a `pylock.toml` would be `anyio==4.13.0; python_full_version >= "3.10"`.
-
-### Enabling the Plugin
-
-The plugin requires the `HATCH_PINNED_EXTRA_ENABLE` environment variable to be set to a truthy value to activate (e.g. `1`, `true`, `yes`, `on`). This design allows you to control when pinned dependencies are included:
-
-```bash
-# Build with pinned dependencies
-HATCH_PINNED_EXTRA_ENABLE=1 uv build
-
-# Update lockfile without constraints from pinned dependencies
-uv lock --upgrade
-```
-
-This approach solves the circular dependency issue where pinned dependencies become constraints during `uv lock --upgrade`, preventing actual upgrades.
 
 [commits-latest]: https://github.com/edgarrmondragon/hatch-pinned-extra/commit/main
 [commits-latest-badge]: https://img.shields.io/github/last-commit/edgarrmondragon/hatch-pinned-extra
