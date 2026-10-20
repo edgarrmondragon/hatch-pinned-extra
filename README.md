@@ -5,7 +5,7 @@
 [![License][license-badge]][license]
 [![GitHub last commit][commits-latest-badge]][commits-latest]
 [![PyPI - Downloads][pypi-downloads-badge]][pypi-downloads]
-[![uv][uv-badge]][uv]
+[![Hatch project][hatch-badge]][hatch]
 
 Hatch plugin that adds a packaging [_extra_][extras] to the wheel metadata with pinned dependencies from [`uv.lock`][uvlock].
 
@@ -72,6 +72,8 @@ This approach solves the circular dependency issue where pinned dependencies bec
 [commits-latest]: https://github.com/edgarrmondragon/hatch-pinned-extra/commit/main
 [commits-latest-badge]: https://img.shields.io/github/last-commit/edgarrmondragon/hatch-pinned-extra
 [extras]: https://packaging.python.org/en/latest/specifications/core-metadata/#provides-extra-multiple-use
+[hatch]: https://github.com/pypa/hatch
+[hatch-badge]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/pypa/hatch/master/docs/assets/badge/v0.json
 [license]: https://pypi.python.org/pypi/hatch-pinned-extra
 [license-badge]: https://img.shields.io/pypi/l/hatch-pinned-extra.svg
 [pylock-spec]: https://packaging.python.org/en/latest/specifications/pylock-toml/
