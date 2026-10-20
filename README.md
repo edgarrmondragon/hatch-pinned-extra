@@ -7,7 +7,7 @@
 [![PyPI - Downloads][pypi-downloads-badge]][pypi-downloads]
 [![Hatch project][hatch-badge]][hatch]
 
-Hatch plugin that adds a packaging [_extra_][extras] to the wheel metadata with pinned dependencies from [`uv.lock`][uvlock].
+Hatch plugin that adds a packaging [_extra_][extras] to the wheel metadata with pinned dependencies from [`uv.lock`][uvlock] or [`pylock.toml`][pylock-spec].
 
 </div>
 
