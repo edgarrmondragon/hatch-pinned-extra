@@ -79,6 +79,4 @@ This approach solves the circular dependency issue where pinned dependencies bec
 [pylock-spec]: https://packaging.python.org/en/latest/specifications/pylock-toml/
 [pypi-downloads]: https://pypi.python.org/pypi/hatch-pinned-extra
 [pypi-downloads-badge]: https://img.shields.io/pypi/dm/hatch-pinned-extra
-[uv]: https://github.com/astral-sh/uv
-[uv-badge]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json
 [uvlock]: https://github.com/astral-sh/uv
