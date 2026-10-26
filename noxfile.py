@@ -30,8 +30,9 @@ from tempfile import NamedTemporaryFile
 
 import nox
 
-nox.needs_version = ">=2025.8.11"
+nox.needs_version = ">=2026.8.17"
 nox.options.default_venv_backend = "uv"
+nox.options.parallel = "auto"
 nox.options.reuse_venv = "yes"
 
 PYPROJECT = nox.project.load_toml()
