@@ -1,7 +1,7 @@
 #!/usr/bin/env -S uv run --script
 
 # /// script
-# dependencies = ["nox>=2025.8.11"]
+# dependencies = ["nox>=2026.8.17"]
 # ///
 
 #  Copyright © 2025 Edgar Ramírez-Mondragón <edgarrm358@gmail.com>
@@ -69,11 +69,7 @@ def tests(session: nox.Session) -> None:
     session.install("-e.", "--group=testing", env=_install_env(session))
     args = session.posargs or ["--quiet"]
 
-    try:
-        session.run("coverage", "run", "--parallel", "-m", "pytest", *args)
-    finally:
-        if session.interactive:
-            session.notify("coverage", posargs=[])
+    session.run("coverage", "run", "--parallel", "-m", "pytest", *args)
 
 
 @nox.session(name="test-lowest", python=python_versions[0], tags=["test"], allow_parallel=True)
@@ -118,9 +114,7 @@ def typing(session: nox.Session) -> None:
     )
 
 
-@nox.session(default=False)
-def coverage(session: nox.Session) -> None:
-    """Generate coverage report."""
+def _coverage(session: nox.Session) -> None:
     args = session.posargs or ["report", "-m"]
 
     session.install("-e.", "--group=testing", env=_install_env(session))
@@ -129,6 +123,18 @@ def coverage(session: nox.Session) -> None:
         session.run("coverage", "combine", "--debug=pathmap")
 
     session.run("coverage", *args)
+
+
+@nox.session(default=False)
+def coverage(session: nox.Session) -> None:
+    """Generate coverage report."""
+    _coverage(session)
+
+
+@nox.session(name="test-coverage", default=False, requires=["tests"])
+def test_coverage(session: nox.Session) -> None:
+    """Run the tests, then generate the coverage report."""
+    _coverage(session)
 
 
 @nox.session(default=False)
