@@ -58,8 +58,8 @@ def test_parse_pinned_deps_from_pylock(lock: dict[str, Any]) -> None:
     assert str(reqs[5].marker) == 'python_full_version == "3.9.*"'
 
     assert reqs[6].name == "anyio"
-    assert reqs[6].version == Version("4.14.2")
+    assert reqs[6].version == Version("4.15.1")
     assert str(reqs[6].marker) == 'python_full_version >= "3.10"'
 
     # uv does not export transitive dependency information to pylock.toml
-    assert len(set(r.name for r in reqs)) == 22
+    assert len(set(r.name for r in reqs)) == 23

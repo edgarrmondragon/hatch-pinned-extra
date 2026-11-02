@@ -56,7 +56,7 @@ def test_parse_pinned_deps_from_uv_lock(lock: dict[str, Any]) -> None:
     assert reqs[1].version == Version("0.8.0")
     assert (
         str(reqs[1].marker)
-        == 'python_full_version >= "3.13" or (python_full_version >= "3.10" and python_full_version < "3.13")'  # ruff: ignore[line-too-long]
+        == '(python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*"'  # ruff: ignore[line-too-long]
     )
 
     assert reqs[2].name == "anyio"
@@ -68,10 +68,11 @@ def test_parse_pinned_deps_from_uv_lock(lock: dict[str, Any]) -> None:
     assert str(reqs[3].marker) == 'python_full_version == "3.9.*"'
 
     assert reqs[4].name == "anyio"
-    assert reqs[4].version == Version("4.14.2")
+    assert reqs[4].version == Version("4.15.1")
     assert str(reqs[4].marker) == (
-        'python_full_version >= "3.13" '
-        'or (python_full_version >= "3.10" and python_full_version < "3.13")'
+        '(python_full_version >= "3.13" '
+        'or (python_full_version >= "3.11" and python_full_version < "3.13")) '
+        'or python_full_version == "3.10.*"'
     )
 
     assert reqs[5].name == "exceptiongroup"
@@ -179,10 +180,11 @@ def test_update_metadata(monkeypatch: pytest.MonkeyPatch) -> None:
     assert str(botos[0].marker) == 'python_full_version < "3.9"'
     assert botos[1].specifier == "==1.42.97"
     assert str(botos[1].marker) == 'python_full_version == "3.9.*"'
-    assert botos[2].specifier == "==1.43.80"
+    assert botos[2].specifier == "==1.43.118"
     assert str(botos[2].marker) == (
-        'python_full_version >= "3.13" '
-        'or (python_full_version >= "3.10" and python_full_version < "3.13")'
+        '(python_full_version >= "3.13" '
+        'or (python_full_version >= "3.11" and python_full_version < "3.13")) '
+        'or python_full_version == "3.10.*"'
     )
 
     assert (
@@ -224,10 +226,11 @@ def test_update_metadata_no_optional_deps(monkeypatch: pytest.MonkeyPatch) -> No
     assert str(botos[0].marker) == 'python_full_version < "3.9"'
     assert botos[1].specifier == "==1.42.97"
     assert str(botos[1].marker) == 'python_full_version == "3.9.*"'
-    assert botos[2].specifier == "==1.43.80"
+    assert botos[2].specifier == "==1.43.118"
     assert str(botos[2].marker) == (
-        'python_full_version >= "3.13" '
-        'or (python_full_version >= "3.10" and python_full_version < "3.13")'
+        '(python_full_version >= "3.13" '
+        'or (python_full_version >= "3.11" and python_full_version < "3.13")) '
+        'or python_full_version == "3.10.*"'
     )
     assert (
         'colorama==0.4.6; sys_platform == "win32"'
@@ -315,10 +318,11 @@ def test_plugin_enabled_with_env_var(monkeypatch: pytest.MonkeyPatch, env_var: s
     assert str(botos[0].marker) == 'python_full_version < "3.9"'
     assert botos[1].specifier == "==1.42.97"
     assert str(botos[1].marker) == 'python_full_version == "3.9.*"'
-    assert botos[2].specifier == "==1.43.80"
+    assert botos[2].specifier == "==1.43.118"
     assert str(botos[2].marker) == (
-        'python_full_version >= "3.13" '
-        'or (python_full_version >= "3.10" and python_full_version < "3.13")'
+        '(python_full_version >= "3.13" '
+        'or (python_full_version >= "3.11" and python_full_version < "3.13")) '
+        'or python_full_version == "3.10.*"'
     )
 
 
