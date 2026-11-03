@@ -34,6 +34,9 @@ from hatch_pinned_extra._compat import read_toml
 from hatch_pinned_extra._pylock import parse_pinned_deps_from_pylock
 from hatch_pinned_extra._uv import parse_pinned_deps_from_uv_lock
 
+DEFAULT_EXTRA_NAME = "pinned"
+DEFAULT_LOCKFILE = "uv.lock"
+
 
 def strtobool(val: str) -> bool:
     """Convert a string representation of truth to true (1) or false (0).
@@ -80,8 +83,8 @@ class PinnedExtraMetadataHook(MetadataHookInterface):
             )
             return
 
-        extra_name = self.config.get("extra-name", "pinned")
-        lockfile = str(self.config.get("lockfile", "uv.lock"))
+        extra_name = str(self.config.get("extra-name", DEFAULT_EXTRA_NAME))
+        lockfile = str(self.config.get("lockfile", DEFAULT_LOCKFILE))
         root_path = Path(self.root)
 
         lock_path = root_path / lockfile
