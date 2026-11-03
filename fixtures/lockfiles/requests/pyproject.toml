@@ -22,7 +22,6 @@ dependencies = [
 packages = ["my_apl_client"]
 
 [tool.hatch.metadata.hooks.pinned_extra]
-name = "pinned"
 
 [tool.uv]
 prerelease = "allow"

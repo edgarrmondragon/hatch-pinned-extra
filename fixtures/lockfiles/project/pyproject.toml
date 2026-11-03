@@ -33,7 +33,6 @@ dev = [
 ]
 
 [tool.hatch.metadata.hooks.pinned_extra]
-name = "pinned"
 
 [tool.nab]
 mode = "universal"

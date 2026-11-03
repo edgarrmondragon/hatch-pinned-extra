@@ -21,7 +21,6 @@ dependencies = [
 packages = ["src/dep_with_extras"]
 
 [tool.hatch.metadata.hooks.pinned_extra]
-name = "pinned"
 
 [tool.uv.sources]
 hatch-pinned-extra = { path = "../../..", editable = true }
