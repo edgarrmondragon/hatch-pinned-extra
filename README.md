@@ -137,8 +137,6 @@ lockfile = "pylock.prod.toml"
 
 - Combining this plugin with static `optional-dependencies`. See [the note above](#combining-static-and-dynamic-optional-dependencies) above regarding PEP 808 support in Hatchling.
 
-- `uv.lock` workspace members have their dependencies dropped. This might be addressed in a future release.
-
 - For `pylock.toml`, the `pinned` extra will contain all the dependencies in `pylock.toml`, so you'll want to make sure it includes only runtime or relevant dependencies, e.g. by generating it with `uv export --format pylock.toml --no-dev`.
 
 - `pylock.toml` files may produce less precise environment markers than `uv.lock` because some producers may not add the resolver's internal per-Python-version splits.
