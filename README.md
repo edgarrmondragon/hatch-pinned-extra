@@ -7,7 +7,7 @@
 [![PyPI - Downloads][pypi-downloads-badge]][pypi-downloads]
 [![Hatch project][hatch-badge]][hatch]
 
-Hatch plugin that adds a packaging [_extra_][extras] to the [core metadata][core-metadata] with pinned dependencies from [`uv.lock`][uvlock] or [`pylock.toml`][pylock-spec].
+Hatch plugin that adds a `pinned` packaging [_extra_][extras] to the [core metadata][core-metadata] with pinned dependencies from [`uv.lock`][uvlock] or [`pylock.toml`][pylock-spec].
 
 </div>
 
