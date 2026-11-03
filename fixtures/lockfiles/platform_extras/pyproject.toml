@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling", "hatch-pinned-extra"]
+build-backend = "hatchling.build"
+
+[project]
+name = "platform-extras"
+version = "0.1.0"
+description = ""
+requires-python = ">=3.9"
+dynamic = ["optional-dependencies"]
+dependencies = [
+    "app",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/platform_extras"]
+
+[tool.hatch.metadata.hooks.pinned_extra]
+
+[tool.uv.sources]
+hatch-pinned-extra = { path = "../../..", editable = true }

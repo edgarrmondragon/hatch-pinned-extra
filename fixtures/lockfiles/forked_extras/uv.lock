@@ -1,0 +1,57 @@
+# Hand-written, minimal lockfile. `lib` is locked at two versions (forked on the
+# Python version) and the `feature` extra pulls in a different package in each fork.
+version = 1
+revision = 3
+requires-python = ">=3.9"
+resolution-markers = [
+    "python_full_version >= '3.10'",
+    "python_full_version < '3.10'",
+]
+
+[[package]]
+name = "forked-extras"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "lib", version = "1.0.0", source = { registry = "https://pypi.org/simple" }, extra = ["feature"], marker = "python_full_version < '3.10'" },
+    { name = "lib", version = "2.0.0", source = { registry = "https://pypi.org/simple" }, extra = ["feature"], marker = "python_full_version >= '3.10'" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "lib", extras = ["feature"] }]
+
+[[package]]
+name = "lib"
+version = "1.0.0"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "python_full_version < '3.10'",
+]
+
+[package.optional-dependencies]
+feature = [
+    { name = "old-helper" },
+]
+
+[[package]]
+name = "lib"
+version = "2.0.0"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "python_full_version >= '3.10'",
+]
+
+[package.optional-dependencies]
+feature = [
+    { name = "new-helper" },
+]
+
+[[package]]
+name = "new-helper"
+version = "2.0.0"
+source = { registry = "https://pypi.org/simple" }
+
+[[package]]
+name = "old-helper"
+version = "1.0.0"
+source = { registry = "https://pypi.org/simple" }

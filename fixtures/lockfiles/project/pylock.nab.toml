@@ -1986,6 +1986,6 @@ cli-project-overrides = [
 
 [tool.nab.validation]
 version = 3
-all-inputs-sha256 = "b9906280a9a894c37ccd091afc6a32a2fdaf90e7be3f8938ee326b21fb8b647c"
-selection-inputs-sha256 = "75a2ab94b4b92aa88722968fb3bdd0c745e4992f7be1738f5a2c7c6b172bd177"
-contents-sha256 = "d844cda541cd270e156cd8f82eb6c0050e74cbaaa827c66dadb3273e7cc1a805"
+all-inputs-sha256 = "ca06cdda5924ef785e7935f8b0bc540912be6f2a65adab23c3e3f83cc5bb2dfb"
+selection-inputs-sha256 = "08779db4be41d96b9032244e963559242aa0bc676b10dd1bb670b5b412a3a462"
+contents-sha256 = "5be639deacdbe9b1904626924919d4d23f91950fa9032d0900737a01867bf25c"

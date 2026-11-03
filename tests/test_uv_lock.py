@@ -370,3 +370,68 @@ def test_same_version_with_different_markers_is_sortable() -> None:
         ("shared", 'sys_platform == "linux"'),
         ("shared", 'sys_platform == "win32"'),
     ]
+
+
+@pytest.mark.xfail(
+    strict=True,
+    reason="workspace members are skipped as editable, along with their dependencies",
+)
+def test_workspace_member_dependencies_are_included() -> None:
+    """Dependencies of a uv workspace member must be pinned for the packages that use it."""
+    lock = read_toml(Path("fixtures/lockfiles/workspace/uv.lock"))
+
+    reqs = parse_pinned_deps_from_uv_lock(
+        lock,
+        dependencies=["workspace-lib", "typing-extensions>=4"],
+    )
+
+    assert {req.name for req in reqs} >= {"idna", "typing-extensions"}
+
+
+@pytest.mark.xfail(
+    strict=True,
+    reason="`visited` is shared across the versions of a package, so only the first "
+    "version's extras are resolved",
+)
+def test_extras_of_every_locked_version_are_resolved() -> None:
+    """Each fork of a package can pull different packages through the same extra."""
+    lock = read_toml(Path("fixtures/lockfiles/forked_extras/uv.lock"))
+
+    reqs = parse_pinned_deps_from_uv_lock(lock, dependencies=["lib[feature]"])
+
+    assert {req.name for req in reqs} == {"lib", "new-helper", "old-helper"}
+
+
+@pytest.mark.xfail(
+    strict=True,
+    reason="`visited` is keyed by (name, extra) only, so markers from later paths are dropped",
+)
+def test_extra_reached_through_different_platform_markers() -> None:
+    """A shared extra must stay installable on every platform that reaches it."""
+    lock = read_toml(Path("fixtures/lockfiles/platform_extras/uv.lock"))
+
+    reqs = parse_pinned_deps_from_uv_lock(lock, dependencies=["app"])
+
+    def _satisfied_names(reqs: list[Any], env: dict[str, str]) -> set[str]:
+        """Names of the pins whose marker (if any) holds in the given environment."""
+        return {req.name for req in reqs if req.marker is None or req.marker.evaluate(env)}
+
+    assert "extra-dep" in _satisfied_names(reqs, {"sys_platform": "win32"})
+    assert "extra-dep" in _satisfied_names(reqs, {"sys_platform": "darwin"})
+    assert "extra-dep" not in _satisfied_names(reqs, {"sys_platform": "linux"})
+
+
+@pytest.mark.xfail(
+    strict=True,
+    raises=KeyError,
+    reason="`metadata['dependencies']` is accessed unconditionally",
+)
+def test_update_metadata_without_dependencies(monkeypatch: pytest.MonkeyPatch) -> None:
+    """A project with no `dependencies` should not make the hook crash."""
+    monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
+    hook = PinnedExtraMetadataHook("fixtures/lockfiles/no_deps", {"extra-name": "pinned"})
+
+    metadata: dict[str, Any] = {}
+    hook.update(metadata)
+
+    assert metadata.get("optional-dependencies", {}).get("pinned", []) == []

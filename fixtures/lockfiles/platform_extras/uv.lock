@@ -1,0 +1,56 @@
+# Hand-written, minimal lockfile. `shared[extra]` is reachable through two
+# dependencies guarded by different platform markers.
+version = 1
+revision = 3
+requires-python = ">=3.9"
+
+[[package]]
+name = "app"
+version = "1.0.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "mac-helper", marker = "sys_platform == 'darwin'" },
+    { name = "win-helper", marker = "sys_platform == 'win32'" },
+]
+
+[[package]]
+name = "extra-dep"
+version = "3.0.0"
+source = { registry = "https://pypi.org/simple" }
+
+[[package]]
+name = "mac-helper"
+version = "1.0.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "shared", extra = ["extra"] },
+]
+
+[[package]]
+name = "platform-extras"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "app" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "app" }]
+
+[[package]]
+name = "shared"
+version = "2.0.0"
+source = { registry = "https://pypi.org/simple" }
+
+[package.optional-dependencies]
+extra = [
+    { name = "extra-dep" },
+]
+
+[[package]]
+name = "win-helper"
+version = "1.0.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "shared", extra = ["extra"] },
+]
