@@ -87,6 +87,7 @@ def test_lowest_requirements(session: nox.Session) -> None:
         "--universal",
         "--no-sources",
         "--resolution=lowest-direct",
+        "--group=testing",
         f"-o={tmpfile.as_posix()}",
     )
 
@@ -161,6 +162,7 @@ def lock(session: nox.Session, fixture: str) -> None:
             "uv",
             "lock",
             env={
+                "UV_NO_CACHE": "1",
                 "UV_EXCLUDE_NEWER": uploaded_prior_to,
             },
         )

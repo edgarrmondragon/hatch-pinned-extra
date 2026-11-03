@@ -57,6 +57,13 @@ url = "https://files.pythonhosted.org/packages/58/a2/bb081bab032533a855d44de1d56
 sha256 = "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c"
 
 [[packages]]
+name = "my-api-client"
+
+[packages.directory]
+path = "."
+editable = true
+
+[[packages]]
 name = "platformdirs"
 version = "4.13.5"
 

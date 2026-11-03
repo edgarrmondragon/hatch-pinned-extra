@@ -1,14 +1,33 @@
+[build-system]
+requires = [
+  "hatchling",
+  "hatch_pinned_extra",
+]
+build-backend = "hatchling.build"
+
 [project]
 name = "my-api-client"
 version = "0.0.0.dev0"
 description = "Singer tap for pypistats.org"
 requires-python = ">=3.10"
+dynamic = [
+  "optional-dependencies",
+]
 dependencies = [
   "requests~=2.33",
   "requests-cache~=1.2",
 ]
 
+[tool.hatch.build.targets.wheel]
+packages = ["my_apl_client"]
+
+[tool.hatch.metadata.hooks.pinned_extra]
+name = "pinned"
+
 [tool.uv]
 prerelease = "allow"
 preview = true
 required-version = ">=0.6"
+
+[tool.uv.sources]
+hatch-pinned-extra = { path = "../../..", editable = true }
