@@ -372,10 +372,6 @@ def test_same_version_with_different_markers_is_sortable() -> None:
     ]
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="workspace members are skipped as editable, along with their dependencies",
-)
 def test_workspace_member_dependencies_are_included() -> None:
     """Dependencies of a uv workspace member must be pinned for the packages that use it."""
     lock = read_toml(Path("fixtures/lockfiles/workspace/uv.lock"))
@@ -412,11 +408,6 @@ def test_extra_reached_through_different_platform_markers() -> None:
     assert "extra-dep" not in _satisfied_names(reqs, {"sys_platform": "linux"})
 
 
-@pytest.mark.xfail(
-    strict=True,
-    raises=KeyError,
-    reason="`metadata['dependencies']` is accessed unconditionally",
-)
 def test_update_metadata_without_dependencies(monkeypatch: pytest.MonkeyPatch) -> None:
     """A project with no `dependencies` should not make the hook crash."""
     monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
@@ -426,3 +417,49 @@ def test_update_metadata_without_dependencies(monkeypatch: pytest.MonkeyPatch) -
     hook.update(metadata)
 
     assert metadata.get("optional-dependencies", {}).get("pinned", []) == []
+
+
+def test_workspace_member_is_not_pinned() -> None:
+    """Workspace members are built from source, so they have no pin of their own."""
+    lock = read_toml(Path("fixtures/lockfiles/workspace/uv.lock"))
+
+    reqs = parse_pinned_deps_from_uv_lock(lock, dependencies=["workspace-lib"])
+
+    assert [req.name for req in reqs] == ["idna"]
+
+
+def test_dependencies_default_to_the_root_project_in_the_lockfile() -> None:
+    lock = read_toml(Path("fixtures/lockfiles/workspace/uv.lock"))
+
+    reqs = parse_pinned_deps_from_uv_lock(lock)
+
+    assert [req.name for req in reqs] == ["idna", "typing-extensions"]
+
+
+def test_update_metadata_reads_dynamic_dependencies_from_lockfile(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """The hook falls back to the lockfile when `dependencies` are dynamic and not yet set."""
+    monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
+    hook = PinnedExtraMetadataHook("fixtures/lockfiles/workspace", {"extra-name": "pinned"})
+
+    metadata: dict[str, Any] = {"dynamic": ["dependencies"]}
+    hook.update(metadata)
+
+    assert [Requirement(dep).name for dep in metadata["optional-dependencies"]["pinned"]] == [
+        "idna",
+        "typing-extensions",
+    ]
+
+
+def test_update_metadata_ignores_lockfile_dependencies_if_not_dynamic(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Without a `dependencies` field, the project has none, whatever the lockfile says."""
+    monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
+    hook = PinnedExtraMetadataHook("fixtures/lockfiles/workspace", {"extra-name": "pinned"})
+
+    metadata: dict[str, Any] = {}
+    hook.update(metadata)
+
+    assert metadata["optional-dependencies"]["pinned"] == []

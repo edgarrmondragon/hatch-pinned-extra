@@ -42,6 +42,35 @@ Deps: TypeAlias = dict[str, dict[str, dict[str, Any]]]
 _Visited: TypeAlias = dict[tuple[str, str, str], list[frozenset[str]]]
 
 
+def _is_local(package: dict[str, Any]) -> bool:
+    """Whether a package is built from the source tree, e.g. the project or a workspace member."""
+    source = package.get("source", {})
+    return bool(source.get("virtual") or source.get("editable")) or "version" not in package
+
+
+def _project_dependencies(lock: dict[str, Any]) -> list[str]:
+    """Get the direct dependencies of the root project, as recorded in the lockfile."""
+    for package in lock.get("package", []):
+        source = package.get("source", {})
+        if source.get("virtual") == "." or source.get("editable") == ".":
+            return [
+                str(Requirement(dep["name"] + _extras_suffix(dep) + _marker_suffix(dep)))
+                for dep in package.get("dependencies", [])
+            ]
+
+    return []
+
+
+def _extras_suffix(dep: dict[str, Any]) -> str:
+    return f"[{','.join(dep['extra'])}]" if dep.get("extra") else ""
+
+
+def _marker_suffix(dep: dict[str, Any]) -> str:
+    # Only keep platform conditions, the locked package's own resolution markers cover the rest
+    marker = _platform_only_marker(dep.get("marker", ""))
+    return f"; {marker}" if marker else ""
+
+
 def _extract_uv_requirements(
     deps: Deps,
     name: str,
@@ -51,19 +80,28 @@ def _extract_uv_requirements(
 ) -> list[_PinnedRequirement]:
     reqs = []
 
+    path_markers = frozenset(str(m) for m in markers)
+
     for version in deps.get(name, {}):
-        req = _PinnedRequirement(canonicalize_name(name), Version(version))
-
         package = deps[name][version]
-        package_markers: list[Marker] = list(markers)
 
-        if marker_strs := package.get("resolution-markers", []):
-            package_markers.append(reduce(or_, (Marker(m) for m in marker_strs)))
+        if _is_local(package):
+            # Local packages, like workspace members, can't be pinned but their dependencies can.
+            seen = visited.setdefault((name, version, ""), [])
+            if any(prev <= path_markers for prev in seen):
+                continue
+            seen.append(path_markers)
+        else:
+            req = _PinnedRequirement(canonicalize_name(name), Version(version))
+            package_markers: list[Marker] = list(markers)
 
-        if package_markers:
-            req.marker = reduce(and_, package_markers)
+            if marker_strs := package.get("resolution-markers", []):
+                package_markers.append(reduce(or_, (Marker(m) for m in marker_strs)))
 
-        reqs.append(req)
+            if package_markers:
+                req.marker = reduce(and_, package_markers)
+
+            reqs.append(req)
 
         # Handle normal dependencies
         for dep in package.get("dependencies", []):
@@ -85,7 +123,6 @@ def _extract_uv_requirements(
         # packages. Another path to it is only skipped if an earlier path was no more restrictive,
         # i.e. its markers are a subset, otherwise some platforms would lose the extra's pins.
         opt_deps = package.get("optional-dependencies", {})
-        path_markers = frozenset(str(m) for m in markers)
         for extra in extras:
             seen = visited.setdefault((name, version, extra), [])
             if any(prev <= path_markers for prev in seen):
@@ -111,22 +148,23 @@ def _extract_uv_requirements(
 
 def parse_pinned_deps_from_uv_lock(
     lock: dict[str, Any],
-    dependencies: Iterable[str],
+    dependencies: Iterable[str] | None = None,
 ) -> list[_PinnedRequirement]:
-    """Parse the pinned dependencies from a uv.lock file."""
+    """Parse the pinned dependencies from a uv.lock file.
+
+    Args:
+        lock: The parsed contents of the lockfile.
+        dependencies: The direct dependencies of the project. If not given, they are read from
+            the root project in the lockfile.
+    """
     reqs = []
 
     deps: Deps = {}
     for package in lock.get("package", []):
-        # skip the main package
-        if package.get("source", {}).get("virtual") or package.get("source", {}).get("editable"):
-            continue
+        deps.setdefault(package["name"], {})[package.get("version", "")] = package
 
-        name = package["name"]
-        deps.setdefault(name, {})
-
-        version = package.get("version")
-        deps[name][version] = package
+    if dependencies is None:
+        dependencies = _project_dependencies(lock)
 
     for dep in dependencies:
         req = Requirement(dep)

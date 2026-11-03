@@ -28,6 +28,7 @@ from typing import TYPE_CHECKING
 
 import pytest
 from packaging.metadata import parse_email
+from packaging.requirements import Requirement
 from pyproject_hooks import BuildBackendHookCaller, BuildBackendWarning
 
 from hatch_pinned_extra._compat import read_toml
@@ -93,3 +94,42 @@ def test_hook(
         meta = _metadata(wheel_dir / wheel)
         assert meta["provides_extra"] == ["pinned"]
         assert any("extra == 'pinned'" in requirement for requirement in meta["requires_dist"])
+
+
+@pytest.mark.parametrize(
+    ("location", "pinned"),
+    [
+        # Runs after the hook providing `dependencies`, so it pins those
+        ("dynamic_deps_pinned_last", {"typing-extensions"}),
+        # Runs before it, so `dependencies` is not set yet and the lockfile's are used
+        ("dynamic_deps_pinned_first", {"idna"}),
+    ],
+)
+def test_hook_order_with_dynamic_dependencies(
+    pytestconfig: pytest.Config,
+    location: str,
+    pinned: set[str],
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Hatchling runs metadata hooks in the order of their tables in `pyproject.toml`."""
+    project_path = pytestconfig.rootpath / f"fixtures/lockfiles/{location}"
+    toml_data = read_toml(project_path / "pyproject.toml")
+
+    hooks = BuildBackendHookCaller(
+        project_path.as_posix(),
+        toml_data["build-system"]["build-backend"],
+    )
+
+    with warnings.catch_warnings(), monkeypatch.context() as m:
+        warnings.simplefilter("error")
+        m.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
+        wheel = hooks.build_wheel(wheel_directory=tmp_path.as_posix())
+
+    meta = _metadata(tmp_path / wheel)
+    assert meta["requires_dist"][0] == "typing-extensions>=4"
+    assert {
+        Requirement(requirement).name
+        for requirement in meta["requires_dist"]
+        if "extra == 'pinned'" in requirement
+    } == pinned

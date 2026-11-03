@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling", "hatch-pinned-extra"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dynamic-deps-pinned-last"
+version = "0.1.0"
+description = ""
+requires-python = ">=3.10"
+dynamic = ["dependencies", "optional-dependencies"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dynamic_deps_pinned_last"]
+
+# `dependencies` come from the custom hook, `pinned_extra` runs last
+[tool.hatch.metadata.hooks.custom]
+
+[tool.hatch.metadata.hooks.pinned_extra]
+
+[tool.uv.sources]
+hatch-pinned-extra = { path = "../../..", editable = true }
