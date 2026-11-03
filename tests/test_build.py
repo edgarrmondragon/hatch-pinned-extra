@@ -22,6 +22,7 @@
 
 from __future__ import annotations
 
+import warnings
 import zipfile
 from typing import TYPE_CHECKING
 
@@ -84,7 +85,8 @@ def test_hook(
 
     with subtests.test("enabled"):
         wheel_dir = tmp_path / "enabled"
-        with monkeypatch.context() as m:
+        with warnings.catch_warnings(), monkeypatch.context() as m:
+            warnings.simplefilter("error")
             m.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
             wheel = hooks.build_wheel(wheel_directory=wheel_dir.as_posix())
 
