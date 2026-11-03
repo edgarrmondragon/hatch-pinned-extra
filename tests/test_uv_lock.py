@@ -388,11 +388,6 @@ def test_workspace_member_dependencies_are_included() -> None:
     assert {req.name for req in reqs} >= {"idna", "typing-extensions"}
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="`visited` is shared across the versions of a package, so only the first "
-    "version's extras are resolved",
-)
 def test_extras_of_every_locked_version_are_resolved() -> None:
     """Each fork of a package can pull different packages through the same extra."""
     lock = read_toml(Path("fixtures/lockfiles/forked_extras/uv.lock"))
@@ -402,10 +397,6 @@ def test_extras_of_every_locked_version_are_resolved() -> None:
     assert {req.name for req in reqs} == {"lib", "new-helper", "old-helper"}
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="`visited` is keyed by (name, extra) only, so markers from later paths are dropped",
-)
 def test_extra_reached_through_different_platform_markers() -> None:
     """A shared extra must stay installable on every platform that reaches it."""
     lock = read_toml(Path("fixtures/lockfiles/platform_extras/uv.lock"))

@@ -38,13 +38,16 @@ if TYPE_CHECKING:
 
 Deps: TypeAlias = dict[str, dict[str, dict[str, Any]]]
 
+# (package name, version, extra) -> markers accumulated on each path that resolved it
+_Visited: TypeAlias = dict[tuple[str, str, str], list[frozenset[str]]]
+
 
 def _extract_uv_requirements(
     deps: Deps,
     name: str,
     *markers: Marker,
     extras: set[str],
-    visited: set[tuple[str, str]],
+    visited: _Visited,
 ) -> list[_PinnedRequirement]:
     reqs = []
 
@@ -78,11 +81,16 @@ def _extract_uv_requirements(
             )
 
         # Handle extras recursively
+        # An extra is resolved once per locked version, since versions can map it to different
+        # packages. Another path to it is only skipped if an earlier path was no more restrictive,
+        # i.e. its markers are a subset, otherwise some platforms would lose the extra's pins.
         opt_deps = package.get("optional-dependencies", {})
+        path_markers = frozenset(str(m) for m in markers)
         for extra in extras:
-            if (name, extra) in visited:
+            seen = visited.setdefault((name, version, extra), [])
+            if any(prev <= path_markers for prev in seen):
                 continue
-            visited.add((name, extra))
+            seen.append(path_markers)
             for dep in opt_deps.get(extra, []):
                 dep_name = dep["name"]
                 dep_extras = set(dep.get("extra", []))
@@ -125,7 +133,7 @@ def parse_pinned_deps_from_uv_lock(
         name = canonicalize_name(req.name)
         markers = (req.marker,) if req.marker else ()
         extras = set(req.extras)
-        reqs.extend(_extract_uv_requirements(deps, name, *markers, extras=extras, visited=set()))
+        reqs.extend(_extract_uv_requirements(deps, name, *markers, extras=extras, visited={}))
 
     # Sort by name, version, and markers, and deduplicate the requirements
     return sorted(set(reqs))
