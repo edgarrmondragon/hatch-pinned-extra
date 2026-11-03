@@ -90,6 +90,8 @@ If `dependencies` is still unset when this plugin runs, it falls back to the dep
 
 - `lockfile`: path to the lockfile, relative to the project root. Defaults to `uv.lock`, which must be at the project root. `pylock.*.toml` files are also supported, and may be in a subdirectory.
 
+  When the plugin is [enabled](#enabling-the-plugin-at-build-time), the build fails if the lockfile doesn't exist or isn't a `uv.lock` or `pylock.*.toml` file.
+
 ### Enabling the plugin at build time
 
 The plugin requires the `HATCH_PINNED_EXTRA_ENABLE` environment variable to be set to a truthy value (e.g. `1`, `true`, `yes`, `on`) to activate. This design allows you to control when pinned dependencies are included:
