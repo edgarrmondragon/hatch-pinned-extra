@@ -88,6 +88,10 @@ def test_snapshot_project_metadata(
     pyproject = read_toml(Path("fixtures/lockfiles/project/pyproject.toml"))
     metadata: dict[str, Any] = {
         "dependencies": pyproject["project"]["dependencies"],
+        # TODO: Test with additional static optional deps once hatchling supports PEP 808
+        # https://peps.python.org/pep-0808/
+        # https://github.com/pypa/hatch/issues/2443
+        # "optional-dependencies": pyproject["project"]["optional-dependencies"],
     }
     hook = PinnedExtraMetadataHook(
         "fixtures/lockfiles/project",
