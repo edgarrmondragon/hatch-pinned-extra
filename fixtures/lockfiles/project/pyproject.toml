@@ -45,6 +45,9 @@ platforms = [
     "macos_x86_64",
     "macos_arm64",
     "windows_amd64",
+    "windows_arm64",
+    "linux_i686",
+    "linux_armv7l",
 ]
 python-order = "desc"
 

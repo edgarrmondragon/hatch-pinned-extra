@@ -5,41 +5,65 @@ environments = [
     "python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\" and platform_python_implementation == \"CPython\" and platform_system == \"Darwin\"",
     "python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"arm64\" and platform_python_implementation == \"CPython\" and platform_system == \"Darwin\"",
     "python_version == \"3.15\" and sys_platform == \"win32\" and platform_machine == \"AMD64\" and platform_python_implementation == \"CPython\" and platform_system == \"Windows\"",
+    "python_version == \"3.15\" and sys_platform == \"win32\" and platform_machine == \"ARM64\" and platform_python_implementation == \"CPython\" and platform_system == \"Windows\"",
+    "python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"i686\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
+    "python_version == \"3.15\" and sys_platform == \"linux\" and platform_machine == \"armv7l\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
     "python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"x86_64\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
     "python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"aarch64\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
     "python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\" and platform_python_implementation == \"CPython\" and platform_system == \"Darwin\"",
     "python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\" and platform_python_implementation == \"CPython\" and platform_system == \"Darwin\"",
     "python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"AMD64\" and platform_python_implementation == \"CPython\" and platform_system == \"Windows\"",
+    "python_version == \"3.14\" and sys_platform == \"win32\" and platform_machine == \"ARM64\" and platform_python_implementation == \"CPython\" and platform_system == \"Windows\"",
+    "python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"i686\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
+    "python_version == \"3.14\" and sys_platform == \"linux\" and platform_machine == \"armv7l\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
     "python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"x86_64\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
     "python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"aarch64\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
     "python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\" and platform_python_implementation == \"CPython\" and platform_system == \"Darwin\"",
     "python_version == \"3.13\" and sys_platform == \"darwin\" and platform_machine == \"arm64\" and platform_python_implementation == \"CPython\" and platform_system == \"Darwin\"",
     "python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"AMD64\" and platform_python_implementation == \"CPython\" and platform_system == \"Windows\"",
+    "python_version == \"3.13\" and sys_platform == \"win32\" and platform_machine == \"ARM64\" and platform_python_implementation == \"CPython\" and platform_system == \"Windows\"",
+    "python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"i686\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
+    "python_version == \"3.13\" and sys_platform == \"linux\" and platform_machine == \"armv7l\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
     "python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"x86_64\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
     "python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"aarch64\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
     "python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\" and platform_python_implementation == \"CPython\" and platform_system == \"Darwin\"",
     "python_version == \"3.12\" and sys_platform == \"darwin\" and platform_machine == \"arm64\" and platform_python_implementation == \"CPython\" and platform_system == \"Darwin\"",
     "python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"AMD64\" and platform_python_implementation == \"CPython\" and platform_system == \"Windows\"",
+    "python_version == \"3.12\" and sys_platform == \"win32\" and platform_machine == \"ARM64\" and platform_python_implementation == \"CPython\" and platform_system == \"Windows\"",
+    "python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"i686\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
+    "python_version == \"3.12\" and sys_platform == \"linux\" and platform_machine == \"armv7l\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
     "python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"x86_64\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
     "python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"aarch64\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
     "python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\" and platform_python_implementation == \"CPython\" and platform_system == \"Darwin\"",
     "python_version == \"3.11\" and sys_platform == \"darwin\" and platform_machine == \"arm64\" and platform_python_implementation == \"CPython\" and platform_system == \"Darwin\"",
     "python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"AMD64\" and platform_python_implementation == \"CPython\" and platform_system == \"Windows\"",
+    "python_version == \"3.11\" and sys_platform == \"win32\" and platform_machine == \"ARM64\" and platform_python_implementation == \"CPython\" and platform_system == \"Windows\"",
+    "python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"i686\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
+    "python_version == \"3.11\" and sys_platform == \"linux\" and platform_machine == \"armv7l\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
     "python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"x86_64\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
     "python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"aarch64\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
     "python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\" and platform_python_implementation == \"CPython\" and platform_system == \"Darwin\"",
     "python_version == \"3.10\" and sys_platform == \"darwin\" and platform_machine == \"arm64\" and platform_python_implementation == \"CPython\" and platform_system == \"Darwin\"",
     "python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"AMD64\" and platform_python_implementation == \"CPython\" and platform_system == \"Windows\"",
+    "python_version == \"3.10\" and sys_platform == \"win32\" and platform_machine == \"ARM64\" and platform_python_implementation == \"CPython\" and platform_system == \"Windows\"",
+    "python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"i686\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
+    "python_version == \"3.10\" and sys_platform == \"linux\" and platform_machine == \"armv7l\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
     "python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"x86_64\" and os_name == \"posix\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
     "python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"aarch64\" and os_name == \"posix\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
     "python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\" and os_name == \"posix\" and platform_python_implementation == \"CPython\" and platform_system == \"Darwin\"",
     "python_version == \"3.9\" and sys_platform == \"darwin\" and platform_machine == \"arm64\" and os_name == \"posix\" and platform_python_implementation == \"CPython\" and platform_system == \"Darwin\"",
     "python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"AMD64\" and os_name == \"nt\" and platform_python_implementation == \"CPython\" and platform_system == \"Windows\"",
+    "python_version == \"3.9\" and sys_platform == \"win32\" and platform_machine == \"ARM64\" and os_name == \"nt\" and platform_python_implementation == \"CPython\" and platform_system == \"Windows\"",
+    "python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"i686\" and os_name == \"posix\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
+    "python_version == \"3.9\" and sys_platform == \"linux\" and platform_machine == \"armv7l\" and os_name == \"posix\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
     "python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"x86_64\" and os_name == \"posix\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
     "python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"aarch64\" and os_name == \"posix\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
     "python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"x86_64\" and os_name == \"posix\" and platform_python_implementation == \"CPython\" and platform_system == \"Darwin\"",
     "python_version == \"3.8\" and sys_platform == \"darwin\" and platform_machine == \"arm64\" and os_name == \"posix\" and platform_python_implementation == \"CPython\" and platform_system == \"Darwin\"",
     "python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"AMD64\" and os_name == \"nt\" and platform_python_implementation == \"CPython\" and platform_system == \"Windows\"",
+    "python_version == \"3.8\" and sys_platform == \"win32\" and platform_machine == \"ARM64\" and os_name == \"nt\" and platform_python_implementation == \"CPython\" and platform_system == \"Windows\"",
+    "python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"i686\" and os_name == \"posix\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
+    "python_version == \"3.8\" and sys_platform == \"linux\" and platform_machine == \"armv7l\" and os_name == \"posix\" and platform_python_implementation == \"CPython\" and platform_system == \"Linux\"",
 ]
 requires-python = ">=3.8"
 created-by = "nab"
@@ -892,6 +916,15 @@ size = 1830727
 sha256 = "85210c4d99a0114f5a9481b44560d7d1e35e32cc5634c656bc48e590b669b145"
 
 [[packages.wheels]]
+name = "pydantic_core-2.27.2-cp38-cp38-manylinux_2_17_armv7l.manylinux2014_armv7l.whl"
+upload-time = 2024-12-18 11:29:49.098514+00:00
+url = "https://files.pythonhosted.org/packages/8f/df/59f915c8b929d5f61e5a46accf748a87110ba145156f9326d1a7d28912b2/pydantic_core-2.27.2-cp38-cp38-manylinux_2_17_armv7l.manylinux2014_armv7l.whl"
+size = 1868393
+
+[packages.wheels.hashes]
+sha256 = "d716e2e30c6f140d7560ef1538953a5cd1a87264c737643d481f2779fc247fe1"
+
+[[packages.wheels]]
 name = "pydantic_core-2.27.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
 upload-time = 2024-12-18 11:29:57.130505+00:00
 url = "https://files.pythonhosted.org/packages/f7/a3/5f19bc495793546825ab160e530330c2afcee2281c02b5ffafd0b32ac05e/pydantic_core-2.27.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
@@ -899,6 +932,15 @@ size = 1996493
 
 [packages.wheels.hashes]
 sha256 = "9fdbe7629b996647b99c01b37f11170a57ae675375b14b8c13b8518b8320ced5"
+
+[[packages.wheels]]
+name = "pydantic_core-2.27.2-cp38-cp38-manylinux_2_5_i686.manylinux1_i686.whl"
+upload-time = 2024-12-18 11:30:00.681065+00:00
+url = "https://files.pythonhosted.org/packages/ed/e8/e0102c2ec153dc3eed88aea03990e1b06cfbca532916b8a48173245afe60/pydantic_core-2.27.2-cp38-cp38-manylinux_2_5_i686.manylinux1_i686.whl"
+size = 1998544
+
+[packages.wheels.hashes]
+sha256 = "d262606bf386a5ba0b0af3b97f37c83d7011439e3dc1a9298f21efb292e42f1a"
 
 [[packages.wheels]]
 name = "pydantic_core-2.27.2-cp38-cp38-win_amd64.whl"
@@ -956,6 +998,15 @@ size = 1955266
 sha256 = "8b10e3e8fd7ddc2bd915848a2768e44c15b22936f1cc54c462ad1164deb02655"
 
 [[packages.wheels]]
+name = "pydantic_core-2.46.5-cp39-cp39-manylinux_2_17_armv7l.manylinux2014_armv7l.whl"
+upload-time = 2026-08-28 10:00:25.489765+00:00
+url = "https://files.pythonhosted.org/packages/aa/9e/5522b09d12e8720013f2e4ac174999f40a05501bd15ad2bfa197bc136198/pydantic_core-2.46.5-cp39-cp39-manylinux_2_17_armv7l.manylinux2014_armv7l.whl"
+size = 2023466
+
+[packages.wheels.hashes]
+sha256 = "f077d0b97ab11fa7dcc633fca53515f290bca8a8a633e966d5b6d1879d9ed01a"
+
+[[packages.wheels]]
 name = "pydantic_core-2.46.5-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
 upload-time = 2026-08-28 10:00:32.285340+00:00
 url = "https://files.pythonhosted.org/packages/a8/9e/0c0cc24149429c030bef1a5c1776150e7e61fcbbfc068c6d1f9de90eb259/pydantic_core-2.46.5-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
@@ -963,6 +1014,15 @@ size = 2067262
 
 [packages.wheels.hashes]
 sha256 = "978e7b97d4824b5be09c69fb70507cbde3b0323fc147332ca40a94d9a6a0ebbf"
+
+[[packages.wheels]]
+name = "pydantic_core-2.46.5-cp39-cp39-manylinux_2_5_i686.manylinux1_i686.whl"
+upload-time = 2026-08-28 10:00:37.829257+00:00
+url = "https://files.pythonhosted.org/packages/bf/7e/d3088a2717b7bb316d8d0e64a4b0caf994769e88c56df79df547d75c1dc0/pydantic_core-2.46.5-cp39-cp39-manylinux_2_5_i686.manylinux1_i686.whl"
+size = 2134727
+
+[packages.wheels.hashes]
+sha256 = "771cf63ae0b1b50dd22e5f3e3549fab5f3f4ff1635d352a9e1a97fe01c7b2e64"
 
 [[packages.wheels]]
 name = "pydantic_core-2.46.5-cp39-cp39-win_amd64.whl"
@@ -1020,6 +1080,15 @@ size = 2052460
 sha256 = "3aa9de446b793de2beb6fa2d9d0961803126c4e2a99c2f25ab59b9fd6ea125c0"
 
 [[packages.wheels]]
+name = "pydantic_core-2.50.1-cp310-cp310-manylinux_2_17_armv7l.manylinux2014_armv7l.whl"
+upload-time = 2026-10-11 18:31:43.572873+00:00
+url = "https://files.pythonhosted.org/packages/7a/1e/3d192ffa39ce3bd0e98e988fb5c055cfbf4af6e6e155a4ca5baa86d1f2cc/pydantic_core-2.50.1-cp310-cp310-manylinux_2_17_armv7l.manylinux2014_armv7l.whl"
+size = 2190750
+
+[packages.wheels.hashes]
+sha256 = "de531ce1e2a3364e8767878b58f4ff728a434b4fde089781fe30b1e08e2396e0"
+
+[[packages.wheels]]
 name = "pydantic_core-2.50.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
 upload-time = 2026-10-11 18:31:47.557020+00:00
 url = "https://files.pythonhosted.org/packages/1b/1a/21a58791021397d9ca35295e3f4291c16e319155c5904334b89eb07e97e1/pydantic_core-2.50.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
@@ -1027,6 +1096,15 @@ size = 2160719
 
 [packages.wheels.hashes]
 sha256 = "f77ac30b19221cd9bd3fcfa3d4614eff93140d0572ab730cded17b64adca05f3"
+
+[[packages.wheels]]
+name = "pydantic_core-2.50.1-cp310-cp310-manylinux_2_5_i686.manylinux1_i686.whl"
+upload-time = 2026-10-11 18:31:49.987489+00:00
+url = "https://files.pythonhosted.org/packages/af/e8/1a6625d6e99250388dd0ae817c5d75839cd6103e7b790f59e0ffff74955d/pydantic_core-2.50.1-cp310-cp310-manylinux_2_5_i686.manylinux1_i686.whl"
+size = 2271176
+
+[packages.wheels.hashes]
+sha256 = "30ddf019d082c117b5d309e5b86710c2a78909907ec1a9381feec3eec02eca0b"
 
 [[packages.wheels]]
 name = "pydantic_core-2.50.1-cp310-cp310-win_amd64.whl"
@@ -1065,6 +1143,15 @@ size = 2049557
 sha256 = "94be440c03fede26969a5ce75468e0e6a9927a1b46d9b679ee8adc1b057b0350"
 
 [[packages.wheels]]
+name = "pydantic_core-2.50.1-cp311-cp311-manylinux_2_17_armv7l.manylinux2014_armv7l.whl"
+upload-time = 2026-10-11 18:32:02.442467+00:00
+url = "https://files.pythonhosted.org/packages/a5/9d/cd5dfe13928f55e236dff3a1bee06721d318ca6c955d9ca993b0a5d09f39/pydantic_core-2.50.1-cp311-cp311-manylinux_2_17_armv7l.manylinux2014_armv7l.whl"
+size = 2188153
+
+[packages.wheels.hashes]
+sha256 = "36c426eac0af8d1529ff8467e612b933346caec1fdc0d774f78f67a1a11e16c1"
+
+[[packages.wheels]]
 name = "pydantic_core-2.50.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
 upload-time = 2026-10-11 18:32:06.616613+00:00
 url = "https://files.pythonhosted.org/packages/ed/60/7f2ae89c37e69a3dc0da9ff57b0388c285542c688d05f36767770429de85/pydantic_core-2.50.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
@@ -1074,6 +1161,15 @@ size = 2157623
 sha256 = "8812592c85d0edf423f10eadcef42716d71e8219085ad9e85b775057b7306133"
 
 [[packages.wheels]]
+name = "pydantic_core-2.50.1-cp311-cp311-manylinux_2_5_i686.manylinux1_i686.whl"
+upload-time = 2026-10-11 18:32:09.399423+00:00
+url = "https://files.pythonhosted.org/packages/3f/d5/5b620aaf40dc631d911565b64d49d3fa8422027c046a7a96dc4e4921ae98/pydantic_core-2.50.1-cp311-cp311-manylinux_2_5_i686.manylinux1_i686.whl"
+size = 2267344
+
+[packages.wheels.hashes]
+sha256 = "476f6ed8e43cd1e0b460920e23571700872b284e77331cb30c4faf459cf48a4b"
+
+[[packages.wheels]]
 name = "pydantic_core-2.50.1-cp311-cp311-win_amd64.whl"
 upload-time = 2026-10-11 18:32:17.153655+00:00
 url = "https://files.pythonhosted.org/packages/24/65/3e875e7991eaecd4d70686293ff0d8a99aa8f93dc295e6a21c3d702912fb/pydantic_core-2.50.1-cp311-cp311-win_amd64.whl"
@@ -1081,6 +1177,15 @@ size = 2176332
 
 [packages.wheels.hashes]
 sha256 = "0048b6dddc8ef4b64fccaad878bd143b0c3882ea9936279dc11d613f6b7dd1bc"
+
+[[packages.wheels]]
+name = "pydantic_core-2.50.1-cp311-cp311-win_arm64.whl"
+upload-time = 2026-10-11 18:32:18.490424+00:00
+url = "https://files.pythonhosted.org/packages/ab/5c/58dbd17c61f209d91c70f549eb7a3bbec7023e89ea12dead091462d6d658/pydantic_core-2.50.1-cp311-cp311-win_arm64.whl"
+size = 2182471
+
+[packages.wheels.hashes]
+sha256 = "6a733778df2f7087ec1100ed0b41533e4f3001976e99570fa34f57c66e7f8e3e"
 
 [[packages.wheels]]
 name = "pydantic_core-2.50.1-cp312-cp312-macosx_10_12_x86_64.whl"
@@ -1110,6 +1215,15 @@ size = 2048429
 sha256 = "c18db21573bd2c6489f9a544b7499f0df2853958c568e5e783536ee1f690af41"
 
 [[packages.wheels]]
+name = "pydantic_core-2.50.1-cp312-cp312-manylinux_2_17_armv7l.manylinux2014_armv7l.whl"
+upload-time = 2026-10-11 18:32:24.697369+00:00
+url = "https://files.pythonhosted.org/packages/c0/7d/fed95d18bf2b5abe2d5ab2bbec4184bfc22b6805994a33ccdae8edffd25a/pydantic_core-2.50.1-cp312-cp312-manylinux_2_17_armv7l.manylinux2014_armv7l.whl"
+size = 2173274
+
+[packages.wheels.hashes]
+sha256 = "cb57f304525a5e3c13333b772bf9a473f36326e9c821b2e8e1b2fd36f80ae2c3"
+
+[[packages.wheels]]
 name = "pydantic_core-2.50.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
 upload-time = 2026-10-11 18:32:29.553261+00:00
 url = "https://files.pythonhosted.org/packages/90/24/48cd98388e4ac2c08d0800af36d15413db15e20387f1038123a2c86cb2f6/pydantic_core-2.50.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
@@ -1119,6 +1233,15 @@ size = 2160157
 sha256 = "93ba4e9d8210d941c200431a56b2c0400b131865947903937ed3ec5404307d2e"
 
 [[packages.wheels]]
+name = "pydantic_core-2.50.1-cp312-cp312-manylinux_2_5_i686.manylinux1_i686.whl"
+upload-time = 2026-10-11 18:32:32.622488+00:00
+url = "https://files.pythonhosted.org/packages/90/31/4b43f08131b2098e73a852fd932063385f3103b33839fd9d1abdb89e673d/pydantic_core-2.50.1-cp312-cp312-manylinux_2_5_i686.manylinux1_i686.whl"
+size = 2242700
+
+[packages.wheels.hashes]
+sha256 = "a3cda0e538208e5d722bbf3698b24f19c0a7d05bc8d5f8a7f9b121ea7fa243d9"
+
+[[packages.wheels]]
 name = "pydantic_core-2.50.1-cp312-cp312-win_amd64.whl"
 upload-time = 2026-10-11 18:32:40.112226+00:00
 url = "https://files.pythonhosted.org/packages/c5/17/8bbd530b8659e9d963f5b16f6cb8e159f4cd174b4d6304e48969ab12dba8/pydantic_core-2.50.1-cp312-cp312-win_amd64.whl"
@@ -1126,6 +1249,15 @@ size = 2172522
 
 [packages.wheels.hashes]
 sha256 = "132529c83901437ff642f585216831bf5fd7a91df66829907e155192ead62498"
+
+[[packages.wheels]]
+name = "pydantic_core-2.50.1-cp312-cp312-win_arm64.whl"
+upload-time = 2026-10-11 18:32:41.606631+00:00
+url = "https://files.pythonhosted.org/packages/af/9f/a79d690b127e4e3cff143d031538ab9aa715f6b2fbeecbd07cd6f2bf9fb7/pydantic_core-2.50.1-cp312-cp312-win_arm64.whl"
+size = 2161366
+
+[packages.wheels.hashes]
+sha256 = "4e834f6a8e4ff772dcc34f58ef5504147a3ea5b0f4eeb13b0f8eb2ca75ac57f1"
 
 [[packages.wheels]]
 name = "pydantic_core-2.50.1-cp313-cp313-macosx_10_12_x86_64.whl"
@@ -1155,6 +1287,15 @@ size = 2047049
 sha256 = "409e0ea40ec30d9158f33574fd758e689f6045a0f2596701828c27816ca9687d"
 
 [[packages.wheels]]
+name = "pydantic_core-2.50.1-cp313-cp313-manylinux_2_17_armv7l.manylinux2014_armv7l.whl"
+upload-time = 2026-10-11 18:32:47.722290+00:00
+url = "https://files.pythonhosted.org/packages/d7/43/34210124d504c553688f2f04b48500b131237528ac545b445e0d6d30e0d5/pydantic_core-2.50.1-cp313-cp313-manylinux_2_17_armv7l.manylinux2014_armv7l.whl"
+size = 2173415
+
+[packages.wheels.hashes]
+sha256 = "131059670f1d2444269b8585cb888963994871932447c08b39ac6a51fcfef658"
+
+[[packages.wheels]]
 name = "pydantic_core-2.50.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
 upload-time = 2026-10-11 18:32:52.714059+00:00
 url = "https://files.pythonhosted.org/packages/1c/bc/d79d000e5203ebef39af839f2ce77a777fcad6e08ad26af9a2fcd114ffc8/pydantic_core-2.50.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
@@ -1164,6 +1305,15 @@ size = 2158402
 sha256 = "17e722e156d0444ecaefbe640bdb60928752bf2013e2b7a11cdb099aaae19bec"
 
 [[packages.wheels]]
+name = "pydantic_core-2.50.1-cp313-cp313-manylinux_2_5_i686.manylinux1_i686.whl"
+upload-time = 2026-10-11 18:32:55.641668+00:00
+url = "https://files.pythonhosted.org/packages/1a/f5/c1481f8669f6060d89110c9b1374173fc8767ca276b84f4870bd8acd5e3f/pydantic_core-2.50.1-cp313-cp313-manylinux_2_5_i686.manylinux1_i686.whl"
+size = 2242303
+
+[packages.wheels.hashes]
+sha256 = "41bc8237121bd8dc8d888dfd6279fc166ffc88c1f1bf3a8bf00869680533ca4c"
+
+[[packages.wheels]]
 name = "pydantic_core-2.50.1-cp313-cp313-win_amd64.whl"
 upload-time = 2026-10-11 18:33:03.919876+00:00
 url = "https://files.pythonhosted.org/packages/2d/1f/323f78ddd9d9938aac420c1abb4e8ba799fc8bdab0acc67c0593b837c979/pydantic_core-2.50.1-cp313-cp313-win_amd64.whl"
@@ -1171,6 +1321,15 @@ size = 2170840
 
 [packages.wheels.hashes]
 sha256 = "7816e98acc08119dc0f340ab167048ecc54126316330c1f0caf7c6756c88e28f"
+
+[[packages.wheels]]
+name = "pydantic_core-2.50.1-cp313-cp313-win_arm64.whl"
+upload-time = 2026-10-11 18:33:05.518594+00:00
+url = "https://files.pythonhosted.org/packages/cb/09/8497c52a739ae425c3ac2f7f56414cbc711c67d374346174f40fe2062644/pydantic_core-2.50.1-cp313-cp313-win_arm64.whl"
+size = 2161633
+
+[packages.wheels.hashes]
+sha256 = "c17799a62c142d61b8a3c51752a7cbc87fe2ad4ccfab10e628a77b405075c662"
 
 [[packages.wheels]]
 name = "pydantic_core-2.50.1-cp314-cp314-macosx_10_12_x86_64.whl"
@@ -1200,6 +1359,15 @@ size = 2049435
 sha256 = "0036473f5583e6a60e50b8b21651511564277a3f05cc5dab8cf579f552cd5f6c"
 
 [[packages.wheels]]
+name = "pydantic_core-2.50.1-cp314-cp314-manylinux_2_17_armv7l.manylinux2014_armv7l.whl"
+upload-time = 2026-10-11 18:33:12.368098+00:00
+url = "https://files.pythonhosted.org/packages/ba/8e/f195aebec49ad12318876ac2368c197a7939f5d52f8e156d2238ef8a4588/pydantic_core-2.50.1-cp314-cp314-manylinux_2_17_armv7l.manylinux2014_armv7l.whl"
+size = 2172975
+
+[packages.wheels.hashes]
+sha256 = "992c3514ec891fa7858099183e4d64e6bd5a5d4ff452fae29df22faa77a006bb"
+
+[[packages.wheels]]
 name = "pydantic_core-2.50.1-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
 upload-time = 2026-10-11 18:33:17.510113+00:00
 url = "https://files.pythonhosted.org/packages/45/35/38f6d6564fae57d9b12e5676dfa947e0e7d5c46dbeaa7eb3352261d6d299/pydantic_core-2.50.1-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
@@ -1209,6 +1377,15 @@ size = 2159857
 sha256 = "42b54c2c90ad348b5e3a85e03e715d572c1fde357ef104cdfe3b03b697a404ea"
 
 [[packages.wheels]]
+name = "pydantic_core-2.50.1-cp314-cp314-manylinux_2_5_i686.manylinux1_i686.whl"
+upload-time = 2026-10-11 18:33:21.393815+00:00
+url = "https://files.pythonhosted.org/packages/8c/6a/e63842252702aa4ec6e6b7178ca85e541a77459076592c23ebe2d9840b33/pydantic_core-2.50.1-cp314-cp314-manylinux_2_5_i686.manylinux1_i686.whl"
+size = 2243876
+
+[packages.wheels.hashes]
+sha256 = "fe90228920fd8ff2be62622b6bb8a2b11acd65046d50c6b130614b5879605a20"
+
+[[packages.wheels]]
 name = "pydantic_core-2.50.1-cp314-cp314-win_amd64.whl"
 upload-time = 2026-10-11 18:33:32.139916+00:00
 url = "https://files.pythonhosted.org/packages/14/4c/350a2415209c43d670eb71d3c040f332c04a30583d39e311b05c7ac15762/pydantic_core-2.50.1-cp314-cp314-win_amd64.whl"
@@ -1216,6 +1393,15 @@ size = 2171586
 
 [packages.wheels.hashes]
 sha256 = "d32f3acc081cc3923386d88f422cde8892335e95f034e0104bb4cf9310d9915f"
+
+[[packages.wheels]]
+name = "pydantic_core-2.50.1-cp314-cp314-win_arm64.whl"
+upload-time = 2026-10-11 18:33:33.896068+00:00
+url = "https://files.pythonhosted.org/packages/bf/92/9bea6ca96580a0902fed366f064f0829e404f41889b34543279a1162b888/pydantic_core-2.50.1-cp314-cp314-win_arm64.whl"
+size = 2155773
+
+[packages.wheels.hashes]
+sha256 = "bed5163e03b98bc1fa2eb05d74c63d9c5c95d8ed6254985481640fbf5e237dea"
 
 [[packages.wheels]]
 name = "pydantic_core-2.50.1-cp315-cp315-macosx_10_12_x86_64.whl"
@@ -1245,6 +1431,15 @@ size = 2048252
 sha256 = "23edad659e8dbd8ca7e4e877fe6c81573abbdf215bd25a68b53e1272f58b80c7"
 
 [[packages.wheels]]
+name = "pydantic_core-2.50.1-cp315-cp315-manylinux_2_17_armv7l.manylinux2014_armv7l.whl"
+upload-time = 2026-10-11 18:34:09.592221+00:00
+url = "https://files.pythonhosted.org/packages/b2/54/13f419bf1eb59852003818e25935aaf175687d978f4c4bca70e08fe40a3b/pydantic_core-2.50.1-cp315-cp315-manylinux_2_17_armv7l.manylinux2014_armv7l.whl"
+size = 2173376
+
+[packages.wheels.hashes]
+sha256 = "3a5fce22f1e87d181e924e12da7d81cfe031fb3881a5ddf26ad28f141756ca43"
+
+[[packages.wheels]]
 name = "pydantic_core-2.50.1-cp315-cp315-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
 upload-time = 2026-10-11 18:34:15.560294+00:00
 url = "https://files.pythonhosted.org/packages/b8/0d/1b1149f60a00ea21ba5f70e28acbd40feb4598af414f80f53c921fac07c9/pydantic_core-2.50.1-cp315-cp315-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
@@ -1254,6 +1449,15 @@ size = 2159961
 sha256 = "7689580e72a642ab5ec64d5f55b2e33636fa43b4ebe63c0c2c965ef307c7d1aa"
 
 [[packages.wheels]]
+name = "pydantic_core-2.50.1-cp315-cp315-manylinux_2_5_i686.manylinux1_i686.whl"
+upload-time = 2026-10-11 18:34:19.402261+00:00
+url = "https://files.pythonhosted.org/packages/6a/85/26901a490522b7f75ef9bb9a7afb73e5bb550f0e1cb5b99a0069183e2eb9/pydantic_core-2.50.1-cp315-cp315-manylinux_2_5_i686.manylinux1_i686.whl"
+size = 2244090
+
+[packages.wheels.hashes]
+sha256 = "40f523349960fa30f3ea51404308ff50f9997a90df639590f47a057c1f32b415"
+
+[[packages.wheels]]
 name = "pydantic_core-2.50.1-cp315-cp315-win_amd64.whl"
 upload-time = 2026-10-11 18:34:29.508272+00:00
 url = "https://files.pythonhosted.org/packages/5f/98/f9bd7e1f9b6709f155acb9ef826d9c3884fe925f811fd8e55b9b52280bad/pydantic_core-2.50.1-cp315-cp315-win_amd64.whl"
@@ -1261,6 +1465,15 @@ size = 2171681
 
 [packages.wheels.hashes]
 sha256 = "983a662de2571cb2502fc8ff47b6770b03d025d2eb314c92f77b3f07c74720ed"
+
+[[packages.wheels]]
+name = "pydantic_core-2.50.1-cp315-cp315-win_arm64.whl"
+upload-time = 2026-10-11 18:34:31.455313+00:00
+url = "https://files.pythonhosted.org/packages/10/87/4bb3e1e7f385c076ab5af4d6dd0571b22042cd8207eb810d5b9fef15ae31/pydantic_core-2.50.1-cp315-cp315-win_arm64.whl"
+size = 2156251
+
+[packages.wheels.hashes]
+sha256 = "94845ff54dc5193f228cab81b2662a04bfbb892e95bdc15edf7399000ce57d54"
 
 [[packages]]
 name = "python-dateutil"
@@ -1763,6 +1976,9 @@ platforms = [
     "macos_x86_64",
     "macos_arm64",
     "windows_amd64",
+    "windows_arm64",
+    "linux_i686",
+    "linux_armv7l",
 ]
 cli-project-overrides = [
     "--project-uploaded-prior-to=P7D",
