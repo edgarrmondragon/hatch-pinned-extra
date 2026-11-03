@@ -88,38 +88,34 @@ class PinnedExtraMetadataHook(MetadataHookInterface):
         root_path = Path(self.root)
 
         lock_path = root_path / lockfile
-        if not lock_path.exists():
-            warnings.warn(
-                f"{lock_path} was not found in {self.root}. "
-                f"Skipping generation of the '{extra_name}' extra.",
-                UserWarning,
-                stacklevel=2,
-            )
-            return
+        is_uv_lock = lockfile == "uv.lock"
+        is_pylock = lock_path.name.startswith("pylock.") and lock_path.name.endswith(".toml")
 
-        if lockfile == "uv.lock":
-            lock = read_toml(lock_path)
+        if not (is_uv_lock or is_pylock):
+            msg = (
+                f"The configured lockfile '{lockfile}' is neither uv.lock nor a "
+                f"pylock.*.toml file, so the '{extra_name}' extra cannot be generated."
+            )
+            raise ValueError(msg)
+
+        if not lock_path.exists():
+            msg = (
+                f"{lock_path} was not found in {self.root}, so the '{extra_name}' extra "
+                "cannot be generated."
+            )
+            raise FileNotFoundError(msg)
+
+        lock = read_toml(lock_path)
+
+        if is_uv_lock:
             dependencies = metadata.get("dependencies")
             if dependencies is None and "dependencies" not in metadata.get("dynamic", []):
                 # No dependencies declared. If they were dynamic, read them from the lockfile.
                 dependencies = []
 
             pinned_reqs = parse_pinned_deps_from_uv_lock(lock, dependencies)
-
-        elif lock_path.name.startswith("pylock.") and lock_path.name.endswith(".toml"):
-            lock = read_toml(lock_path)
-            pinned_reqs = parse_pinned_deps_from_pylock(lock)
-
         else:
-            warnings.warn(
-                (
-                    f"The configured lockfile '{lockfile}' is neither uv.lock nor a "
-                    f"pylock.*.toml file. Skipping generation of the '{extra_name}' extra."
-                ),
-                UserWarning,
-                stacklevel=2,
-            )
-            return
+            pinned_reqs = parse_pinned_deps_from_pylock(lock)
 
         # add the pinned dependencies to the project table
         metadata.setdefault("optional-dependencies", {})

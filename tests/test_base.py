@@ -21,6 +21,7 @@
 
 # ruff: file-ignore[line-too-long]
 
+import re
 import shutil
 from importlib.metadata import entry_points
 from pathlib import Path
@@ -43,7 +44,7 @@ def test_entry_point_is_loadable() -> None:
 def test_missing_files(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
     hook = PinnedExtraMetadataHook(str(tmp_path), {"extra-name": "pinned"})
-    with pytest.warns(UserWarning, match=r"was not found .* Skipping generation"):
+    with pytest.raises(FileNotFoundError, match=r"was not found .* 'pinned' extra cannot be"):
         hook.update({})
 
 
@@ -55,7 +56,7 @@ def test_invalid_file_type(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> N
         str(tmp_path),
         {"extra-name": "pinned", "lockfile": lockfile},
     )
-    with pytest.warns(UserWarning, match=r"neither uv.lock .* Skipping generation"):
+    with pytest.raises(ValueError, match=r"neither uv.lock .* 'pinned' extra cannot be"):
         hook.update({})
 
 
@@ -217,9 +218,9 @@ def test_uv_lock_in_subdirectory_is_not_supported(
     )
     pyproject = read_toml(tmp_project_path / "pyproject.toml")
     metadata = {"dependencies": pyproject["project"]["dependencies"]}
-    with pytest.warns(
-        UserWarning,
-        match=r"configured lockfile 'requirements/uv.lock' is neither uv.lock nor a pylock.*.toml file. Skipping generation of the 'pinned' extra.",
+    with pytest.raises(
+        ValueError,
+        match=re.escape("configured lockfile 'requirements/uv.lock' is neither uv.lock nor a"),
     ):
         hook.update(metadata)
 
