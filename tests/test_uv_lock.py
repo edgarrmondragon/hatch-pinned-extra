@@ -463,3 +463,34 @@ def test_update_metadata_ignores_lockfile_dependencies_if_not_dynamic(
     hook.update(metadata)
 
     assert metadata["optional-dependencies"]["pinned"] == []
+
+
+def test_dependencies_default_to_nothing_without_a_root_project() -> None:
+    lock = {"package": [{"name": "idna", "version": "3.20"}]}
+
+    assert parse_pinned_deps_from_uv_lock(lock) == []
+
+
+def test_local_package_cycle_terminates() -> None:
+    """Workspace members can depend on each other, or on the root project."""
+    lock = {
+        "package": [
+            {
+                "name": "app",
+                "version": "0.1.0",
+                "source": {"editable": "."},
+                "dependencies": [{"name": "lib"}],
+            },
+            {
+                "name": "lib",
+                "version": "0.2.0",
+                "source": {"editable": "packages/lib"},
+                "dependencies": [{"name": "app"}, {"name": "lib"}, {"name": "idna"}],
+            },
+            {"name": "idna", "version": "3.20"},
+        ],
+    }
+
+    reqs = parse_pinned_deps_from_uv_lock(lock)
+
+    assert [(req.name, str(req.version)) for req in reqs] == [("idna", "3.20")]
