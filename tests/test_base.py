@@ -197,6 +197,60 @@ def test_pylock(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     }
 
 
+def test_uv_lock_in_subdirectory_is_not_supported(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
+    project_path = Path("fixtures/lockfiles/project")
+    tmp_project_path = tmp_path / "project"
+
+    lockfile = "requirements/uv.lock"
+    shutil.copytree(project_path, tmp_project_path)
+    lockfile_path = tmp_project_path / lockfile
+    lockfile_path.parent.mkdir()
+    shutil.move(tmp_project_path / "uv.lock", lockfile_path)
+
+    hook = PinnedExtraMetadataHook(
+        str(tmp_project_path),
+        {"extra-name": "pinned", "lockfile": lockfile},
+    )
+    pyproject = read_toml(tmp_project_path / "pyproject.toml")
+    metadata = {"dependencies": pyproject["project"]["dependencies"]}
+    with pytest.warns(
+        UserWarning,
+        match=r"configured lockfile 'requirements/uv.lock' is neither uv.lock nor a pylock.*.toml file. Skipping generation of the 'pinned' extra.",
+    ):
+        hook.update(metadata)
+
+    assert "optional-dependencies" not in metadata
+
+
+def test_pylock_relative_path(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
+    project_path = Path("fixtures/lockfiles/project")
+    tmp_project_path = tmp_path / "project"
+
+    lockfile = "requirements/pylock.uv.toml"
+    shutil.copytree(project_path, tmp_project_path)
+    lockfile_path = tmp_project_path / lockfile
+    lockfile_path.parent.mkdir()
+    shutil.move(tmp_project_path / "pylock.uv.toml", lockfile_path)
+    tmp_project_path.joinpath("uv.lock").unlink()
+
+    hook = PinnedExtraMetadataHook(
+        str(tmp_project_path),
+        {"extra-name": "pinned", "lockfile": lockfile},
+    )
+    pyproject = read_toml(tmp_project_path / "pyproject.toml")
+    metadata = {"dependencies": pyproject["project"]["dependencies"]}
+    hook.update(metadata)
+
+    extra = metadata["optional-dependencies"]["pinned"]
+    assert isinstance(extra, list)
+    assert len(extra) > 0
+
+
 def test_pinned_requirement_sorting() -> None:
     reqs = [
         _PinnedRequirement("foo", Version("1.0"), Marker("sys_platform == 'win32'")),
