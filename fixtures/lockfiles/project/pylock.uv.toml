@@ -205,6 +205,10 @@ sdist = { url = "https://files.pythonhosted.org/packages/2e/02/6e0ae9cc61bd3169d
 wheels = [{ url = "https://files.pythonhosted.org/packages/1e/41/f7dcf80b81ee8e71c1a2b59f14208bc723edbd89ed027a73b175abf6348e/opentelemetry_api-1.45.1-py3-none-any.whl", upload-time = 2026-10-06T17:32:33Z, size = 60256, hashes = { sha256 = "b31553efa588ae44bc306f863c785c5333a9ecc091248c6ee68b4b6c87fdedfb" } }]
 
 [[packages]]
+name = "project"
+directory = { path = ".", editable = true }
+
+[[packages]]
 name = "pydantic"
 version = "2.10.6"
 marker = "python_full_version < '3.9'"

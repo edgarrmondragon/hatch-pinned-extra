@@ -101,6 +101,13 @@ url = "https://files.pythonhosted.org/packages/1e/41/f7dcf80b81ee8e71c1a2b59f142
 sha256 = "b31553efa588ae44bc306f863c785c5333a9ecc091248c6ee68b4b6c87fdedfb"
 
 [[packages]]
+name = "project"
+
+[packages.directory]
+path = "."
+editable = true
+
+[[packages]]
 name = "pydantic"
 version = "2.14.1"
 

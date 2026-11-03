@@ -1,3 +1,10 @@
+[build-system]
+requires = [
+    "hatchling",
+    "hatch_pinned_extra",
+]
+build-backend = "hatchling.build"
+
 [project]
 name = "project"
 version = "0.1.0"
@@ -11,13 +18,22 @@ dependencies = [
     "importlib-resources; python_version < '3.10'",
     "fastapi>=0.115.8",
 ]
-optional-dependencies.cli = ["click"]
+# TODO: Test with additional static optional deps once hatchling supports PEP 808
+# https://peps.python.org/pep-0808/
+# https://github.com/pypa/hatch/issues/2443
+# optional-dependencies.cli = ["click"]
+dynamic = [
+    "optional-dependencies",
+]
 
 [dependency-groups]
 dev = [
     "pytest>=8; python_version >= '3.13'",
     "pytest>=7,<8; python_version < '3.13'",
 ]
+
+[tool.hatch.metadata.hooks.pinned_extra]
+name = "pinned"
 
 [tool.nab]
 mode = "universal"
@@ -32,3 +48,6 @@ platforms = [
     "windows_amd64",
 ]
 python-order = "desc"
+
+[tool.uv.sources]
+hatch-pinned-extra = { path = "../../..", editable = true }

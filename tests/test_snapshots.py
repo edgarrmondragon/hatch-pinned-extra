@@ -88,7 +88,6 @@ def test_snapshot_project_metadata(
     pyproject = read_toml(Path("fixtures/lockfiles/project/pyproject.toml"))
     metadata: dict[str, Any] = {
         "dependencies": pyproject["project"]["dependencies"],
-        "optional-dependencies": pyproject["project"]["optional-dependencies"],
     }
     hook = PinnedExtraMetadataHook(
         "fixtures/lockfiles/project",

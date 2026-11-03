@@ -38,6 +38,7 @@ dev = [
 ]
 testing = [
     "coverage>=7",
+    "pyproject-hooks>=1.3",
     "pytest>=9",
     "syrupy>=4",
 ]

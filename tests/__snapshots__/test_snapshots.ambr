@@ -332,7 +332,6 @@
   requires-dist: colorama; sys_platform == "win32"
   requires-dist: importlib-resources; python_version < "3.10"
   requires-dist: fastapi>=0.115.8
-  requires-dist: click; extra == "cli"
   requires-dist: annotated-doc==0.0.4; python_version == "3.8" and extra == "pinned"
   requires-dist: annotated-doc==0.0.5; (python_version == "3.10" or python_version == "3.11" or python_version == "3.12" or python_version == "3.13" or python_version == "3.14" or python_version == "3.15" or python_version == "3.9") and extra == "pinned"
   requires-dist: annotated-types==0.7.0; (python_version == "3.8" or python_version == "3.9") and extra == "pinned"
@@ -382,7 +381,6 @@
   requires-dist: urllib3==2.8.0; (python_version == "3.10" or python_version == "3.11" or python_version == "3.12" or python_version == "3.13" or python_version == "3.14" or python_version == "3.15") and extra == "pinned"
   requires-dist: zipp==3.20.2; python_version == "3.8" and extra == "pinned"
   requires-dist: zipp==3.23.1; python_version == "3.9" and extra == "pinned"
-  provides-extra: cli
   provides-extra: pinned
   
   
@@ -398,7 +396,6 @@
   requires-dist: colorama; sys_platform == "win32"
   requires-dist: importlib-resources; python_version < "3.10"
   requires-dist: fastapi>=0.115.8
-  requires-dist: click; extra == "cli"
   requires-dist: annotated-doc==0.0.5; extra == "pinned"
   requires-dist: annotated-types==0.8.0; extra == "pinned"
   requires-dist: anyio==4.15.1; extra == "pinned"
@@ -417,7 +414,6 @@
   requires-dist: typing-extensions==4.16.0; extra == "pinned"
   requires-dist: typing-inspection==0.4.4; extra == "pinned"
   requires-dist: urllib3==2.8.0; extra == "pinned"
-  provides-extra: cli
   provides-extra: pinned
   
   
@@ -433,7 +429,6 @@
   requires-dist: colorama; sys_platform == "win32"
   requires-dist: importlib-resources; python_version < "3.10"
   requires-dist: fastapi>=0.115.8
-  requires-dist: click; extra == "cli"
   requires-dist: annotated-doc==0.0.4; python_full_version < "3.9" and extra == "pinned"
   requires-dist: annotated-doc==0.0.5; python_full_version >= "3.9" and extra == "pinned"
   requires-dist: annotated-types==0.7.0; python_full_version < "3.10" and extra == "pinned"
@@ -483,7 +478,6 @@
   requires-dist: urllib3==2.8.0; python_full_version >= "3.10" and extra == "pinned"
   requires-dist: zipp==3.20.2; python_full_version < "3.9" and extra == "pinned"
   requires-dist: zipp==3.23.1; python_full_version == "3.9.*" and extra == "pinned"
-  provides-extra: cli
   provides-extra: pinned
   
   
@@ -499,7 +493,6 @@
   requires-dist: colorama; sys_platform == "win32"
   requires-dist: importlib-resources; python_version < "3.10"
   requires-dist: fastapi>=0.115.8
-  requires-dist: click; extra == "cli"
   requires-dist: annotated-doc==0.0.4; python_full_version < "3.9" and extra == "pinned"
   requires-dist: annotated-doc==0.0.5; (((python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*") or python_full_version == "3.9.*") and extra == "pinned"
   requires-dist: annotated-types==0.7.0; (python_full_version == "3.9.*" or python_full_version < "3.9") and extra == "pinned"
@@ -549,7 +542,6 @@
   requires-dist: urllib3==2.8.0; ((python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*") and extra == "pinned"
   requires-dist: zipp==3.20.2; (python_version < "3.10" and python_full_version < "3.9") and extra == "pinned"
   requires-dist: zipp==3.23.1; (python_version < "3.10" and python_full_version == "3.9.*") and extra == "pinned"
-  provides-extra: cli
   provides-extra: pinned
   
   

@@ -228,7 +228,7 @@ wheels = [
 [[package]]
 name = "my-api-client"
 version = "0.0.0.dev0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "requests" },
     { name = "requests-cache" },
