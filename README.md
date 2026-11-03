@@ -73,7 +73,7 @@ dynamic = [
 
 - `extra-name`: the name users will include when installing the package, e.g. `pip install my-package[<extra-name>]`. Defaults to `pinned`.
 
-- `lockfile`: path to, relative to the project root. Defaults to `uv.lock`, which must be the project. `pylock.*.toml` files are also supported, and may be in a subdirectory.
+- `lockfile`: path to the lockfile, relative to the project root. Defaults to `uv.lock`, which must be at the project root. `pylock.*.toml` files are also supported, and may be in a subdirectory.
 
 ### Enabling the plugin at build time
 
