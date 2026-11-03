@@ -15,6 +15,7 @@ Hatch plugin that adds a `pinned` packaging [_extra_][extras] to the [core metad
 
 - [Requirements](#requirements)
 - [Usage](#usage)
+  - [Dynamic dependencies](#dynamic-dependencies)
   - [Combining static and dynamic optional dependencies](#combining-static-and-dynamic-optional-dependencies)
   - [Configuration](#configuration)
   - [Enabling the plugin at build time](#enabling-the-plugin-at-build-time)
@@ -53,6 +54,20 @@ dynamic = [
     "optional-dependencies",
 ]
 ```
+
+### Dynamic dependencies
+
+If `dependencies` is also _dynamic_, because another metadata hook provides it, list that hook **before** this one. Hatchling runs metadata hooks in the order of their tables in `pyproject.toml`, so a hook listed later hasn't run yet when this plugin reads `dependencies`.
+
+```toml
+# pyproject.toml
+[tool.hatch.metadata.hooks.another_dependencies_hook]  # provides `dependencies`
+foo = "bar"
+
+[tool.hatch.metadata.hooks.pinned_extra]
+```
+
+If `dependencies` is still unset when this plugin runs, it falls back to the dependencies of the project recorded in `uv.lock`. `pylock.toml` files don't need them, since the `pinned` extra contains everything in the file.
 
 ### Combining static and dynamic optional dependencies
 

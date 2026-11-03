@@ -99,7 +99,12 @@ class PinnedExtraMetadataHook(MetadataHookInterface):
 
         if lockfile == "uv.lock":
             lock = read_toml(lock_path)
-            pinned_reqs = parse_pinned_deps_from_uv_lock(lock, metadata["dependencies"])
+            dependencies = metadata.get("dependencies")
+            if dependencies is None and "dependencies" not in metadata.get("dynamic", []):
+                # No dependencies declared. If they were dynamic, read them from the lockfile.
+                dependencies = []
+
+            pinned_reqs = parse_pinned_deps_from_uv_lock(lock, dependencies)
 
         elif lock_path.name.startswith("pylock.") and lock_path.name.endswith(".toml"):
             lock = read_toml(lock_path)
