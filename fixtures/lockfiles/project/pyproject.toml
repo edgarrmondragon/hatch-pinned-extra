@@ -49,11 +49,11 @@ platforms = [
     "linux_i686",
     "linux_armv7l",
 ]
-python-builds = [
-    "standard",
-    "free-threaded",
-]
 python-order = "desc"
+
+[[tool.nab.matrix.include]]
+python = ">=3.14"
+free-threaded = true
 
 [tool.uv.sources]
 hatch-pinned-extra = { path = "../../..", editable = true }
