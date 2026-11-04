@@ -1,16 +1,16 @@
 [build-system]
-requires = ["hatchling", "hatch-pinned-extra"]
 build-backend = "hatchling.build"
+requires = [ "hatch-pinned-extra", "hatchling" ]
 
 [project]
 name = "no-deps"
 version = "0.1.0"
 description = ""
 requires-python = ">=3.9"
-dynamic = ["optional-dependencies"]
+dynamic = [ "optional-dependencies" ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/no_deps"]
+packages = [ "src/no_deps" ]
 
 [tool.uv.sources]
 hatch-pinned-extra = { path = "../../..", editable = true }

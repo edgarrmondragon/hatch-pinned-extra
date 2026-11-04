@@ -1,0 +1,3 @@
+generate_python_version_classifiers = false
+max_supported_python = "3.16"
+table_format = "long"
