@@ -1,26 +1,24 @@
 [build-system]
-requires = ["hatchling", "hatch-pinned-extra"]
 build-backend = "hatchling.build"
+requires = [ "hatch-pinned-extra", "hatchling" ]
 
 [project]
 name = "workspace-app"
 version = "0.1.0"
 description = ""
 requires-python = ">=3.10"
-dynamic = ["optional-dependencies"]
+dynamic = [ "optional-dependencies" ]
 dependencies = [
-    "workspace-lib",
-    "typing-extensions>=4",
+  "typing-extensions>=4",
+  "workspace-lib",
 ]
 
-[tool.hatch.build.targets.wheel]
-packages = ["src/workspace_app"]
-
 [tool.hatch.metadata.hooks.pinned_extra]
-
-[tool.uv.workspace]
-members = ["packages/*"]
+[tool.hatch.build.targets.wheel]
+packages = [ "src/workspace_app" ]
 
 [tool.uv.sources]
-workspace-lib = { workspace = true }
 hatch-pinned-extra = { path = "../../..", editable = true }
+workspace-lib = { workspace = true }
+[tool.uv.workspace]
+members = [ "packages/*" ]

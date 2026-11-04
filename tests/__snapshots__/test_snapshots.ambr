@@ -353,8 +353,8 @@
   requires-dist: anyio>=4.5.2
   requires-dist: boto3>=1.36.15
   requires-dist: colorama; sys_platform == "win32"
-  requires-dist: importlib-resources; python_version < "3.10"
   requires-dist: fastapi>=0.115.8
+  requires-dist: importlib-resources; python_version < "3.10"
   requires-dist: annotated-doc==0.0.4; python_version == "3.8" and extra == "pinned"
   requires-dist: annotated-doc==0.0.5; (python_version == "3.10" or python_version == "3.11" or python_version == "3.12" or python_version == "3.13" or python_version == "3.14" or python_version == "3.15" or python_version == "3.9") and extra == "pinned"
   requires-dist: annotated-types==0.7.0; (python_version == "3.8" or python_version == "3.9") and extra == "pinned"
@@ -417,8 +417,8 @@
   requires-dist: anyio>=4.5.2
   requires-dist: boto3>=1.36.15
   requires-dist: colorama; sys_platform == "win32"
-  requires-dist: importlib-resources; python_version < "3.10"
   requires-dist: fastapi>=0.115.8
+  requires-dist: importlib-resources; python_version < "3.10"
   requires-dist: annotated-doc==0.0.5; extra == "pinned"
   requires-dist: annotated-types==0.8.0; extra == "pinned"
   requires-dist: anyio==4.15.1; extra == "pinned"
@@ -450,8 +450,8 @@
   requires-dist: anyio>=4.5.2
   requires-dist: boto3>=1.36.15
   requires-dist: colorama; sys_platform == "win32"
-  requires-dist: importlib-resources; python_version < "3.10"
   requires-dist: fastapi>=0.115.8
+  requires-dist: importlib-resources; python_version < "3.10"
   requires-dist: annotated-doc==0.0.4; python_full_version < "3.9" and extra == "pinned"
   requires-dist: annotated-doc==0.0.5; python_full_version >= "3.9" and extra == "pinned"
   requires-dist: annotated-types==0.7.0; python_full_version < "3.10" and extra == "pinned"
@@ -514,8 +514,8 @@
   requires-dist: anyio>=4.5.2
   requires-dist: boto3>=1.36.15
   requires-dist: colorama; sys_platform == "win32"
-  requires-dist: importlib-resources; python_version < "3.10"
   requires-dist: fastapi>=0.115.8
+  requires-dist: importlib-resources; python_version < "3.10"
   requires-dist: annotated-doc==0.0.4; python_full_version < "3.9" and extra == "pinned"
   requires-dist: annotated-doc==0.0.5; (((python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*") or python_full_version == "3.9.*") and extra == "pinned"
   requires-dist: annotated-types==0.7.0; (python_full_version == "3.9.*" or python_full_version < "3.9") and extra == "pinned"

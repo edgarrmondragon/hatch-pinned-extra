@@ -1,9 +1,9 @@
 [build-system]
-requires = [
-    "hatchling",
-    "hatch_pinned_extra",
-]
 build-backend = "hatchling.build"
+requires = [
+  "hatch-pinned-extra",
+  "hatchling",
+]
 
 [project]
 name = "dep-with-extras"
@@ -11,16 +11,15 @@ version = "0.1.0"
 description = ""
 requires-python = ">=3.9"
 dynamic = [
-    "optional-dependencies",
+  "optional-dependencies",
 ]
 dependencies = [
-    "fastapi[standard]>=0.115.12",
+  "fastapi[standard]>=0.115.12",
 ]
 
-[tool.hatch.build.targets.wheel]
-packages = ["src/dep_with_extras"]
-
 [tool.hatch.metadata.hooks.pinned_extra]
+[tool.hatch.build.targets.wheel]
+packages = [ "src/dep_with_extras" ]
 
 [tool.uv.sources]
 hatch-pinned-extra = { path = "../../..", editable = true }

@@ -1,9 +1,9 @@
 [build-system]
-requires = [
-  "hatchling",
-  "hatch_pinned_extra",
-]
 build-backend = "hatchling.build"
+requires = [
+  "hatch-pinned-extra",
+  "hatchling",
+]
 
 [project]
 name = "my-api-client"
@@ -18,15 +18,13 @@ dependencies = [
   "requests-cache~=1.2",
 ]
 
-[tool.hatch.build.targets.wheel]
-packages = ["my_apl_client"]
-
 [tool.hatch.metadata.hooks.pinned_extra]
+[tool.hatch.build.targets.wheel]
+packages = [ "my_apl_client" ]
 
 [tool.uv]
+required-version = ">=0.6"
 prerelease = "allow"
 preview = true
-required-version = ">=0.6"
-
 [tool.uv.sources]
 hatch-pinned-extra = { path = "../../..", editable = true }

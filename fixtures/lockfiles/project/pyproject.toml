@@ -1,9 +1,9 @@
 [build-system]
-requires = [
-    "hatchling",
-    "hatch_pinned_extra",
-]
 build-backend = "hatchling.build"
+requires = [
+  "hatch-pinned-extra",
+  "hatchling",
+]
 
 [project]
 name = "project"
@@ -11,49 +11,47 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.8"
+dynamic = [
+  "optional-dependencies",
+]
 dependencies = [
-    "anyio>=4.5.2",
-    "boto3>=1.36.15",
-    "colorama; sys_platform == 'win32'",
-    "importlib-resources; python_version < '3.10'",
-    "fastapi>=0.115.8",
+  "anyio>=4.5.2",
+  "boto3>=1.36.15",
+  "colorama; sys_platform=='win32'",
+  "fastapi>=0.115.8",
+  "importlib-resources; python_version<'3.10'",
 ]
 # TODO: Test with additional static optional deps once hatchling supports PEP 808
 # https://peps.python.org/pep-0808/
 # https://github.com/pypa/hatch/issues/2443
-# optional-dependencies.cli = ["click"]
-dynamic = [
-    "optional-dependencies",
-]
+# optional-dependencies.cli = [ "click" ]
 
 [dependency-groups]
 dev = [
-    "pytest>=8; python_version >= '3.13'",
-    "pytest>=7,<8; python_version < '3.13'",
+  "pytest>=7,<8; python_version<'3.13'",
+  "pytest>=8; python_version>='3.13'",
 ]
 
 [tool.hatch.metadata.hooks.pinned_extra]
 
+[tool.uv.sources]
+hatch-pinned-extra = { path = "../../..", editable = true }
+
 [tool.nab]
 mode = "universal"
-
 [tool.nab.matrix]
 python = ">=3.8"
 platforms = [
-    "linux_x86_64",
-    "linux_aarch64",
-    "macos_x86_64",
-    "macos_arm64",
-    "windows_amd64",
-    "windows_arm64",
-    "linux_i686",
-    "linux_armv7l",
+  "linux_x86_64",
+  "linux_aarch64",
+  "macos_x86_64",
+  "macos_arm64",
+  "windows_amd64",
+  "windows_arm64",
+  "linux_i686",
+  "linux_armv7l",
 ]
 python-order = "desc"
-
 [[tool.nab.matrix.include]]
 python = ">=3.14"
 free-threaded = true
-
-[tool.uv.sources]
-hatch-pinned-extra = { path = "../../..", editable = true }
