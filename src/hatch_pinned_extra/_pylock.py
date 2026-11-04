@@ -22,39 +22,21 @@
 
 from __future__ import annotations
 
-from typing import Any, TypeAlias
+from typing import Any
 
-from packaging.pylock import Package, Pylock
-from packaging.version import Version
+from packaging.pylock import Pylock
 
 from ._base import _PinnedRequirement
-
-Deps: TypeAlias = dict[str, dict[str, Package]]
-
-
-def _extract_pylock_requirements(deps: Deps) -> list[_PinnedRequirement]:
-    reqs = []
-
-    for name, versions in deps.items():
-        for version in versions:
-            package = deps[name][version]
-            req = _PinnedRequirement(name, Version(version), package.marker)
-            reqs.append(req)
-
-    return reqs
 
 
 def parse_pinned_deps_from_pylock(lock: dict[str, Any]) -> list[_PinnedRequirement]:
     """Parse the pinned dependencies from a pylock.toml file."""
     pylock = Pylock.from_dict(lock)
-
-    deps: Deps = {}
-    for package in pylock.packages:
-        if package.version is None:
-            continue
-        name = package.name
-        deps.setdefault(name, {})
-        deps[name][str(package.version)] = package
+    reqs = [
+        _PinnedRequirement(package.name, package.version, package.marker)
+        for package in pylock.packages
+        if package.version is not None
+    ]
 
     # Sort by name, version, and markers, and deduplicate the requirements
-    return sorted(set(_extract_pylock_requirements(deps)))
+    return sorted(set(reqs))
