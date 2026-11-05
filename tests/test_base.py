@@ -25,6 +25,7 @@ import re
 import shutil
 from importlib.metadata import entry_points
 from pathlib import Path
+from typing import Any
 
 import pytest
 from inline_snapshot import snapshot
@@ -251,6 +252,30 @@ def test_pylock_relative_path(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -
     extra = metadata["optional-dependencies"]["pinned"]
     assert isinstance(extra, list)
     assert len(extra) > 0
+
+
+def test_multiple_lockfiles(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
+    project_path = Path("fixtures/lockfiles/multiple")
+    tmp_project_path = tmp_path / "project"
+
+    shutil.copytree(project_path, tmp_project_path)
+
+    hook = PinnedExtraMetadataHook(
+        str(tmp_project_path),
+        {
+            "lockfiles": {
+                "pinned": "pylock.toml",
+                "pinned_recommended": "pylock.recommended.toml",
+            },
+        },
+    )
+    metadata: dict[str, Any] = {}
+    hook.update(metadata)
+
+    assert "requests==2.34.2" in metadata["optional-dependencies"]["pinned"]
+    assert "requests==2.34.2" in metadata["optional-dependencies"]["pinned_recommended"]
+    assert "requests-cache==1.3.3" in metadata["optional-dependencies"]["pinned_recommended"]
 
 
 def test_pinned_requirement_sorting() -> None:
