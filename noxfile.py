@@ -25,6 +25,7 @@
 #  OR OTHER DEALINGS IN THE SOFTWARE.
 
 import os
+import os.path
 from pathlib import Path
 from tempfile import NamedTemporaryFile
 
@@ -145,13 +146,15 @@ def test_coverage(session: nox.Session) -> None:
 )
 def lock(session: nox.Session, fixture: str) -> None:
     """Generate lock files."""
-    uploaded_prior_to = "P7D"
+    uploaded_prior_to = "2026-11-05T00:00:00Z"
+    constraints = os.path.join(session.invoked_from, "requirements/lock.requirements.txt")
     with (
         NamedTemporaryFile(suffix=".txt") as tmpfile,
         session.chdir(f"fixtures/{fixture}"),
     ):
         session.run(
             "uvx",
+            f"--constraints={constraints}",
             "nab",
             "lock",
             "pyproject.toml",
@@ -185,6 +188,7 @@ def lock(session: nox.Session, fixture: str) -> None:
         )
         session.run(
             "uvx",
+            f"--constraints={constraints}",
             "pip",
             "-q",
             "lock",
