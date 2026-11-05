@@ -29,7 +29,7 @@ classifiers = [
 ]
 dynamic = [ "version" ]
 dependencies = [
-  "hatchling>=1.27",
+  "hatchling @ git+https://github.com/pypa/hatch.git@refs/pull/2463/head#subdirectory=backend",
   # packaging 26.0+ required for pylock support
   # packaging 26.1+ required for & and | support for Marker
   # packaging 26.4+ required for `str(Marker(...))` with fewer parentheses when unambiguous
@@ -68,6 +68,8 @@ typing = [
 [tool.hatch.version]
 source = "vcs"
 fallback-version = "0.0.0.dev0"
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [tool.ruff]
 required-version = ">=0.17"
@@ -118,6 +120,8 @@ per-file-ignores."tests/*" = [
 ]
 
 [tool.typos]
+[tool.typos.default.extend-words]
+certifi = "certifi"  # https://pypi.org/project/certifi/
 [tool.typos.files]
 extend-exclude = [ "fixtures/**/pylock.*.toml" ]
 
