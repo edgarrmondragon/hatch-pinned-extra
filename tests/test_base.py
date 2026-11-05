@@ -27,6 +27,7 @@ from importlib.metadata import entry_points
 from pathlib import Path
 
 import pytest
+from inline_snapshot import snapshot
 from packaging.markers import Marker
 from packaging.version import Version
 
@@ -72,7 +73,7 @@ def test_uv_lock(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     metadata = {"dependencies": pyproject["project"]["dependencies"]}
     hook.update(metadata)
 
-    assert metadata["optional-dependencies"] == {
+    assert metadata["optional-dependencies"] == snapshot({
         "pinned": [
             'annotated-doc==0.0.4; python_full_version < "3.9"',
             'annotated-doc==0.0.5; ((python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*") or python_full_version == "3.9.*"',
@@ -80,13 +81,13 @@ def test_uv_lock(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
             'annotated-types==0.8.0; (python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*"',
             'anyio==4.5.2; python_full_version < "3.9"',
             'anyio==4.12.1; python_full_version == "3.9.*"',
-            'anyio==4.15.1; (python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*"',
+            'anyio==4.16.0; (python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*"',
             'boto3==1.37.38; python_full_version < "3.9"',
             'boto3==1.42.97; python_full_version == "3.9.*"',
-            'boto3==1.43.118; (python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*"',
+            'boto3==1.43.124; (python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*"',
             'botocore==1.37.38; python_full_version < "3.9"',
             'botocore==1.42.97; python_full_version == "3.9.*"',
-            'botocore==1.43.118; (python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*"',
+            'botocore==1.43.124; (python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*"',
             'colorama==0.4.6; sys_platform == "win32"',
             "exceptiongroup==1.3.1",
             'fastapi==0.124.4; python_full_version < "3.9"',
@@ -98,13 +99,13 @@ def test_uv_lock(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
             'importlib-resources==6.5.2; python_version < "3.10" and python_full_version == "3.9.*"',
             'jmespath==1.0.1; python_full_version < "3.9"',
             'jmespath==1.1.0; ((python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*") or python_full_version == "3.9.*"',
-            "opentelemetry-api==1.45.1",
+            "opentelemetry-api==1.45.2",
             'pydantic==2.10.6; python_full_version < "3.9"',
             'pydantic==2.13.5; python_full_version == "3.9.*"',
-            'pydantic==2.14.1; (python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*"',
+            'pydantic==2.14.2; (python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*"',
             'pydantic-core==2.27.2; python_full_version < "3.9"',
             'pydantic-core==2.46.5; python_full_version == "3.9.*"',
-            'pydantic-core==2.50.1; (python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*"',
+            'pydantic-core==2.50.2; (python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*"',
             "python-dateutil==2.9.0.post0",
             's3transfer==0.11.5; python_full_version < "3.9"',
             's3transfer==0.16.1; python_full_version == "3.9.*"',
@@ -118,13 +119,13 @@ def test_uv_lock(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
             'typing-extensions==4.13.2; python_full_version < "3.9"',
             'typing-extensions==4.16.0; ((python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*") or python_full_version == "3.9.*"',
             'typing-inspection==0.4.2; python_full_version == "3.9.*"',
-            'typing-inspection==0.4.4; (python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*"',
+            'typing-inspection==0.4.5; (python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*"',
             'urllib3==1.26.20; python_full_version == "3.9.*" or python_full_version < "3.9"',
             'urllib3==2.8.0; (python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*"',
             'zipp==3.20.2; python_version < "3.10" and python_full_version < "3.9"',
             'zipp==3.23.1; python_version < "3.10" and python_full_version == "3.9.*"',
         ]
-    }
+    })
 
 
 def test_pylock(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
@@ -143,7 +144,7 @@ def test_pylock(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     metadata = {"dependencies": pyproject["project"]["dependencies"]}
     hook.update(metadata)
 
-    assert metadata["optional-dependencies"] == {
+    assert metadata["optional-dependencies"] == snapshot({
         "pinned": [
             'annotated-doc==0.0.4; python_full_version < "3.9"',
             'annotated-doc==0.0.5; python_full_version >= "3.9"',
@@ -151,13 +152,13 @@ def test_pylock(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
             'annotated-types==0.8.0; python_full_version >= "3.10"',
             'anyio==4.5.2; python_full_version < "3.9"',
             'anyio==4.12.1; python_full_version == "3.9.*"',
-            'anyio==4.15.1; python_full_version >= "3.10"',
+            'anyio==4.16.0; python_full_version >= "3.10"',
             'boto3==1.37.38; python_full_version < "3.9"',
             'boto3==1.42.97; python_full_version == "3.9.*"',
-            'boto3==1.43.118; python_full_version >= "3.10"',
+            'boto3==1.43.124; python_full_version >= "3.10"',
             'botocore==1.37.38; python_full_version < "3.9"',
             'botocore==1.42.97; python_full_version == "3.9.*"',
-            'botocore==1.43.118; python_full_version >= "3.10"',
+            'botocore==1.43.124; python_full_version >= "3.10"',
             'colorama==0.4.6; sys_platform == "win32"',
             'exceptiongroup==1.3.1; python_full_version < "3.11"',
             'fastapi==0.124.4; python_full_version < "3.9"',
@@ -169,13 +170,13 @@ def test_pylock(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
             'importlib-resources==6.5.2; python_full_version == "3.9.*"',
             'jmespath==1.0.1; python_full_version < "3.9"',
             'jmespath==1.1.0; python_full_version >= "3.9"',
-            'opentelemetry-api==1.45.1; python_full_version >= "3.10"',
+            'opentelemetry-api==1.45.2; python_full_version >= "3.10"',
             'pydantic==2.10.6; python_full_version < "3.9"',
             'pydantic==2.13.5; python_full_version == "3.9.*"',
-            'pydantic==2.14.1; python_full_version >= "3.10"',
+            'pydantic==2.14.2; python_full_version >= "3.10"',
             'pydantic-core==2.27.2; python_full_version < "3.9"',
             'pydantic-core==2.46.5; python_full_version == "3.9.*"',
-            'pydantic-core==2.50.1; python_full_version >= "3.10"',
+            'pydantic-core==2.50.2; python_full_version >= "3.10"',
             "python-dateutil==2.9.0.post0",
             's3transfer==0.11.5; python_full_version < "3.9"',
             's3transfer==0.16.1; python_full_version == "3.9.*"',
@@ -189,13 +190,13 @@ def test_pylock(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
             'typing-extensions==4.13.2; python_full_version < "3.9"',
             'typing-extensions==4.16.0; python_full_version >= "3.9"',
             'typing-inspection==0.4.2; python_full_version == "3.9.*"',
-            'typing-inspection==0.4.4; python_full_version >= "3.10"',
+            'typing-inspection==0.4.5; python_full_version >= "3.10"',
             'urllib3==1.26.20; python_full_version < "3.10"',
             'urllib3==2.8.0; python_full_version >= "3.10"',
             'zipp==3.20.2; python_full_version < "3.9"',
             'zipp==3.23.1; python_full_version == "3.9.*"',
         ]
-    }
+    })
 
 
 def test_uv_lock_in_subdirectory_is_not_supported(

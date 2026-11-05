@@ -65,14 +65,14 @@ editable = true
 
 [[packages]]
 name = "platformdirs"
-version = "4.13.5"
+version = "4.14.5"
 
 [[packages.wheels]]
-name = "platformdirs-4.13.5-py3-none-any.whl"
-url = "https://files.pythonhosted.org/packages/6c/8a/1d8cb3842909dc193a73835adedf412e32e18f8ffd59f43983949622fe6f/platformdirs-4.13.5-py3-none-any.whl"
+name = "platformdirs-4.14.5-py3-none-any.whl"
+url = "https://files.pythonhosted.org/packages/7c/ae/ecbbbfd0e4343a6a521d49b3c8656fb4643dee2a4f6eaf941cf3280391a8/platformdirs-4.14.5-py3-none-any.whl"
 
 [packages.wheels.hashes]
-sha256 = "53d3ec4280b815c1e0b02edad7f9ee8fda1ba9c0865dd9c2e6e63849ce82fc1e"
+sha256 = "8e778c6fa421516f4d3369449f8df3b0e1b72c0e0005fe88e3ec772d0a14e750"
 
 [[packages]]
 name = "requests"
@@ -109,14 +109,14 @@ sha256 = "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
 
 [[packages]]
 name = "url-normalize"
-version = "3.0.1"
+version = "3.1.0"
 
 [[packages.wheels]]
-name = "url_normalize-3.0.1-py3-none-any.whl"
-url = "https://files.pythonhosted.org/packages/9d/bf/98209a164859c81d9eec311ee2b35cd1e5b33c7be8d3665c08850557abe1/url_normalize-3.0.1-py3-none-any.whl"
+name = "url_normalize-3.1.0-py3-none-any.whl"
+url = "https://files.pythonhosted.org/packages/7d/3d/ae9ba568240002f25d676df745208aec077767cd63e68cbb93bd2650c4ec/url_normalize-3.1.0-py3-none-any.whl"
 
 [packages.wheels.hashes]
-sha256 = "97ea68fc543b1fc9f270f34c90cf164453e7d490da2ec653dcd8ebd4e3ac1faf"
+sha256 = "34c386c6b2dbde760eaaaa8542dc29995c75f2baf94acceee18e5b6b29579469"
 
 [[packages]]
 name = "urllib3"

@@ -152,13 +152,22 @@ def lock(session: nox.Session, fixture: str) -> None:
         NamedTemporaryFile(suffix=".txt") as tmpfile,
         session.chdir(f"fixtures/{fixture}"),
     ):
+        pylock_nab = "pylock.nab.toml"
+        pylock_pip = "pylock.pip.toml"
+        pylock_uv = "pylock.uv.toml"
+        uv_lock = "uv.lock"
+        os.remove(pylock_nab)
+        os.remove(pylock_pip)
+        os.remove(pylock_uv)
+        os.remove(uv_lock)
+
         session.run(
             "uvx",
             f"--constraints={constraints}",
             "nab",
             "lock",
             "pyproject.toml",
-            "--output=pylock.nab.toml",
+            f"--output={pylock_nab}",
             f"--project-uploaded-prior-to={uploaded_prior_to}",
         )
         session.run(
@@ -175,7 +184,7 @@ def lock(session: nox.Session, fixture: str) -> None:
             "export",
             "--format=pylock.toml",
             "--no-dev",
-            "--output-file=pylock.uv.toml",
+            f"--output-file={pylock_uv}",
         )
         session.run(
             "uv",
@@ -194,7 +203,7 @@ def lock(session: nox.Session, fixture: str) -> None:
             "lock",
             "--requirement",
             f"{tmpfile.name}",
-            "--output=pylock.pip.toml",
+            f"--output={pylock_pip}",
             f"--uploaded-prior-to={uploaded_prior_to}",
         )
 
