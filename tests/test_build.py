@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import warnings
 import zipfile
+from collections import defaultdict
 from typing import TYPE_CHECKING
 
 import pytest
@@ -94,6 +95,79 @@ def test_hook(
         meta = _metadata(wheel_dir / wheel)
         assert meta["provides_extra"] == ["pinned"]
         assert any("extra == 'pinned'" in requirement for requirement in meta["requires_dist"])
+
+
+def test_build_multiple_extras(
+    pytestconfig: pytest.Config,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    subtests: pytest.Subtests,
+) -> None:
+    project_path = pytestconfig.rootpath / "fixtures/lockfiles/multiple"
+    toml_data = read_toml(project_path / "pyproject.toml")
+
+    hooks = BuildBackendHookCaller(
+        project_path.as_posix(),
+        toml_data["build-system"]["build-backend"],
+    )
+
+    with subtests.test("disabled"):
+        wheel_dir = tmp_path / "disabled"
+        with pytest.warns(
+            BuildBackendWarning,
+            match=r"HATCH_PINNED_EXTRA_ENABLE is not set, pinned extra is disabled",
+        ):
+            wheel = hooks.build_wheel(wheel_directory=wheel_dir.as_posix())
+
+        meta = _metadata(wheel_dir / wheel)
+        assert meta["provides_extra"] == ["recommended"]
+
+        opt = [req for req in meta["requires_dist"] if "extra == 'recommended'" in req]
+        assert opt == ["requests-cache>=1.1; extra == 'recommended'"]
+
+    with subtests.test("enabled"):
+        wheel_dir = tmp_path / "enabled"
+        with warnings.catch_warnings(), monkeypatch.context() as m:
+            warnings.simplefilter("error")
+            m.setenv("HATCH_PINNED_EXTRA_ENABLE", "1")
+            wheel = hooks.build_wheel(wheel_directory=wheel_dir.as_posix())
+
+        meta = _metadata(wheel_dir / wheel)
+        assert meta["provides_extra"] == [
+            "pinned",
+            "pinned-recommended",  # TODO: check if extra names should be normalized or not
+            "recommended",
+        ]
+
+        opt_dict: dict[str, list[tuple[str, str]]] = defaultdict(list)
+        for rs in meta["requires_dist"]:
+            req = Requirement(rs)
+            if req.marker is None:
+                continue
+
+            opt_dict[str(req.marker)].append((req.name, str(req.specifier)))
+
+        assert opt_dict['extra == "recommended"'] == [("requests-cache", ">=1.1")]
+        assert opt_dict['extra == "pinned"'] == [
+            ("certifi", "==2026.10.23"),
+            ("charset-normalizer", "==3.5.2"),
+            ("idna", "==3.20"),
+            ("requests", "==2.34.2"),
+            ("urllib3", "==2.8.0"),
+        ]
+        assert opt_dict['extra == "pinned-recommended"'] == [
+            ("attrs", "==26.1.0"),
+            ("cattrs", "==26.2.1"),
+            ("certifi", "==2026.10.23"),
+            ("charset-normalizer", "==3.5.2"),
+            ("idna", "==3.20"),
+            ("platformdirs", "==4.14.5"),
+            ("requests-cache", "==1.3.3"),
+            ("requests", "==2.34.2"),
+            ("typing-extensions", "==4.16.0"),
+            ("url-normalize", "==3.1.0"),
+            ("urllib3", "==2.8.0"),
+        ]
 
 
 @pytest.mark.parametrize(

@@ -25,7 +25,7 @@ from __future__ import annotations
 import os
 import warnings
 from pathlib import Path
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from hatchling.metadata.plugin.interface import MetadataHookInterface
 from hatchling.plugin import hookimpl
@@ -33,6 +33,9 @@ from hatchling.plugin import hookimpl
 from hatch_pinned_extra._compat import read_toml
 from hatch_pinned_extra._pylock import parse_pinned_deps_from_pylock
 from hatch_pinned_extra._uv import parse_pinned_deps_from_uv_lock
+
+if TYPE_CHECKING:
+    from hatch_pinned_extra._base import _PinnedRequirement
 
 DEFAULT_EXTRA_NAME = "pinned"
 DEFAULT_LOCKFILE = "uv.lock"
@@ -85,41 +88,47 @@ class PinnedExtraMetadataHook(MetadataHookInterface):
 
         extra_name = str(self.config.get("extra-name", DEFAULT_EXTRA_NAME))
         lockfile = str(self.config.get("lockfile", DEFAULT_LOCKFILE))
+
+        lockfiles = self.config.get("lockfiles", {})
+        all_lockfiles = {extra_name: lockfile, **lockfiles}
+        extras: dict[str, list[_PinnedRequirement]] = {}
+
         root_path = Path(self.root)
+        # breakpoint()
+        for extra_name, lockfile_name in all_lockfiles.items():
+            lock_path = root_path / lockfile_name
+            is_uv_lock = lockfile_name == "uv.lock"
+            is_pylock = lock_path.name.startswith("pylock.") and lock_path.name.endswith(".toml")
+            if not (is_uv_lock or is_pylock):
+                msg = (
+                    f"The configured lockfile '{lockfile}' is neither uv.lock nor a "
+                    f"pylock.*.toml file, so the '{extra_name}' extra cannot be generated."
+                )
+                raise ValueError(msg)
 
-        lock_path = root_path / lockfile
-        is_uv_lock = lockfile == "uv.lock"
-        is_pylock = lock_path.name.startswith("pylock.") and lock_path.name.endswith(".toml")
+            if not lock_path.exists():
+                msg = (
+                    f"{lock_path} was not found in {self.root}, so the '{extra_name}' extra "
+                    "cannot be generated."
+                )
+                raise FileNotFoundError(msg)
 
-        if not (is_uv_lock or is_pylock):
-            msg = (
-                f"The configured lockfile '{lockfile}' is neither uv.lock nor a "
-                f"pylock.*.toml file, so the '{extra_name}' extra cannot be generated."
-            )
-            raise ValueError(msg)
+            lock = read_toml(lock_path)
 
-        if not lock_path.exists():
-            msg = (
-                f"{lock_path} was not found in {self.root}, so the '{extra_name}' extra "
-                "cannot be generated."
-            )
-            raise FileNotFoundError(msg)
+            if is_uv_lock:
+                dependencies = metadata.get("dependencies")
+                if dependencies is None and "dependencies" not in metadata.get("dynamic", []):
+                    # No dependencies declared. If they were dynamic, read them from the lockfile.
+                    dependencies = []
 
-        lock = read_toml(lock_path)
-
-        if is_uv_lock:
-            dependencies = metadata.get("dependencies")
-            if dependencies is None and "dependencies" not in metadata.get("dynamic", []):
-                # No dependencies declared. If they were dynamic, read them from the lockfile.
-                dependencies = []
-
-            pinned_reqs = parse_pinned_deps_from_uv_lock(lock, dependencies)
-        else:
-            pinned_reqs = parse_pinned_deps_from_pylock(lock)
+                extras[extra_name] = parse_pinned_deps_from_uv_lock(lock, dependencies)
+            else:
+                extras[extra_name] = parse_pinned_deps_from_pylock(lock)
 
         # add the pinned dependencies to the project table
         metadata.setdefault("optional-dependencies", {})
-        metadata["optional-dependencies"][extra_name] = [str(req) for req in pinned_reqs]
+        for extra_name, opt_deps in extras.items():
+            metadata["optional-dependencies"][extra_name] = [str(req) for req in opt_deps]
 
 
 @hookimpl

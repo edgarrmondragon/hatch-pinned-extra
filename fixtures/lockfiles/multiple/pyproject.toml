@@ -1,0 +1,32 @@
+[build-system]
+build-backend = "hatchling.build"
+requires = [
+  "hatch-pinned-extra",
+  "hatchling @ git+https://github.com/pypa/hatch.git@refs/pull/2463/head#subdirectory=backend",
+]
+
+[project]
+name = "multiple-lockfiles"
+version = "0.1.0"
+description = "Adds multiple 'pinned' extras"
+readme = "README.md"
+requires-python = ">=3.8"
+dynamic = [
+  "optional-dependencies",
+]
+dependencies = [
+  "requests>=2",
+]
+[project.optional-dependencies]
+recommended = [
+  "requests-cache>=1.1",
+]
+
+[tool.hatch.metadata.hooks.pinned_extra.lockfiles]
+pinned = "pylock.toml"
+pinned_recommended = "pylock.recommended.toml"
+[tool.hatch.build.targets.wheel]
+packages = [ "multiple_lockfiles" ]
+
+[tool.uv.sources]
+hatch-pinned-extra = { path = "../../..", editable = true }
