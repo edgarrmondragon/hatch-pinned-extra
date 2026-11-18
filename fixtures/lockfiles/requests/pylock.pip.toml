@@ -39,11 +39,11 @@ name = "charset-normalizer"
 version = "3.5.2"
 
 [[packages.wheels]]
-name = "charset_normalizer-3.5.2-cp314-cp314-macosx_10_15_universal2.whl"
-url = "https://files.pythonhosted.org/packages/7c/8a/40db9aa9f5907bb0e6f8b6d64064bf8852fb33d4b813ff9414911df7647c/charset_normalizer-3.5.2-cp314-cp314-macosx_10_15_universal2.whl"
+name = "charset_normalizer-3.5.2-cp315-cp315-macosx_10_15_universal2.whl"
+url = "https://files.pythonhosted.org/packages/ca/e9/34e597dee616d0b8ee4b34d29399e85c2204ade174157a48505d42baa4ff/charset_normalizer-3.5.2-cp315-cp315-macosx_10_15_universal2.whl"
 
 [packages.wheels.hashes]
-sha256 = "fcff63213e8e6e47770541a4607175404f47cbb3ebea7b6058cc82d524a0e424"
+sha256 = "87475fabc8d9996fd9c27debb395e642e8c838d78a00b6e932227a0e06b81e26"
 
 [[packages]]
 name = "idna"

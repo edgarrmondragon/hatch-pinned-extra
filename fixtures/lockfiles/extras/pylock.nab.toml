@@ -1,6 +1,6 @@
 lock-version = "1.0"
 environments = [
-    "python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\" and platform_python_implementation == \"CPython\" and platform_system == \"Darwin\"",
+    "python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"arm64\" and platform_python_implementation == \"CPython\" and platform_system == \"Darwin\"",
 ]
 requires-python = ">=3.9"
 created-by = "nab"
@@ -83,7 +83,6 @@ version = "4.16.0"
 requires-python = ">=3.10"
 dependencies = [
     { name = "idna" },
-    { name = "typing-extensions" },
 ]
 index = "https://pypi.org/simple/"
 
@@ -145,13 +144,13 @@ size = 172659
 sha256 = "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
 
 [[packages.wheels]]
-name = "charset_normalizer-3.5.2-cp314-cp314-macosx_10_15_universal2.whl"
-upload-time = 2026-09-30T04:36:34.197625+00:00
-url = "https://files.pythonhosted.org/packages/7c/8a/40db9aa9f5907bb0e6f8b6d64064bf8852fb33d4b813ff9414911df7647c/charset_normalizer-3.5.2-cp314-cp314-macosx_10_15_universal2.whl"
-size = 367815
+name = "charset_normalizer-3.5.2-cp315-cp315-macosx_10_15_universal2.whl"
+upload-time = 2026-09-30T04:37:28.329851+00:00
+url = "https://files.pythonhosted.org/packages/ca/e9/34e597dee616d0b8ee4b34d29399e85c2204ade174157a48505d42baa4ff/charset_normalizer-3.5.2-cp315-cp315-macosx_10_15_universal2.whl"
+size = 367676
 
 [packages.wheels.hashes]
-sha256 = "fcff63213e8e6e47770541a4607175404f47cbb3ebea7b6058cc82d524a0e424"
+sha256 = "87475fabc8d9996fd9c27debb395e642e8c838d78a00b6e932227a0e06b81e26"
 
 [[packages.wheels]]
 name = "charset_normalizer-3.5.2-cp37-abi3-macosx_10_9_universal2.whl"
@@ -397,13 +396,13 @@ size = 89647
 sha256 = "bba71522eae6a7627a5514ffdd4ac9645ef27d82e23931d79fd974bb49c3f2ad"
 
 [[packages.wheels]]
-name = "fastar-0.12.0-cp314-cp314-macosx_11_0_arm64.whl"
-upload-time = 2026-08-20T09:09:37.853385+00:00
-url = "https://files.pythonhosted.org/packages/be/3f/c0ef2beffeeb01f9ec27b0ba8ce23697919b2247316d923f5a3bed6fc26b/fastar-0.12.0-cp314-cp314-macosx_11_0_arm64.whl"
-size = 626452
+name = "fastar-0.12.0-cp315-cp315-macosx_11_0_arm64.whl"
+upload-time = 2026-08-20T09:09:40.933984+00:00
+url = "https://files.pythonhosted.org/packages/a7/f2/9e570204757c36d3ef1c94012294b1921a4c51af55da4684f206d88c09df/fastar-0.12.0-cp315-cp315-macosx_11_0_arm64.whl"
+size = 626785
 
 [packages.wheels.hashes]
-sha256 = "ebe324ffcb3e8efb2308255f60de911bfa4ccf10f087b6e60c62606f091f1807"
+sha256 = "6e94e2881c3aa53da5d9161e2e64c0d698c66506a62024d5900943098220ebc7"
 
 [[packages]]
 name = "googleapis-common-protos"
@@ -528,13 +527,13 @@ size = 282523
 sha256 = "d484ebb7e3a3f3597b0f645fbd1b85633674ca808c1f5ba11c2caf7c66f5c8b6"
 
 [[packages.wheels]]
-name = "httptools-0.9.0-cp314-cp314-macosx_11_0_arm64.whl"
-upload-time = 2026-10-09T19:55:14.491100+00:00
-url = "https://files.pythonhosted.org/packages/31/39/0965023968452245ece67b161adbf7c5652f8d0697ac69312f9d21849411/httptools-0.9.0-cp314-cp314-macosx_11_0_arm64.whl"
-size = 118142
+name = "httptools-0.9.0-cp315-cp315-macosx_11_0_arm64.whl"
+upload-time = 2026-10-09T19:55:58.295512+00:00
+url = "https://files.pythonhosted.org/packages/d2/77/e226b16a2f291f2a4ce25a24a3297e98749d80b8a713b8f3b11d8a82e904/httptools-0.9.0-cp315-cp315-macosx_11_0_arm64.whl"
+size = 117817
 
 [packages.wheels.hashes]
-sha256 = "1a4050a651e1f2faf05eb028ce9f2168abbcee9e24b209f5c1f2eb96d8c569e4"
+sha256 = "d3906b5c549ff2ad2473cb711e1fc65d76715c2726a402108fbf55eab6c6b49d"
 
 [[packages]]
 name = "httpx"
@@ -690,13 +689,13 @@ size = 153777
 sha256 = "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
 
 [[packages.wheels]]
-name = "markupsafe-3.0.4-cp314-cp314-macosx_11_0_arm64.whl"
-upload-time = 2026-10-02T23:05:37.397531+00:00
-url = "https://files.pythonhosted.org/packages/ad/40/e2d117b048d47282ade906fbfd92814cbee5647afc13fda88a3406039372/markupsafe-3.0.4-cp314-cp314-macosx_11_0_arm64.whl"
-size = 12061
+name = "markupsafe-3.0.4-cp315-cp315-macosx_11_0_arm64.whl"
+upload-time = 2026-10-02T23:06:17.855823+00:00
+url = "https://files.pythonhosted.org/packages/96/24/3ec292b44064c16229e064d770b2625bd8ea941aa61f44905a9fa44942c0/markupsafe-3.0.4-cp315-cp315-macosx_11_0_arm64.whl"
+size = 12075
 
 [packages.wheels.hashes]
-sha256 = "52704c5d36eb6dda8866493decd61111fff86244c9b1ad225ca01b9e91e5970f"
+sha256 = "ae9dcb8fbe244cb82f8a6458b455b927a03685e383d9bacf1ea5ce180b96dc97"
 
 [[packages]]
 name = "mdurl"
@@ -1033,13 +1032,13 @@ size = 518711
 sha256 = "1b0e8dc3932cf4e9ed5727570325cacc716b9409ffc794a221c0ccc72e8eb775"
 
 [[packages.wheels]]
-name = "pydantic_core-2.50.2-cp314-cp314-macosx_11_0_arm64.whl"
-upload-time = 2026-10-29T16:32:59.873202+00:00
-url = "https://files.pythonhosted.org/packages/db/68/315701095f25687938ab79d263a6d939337456c2840fe69038fd38000338/pydantic_core-2.50.2-cp314-cp314-macosx_11_0_arm64.whl"
-size = 2095041
+name = "pydantic_core-2.50.2-cp315-cp315-macosx_11_0_arm64.whl"
+upload-time = 2026-10-29T16:33:44.946711+00:00
+url = "https://files.pythonhosted.org/packages/ae/ff/af99a09eddc348c1d0744c0df28dfcd4839ca497067f0fa2168208b41b1b/pydantic_core-2.50.2-cp315-cp315-macosx_11_0_arm64.whl"
+size = 2100409
 
 [packages.wheels.hashes]
-sha256 = "6ffb4dce3ecb2cd563aa30f9eb5088a1cf1f4f688b90cbb374fa96e49fc50b02"
+sha256 = "f73930dacad5e611fe019e18df6f53c30629b1843d038d303b8dec86a32493bd"
 
 [[packages]]
 name = "pydantic-extra-types"
@@ -1186,15 +1185,6 @@ size = 130960
 [packages.sdist.hashes]
 sha256 = "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
 
-[[packages.wheels]]
-name = "pyyaml-6.0.3-cp314-cp314-macosx_11_0_arm64.whl"
-upload-time = 2025-09-25T21:32:36.789261+00:00
-url = "https://files.pythonhosted.org/packages/bd/9c/4d95bb87eb2063d20db7b60faa3840c1b18025517ae857371c4dd55a6b3a/pyyaml-6.0.3-cp314-cp314-macosx_11_0_arm64.whl"
-size = 173809
-
-[packages.wheels.hashes]
-sha256 = "34d5fcd24b8445fadc33f9cf348c1047101756fd760b4dacb5c3e99755703310"
-
 [[packages]]
 name = "requests"
 version = "2.34.2"
@@ -1298,13 +1288,13 @@ size = 55535
 sha256 = "2b6cf58501e9ff1b6a71c3fd66c8a105311e1f23237626fd4c9c00606bb3d30f"
 
 [[packages.wheels]]
-name = "rignore-0.8.1-cp314-cp314-macosx_11_0_arm64.whl"
-upload-time = 2026-08-04T22:24:18.584192+00:00
-url = "https://files.pythonhosted.org/packages/ba/87/fe151f1a3d93483b36e22e8a0e84382cff3b7fe9d7347cfb586727054c56/rignore-0.8.1-cp314-cp314-macosx_11_0_arm64.whl"
-size = 817293
+name = "rignore-0.8.1-cp315-cp315-macosx_11_0_arm64.whl"
+upload-time = 2026-08-04T22:25:05.489762+00:00
+url = "https://files.pythonhosted.org/packages/b2/24/4ca7ce428378e7ef938cb36573f22e842dcdb2655e266b32711eea08d16f/rignore-0.8.1-cp315-cp315-macosx_11_0_arm64.whl"
+size = 817738
 
 [packages.wheels.hashes]
-sha256 = "60f1ae9eaa51b50d5afe99bd25ffb2cfc10729701ca08c179489555d2614f3ae"
+sha256 = "58449c827c36dba68133a5ee4137b67d7d6e050234a95c3a8f5e3cefbd6970ec"
 
 [[packages]]
 name = "sentry-sdk"
@@ -1563,13 +1553,13 @@ size = 2559185
 sha256 = "28d160f51ab4da3b187063652e643dea6831072add4adc1e6d62afbe73b6be27"
 
 [[packages.wheels]]
-name = "uvloop-0.23.0-cp314-cp314-macosx_10_15_universal2.whl"
-upload-time = 2026-10-01T03:16:02.599117+00:00
-url = "https://files.pythonhosted.org/packages/4e/a4/00e85345871c59c834a23c136c1771205856028ecc8ba940b3951178e59b/uvloop-0.23.0-cp314-cp314-macosx_10_15_universal2.whl"
-size = 1421363
+name = "uvloop-0.23.0-cp315-cp315-macosx_10_15_universal2.whl"
+upload-time = 2026-10-01T03:16:23.241553+00:00
+url = "https://files.pythonhosted.org/packages/58/3d/ee11f4718ea1280595c67ed25c83d4c92115dc100bbdfd192d3ed9339168/uvloop-0.23.0-cp315-cp315-macosx_10_15_universal2.whl"
+size = 1418095
 
 [packages.wheels.hashes]
-sha256 = "b90397a50ad6332ed3e459c648ac20d182cce24a557354363ad85fc9ea4a17cd"
+sha256 = "f1341c6abcee1c31277cfe28d34e46196f2143ec3d755e6efe7452126e1f626d"
 
 [[packages]]
 name = "watchfiles"
@@ -1614,22 +1604,22 @@ size = 191391
 sha256 = "09d3939b70df0c8ad2da145ebd50978bccaee1d565e838b0e7921a34d38571eb"
 
 [[packages.wheels]]
-name = "websockets-17.4-cp314-cp314-macosx_10_15_universal2.whl"
-upload-time = 2026-10-30T15:08:12.140978+00:00
-url = "https://files.pythonhosted.org/packages/1f/5b/085530961668661300de7248f9bf3ba84e98f47875f0fcc87637d024f82b/websockets-17.4-cp314-cp314-macosx_10_15_universal2.whl"
-size = 218810
+name = "websockets-17.4-cp315-cp315-macosx_10_15_universal2.whl"
+upload-time = 2026-10-30T15:09:13.833552+00:00
+url = "https://files.pythonhosted.org/packages/ee/be/4032fde05e62d1c52edd250fda475e910cac0cd180e377690bff24147b5e/websockets-17.4-cp315-cp315-macosx_10_15_universal2.whl"
+size = 218740
 
 [packages.wheels.hashes]
-sha256 = "d0f943b53bb1d7389d72a5380078670e5fcc34a1328142148b72d20fd82031c7"
+sha256 = "8c51ac7b31578a7275650f580aac985940985b6d2e57247ac6d5e07f2c936cd6"
 
 [[packages.wheels]]
-name = "websockets-17.4-cp314-cp314-macosx_11_0_arm64.whl"
-upload-time = 2026-10-30T15:08:15.080120+00:00
-url = "https://files.pythonhosted.org/packages/df/73/eb8544367c13cd87df39d41b74853741fb7182e2a4bb659ad7d36f9066c8/websockets-17.4-cp314-cp314-macosx_11_0_arm64.whl"
-size = 216719
+name = "websockets-17.4-cp315-cp315-macosx_11_0_arm64.whl"
+upload-time = 2026-10-30T15:09:17.185194+00:00
+url = "https://files.pythonhosted.org/packages/70/98/0021f55de633617b4a8390cca17e700c9ba5d99323103128412dc2c15aca/websockets-17.4-cp315-cp315-macosx_11_0_arm64.whl"
+size = 216695
 
 [packages.wheels.hashes]
-sha256 = "a0457561e8a87a6a3b509e21c35084d7d207ced262139de3f738e9676a476bbd"
+sha256 = "6fd8cac4907fec8302726d49e6969acfffaf720bc39b1cee23f473b81f4dce01"
 
 [[packages.wheels]]
 name = "websockets-17.4-py3-none-any.whl"
@@ -1641,7 +1631,7 @@ size = 212900
 sha256 = "c6bd2c9781915592b209160d0f017d4c7c82ad53075e6b0c24d2a89299e7f9e9"
 
 [tool.nab]
-nab-version = "0.0.29"
+nab-version = "0.0.30"
 created-at = 2026-11-05T00:00:00+00:00
 command-line = [
     "nab",
@@ -1659,6 +1649,6 @@ cli-project-overrides = [
 
 [tool.nab.validation]
 version = 1
-all-inputs-sha256 = "bb35c34d644bfd699c84096a49bdbb81d33a5bcd4ec664a3a0c02d60b8d23e7e"
-selection-inputs-sha256 = "05a3e5a6e0614c68249e84ef073b1fc92f50795305eb1eeaff8159ee9f84632f"
-contents-sha256 = "75b9769479ace544d344b97ce5fd215787097abbfdae4cfcc4a6d4d7e0dc35cc"
+all-inputs-sha256 = "b6b416fa6655dc7170f1c69964804052abf162d4c06312490d029b38d563ba2c"
+selection-inputs-sha256 = "1b92228935de6b2d3761987deee3aaeb4d5a7b6b23e558563ccf6cbd78596fcc"
+contents-sha256 = "a1d2d008f3bfa087c08f4702884ea72a4d82084db364997d51fd7353746319ec"

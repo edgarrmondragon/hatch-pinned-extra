@@ -123,11 +123,11 @@ name = "pydantic-core"
 version = "2.50.2"
 
 [[packages.wheels]]
-name = "pydantic_core-2.50.2-cp314-cp314-macosx_11_0_arm64.whl"
-url = "https://files.pythonhosted.org/packages/db/68/315701095f25687938ab79d263a6d939337456c2840fe69038fd38000338/pydantic_core-2.50.2-cp314-cp314-macosx_11_0_arm64.whl"
+name = "pydantic_core-2.50.2-cp315-cp315-macosx_11_0_arm64.whl"
+url = "https://files.pythonhosted.org/packages/ae/ff/af99a09eddc348c1d0744c0df28dfcd4839ca497067f0fa2168208b41b1b/pydantic_core-2.50.2-cp315-cp315-macosx_11_0_arm64.whl"
 
 [packages.wheels.hashes]
-sha256 = "6ffb4dce3ecb2cd563aa30f9eb5088a1cf1f4f688b90cbb374fa96e49fc50b02"
+sha256 = "f73930dacad5e611fe019e18df6f53c30629b1843d038d303b8dec86a32493bd"
 
 [[packages]]
 name = "python-dateutil"

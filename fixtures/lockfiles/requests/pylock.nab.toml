@@ -1,6 +1,6 @@
 lock-version = "1.0"
 environments = [
-    "python_version == \"3.14\" and sys_platform == \"darwin\" and platform_machine == \"arm64\" and implementation_name == \"cpython\" and platform_python_implementation == \"CPython\"",
+    "python_version == \"3.15\" and sys_platform == \"darwin\" and platform_machine == \"arm64\" and implementation_name == \"cpython\" and platform_python_implementation == \"CPython\"",
 ]
 requires-python = ">=3.10"
 created-by = "nab"
@@ -97,13 +97,13 @@ size = 172659
 sha256 = "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
 
 [[packages.wheels]]
-name = "charset_normalizer-3.5.2-cp314-cp314-macosx_10_15_universal2.whl"
-upload-time = 2026-09-30T04:36:34.197625+00:00
-url = "https://files.pythonhosted.org/packages/7c/8a/40db9aa9f5907bb0e6f8b6d64064bf8852fb33d4b813ff9414911df7647c/charset_normalizer-3.5.2-cp314-cp314-macosx_10_15_universal2.whl"
-size = 367815
+name = "charset_normalizer-3.5.2-cp315-cp315-macosx_10_15_universal2.whl"
+upload-time = 2026-09-30T04:37:28.329851+00:00
+url = "https://files.pythonhosted.org/packages/ca/e9/34e597dee616d0b8ee4b34d29399e85c2204ade174157a48505d42baa4ff/charset_normalizer-3.5.2-cp315-cp315-macosx_10_15_universal2.whl"
+size = 367676
 
 [packages.wheels.hashes]
-sha256 = "fcff63213e8e6e47770541a4607175404f47cbb3ebea7b6058cc82d524a0e424"
+sha256 = "87475fabc8d9996fd9c27debb395e642e8c838d78a00b6e932227a0e06b81e26"
 
 [[packages.wheels]]
 name = "charset_normalizer-3.5.2-cp37-abi3-macosx_10_9_universal2.whl"
@@ -309,7 +309,7 @@ size = 135717
 sha256 = "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3"
 
 [tool.nab]
-nab-version = "0.0.29"
+nab-version = "0.0.30"
 created-at = 2026-11-05T00:00:00+00:00
 command-line = [
     "nab",
@@ -327,6 +327,6 @@ cli-project-overrides = [
 
 [tool.nab.validation]
 version = 1
-all-inputs-sha256 = "2df47185a636d7b6c35aa4221d910daaac6eb8864210e2e39b5c04605a521fda"
-selection-inputs-sha256 = "bdd96976f3efa509cacb8102745641bdaf65df6c368e52c7c48b2feca1e994f7"
-contents-sha256 = "3c867c55838c76ba114f62da9a0d3e46470c1f4aeac8dc742d6992a0c1b20c90"
+all-inputs-sha256 = "55ef68d3d934133a55bec0559096ef7f67c320800d46033ae5ce7fdc6f8a40f0"
+selection-inputs-sha256 = "4b7feeb62a866e09c079e0e0919869ca4ad12345865ecec1bdc955bad2c3272d"
+contents-sha256 = "6fdba537885457614330aeb1e9cbcf307e89521e363852141682bb42198062d5"
