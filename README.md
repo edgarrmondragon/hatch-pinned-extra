@@ -7,7 +7,7 @@
 [![PyPI - Downloads][pypi-downloads-badge]][pypi-downloads]
 [![Hatch project][hatch-badge]][hatch]
 
-Hatch plugin that adds a `pinned` packaging [_extra_][extras] to the [core metadata][core-metadata] with pinned dependencies from [`uv.lock`][uvlock] or [`pylock.toml`][pylock-spec].
+Hatch plugin that adds pinned requirements [packaging _extras_][extras] to the [core metadata][core-metadata] with, from one or more [`pylock.toml`][pylock-spec] or [`uv.lock`][uvlock] files.
 
 </div>
 
@@ -19,7 +19,6 @@ Hatch plugin that adds a `pinned` packaging [_extra_][extras] to the [core metad
   - [Combining static and dynamic optional dependencies](#combining-static-and-dynamic-optional-dependencies)
   - [Configuration](#configuration)
   - [Enabling the plugin at build time](#enabling-the-plugin-at-build-time)
-  - [Reading pinned dependencies from pylock.toml file](#reading-pinned-dependencies-from-pylocktoml-file)
 - [Limitations](#limitations)
 
 ## Requirements
@@ -40,9 +39,10 @@ requires = [
 ]
 build-backend = "hatchling.build"
 
-# Leaving this empty is fine, as it registers the plugin
-# and will result in using the default settings
-[tool.hatch.metadata.hooks.pinned_extra]
+# <extra> = "<relative/path/to/pylock.toml>"
+[tool.hatch.metadata.hooks.pinned_extra.lockfiles]
+pinned = "pylock.toml"
+pinned_recommended = "pylock.recommended.toml"
 ```
 
 The plugin needs [`optional-dependencies`][optional-dependencies] to be declared as [_dynamic_][dynamic-fields]:
@@ -64,7 +64,8 @@ If `dependencies` is also _dynamic_, because another metadata hook provides it, 
 [tool.hatch.metadata.hooks.another_dependencies_hook]  # provides `dependencies`
 foo = "bar"
 
-[tool.hatch.metadata.hooks.pinned_extra]
+[tool.hatch.metadata.hooks.pinned_extra.lockfiles]
+...
 ```
 
 If `dependencies` is still unset when this plugin runs, it falls back to the dependencies of the project recorded in `uv.lock`. `pylock.toml` files don't need them, since the `pinned` extra contains everything in the file.
@@ -123,23 +124,11 @@ WARNING HATCH_PINNED_EXTRA_ENABLE is not set, pinned extra is disabled
 Successfully built project-0.1.0-py3-none-any.whl
 ```
 
-### Reading pinned dependencies from `pylock.toml` file
-
-> [!NOTE]
-> Added in v0.4.0.
-
-To use a [`pylock.toml` file][pylock-spec] instead of `uv.lock`, configure `lockfile`:
-
-```toml
-[tool.hatch.metadata.hooks.pinned_extra]
-lockfile = "pylock.prod.toml"
-```
-
 ## Limitations
 
 - Combining this plugin with static `optional-dependencies`. See [the note above](#combining-static-and-dynamic-optional-dependencies) above regarding PEP 808 support in Hatchling.
 
-- For `pylock.toml`, the `pinned` extra will contain all the dependencies in `pylock.toml`, so you'll want to make sure it includes only runtime or relevant dependencies, e.g. by generating it with `uv export --format pylock.toml --no-dev`.
+- For `pylock.toml`, the extra will contain all the dependencies in the lockfile, so you'll want to make sure it includes only runtime or relevant dependencies, e.g. by generating it with `uv export --format pylock.toml --no-dev`.
 
 - `pylock.toml` files may produce less precise environment markers than `uv.lock` because some producers may not add the resolver's internal per-Python-version splits.
 
