@@ -56,7 +56,7 @@ def test_parse_pinned_deps_from_uv_lock(lock: dict[str, Any]) -> None:
     assert reqs[1].version == Version("0.8.0")
     assert (
         str(reqs[1].marker)
-        == '(python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13")) or python_full_version == "3.10.*"'  # ruff: ignore[line-too-long]
+        == 'python_full_version >= "3.13" or (python_full_version >= "3.11" and python_full_version < "3.13") or python_full_version == "3.10.*"'  # ruff: ignore[line-too-long]
     )
 
     assert reqs[2].name == "anyio"
@@ -70,8 +70,8 @@ def test_parse_pinned_deps_from_uv_lock(lock: dict[str, Any]) -> None:
     assert reqs[4].name == "anyio"
     assert reqs[4].version == Version("4.16.0")
     assert str(reqs[4].marker) == (
-        '(python_full_version >= "3.13" '
-        'or (python_full_version >= "3.11" and python_full_version < "3.13")) '
+        'python_full_version >= "3.13" '
+        'or (python_full_version >= "3.11" and python_full_version < "3.13") '
         'or python_full_version == "3.10.*"'
     )
 
@@ -139,7 +139,7 @@ def test_optional_dep_markers_preserved(lock_with_extras: dict[str, Any]) -> Non
     req = next((req for req in reqs if req.name == "uvloop"), None)
     assert req, "uvloop should be included as a transitive dependency"
     assert str(req.marker) == (
-        '(platform_python_implementation != "PyPy" and sys_platform != "cygwin") '
+        'platform_python_implementation != "PyPy" and sys_platform != "cygwin" '
         'and sys_platform != "win32"'
     )
 
@@ -182,8 +182,8 @@ def test_update_metadata(monkeypatch: pytest.MonkeyPatch) -> None:
     assert str(botos[1].marker) == 'python_full_version == "3.9.*"'
     assert botos[2].specifier == "==1.43.124"
     assert str(botos[2].marker) == (
-        '(python_full_version >= "3.13" '
-        'or (python_full_version >= "3.11" and python_full_version < "3.13")) '
+        'python_full_version >= "3.13" '
+        'or (python_full_version >= "3.11" and python_full_version < "3.13") '
         'or python_full_version == "3.10.*"'
     )
 
@@ -228,8 +228,8 @@ def test_update_metadata_no_optional_deps(monkeypatch: pytest.MonkeyPatch) -> No
     assert str(botos[1].marker) == 'python_full_version == "3.9.*"'
     assert botos[2].specifier == "==1.43.124"
     assert str(botos[2].marker) == (
-        '(python_full_version >= "3.13" '
-        'or (python_full_version >= "3.11" and python_full_version < "3.13")) '
+        'python_full_version >= "3.13" '
+        'or (python_full_version >= "3.11" and python_full_version < "3.13") '
         'or python_full_version == "3.10.*"'
     )
     assert (
@@ -320,8 +320,8 @@ def test_plugin_enabled_with_env_var(monkeypatch: pytest.MonkeyPatch, env_var: s
     assert str(botos[1].marker) == 'python_full_version == "3.9.*"'
     assert botos[2].specifier == "==1.43.124"
     assert str(botos[2].marker) == (
-        '(python_full_version >= "3.13" '
-        'or (python_full_version >= "3.11" and python_full_version < "3.13")) '
+        'python_full_version >= "3.13" '
+        'or (python_full_version >= "3.11" and python_full_version < "3.13") '
         'or python_full_version == "3.10.*"'
     )
 
