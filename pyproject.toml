@@ -30,7 +30,10 @@ classifiers = [
 dynamic = [ "version" ]
 dependencies = [
   "hatchling>=1.27",
-  "packaging>=26.1",                     # 26.0+ required for pylock support, 26.1+ required for & and | support for Marker
+  # packaging 26.0+ required for pylock support
+  # packaging 26.1+ required for & and | support for Marker
+  # packaging 26.4+ required for `str(Marker(...))` with fewer parentheses when unambiguous
+  "packaging>=26.4",
   "tomli>=1.2.2; python_version<'3.11'",
 ]
 [[project.authors]]
