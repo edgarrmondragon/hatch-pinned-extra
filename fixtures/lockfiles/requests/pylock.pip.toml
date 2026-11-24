@@ -25,25 +25,25 @@ sha256 = "a12aaa3453dc8f633a815293179f08b7421ed18d2575c459c3c736f840beac24"
 
 [[packages]]
 name = "certifi"
-version = "2026.10.23"
+version = "2026.11.20"
 
 [[packages.wheels]]
-name = "certifi-2026.10.23-py3-none-any.whl"
-url = "https://files.pythonhosted.org/packages/32/d1/a3652fe2c19134d0d15922177821d863cbd7e842d53a21bbe7e8e3a1b5ac/certifi-2026.10.23-py3-none-any.whl"
+name = "certifi-2026.11.20-py3-none-any.whl"
+url = "https://files.pythonhosted.org/packages/6d/39/5eec3296860b94ac20bb8ed807725b88f6adfab3f343df592afd975f5f86/certifi-2026.11.20-py3-none-any.whl"
 
 [packages.wheels.hashes]
-sha256 = "e9b54de76e530bb6cf0ccd036787103acb58fd42ba930ea8bf948ddbaa2f61d1"
+sha256 = "7422df25243767b9877031a2248cb14d09ddac9beee846f4cef3d5c9191d488f"
 
 [[packages]]
 name = "charset-normalizer"
-version = "3.5.2"
+version = "3.5.3"
 
 [[packages.wheels]]
-name = "charset_normalizer-3.5.2-cp315-cp315-macosx_10_15_universal2.whl"
-url = "https://files.pythonhosted.org/packages/ca/e9/34e597dee616d0b8ee4b34d29399e85c2204ade174157a48505d42baa4ff/charset_normalizer-3.5.2-cp315-cp315-macosx_10_15_universal2.whl"
+name = "charset_normalizer-3.5.3-cp315-cp315-macosx_10_15_universal2.whl"
+url = "https://files.pythonhosted.org/packages/7d/63/99fe455c382b9ae254baa0eac2b252d83d174d42ff39557083cc6d1a6e85/charset_normalizer-3.5.3-cp315-cp315-macosx_10_15_universal2.whl"
 
 [packages.wheels.hashes]
-sha256 = "87475fabc8d9996fd9c27debb395e642e8c838d78a00b6e932227a0e06b81e26"
+sha256 = "f7fb9a3275f1a1528e542a0f5a3d2c89fcaf68e797fc5c6530434cbd92a852c4"
 
 [[packages]]
 name = "idna"
@@ -65,14 +65,14 @@ editable = true
 
 [[packages]]
 name = "platformdirs"
-version = "4.14.5"
+version = "4.14.8"
 
 [[packages.wheels]]
-name = "platformdirs-4.14.5-py3-none-any.whl"
-url = "https://files.pythonhosted.org/packages/7c/ae/ecbbbfd0e4343a6a521d49b3c8656fb4643dee2a4f6eaf941cf3280391a8/platformdirs-4.14.5-py3-none-any.whl"
+name = "platformdirs-4.14.8-py3-none-any.whl"
+url = "https://files.pythonhosted.org/packages/5b/be/373cc7341f53bfd3acba3e5db62433fd960a45fcf73ad64a5f4d27e74910/platformdirs-4.14.8-py3-none-any.whl"
 
 [packages.wheels.hashes]
-sha256 = "8e778c6fa421516f4d3369449f8df3b0e1b72c0e0005fe88e3ec772d0a14e750"
+sha256 = "1e34af590de4d978631b751eb2202f2fee4497537a17c1720b12fcf57b331392"
 
 [[packages]]
 name = "requests"
@@ -109,14 +109,14 @@ sha256 = "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
 
 [[packages]]
 name = "url-normalize"
-version = "3.1.0"
+version = "4.0.0"
 
 [[packages.wheels]]
-name = "url_normalize-3.1.0-py3-none-any.whl"
-url = "https://files.pythonhosted.org/packages/7d/3d/ae9ba568240002f25d676df745208aec077767cd63e68cbb93bd2650c4ec/url_normalize-3.1.0-py3-none-any.whl"
+name = "url_normalize-4.0.0-py3-none-any.whl"
+url = "https://files.pythonhosted.org/packages/90/69/b99d4032fd4a2984e7ec0756ef84c031f3cb7b909c2d3b592aa7b0bb7d57/url_normalize-4.0.0-py3-none-any.whl"
 
 [packages.wheels.hashes]
-sha256 = "34c386c6b2dbde760eaaaa8542dc29995c75f2baf94acceee18e5b6b29579469"
+sha256 = "dea616fc9c3d4c8bcd46fcaa783bb4e402b4f272789650919e473c5a86a7b3eb"
 
 [[packages]]
 name = "urllib3"

@@ -20,14 +20,29 @@
 #  OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
+from __future__ import annotations
+
 from pathlib import Path
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 import pytest
-from packaging.version import Version
 
 from hatch_pinned_extra._compat import read_toml
 from hatch_pinned_extra._pylock import parse_pinned_deps_from_pylock
+
+if TYPE_CHECKING:
+    from hatch_pinned_extra._base import _PinnedRequirement
+
+
+def _group_pins_by_package(reqs: list[_PinnedRequirement]) -> dict[str, dict[str, str | None]]:
+    res: dict[str, dict[str, str | None]] = {}
+    for req in reqs:
+        if req.name not in res:
+            res[req.name] = {}
+
+        res[req.name][str(req.version)] = str(req.marker) if req.marker else None
+
+    return res
 
 
 @pytest.fixture
@@ -37,29 +52,24 @@ def lock() -> dict[str, Any]:
 
 def test_parse_pinned_deps_from_pylock(lock: dict[str, Any]) -> None:
     reqs = parse_pinned_deps_from_pylock(lock)
-    assert reqs[0].name == "annotated-doc"
-    assert reqs[0].version == Version("0.0.4")
+    by_package = _group_pins_by_package(reqs)
+    assert by_package["annotated-doc"] == {
+        "0.0.4": 'python_full_version < "3.9"',
+        "0.0.5": 'python_full_version == "3.9.*"',
+        "0.0.6": 'python_full_version == "3.10.*"',
+        "0.0.7": 'python_full_version >= "3.11"',
+    }
 
-    assert reqs[1].name == "annotated-doc"
-    assert reqs[1].version == Version("0.0.5")
+    assert by_package["annotated-types"] == {
+        "0.7.0": 'python_full_version < "3.10"',
+        "0.8.0": 'python_full_version >= "3.10"',
+    }
 
-    assert reqs[2].name == "annotated-types"
-    assert reqs[2].version == Version("0.7.0")
-
-    assert reqs[3].name == "annotated-types"
-    assert reqs[3].version == Version("0.8.0")
-
-    assert reqs[4].name == "anyio"
-    assert reqs[4].version == Version("4.5.2")
-    assert str(reqs[4].marker) == 'python_full_version < "3.9"'
-
-    assert reqs[5].name == "anyio"
-    assert reqs[5].version == Version("4.12.1")
-    assert str(reqs[5].marker) == 'python_full_version == "3.9.*"'
-
-    assert reqs[6].name == "anyio"
-    assert reqs[6].version == Version("4.16.0")
-    assert str(reqs[6].marker) == 'python_full_version >= "3.10"'
+    assert by_package["anyio"] == {
+        "4.5.2": 'python_full_version < "3.9"',
+        "4.12.1": 'python_full_version == "3.9.*"',
+        "4.16.0": 'python_full_version >= "3.10"',
+    }
 
     # uv does not export transitive dependency information to pylock.toml
     assert len(set(r.name for r in reqs)) == 23

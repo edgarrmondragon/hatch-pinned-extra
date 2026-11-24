@@ -146,7 +146,7 @@ def test_coverage(session: nox.Session) -> None:
 )
 def lock(session: nox.Session, fixture: str) -> None:
     """Generate lock files."""
-    uploaded_prior_to = "2026-11-05T00:00:00Z"
+    uploaded_prior_to = "2026-11-24T00:00:00Z"
     constraints = os.path.join(session.invoked_from, "requirements/lock.requirements.txt")
     with (
         NamedTemporaryFile(suffix=".txt") as tmpfile,

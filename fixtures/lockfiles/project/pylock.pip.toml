@@ -3,14 +3,14 @@ created-by = "pip"
 
 [[packages]]
 name = "annotated-doc"
-version = "0.0.5"
+version = "0.0.7"
 
 [[packages.wheels]]
-name = "annotated_doc-0.0.5-py3-none-any.whl"
-url = "https://files.pythonhosted.org/packages/3e/30/e900b21425a860e195f32e37657aa1f7c7f2b1bfb26f03ca209b90933c06/annotated_doc-0.0.5-py3-none-any.whl"
+name = "annotated_doc-0.0.7-py3-none-any.whl"
+url = "https://files.pythonhosted.org/packages/5e/b1/9530d6bee606979d54501adcc767d958a38929827f11a524b0d93429d2ad/annotated_doc-0.0.7-py3-none-any.whl"
 
 [packages.wheels.hashes]
-sha256 = "117bac03a25ede5df5440e855b32d556049ca169ead221505badf432fed4b101"
+sha256 = "6bc31bbbec6dfaaedc1676dbc11dbda96fe22a2b5c400e9ebad113fec44a9dc6"
 
 [[packages]]
 name = "annotated-types"
@@ -36,36 +36,36 @@ sha256 = "c66ae634e0b8228396b801741beb3294326d4b6102f7bba4041c0dfb58c29026"
 
 [[packages]]
 name = "boto3"
-version = "1.43.124"
+version = "1.44.10"
 
 [[packages.wheels]]
-name = "boto3-1.43.124-py3-none-any.whl"
-url = "https://files.pythonhosted.org/packages/71/04/7a7c75e465b063d40d63b6fc5217e312793400fb43411d3064a5ba9174cc/boto3-1.43.124-py3-none-any.whl"
+name = "boto3-1.44.10-py3-none-any.whl"
+url = "https://files.pythonhosted.org/packages/db/d2/809886fa059a287b8c994c48e00c5dd8c8814438852db61812e6e5c436e2/boto3-1.44.10-py3-none-any.whl"
 
 [packages.wheels.hashes]
-sha256 = "62edd40fdeef6523ee2f73f4ccbe754fde79200ad0763bd86f4422e8125b2735"
+sha256 = "2ec7370e9f387bf5ba3ae93024d18b3a9fd07eb697062d81165e3672f16a9335"
 
 [[packages]]
 name = "botocore"
-version = "1.43.124"
+version = "1.44.10"
 
 [[packages.wheels]]
-name = "botocore-1.43.124-py3-none-any.whl"
-url = "https://files.pythonhosted.org/packages/84/a4/77409b07ba0b5520dbc591c33b305c5fe4c186036d881ca894a597c0dfba/botocore-1.43.124-py3-none-any.whl"
+name = "botocore-1.44.10-py3-none-any.whl"
+url = "https://files.pythonhosted.org/packages/93/12/0915f9467a7c6f2fcdb56a2f415e0831a993825a424d8c033cdf8edd1dc0/botocore-1.44.10-py3-none-any.whl"
 
 [packages.wheels.hashes]
-sha256 = "4651bac68d1aef78d42c8aefb514a6cd86fda07971b8348652a9d24f21b07965"
+sha256 = "d9c8602d24df40e366bbe80157c6f94155c91c367eaaabeceb26d47532f6baba"
 
 [[packages]]
 name = "fastapi"
-version = "0.162.0"
+version = "0.165.0"
 
 [[packages.wheels]]
-name = "fastapi-0.162.0-py3-none-any.whl"
-url = "https://files.pythonhosted.org/packages/b4/4f/3f2c25c9b43970b5e9a08beb5e04776247edea684ddc0930f4f02f0bb6cb/fastapi-0.162.0-py3-none-any.whl"
+name = "fastapi-0.165.0-py3-none-any.whl"
+url = "https://files.pythonhosted.org/packages/c4/c1/3b74c030262a1b38b1fee180f80b4007bbc11c9ac12028cb18c7bcecaec9/fastapi-0.165.0-py3-none-any.whl"
 
 [packages.wheels.hashes]
-sha256 = "3785963de305dd09912426cb81f2d230fce98ab3521cdfe97265c8d14983128c"
+sha256 = "896f48462042bb4f162147eb8fac7e858753dc1f486765709baf105d70e4fc5b"
 
 [[packages]]
 name = "idna"
@@ -109,25 +109,25 @@ editable = true
 
 [[packages]]
 name = "pydantic"
-version = "2.14.2"
+version = "2.14.4"
 
 [[packages.wheels]]
-name = "pydantic-2.14.2-py3-none-any.whl"
-url = "https://files.pythonhosted.org/packages/97/01/c71a71258b58659c72504e5fd65b451f6e36e34dc931d0b237ded213c814/pydantic-2.14.2-py3-none-any.whl"
+name = "pydantic-2.14.4-py3-none-any.whl"
+url = "https://files.pythonhosted.org/packages/8a/8c/824a686c4ba815ddb0722f9e66272088bccd4e1ae1d2f7015375e4a4fc7f/pydantic-2.14.4-py3-none-any.whl"
 
 [packages.wheels.hashes]
-sha256 = "7efbf7507b937931cd32a5755acb00ea1cf5ccb1d4e8067a5850d5069e382118"
+sha256 = "653a2ad9f6d8858529c77c72717d0ea991d6c6837fe683246b2f4b2bbfc3fadc"
 
 [[packages]]
 name = "pydantic-core"
-version = "2.50.2"
+version = "2.50.5"
 
 [[packages.wheels]]
-name = "pydantic_core-2.50.2-cp315-cp315-macosx_11_0_arm64.whl"
-url = "https://files.pythonhosted.org/packages/ae/ff/af99a09eddc348c1d0744c0df28dfcd4839ca497067f0fa2168208b41b1b/pydantic_core-2.50.2-cp315-cp315-macosx_11_0_arm64.whl"
+name = "pydantic_core-2.50.5-cp315-cp315-macosx_11_0_arm64.whl"
+url = "https://files.pythonhosted.org/packages/ac/29/2cc2423f489d4526825d2371d047de505760260462eb72d838fc5e934aca/pydantic_core-2.50.5-cp315-cp315-macosx_11_0_arm64.whl"
 
 [packages.wheels.hashes]
-sha256 = "f73930dacad5e611fe019e18df6f53c30629b1843d038d303b8dec86a32493bd"
+sha256 = "e93587aaa5660536b9188686e8fe0544b577ec57d896d424b5b2118b151a6845"
 
 [[packages]]
 name = "python-dateutil"

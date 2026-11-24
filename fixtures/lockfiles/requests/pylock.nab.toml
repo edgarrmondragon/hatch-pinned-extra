@@ -59,69 +59,69 @@ sha256 = "a12aaa3453dc8f633a815293179f08b7421ed18d2575c459c3c736f840beac24"
 
 [[packages]]
 name = "certifi"
-version = "2026.10.23"
+version = "2026.11.20"
 requires-python = ">=3.7"
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "certifi-2026.10.23.tar.gz"
-upload-time = 2026-10-23T11:36:16.478386+00:00
-url = "https://files.pythonhosted.org/packages/fd/11/b524cbd9bbdaca58608e4cf4053fd463417549e1959fa8d3aa18319f9555/certifi-2026.10.23.tar.gz"
-size = 136225
+name = "certifi-2026.11.20.tar.gz"
+upload-time = 2026-11-20T23:37:49.522670+00:00
+url = "https://files.pythonhosted.org/packages/51/33/4cd27639502f010084bcef7a2036391dd637439901341ce1a530f36f6e51/certifi-2026.11.20.tar.gz"
+size = 128901
 
 [packages.sdist.hashes]
-sha256 = "a9895e6e2758b371e0545e321a3a8fd1fcfd9829ada8824a936dfb16aaaf36cd"
+sha256 = "af1cb240a8133f105aa52684a3a3258339d7f2fd0bd4e2812698ff5cf5588c4e"
 
 [[packages.wheels]]
-name = "certifi-2026.10.23-py3-none-any.whl"
-upload-time = 2026-10-23T11:36:14.763067+00:00
-url = "https://files.pythonhosted.org/packages/32/d1/a3652fe2c19134d0d15922177821d863cbd7e842d53a21bbe7e8e3a1b5ac/certifi-2026.10.23-py3-none-any.whl"
-size = 135082
+name = "certifi-2026.11.20-py3-none-any.whl"
+upload-time = 2026-11-20T23:37:48.117638+00:00
+url = "https://files.pythonhosted.org/packages/6d/39/5eec3296860b94ac20bb8ed807725b88f6adfab3f343df592afd975f5f86/certifi-2026.11.20-py3-none-any.whl"
+size = 127913
 
 [packages.wheels.hashes]
-sha256 = "e9b54de76e530bb6cf0ccd036787103acb58fd42ba930ea8bf948ddbaa2f61d1"
+sha256 = "7422df25243767b9877031a2248cb14d09ddac9beee846f4cef3d5c9191d488f"
 
 [[packages]]
 name = "charset-normalizer"
-version = "3.5.2"
+version = "3.5.3"
 requires-python = ">=3.7"
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "charset_normalizer-3.5.2.tar.gz"
-upload-time = 2026-09-30T04:39:23.398219+00:00
-url = "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
-size = 172659
+name = "charset_normalizer-3.5.3.tar.gz"
+upload-time = 2026-11-23T02:46:51.755043+00:00
+url = "https://files.pythonhosted.org/packages/c2/c3/cae6d3bdefd96a941ffc247c714ac4babc488a69012e11c058f6c17c6c47/charset_normalizer-3.5.3.tar.gz"
+size = 189359
 
 [packages.sdist.hashes]
-sha256 = "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
+sha256 = "a250888753faa289e2997962fbb17c4960cbdb58575533ca6fceee68c224bdff"
 
 [[packages.wheels]]
-name = "charset_normalizer-3.5.2-cp315-cp315-macosx_10_15_universal2.whl"
-upload-time = 2026-09-30T04:37:28.329851+00:00
-url = "https://files.pythonhosted.org/packages/ca/e9/34e597dee616d0b8ee4b34d29399e85c2204ade174157a48505d42baa4ff/charset_normalizer-3.5.2-cp315-cp315-macosx_10_15_universal2.whl"
-size = 367676
+name = "charset_normalizer-3.5.3-cp315-cp315-macosx_10_15_universal2.whl"
+upload-time = 2026-11-23T02:45:29.061725+00:00
+url = "https://files.pythonhosted.org/packages/7d/63/99fe455c382b9ae254baa0eac2b252d83d174d42ff39557083cc6d1a6e85/charset_normalizer-3.5.3-cp315-cp315-macosx_10_15_universal2.whl"
+size = 388433
 
 [packages.wheels.hashes]
-sha256 = "87475fabc8d9996fd9c27debb395e642e8c838d78a00b6e932227a0e06b81e26"
+sha256 = "f7fb9a3275f1a1528e542a0f5a3d2c89fcaf68e797fc5c6530434cbd92a852c4"
 
 [[packages.wheels]]
-name = "charset_normalizer-3.5.2-cp37-abi3-macosx_10_9_universal2.whl"
-upload-time = 2026-09-30T04:38:26.216534+00:00
-url = "https://files.pythonhosted.org/packages/8c/ab/176fbfd5b64939c55d652366aa5b9ef1d767af207a3aa6ebeb0d226c484d/charset_normalizer-3.5.2-cp37-abi3-macosx_10_9_universal2.whl"
-size = 331815
+name = "charset_normalizer-3.5.3-cp37-abi3-macosx_10_9_universal2.whl"
+upload-time = 2026-11-23T02:46:09.155792+00:00
+url = "https://files.pythonhosted.org/packages/64/57/146cbf75a34eb50a27ca6daf4841a4a13a0726fa05db6f7fe97c8f14f383/charset_normalizer-3.5.3-cp37-abi3-macosx_10_9_universal2.whl"
+size = 376114
 
 [packages.wheels.hashes]
-sha256 = "4275811936e2f06feff5e598fb42a1b7ae852da8e39605211892b56b81a34efd"
+sha256 = "84356c7b7ddf090e3e4692cb99fc820e6189b5f6662ca7e8589f41095cc8efca"
 
 [[packages.wheels]]
-name = "charset_normalizer-3.5.2-py3-none-any.whl"
-upload-time = 2026-09-30T04:39:21.828049+00:00
-url = "https://files.pythonhosted.org/packages/fc/ad/d07d7862a62ffa6d79d68074d14823243dd235a77c45262acbf6adeb28bf/charset_normalizer-3.5.2-py3-none-any.whl"
-size = 68872
+name = "charset_normalizer-3.5.3-py3-none-any.whl"
+upload-time = 2026-11-23T02:46:50.665325+00:00
+url = "https://files.pythonhosted.org/packages/d2/0d/07ab8eb9b7015274353eac2add4067bde1ab1b51912bbae505392905eedd/charset_normalizer-3.5.3-py3-none-any.whl"
+size = 68878
 
 [packages.wheels.hashes]
-sha256 = "b6b751274acb69d77b3323d6b7dbaa3c7fdfc1eb829b7eb61d262f32e1af9685"
+sha256 = "96e268b0cbda016ac519513294fcd17032264085b600abaac58b93049477e132"
 
 [[packages]]
 name = "idna"
@@ -149,27 +149,27 @@ sha256 = "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c"
 
 [[packages]]
 name = "platformdirs"
-version = "4.14.5"
+version = "4.14.8"
 requires-python = ">=3.11"
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "platformdirs-4.14.5.tar.gz"
-upload-time = 2026-11-04T16:54:50.358732+00:00
-url = "https://files.pythonhosted.org/packages/d7/9a/8475be631fb33ca1466915e70fd594c42a4e84b512db650eaa14f90fe75d/platformdirs-4.14.5.tar.gz"
-size = 71464
+name = "platformdirs-4.14.8.tar.gz"
+upload-time = 2026-11-20T08:14:52.630328+00:00
+url = "https://files.pythonhosted.org/packages/71/18/0b0d99f5bf164f04a7a9534c3dbdbe4d5fd2b382667685ad40c192c4d3d1/platformdirs-4.14.8.tar.gz"
+size = 87203
 
 [packages.sdist.hashes]
-sha256 = "32e9921db7385aa8169bee4fe9501923e5715ba9fb7ea3b9c69b0d8e0639f7a1"
+sha256 = "96893d686e84e9e6f358a9ea41a8de544df66dbf2ba6cda250e7dc73acf85b9b"
 
 [[packages.wheels]]
-name = "platformdirs-4.14.5-py3-none-any.whl"
-upload-time = 2026-11-04T16:54:48.875457+00:00
-url = "https://files.pythonhosted.org/packages/7c/ae/ecbbbfd0e4343a6a521d49b3c8656fb4643dee2a4f6eaf941cf3280391a8/platformdirs-4.14.5-py3-none-any.whl"
-size = 35402
+name = "platformdirs-4.14.8-py3-none-any.whl"
+upload-time = 2026-11-20T08:14:51.306619+00:00
+url = "https://files.pythonhosted.org/packages/5b/be/373cc7341f53bfd3acba3e5db62433fd960a45fcf73ad64a5f4d27e74910/platformdirs-4.14.8-py3-none-any.whl"
+size = 94267
 
 [packages.wheels.hashes]
-sha256 = "8e778c6fa421516f4d3369449f8df3b0e1b72c0e0005fe88e3ec772d0a14e750"
+sha256 = "1e34af590de4d978631b751eb2202f2fee4497537a17c1720b12fcf57b331392"
 
 [[packages]]
 name = "requests"
@@ -259,7 +259,7 @@ sha256 = "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
 
 [[packages]]
 name = "url-normalize"
-version = "3.1.0"
+version = "4.0.0"
 requires-python = ">=3.11"
 dependencies = [
     { name = "idna" },
@@ -267,22 +267,22 @@ dependencies = [
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "url_normalize-3.1.0.tar.gz"
-upload-time = 2026-10-29T15:44:39.183794+00:00
-url = "https://files.pythonhosted.org/packages/84/d3/af36d36d189cb33237732a7fe6bba2df08189ac8c5975dab0510d5c6a5f2/url_normalize-3.1.0.tar.gz"
-size = 30464
+name = "url_normalize-4.0.0.tar.gz"
+upload-time = 2026-11-19T01:20:00.829169+00:00
+url = "https://files.pythonhosted.org/packages/6c/1b/0651cd4dc1a2c0b81151a7f0a06ff171e324a2bce47b092121d75fbeb27c/url_normalize-4.0.0.tar.gz"
+size = 90053
 
 [packages.sdist.hashes]
-sha256 = "138912833c0005ec77e756ec220590f8971ff046227280790ceb00f5ab9d56b6"
+sha256 = "52ad9004d6278ea4b581f1cf2f4d016c4873bf3d81fd749b7472ac0206355d05"
 
 [[packages.wheels]]
-name = "url_normalize-3.1.0-py3-none-any.whl"
-upload-time = 2026-10-29T15:44:37.875261+00:00
-url = "https://files.pythonhosted.org/packages/7d/3d/ae9ba568240002f25d676df745208aec077767cd63e68cbb93bd2650c4ec/url_normalize-3.1.0-py3-none-any.whl"
-size = 18692
+name = "url_normalize-4.0.0-py3-none-any.whl"
+upload-time = 2026-11-19T01:19:59.747360+00:00
+url = "https://files.pythonhosted.org/packages/90/69/b99d4032fd4a2984e7ec0756ef84c031f3cb7b909c2d3b592aa7b0bb7d57/url_normalize-4.0.0-py3-none-any.whl"
+size = 35372
 
 [packages.wheels.hashes]
-sha256 = "34c386c6b2dbde760eaaaa8542dc29995c75f2baf94acceee18e5b6b29579469"
+sha256 = "dea616fc9c3d4c8bcd46fcaa783bb4e402b4f272789650919e473c5a86a7b3eb"
 
 [[packages]]
 name = "urllib3"
@@ -309,24 +309,24 @@ size = 135717
 sha256 = "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3"
 
 [tool.nab]
-nab-version = "0.0.30"
-created-at = 2026-11-05T00:00:00+00:00
+nab-version = "0.0.31"
+created-at = 2026-11-24T00:00:00+00:00
 command-line = [
     "nab",
     "lock",
     "pyproject.toml",
     "--output=pylock.nab.toml",
-    "--project-uploaded-prior-to=2026-11-05T00:00:00Z",
+    "--project-uploaded-prior-to=2026-11-24T00:00:00Z",
 ]
 input-path = "pyproject.toml"
 mode = "specific"
 python-specifier = ">=3.10"
 cli-project-overrides = [
-    "--project-uploaded-prior-to=2026-11-05 00:00:00+00:00",
+    "--project-uploaded-prior-to=2026-11-24 00:00:00+00:00",
 ]
 
 [tool.nab.validation]
 version = 1
-all-inputs-sha256 = "55ef68d3d934133a55bec0559096ef7f67c320800d46033ae5ce7fdc6f8a40f0"
-selection-inputs-sha256 = "4b7feeb62a866e09c079e0e0919869ca4ad12345865ecec1bdc955bad2c3272d"
-contents-sha256 = "6fdba537885457614330aeb1e9cbcf307e89521e363852141682bb42198062d5"
+all-inputs-sha256 = "1b3ec9eb1b6e0d832c407a274a05187fc5dd4524ff2d17dae1a2370a962dd8bd"
+selection-inputs-sha256 = "2b688d9eb127e6216409d21260bcd570ed3b05cd4e4438dc3825d456feccb8cc"
+contents-sha256 = "56e8826c8d0c86121f32c3fffd4da78d8cdaff31ccd86c72f9a43b50682c5e93"
